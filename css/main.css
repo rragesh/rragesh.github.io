@@ -4,7 +4,7 @@
 /* Mobile Layout: 320px */
 /* Wide Mobile Layout: 480px */
 /* =================================== */
-/*  Basic Style 
+/*  Basic Style
 /* =================================== */
 ::-moz-selection {
   /* Code for Firefox */
@@ -984,17 +984,19 @@ td, th {
         padding: 8px 0; } }
   .primary-btn.white {
     border: 1px solid #90acd1;
-    color: #e45447;
-    background: #fff; }
+    color: #fff;
+    background: #90acd1;
+  }
     .primary-btn.white span {
-      color: #222222; }
-    .primary-btn.white:before {
-      color: #222222; }
-    .primary-btn.white:hover {
-      background: #90acd1;
       color: #fff; }
+    .primary-btn.white:before {
+      color: #fff; }
+    .primary-btn.white:hover {
+      border: 1px solid #90acd1;
+      background: #fff;
+      color: #90acd1; }
       .primary-btn.white:hover span {
-        color: #fff; }
+        color: #90acd1; }
 
 .overlay {
   position: absolute;
