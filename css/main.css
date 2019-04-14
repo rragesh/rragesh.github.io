@@ -1968,7 +1968,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: capitalize;
   outline: none;
   font-family: "Poppins", sans-serif; }
-  .nav-menu a.active, .nav-menu a:hover {
+  .nav-menu .active:focus, .nav-menu .active:hover {
     color: #e45447 !important; }
 .nav-menu.white a {
   color: #fff; }
