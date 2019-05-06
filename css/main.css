@@ -2286,8 +2286,8 @@ body.mobile-nav-active #mobile-nav-toggle {
     width: 100%; }
 
 .single-work {
-  object-fit: contain;
-  margin-bottom: 10vh;
+  object-fit: fill;
+  margin-bottom: 5vh;
   border-radius: 5px;
 width:30vw;
 height:30vh;}
