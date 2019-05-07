@@ -2289,8 +2289,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   object-fit: fill;
   margin-bottom: 80px;
   border-radius: 5px;
-width:30vw;
-height:30vh;}
+  width:30vw;
+  height:20vh;}
   .single-work .thumb .overlay-bg {
     background: #e45447;
     opacity: 0;
