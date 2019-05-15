@@ -55,34 +55,35 @@
 	<section class="about-area section-gap">
 			<div class="container">
 				<div class="row align-items-center justify-content-between">
-					<div class="col-lg-2 about-left">
+					<!-- <div class="col-lg-2 about-left">
 						<img class="img-fluid" src="" alt="">
-					</div>
-					<div class="col-lg-10 col-md-12 about-right">
+					</div> -->
+					<div class="col-lg-12 col-md-12 about-right">
 						<div class="section-title">
-							<h2>About</h2>
+							<h2>Abstract</h2>
 						</div>
 						<div class="mb-50 wow fadeIn" data-wow-duration=".8s">
-	
-	
+							<h5>
 							<p align="justify">
-							
+								Teaching 3-dimensional motion to robotic arm using teach pendant requires much effort. And also in order to locate position of the end effectors it involves solving difficult kinematic equation. Since traditional robot motion programming apparatus using teach pendants is a tedious job, the task could be more effectively completed using a different controller .To deal with this problem this microcontroller controlled master arm was developed which gives some movement and the slave arm follows the movement of the master. So this master slave manipulator robot arm consisting of a robotic arm represents the actual robotic arm which are used in manufacturing companies, and also the prototype joystick is the controller that helps to control the arm with high
+								accuracy precision
 							</p>
 	
 							<p align="justify">
-							
+								SAKSHA works under master slave manipulation. It has two arms namely a master arm and a slave arm. The code
+								allows the master arm, in fact a dummy arm build with servos stripped of everything but their potentiometers and
+								gears to control the positioning of the actual slave arm, allowing it to complete tasks. We replaced the
+								potentiometers in the master by servos as it draws current even while it is not operating so that the arm can retain its position while not being operated. It mainly has 2 modes of operation:
 							</p>
-	
-							<p align="justify">
-							
-							</p>
-	
-							<p align="justify">
-							
-							</p>
-	
+
+								<p align="justify">&#9666; <b>Teach mode:</b> At first master arm performs a certain movement .On resetting the slave arm imitates the master arm while mapping the analog inputs every 25ms to the servo motors using aurdino micro controller. Now pressing the record button stores each of the voltage values corresponding to servo positions into an array. 
+								</p>
+
+								<p align="justify">&#9666; <b>Play mode:</b> The program reads the so obtained array step by step and as a result slave arm displays its motion. For this the potentiometers(of the servos) in the master arm will map the angle values(of its joints) in each and every move and it is send to the slave arm through serial communication, this will help the slave arm to replicate the movements at once. Now on pressing the play button the slave arm performs the same action repeatedly until the reset button is pressed.
+								</p>
+							</h5>
 						</div>
-						<a href="https://www.linkedin.com/in/ragesh-ramachandran/" class="primary-btn white" data-text="Codes">
+						<a href="https://github.com/EnigmaRagesh/haptic-arm" class="primary-btn white" data-text="Codes">
 							<span><i class="fa fa-github" ></i></span>
 							<span>G</span>
 							<span>i</span>
@@ -92,7 +93,7 @@
 							<span>b</span>
 
 						</a>
-						<a href="resume/Ragesh_CV.pdf" class="primary-btn" data-text="Documents">
+						<a href="https://www.sciencedirect.com/science/article/pii/S1877050918310810" class="primary-btn" data-text="Documents">
 	
 							<span>D</span>
 							<span>o</span>

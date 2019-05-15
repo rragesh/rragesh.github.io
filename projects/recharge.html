@@ -39,7 +39,7 @@
 			<div class="row d-flex align-items-center justify-content-center">
 				<div class="about-content col-lg-12">
 					<h1 class="text-white">
-						Autonomous docking service for recharging service robots
+						Development of an autonomous docking ROS routine for the STOP project
 					</h1>
 					<p class="link-nav">
 						<span class="box">
@@ -55,34 +55,30 @@
 	<section class="about-area section-gap">
 			<div class="container">
 				<div class="row align-items-center justify-content-between">
-					<div class="col-lg-2 about-left">
+					<!-- <div class="col-lg-2 about-left">
 						<img class="img-fluid" src="" alt="">
-					</div>
-					<div class="col-lg-10 col-md-12 about-right">
+					</div> -->
+					<div class="col-lg-12 col-md-12 about-right">
 						<div class="section-title">
-							<h2>About</h2>
+							<h2>Abstract</h2>
 						</div>
 						<div class="mb-50 wow fadeIn" data-wow-duration=".8s">
 	
-	
+							<h5>
 							<p align="justify">
-							
+								STOP robot is a single-floor multi-robot patrol system with a small team, focusing mainly on inter-robot communication to coordinate distributed decision-making and optimize patrolling actions performed individually by mobile robots, but also including automatic deployment features and programmed and staged stop of the robots for automatic battery charging.
 							</p>
 	
 							<p align="justify">
-							
+								The task was to develop a service routine for the automatic battery charging of these multi-robots. The charging station is located in Specific locations in the patrolling area. Whenever the robot's battery level falls below a threshold value it looks for the nearest docking station and then navigates to the location to dock itself for charging. 
 							</p>
 	
 							<p align="justify">
-							
+								ROS was chosen for the application development because the entire software package for the robot was developed in ROS. Custom ROS service is created, which when called sends the location of the nearest docking station to the robot. Once the robot succesfully docks to the charding station it replies back the charging state. To navigate the robot from its current position to its docking station navigation stack of ROS was used. The entire application was developed and succesfully simulated in Gazebo.
 							</p>
-	
-							<p align="justify">
-							
-							</p>
-	
+						</h5>
 						</div>
-						<a href="https://www.linkedin.com/in/ragesh-ramachandran/" class="primary-btn white" data-text="Codes">
+						<a href="https://github.com/EnigmaRagesh/ctcv_gazebo" class="primary-btn white" data-text="Codes">
 							<span><i class="fa fa-github" ></i></span>
 							<span>G</span>
 							<span>i</span>
@@ -92,17 +88,17 @@
 							<span>b</span>
 
 						</a>
-						<a href="resume/Ragesh_CV.pdf" class="primary-btn" data-text="Documents">
+						<a href="http://stop.ingeniarius.pt/" class="primary-btn" data-text="More info">
 	
-							<span>D</span>
+							<span>M</span>
 							<span>o</span>
-							<span>c</span>
-							<span>u</span>
-							<span>m</span>
+							<span>r</span>
 							<span>e</span>
+							<span></span>
+							<span>i</span>
 							<span>n</span>
-							<span>t</span>
-							<span>s</span>
+							<span>f</span>
+							<span>o</span>
 						</a>
 					</div>
 				</div>
@@ -110,10 +106,10 @@
 			</section>
 		
 		<!-- ####################### Start Video  ####################### -->
-		<div class="col-lg- about-content">
+		<!-- <div class="col-lg- about-content">
 			<iframe width="1280" height="720" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen >
 			</iframe>
-		</div>
+		</div> -->
 		<!-- ####################### End Video ####################### -->
 	
 
