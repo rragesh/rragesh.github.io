@@ -2109,7 +2109,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff; }
 
 .home-banner-area {
-  background: url(../img/banner-bg.jpg) center;
+  background: url(../img/bg_new.png) center;
   background-size: cover; }
   @media (max-width: 769px) {
     .home-banner-area .fullscreen {
