@@ -55,6 +55,8 @@ node --check js/site.js
 
 The site checker covers local links, fragment targets, new-tab behavior, heading structure, image alt attributes, canonical URLs, sitemap coverage, structured entity references, visible FAQ parity, legacy noindex directives, and résumé/Instagram removal. Feed tests cover escaping, invalid URLs, empty/malformed feeds, tracking-pixel exclusion, and preserving content outside the generated region. Link-policy tests cover safe targets, same-page navigation, script preservation, and idempotence. CI runs these checks on pushes and pull requests.
 
+It also verifies unique page titles/descriptions, social-preview images, project authorship, the Robotair founder relationship, and crawler access. After deployment, run `python scripts/check_live.py` to verify the **public** site rather than just the working copy. Publication tests ensure this check rejects stale pages, incorrect canonicals, and indexing restrictions.
+
 ## Publication
 
 This checkout’s `origin` is `ipa-rar/rragesh.github.io`, a fork of `rragesh/rragesh.github.io`. The public website is published from the original repository. Pushing this fork does **not** update the live website: merge the upstream pull request into the original repository’s `master` branch to publish. Keep its existing branch-based Pages configuration. Development files are excluded through `_config.yml`.

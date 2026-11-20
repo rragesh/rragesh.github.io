@@ -5,6 +5,7 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
+from urllib.robotparser import RobotFileParser
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,9 +28,13 @@ class Page(HTMLParser):
         self.visible = []
         self.in_body = False
         self.hidden_depth = 0
+        self.title = []
+        self.in_title = False
 
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
+        if tag == 'title':
+            self.in_title = True
         if tag == 'body':
             self.in_body = True
         if tag in ('script', 'style'):
@@ -61,12 +66,16 @@ class Page(HTMLParser):
                 self.urls.append(attrs[name])
 
     def handle_data(self, data):
+        if self.in_title:
+            self.title.append(data)
         if self.schema_parts is not None:
             self.schema_parts.append(data)
         elif self.in_body and not self.hidden_depth:
             self.visible.append(data)
 
     def handle_endtag(self, tag):
+        if tag == 'title':
+            self.in_title = False
         if tag == 'script' and self.schema_parts is not None:
             try:
                 self.schemas.append(json.loads(''.join(self.schema_parts)))
@@ -86,7 +95,17 @@ for path in [ROOT / 'index.html', *sorted((ROOT / 'projects').glob('*.html'))]:
     pages[path.resolve()] = page
 
 errors = []
+titles = set()
+descriptions = set()
 for path, page in pages.items():
+    title = ''.join(page.title).strip()
+    if not title or title in titles:
+        page.errors.append('Each canonical page needs a unique title')
+    titles.add(title)
+    description = page.meta.get('description', '')
+    if description in descriptions:
+        page.errors.append('Each canonical page needs a unique description')
+    descriptions.add(description)
     if page.h1 != 1:
         page.errors.append(f'Expected one h1, got {page.h1}')
     expected = BASE if path.name == 'index.html' else BASE + path.relative_to(ROOT).as_posix()
@@ -96,6 +115,19 @@ for path, page in pages.items():
         page.errors.append('Missing meta description')
     if 'noindex' in page.meta.get('robots', ''):
         page.errors.append('A published portfolio page must be indexable')
+    for key in ('og:title', 'og:description', 'og:url', 'og:image', 'og:image:alt', 'twitter:card'):
+        if not page.meta.get(key):
+            page.errors.append(f'Missing search/social metadata: {key}')
+    if page.meta.get('og:url') != expected:
+        page.errors.append('Social URL must match the canonical URL')
+    image = page.meta.get('og:image', '')
+    if not image.startswith(BASE) or not (ROOT / unquote(urlsplit(image).path.lstrip('/'))).is_file():
+        page.errors.append('Social preview must reference an existing public image')
+    if path.parent.name == 'projects':
+        nodes = [node for schema in page.schemas for node in schema.get('@graph', [])]
+        work = next((node for node in nodes if node.get('@type') == 'CreativeWork'), {})
+        if work.get('author', {}).get('@id') != BASE + '#ragesh' or work.get('url') != expected:
+            page.errors.append('Project schema must connect the canonical project and its author')
     for url in page.urls:
         parsed = urlsplit(url)
         if parsed.scheme or parsed.netloc:
@@ -123,6 +155,8 @@ if entities.get(BASE + '#profile', {}).get('mainEntity', {}).get('@id') != perso
     errors.append('ProfilePage must reference the Person entity')
 if entities.get(BASE + '#robotics-deployment', {}).get('provider', {}).get('@id') != person_id:
     errors.append('Deployment service must reference the Person provider')
+if entities.get(BASE + '#robotair', {}).get('founder', {}).get('@id') != person_id:
+    errors.append('Robotair must reference Ragesh as its founder')
 visible = ' '.join(' '.join(home.visible).split())
 questions = entities.get(BASE + '#faq', {}).get('mainEntity', [])
 if not questions:
@@ -158,6 +192,14 @@ locations = [node.text for node in sitemap.findall('.//{http://www.sitemaps.org/
 expected_locations = {page.canonical[0] for page in pages.values() if len(page.canonical) == 1}
 if set(locations) != expected_locations or len(locations) != len(set(locations)):
     errors.append('Sitemap must list each canonical portfolio page exactly once')
+robots = RobotFileParser()
+robots.parse((ROOT / 'robots.txt').read_text().splitlines())
+if robots.site_maps() != [BASE + 'sitemap.xml']:
+    errors.append('robots.txt must advertise the canonical sitemap')
+for agent in ('Googlebot', 'bingbot', 'OAI-SearchBot', 'Claude-SearchBot', 'PerplexityBot'):
+    for url in [*locations, BASE + 'css/site.css', BASE + 'js/site.js', *[BASE + name for name in LEGACY]]:
+        if not robots.can_fetch(agent, url):
+            errors.append(f'{agent} cannot crawl {url}')
 if errors:
     raise SystemExit('\n'.join(errors))
 print(f'Checked {len(pages)} pages: links, new-tab behavior, headings, metadata, schema/visible FAQ parity, sitemap, legacy noindex, and profile cleanup passed.')

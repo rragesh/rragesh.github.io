@@ -14,6 +14,25 @@ Help search systems and visitors identify **Ragesh Ramachandran** as a **Robotic
 - Static article previews, text-first HTML, crawlable links, canonical URLs, an XML sitemap, and unrestricted crawling in robots.txt.
 - Legacy template/demo routes have `noindex, follow`, and remain crawlable so search engines can see that instruction. Do not block those routes in robots.txt while expecting their noindex directives to be processed.
 - Checks validate structured-data references, visible FAQ parity, canonical URLs, and sitemap targets.
+- All nine project pages have unique search titles/descriptions, Open Graph and Twitter previews, and WebPage/CreativeWork data linked to the same Ragesh author identity as the homepage.
+- Robotair's Organization entity identifies Ragesh as its founder, consistent with the visible biography. Search checks also verify access for Googlebot, bingbot, OAI-SearchBot, Claude-SearchBot, and PerplexityBot under the existing open robots policy.
+
+## Readiness verification
+
+```sh
+python -m unittest discover -s tests -v
+python scripts/check_site.py
+```
+
+After the original GitHub Pages site deploys, run:
+
+```sh
+python scripts/check_live.py
+```
+
+This verifies the actual HTTP responses, canonical metadata, published structured identities, sitemap, and crawler access across every sitemap page. It fails if the old homepage still returns HTTP 200 without the new profile. It also checks `X-Robots-Tag` and HTML indexing directives. Passing means publication is technically accessible; it does not mean Google or an answer engine has indexed or recommended the site.
+
+For a local server, use `python scripts/check_live.py --base-url http://127.0.0.1:4173/`. Production canonicals are still expected in local HTML.
 
 ## Query themes
 

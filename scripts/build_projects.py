@@ -57,7 +57,17 @@ def import_legacy():
 
 def render(project):
     title = escape(project["title"])
-    description = escape(project["paragraphs"][0][:180], quote=True)
+    seo_title = escape(project.get("seoTitle", project["title"] + " | Ragesh Ramachandran"))
+    summary = project.get("summary", project["paragraphs"][0][:180])
+    description = escape(summary, quote=True)
+    canonical = f"https://rragesh.github.io/projects/{project['slug']}.html"
+    image = f"https://rragesh.github.io/img/{project['image']}"
+    person = {"@type": "Person", "@id": "https://rragesh.github.io/#ragesh", "name": "Ragesh Ramachandran", "url": "https://rragesh.github.io/"}
+    structured = json.dumps({"@context": "https://schema.org", "@graph": [
+        {"@type": "WebPage", "@id": canonical + "#webpage", "url": canonical, "name": project["title"], "description": summary, "inLanguage": "en", "mainEntity": {"@id": canonical + "#project"}},
+        {"@type": "CreativeWork", "@id": canonical + "#project", "name": project["title"], "description": summary, "url": canonical, "image": image, "author": {"@id": person["@id"]}},
+        person
+    ]}, ensure_ascii=False).replace("<", "\\u003c")
     paragraphs = "\n".join(f"<p>{escape(p)}</p>" for p in project["paragraphs"])
     links = "\n".join(f'<a class="button" href="{escape(link["url"], quote=True)}">{escape(link["label"])}</a>' for link in project["links"])
     videos = "\n".join(f'<iframe class="project-video" src="https://www.youtube-nocookie.com/embed/{video}" title="{title} — demonstration {i + 1}" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>' for i, video in enumerate(project["videos"]))
@@ -66,13 +76,28 @@ def render(project):
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{title} — Ragesh Ramachandran</title>
+  <title>{seo_title}</title>
   <meta name="description" content="{description}">
+  <meta name="author" content="Ragesh Ramachandran">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ragesh Ramachandran">
+  <meta property="og:title" content="{seo_title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:image" content="{image}">
+  <meta property="og:image:alt" content="{title}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{seo_title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="{image}">
+  <meta name="twitter:image:alt" content="{title}">
   <meta name="theme-color" content="#dceef3">
-  <link rel="canonical" href="https://rragesh.github.io/projects/{project['slug']}.html">
+  <link rel="canonical" href="{canonical}">
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/site.css">
   <script src="../js/site.js" defer></script>
+  <script type="application/ld+json">{structured}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>

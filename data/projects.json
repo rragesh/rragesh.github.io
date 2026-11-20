@@ -1,6 +1,8 @@
 [
   {
     "slug": "recharge",
+    "seoTitle": "ROS Autonomous Docking | Ragesh Ramachandran",
+    "summary": "Ragesh Ramachandran's ROS autonomous docking project for service robots at Ingeniarius, covering charging-station navigation and simulation in Gazebo.",
     "title": "Development of an autonomous docking ROS routine for the STOP project",
     "context": "Ingeniarius · Coimbra, Portugal",
     "image": "optimized/recharge.webp",
@@ -23,6 +25,8 @@
   },
   {
     "slug": "localization",
+    "seoTitle": "IR Robot Localization | Ragesh Ramachandran",
+    "summary": "An infrared camera array for multi-robot localization: ROS drivers, CAN bus integration, RViz visualization, and camera calibration by Ragesh Ramachandran.",
     "title": "Indoor robot localization system using an array of IR cameras.",
     "context": "École Centrale de Nantes · France",
     "image": "optimized/localize.webp",
@@ -45,6 +49,8 @@
   },
   {
     "slug": "Saksha",
+    "seoTitle": "SAKSHA Robotic Teaching Arm | Ragesh Ramachandran",
+    "summary": "Explore Ragesh Ramachandran's SAKSHA master-slave teaching pendant for robotic arms, including teach-and-play operation, source code, and publication.",
     "title": "Teaching pendant for Industrial Robots",
     "context": "Amrita University · India",
     "image": "optimized/saksha.webp",
@@ -70,6 +76,8 @@
   },
   {
     "slug": "astra",
+    "seoTitle": "ASTRA Multi-Robot System | Ragesh Ramachandran",
+    "summary": "Ragesh Ramachandran's ASTRA project connects ground and aerial robots using ROS, sensor integration, mapping, and coordinated multi-robot communication.",
     "title": "Multi-Robot system for Surveillance and Security",
     "context": "Amrita University · India",
     "image": "optimized/astra.webp",
@@ -91,6 +99,8 @@
   },
   {
     "slug": "dhruv",
+    "seoTitle": "DHRUV Rescue Rover | Ragesh Ramachandran",
+    "summary": "Explore DHRUV, Ragesh Ramachandran's disaster-response rover project integrating gas sensing, thermal imaging, a robotic arm, and ROS-based telemetry.",
     "title": "Unmanned Robot for Disaster and Hazard rescue",
     "context": "Amrita University · India",
     "image": "work/disaster.jpg",
@@ -108,6 +118,8 @@
   },
   {
     "slug": "phoenix",
+    "seoTitle": "Phoenix II Rover | Ragesh Ramachandran",
+    "summary": "Meet Phoenix II, the rover built for the 2016 United Kingdom Rover Challenge in Manchester, with Ragesh Ramachandran as the project's team lead.",
     "title": "Phoenix II: United Kingdom Rover Challenge",
     "context": "United Kingdom Rover Challenge · Manchester · 2016",
     "image": "optimized/roveruk.webp",
@@ -119,6 +131,8 @@
   },
   {
     "slug": "phoenix_dummy",
+    "seoTitle": "Phoenix I Rover | Ragesh Ramachandran",
+    "summary": "Explore Phoenix I, built for the 2016 University Rover Challenge in Utah with Ragesh Ramachandran as team lead. Includes a rover demonstration video.",
     "title": "Phoenix I: University Rover Challenge",
     "context": "University Rover Challenge · Utah · 2016",
     "image": "work/pro1.JPG",
@@ -132,6 +146,8 @@
   },
   {
     "slug": "8_leg",
+    "seoTitle": "Eight-Wheeled Mars Rover | Ragesh Ramachandran",
+    "summary": "Ragesh Ramachandran's 2015 Mars rover project combines a bioinspired eight-wheel mechanism, robotic arm, and stereo vision. Read the paper and watch demos.",
     "title": "Mars Rover for University Rover Challenge 2015, Utah, USA",
     "context": "University Rover Challenge · Utah · 2015",
     "image": "work/spider_rover.jpg",
@@ -158,6 +174,8 @@
   },
   {
     "slug": "8_leg_dummy",
+    "seoTitle": "Mars Rover Field Trials | Ragesh Ramachandran",
+    "summary": "Watch field trials from the 2015 University Rover Challenge project and explore the bioinspired rover's suspension and control system with Ragesh Ramachandran.",
     "title": "Rover field trials: University Rover Challenge 2015",
     "context": "University Rover Challenge · Utah · 2015",
     "image": "work/spider_1.JPG",
