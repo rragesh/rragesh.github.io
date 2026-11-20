@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "recharge",
+    "seoTitle": "ROS Autonomous Docking | Ragesh Ramachandran",
+    "summary": "Ragesh Ramachandran's ROS autonomous docking project for service robots at Ingeniarius, covering charging-station navigation and simulation in Gazebo.",
+    "title": "Development of an autonomous docking ROS routine for the STOP project",
+    "context": "Ingeniarius · Coimbra, Portugal",
+    "image": "optimized/recharge.webp",
+    "paragraphs": [
+      "STOP robot is a single-floor multi-robot patrol system with a small team, focusing mainly on inter-robot communication to coordinate distributed decision-making and optimize patrolling actions performed individually by mobile robots, but also including automatic deployment features and programmed and staged stop of the robots for automatic battery charging.",
+      "The task was to develop a service routine for the automatic battery charging of these multi-robots. The charging station is located in Specific locations in the patrolling area. Whenever the robot's battery level falls below a threshold value it looks for the nearest docking station and then navigates to the location to dock itself for charging.",
+      "ROS was chosen for the application development because the entire software package for the robot was developed in ROS. Custom ROS service is created, which when called sends the location of the nearest docking station to the robot. Once the robot succesfully docks to the charding station it replies back the charging state. To navigate the robot from its current position to its docking station navigation stack of ROS was used. The entire application was developed and succesfully simulated in Gazebo."
+    ],
+    "links": [
+      {
+        "url": "https://github.com/EnigmaRagesh/ctcv_gazebo",
+        "label": "Source on GitHub"
+      },
+      {
+        "url": "http://stop.ingeniarius.pt/",
+        "label": "Project website"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "localization",
+    "seoTitle": "IR Robot Localization | Ragesh Ramachandran",
+    "summary": "An infrared camera array for multi-robot localization: ROS drivers, CAN bus integration, RViz visualization, and camera calibration by Ragesh Ramachandran.",
+    "title": "Indoor robot localization system using an array of IR cameras.",
+    "context": "École Centrale de Nantes · France",
+    "image": "optimized/localize.webp",
+    "paragraphs": [
+      "Movement and control of mobile robots in closed workspaces depends on global knowledge of the environment and exact knowledge of robot position at all times (localization). Odometry, which is a popular relative localization method, is prone to systematic and non-systematic errors and therefore results in an inaccurate estimation of the robot’s position. Consequently, localization systems that rely on sensing systems like vision cameras and range sensors are gaining importance in the domain. This project implements a system that uses infrared cameras to capture the position of several robots in a predefined workspace. It provides absolute localization for several robots equipped with IR LEDs, using multiple infrared cameras.",
+      "In the workspace of the Multi-Robot Localization,system has four cameras mounted on the ceiling of the project room and they are placed on the 4 corners of a (≈1x1m2) square. Each camera has a triangular pyramid detection range. These ranges are not independent; they have overlapping space in which the robots (LEDs) can be detected by more than one camera at the same time. The base surface of each camera’s detecting range is a rectangle.",
+      "The 4 cameras in the localization system sends the data via CAN bus. ROS drivers were developed to read these CAN bus data and convert them to camera cordinates. Then the simulation environment is set up in rviz which displays the field of view of the camera as well as the detected points. Since the main objective was to make the system modular and scale up when required, A calibration method needs to be introduced for the efficient calibration of the cameras when scaling up the array. ROS nodes were created to calibrate these cameras and special calibratin boards made up of IR leds were made. An accuracy of 5 cm were achieved in localization of robots after the calibraion."
+    ],
+    "links": [
+      {
+        "url": "https://github.com/EnigmaRagesh/2X2_IR-sensor-array-Calibration",
+        "label": "Source on GitHub"
+      },
+      {
+        "url": "../img/exp/Localization system using overhead IR image sensors.pdf",
+        "label": "Project publication"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "Saksha",
+    "seoTitle": "SAKSHA Robotic Teaching Arm | Ragesh Ramachandran",
+    "summary": "Explore Ragesh Ramachandran's SAKSHA master-slave teaching pendant for robotic arms, including teach-and-play operation, source code, and publication.",
+    "title": "Teaching pendant for Industrial Robots",
+    "context": "Amrita University · India",
+    "image": "optimized/saksha.webp",
+    "paragraphs": [
+      "Teaching 3-dimensional motion to robotic arm using teach pendant requires much effort. And also in order to locate position of the end effectors it involves solving difficult kinematic equation. Since traditional robot motion programming apparatus using teach pendants is a tedious job, the task could be more effectively completed using a different controller .To deal with this problem this microcontroller controlled master arm was developed which gives some movement and the slave arm follows the movement of the master. So this master slave manipulator robot arm consisting of a robotic arm represents the actual robotic arm which are used in manufacturing companies, and also the prototype joystick is the controller that helps to control the arm with high accuracy precision",
+      "SAKSHA works under master slave manipulation. It has two arms namely a master arm and a slave arm. The code allows the master arm, in fact a dummy arm build with servos stripped of everything but their potentiometers and gears to control the positioning of the actual slave arm, allowing it to complete tasks. We replaced the potentiometers in the master by servos as it draws current even while it is not operating so that the arm can retain its position while not being operated. It mainly has 2 modes of operation:",
+      "◂ Teach mode: At first master arm performs a certain movement .On resetting the slave arm imitates the master arm while mapping the analog inputs every 25ms to the servo motors using aurdino micro controller. Now pressing the record button stores each of the voltage values corresponding to servo positions into an array.",
+      "◂ Play mode: The program reads the so obtained array step by step and as a result slave arm displays its motion. For this the potentiometers(of the servos) in the master arm will map the angle values(of its joints) in each and every move and it is send to the slave arm through serial communication, this will help the slave arm to replicate the movements at once. Now on pressing the play button the slave arm performs the same action repeatedly until the reset button is pressed."
+    ],
+    "links": [
+      {
+        "url": "https://github.com/EnigmaRagesh/haptic-arm",
+        "label": "Source on GitHub"
+      },
+      {
+        "url": "https://www.sciencedirect.com/science/article/pii/S1877050918310810",
+        "label": "Project publication"
+      }
+    ],
+    "videos": [
+      "uxLMUj7yzW4"
+    ]
+  },
+  {
+    "slug": "astra",
+    "seoTitle": "ASTRA Multi-Robot System | Ragesh Ramachandran",
+    "summary": "Ragesh Ramachandran's ASTRA project connects ground and aerial robots using ROS, sensor integration, mapping, and coordinated multi-robot communication.",
+    "title": "Multi-Robot system for Surveillance and Security",
+    "context": "Amrita University · India",
+    "image": "optimized/astra.webp",
+    "paragraphs": [
+      "Armed forces and civilian securities helps in promoting and maintaining a peaceful harmony in our country and the civilian industries to ensure safety. The risk and complications makes the job more tough and stressful. A survey on over 70 percent of our forces says, they were not getting adequate rest and sleep. In Order to ease their task and automate the security functions, ASTRA (Attack Suspecting and Tactically Responding Army machines) is developed.",
+      "ASTRA is network of swarm UGV/UAV robots collaborated together for surveillance, targeting, and improved communications. It uses modern technologies like computer vision, AI, Encrypted Communication and sensor based interactions. It is provided with algorithms that helps the machines to perform mostly like humans which includes real-time communication,vision-based target tracking ,alert the securities about intruders and unknown suspects, which can reduce the occupational stress on soldiers.",
+      "ASTRA can be deployed at any area in need of Surveillance. The real-time camera feedback and Automated Exploration feature (between two GPS coordinates) ease the task of Surveillance. The Manual/Remote controlled exploration feature also makes the traversal easier. The UGV can detect the unusual motions and alert the base Security station. It can track the object and follow it till the security force covers the area of suspect. The alert is also passed to the inter-connected robots which makes the robots more vigilant. By this, even if the tracking robot gets destroyed, the other one will get into duty of the previous one(follow the suspect). Thus, it can ensure more security.",
+      "The UGV is build on an all wheel drive aluminium chasis. The drive train consists of 4 high torque brushed DC motors with planetary gearbox. The battery is made from 18650 Lithium ion cells with an overall power rating of 40Ah at 13.2 volts. The battery is protected using battery management system which protects it from over charding and discharging. DC-DC step down converters are used for powering the sensors are onboard computers. The navigation system of the robot consists of laser scanners, ultrasonic sensors, GPS, IMU and camera for obstacle avoidance, localization and mapping. The data processing is done in Atmega2560 MCU which then publishes this data to a Raspberry Pi running Ubuntu. The ROS drivers for the ATmega MCU publishes all the sensor data to the Raspberry Pi and subscribes velocity commands from it. SLAM algorithm is used for mapping and localization of unknown environments. The computed map is then used for patrolling around the environment. Raspberry Pi camera is used for detecting the presence of intruders and uses machine learning for improved detection even at low light conditions. The robot has high intensity IR led array which can improve the visblity upto 25 m at dark environments. All the robots are connected to a central PC running ROS master node via the onboard Wifi. The prototype was tested in an an area which is free from other radio interferences and the distance between the robots were maintained at 5 m for low latency communication."
+    ],
+    "links": [
+      {
+        "url": "../img/exp/BORDER SWARM FORCE.pdf",
+        "label": "Project publication"
+      }
+    ],
+    "videos": [
+      "gJsC4f8IdxI"
+    ]
+  },
+  {
+    "slug": "dhruv",
+    "seoTitle": "DHRUV Rescue Rover | Ragesh Ramachandran",
+    "summary": "Explore DHRUV, Ragesh Ramachandran's disaster-response rover project integrating gas sensing, thermal imaging, a robotic arm, and ROS-based telemetry.",
+    "title": "Unmanned Robot for Disaster and Hazard rescue",
+    "context": "Amrita University · India",
+    "image": "work/disaster.jpg",
+    "paragraphs": [
+      "A rover designed for rescue missions during an industrial hazard. The rover is equipped with carbon monoxide, carbon dioxide, methane, butane, ammonia, and chlorine sensors to monitor the air quaity in real time. Real-Time monitoring is done using a web based interface made using html, css and javascript. The rover puncture less tyres, specially build aluminium chassis and 5 DOF heavy duty robotic arm which can lift up to 40kg using its grippers. The robotic arm is fitted with thermal cameras which can detect the presence of human bodies present in the scene. This is of grat help if the environment in which it is rovering on is filled with dust particles of gases which blur the vision of normal cameras.",
+      "The onboard processing unit consists of Raspberry pi running ubuntu OS and Atmega 2560 MCU for data processing. ROS is used for the telemetry contol of the rover as well as the real-time transmission of sensor data. The rover is connected to the user using 5.8 GHz Radio link which has a maximun range of 2 km with low latency communication. IR camera is used for navigation from control station along with an array of ultrasonic sensors which assists the driver to avoid the obstacles that is not visible in the camera. Rover is powered using Lithium ion battery with maximun power output of 60Ah. The electonic systems are sealed inside a vaccum chamber to prevent fire incase of gas leakage. All precautions are taken to isolate the electonics components from the external environment to prevent accidents."
+    ],
+    "links": [
+      {
+        "url": "https://www.amrita.edu/news/amrita-mechanical-engineering-students-win-prizes-robotsavam-2017",
+        "label": "Read the coverage"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "phoenix",
+    "seoTitle": "Phoenix II Rover | Ragesh Ramachandran",
+    "summary": "Meet Phoenix II, the rover built for the 2016 United Kingdom Rover Challenge in Manchester, with Ragesh Ramachandran as the project's team lead.",
+    "title": "Phoenix II: United Kingdom Rover Challenge",
+    "context": "United Kingdom Rover Challenge · Manchester · 2016",
+    "image": "optimized/roveruk.webp",
+    "paragraphs": [
+      "Phoenix II is a rover built for the United Kingdom Rover Challenge in Manchester in 2016. I was the team lead for the project."
+    ],
+    "links": [],
+    "videos": []
+  },
+  {
+    "slug": "phoenix_dummy",
+    "seoTitle": "Phoenix I Rover | Ragesh Ramachandran",
+    "summary": "Explore Phoenix I, built for the 2016 University Rover Challenge in Utah with Ragesh Ramachandran as team lead. Includes a rover demonstration video.",
+    "title": "Phoenix I: University Rover Challenge",
+    "context": "University Rover Challenge · Utah · 2016",
+    "image": "work/pro1.JPG",
+    "paragraphs": [
+      "Phoenix I is a rover built for the University Rover Challenge in Utah, USA, in 2016. I was the team lead for the project."
+    ],
+    "links": [],
+    "videos": [
+      "eb4B5Us4b5w"
+    ]
+  },
+  {
+    "slug": "8_leg",
+    "seoTitle": "Eight-Wheeled Mars Rover | Ragesh Ramachandran",
+    "summary": "Ragesh Ramachandran's 2015 Mars rover project combines a bioinspired eight-wheel mechanism, robotic arm, and stereo vision. Read the paper and watch demos.",
+    "title": "Mars Rover for University Rover Challenge 2015, Utah, USA",
+    "context": "University Rover Challenge · Utah · 2015",
+    "image": "work/spider_rover.jpg",
+    "paragraphs": [
+      "The rover features a bioinspired eight-wheeled drive mechanism, an integrated robotic arm and a stereo vision technique for advanced image processing. The system control, for both the rover as well the robotic arm, is done using microcontrollers and microprocessors such as Arduino, Intel NUC, and Raspberry Pi. Inspired by nature, a reflex mechanism has also been integrated into the rover design to minimize damage, by automated safety reflexes. The arm is so designed to switch between three different end effectors depending upon the task to be performed.",
+      "The 8- wheeled rover combines the rocker-bogie mechanism and four rocker wheels and four spider-leg wheels. The spider-legs ensures that it can traverse over a considerable height greater than the chassis height which could be as much as thrice the diameter of the wheels, whereas the current NASA`S curiosity rocker-bogie system can only traverse over a height twice the diameter of the wheel.",
+      "Additionally, as they are actuator powered, the slope of the rover can be adjusted in such a way that it does not topple for a wide range of inclination and allows the rover to traverse over the highly rugged terrain. It provides a large amount of traction with the ground even in terrains where there is a negative slope or vertical drop of around 1m using a spring-damper suspension mechanism whereas the rocker-bogie mechanism provides traction only due to its body weight.",
+      "The Rover finds applications in the exploration of other planets, deep sea vents and other hostile environments. It offers a possibility of integrating numerous features such mineral collection and sampling, landscape mapping, moisture detection, etc. Such an effort may even prove to be instrumental in detection and study of biological activity in worlds other than ours."
+    ],
+    "links": [
+      {
+        "url": "https://www.amrita.edu/news/amrita-team-participates-university-rover-challenge-usa",
+        "label": "Read the coverage"
+      },
+      {
+        "url": "../img/exp/rover_paper.pdf",
+        "label": "Project publication"
+      }
+    ],
+    "videos": [
+      "mWysfPfZIGI",
+      "-HYnqNPgKkU"
+    ]
+  },
+  {
+    "slug": "8_leg_dummy",
+    "seoTitle": "Mars Rover Field Trials | Ragesh Ramachandran",
+    "summary": "Watch field trials from the 2015 University Rover Challenge project and explore the bioinspired rover's suspension and control system with Ragesh Ramachandran.",
+    "title": "Rover field trials: University Rover Challenge 2015",
+    "context": "University Rover Challenge · Utah · 2015",
+    "image": "work/spider_1.JPG",
+    "paragraphs": [
+      "The rover features a bioinspired eight-wheeled drive mechanism, an integrated robotic arm and a stereo vision technique for advanced image processing. The system control, for both the rover as well the robotic arm, is done using microcontrollers and microprocessors such as Arduino, Intel NUC, and Raspberry Pi. Inspired by nature, a reflex mechanism has also been integrated into the rover design to minimize damage, by automated safety reflexes. The arm is so designed to switch between three different end effectors depending upon the task to be performed.",
+      "The 8- wheeled rover combines the rocker-bogie mechanism and four rocker wheels and four spider-leg wheels. The spider-legs ensures that it can traverse over a considerable height greater than the chassis height which could be as much as thrice the diameter of the wheels, whereas the current NASA`S curiosity rocker-bogie system can only traverse over a height twice the diameter of the wheel.",
+      "Additionally, as they are actuator powered, the slope of the rover can be adjusted in such a way that it does not topple for a wide range of inclination and allows the rover to traverse over the highly rugged terrain. It provides a large amount of traction with the ground even in terrains where there is a negative slope or vertical drop of around 1m using a spring-damper suspension mechanism whereas the rocker-bogie mechanism provides traction only due to its body weight.",
+      "The Rover finds applications in the exploration of other planets, deep sea vents and other hostile environments. It offers a possibility of integrating numerous features such mineral collection and sampling, landscape mapping, moisture detection, etc. Such an effort may even prove to be instrumental in detection and study of biological activity in worlds other than ours."
+    ],
+    "links": [
+      {
+        "url": "https://www.amrita.edu/news/amrita-team-participates-university-rover-challenge-usa",
+        "label": "Read the coverage"
+      },
+      {
+        "url": "../img/exp/rover2_paper.pdf",
+        "label": "Project publication"
+      }
+    ],
+    "videos": [
+      "bEimLRsp5GA"
+    ]
+  }
+]
