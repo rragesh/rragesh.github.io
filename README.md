@@ -39,6 +39,12 @@ python3 scripts/build_projects.py
 
 Existing public project URLs and project-publication PDFs are retained. The résumé PDF has been removed; professional profile links point to [LinkedIn](https://www.linkedin.com/in/ragesh-ramachandran/). The old `about.html` route redirects to the homepage’s About section.
 
+Destination-page links open in new tabs with `rel="noopener"`, including generated articles and project pages. Same-page navigation keeps its normal behavior. After adding handwritten links, run `python3 scripts/link_policy.py`. The owner has no Instagram account; do not add an Instagram profile.
+
+## Search positioning
+
+The homepage positions Ragesh as a **Robotics and Physical AI Deployment & Ops Specialist** helping VC-backed robotics startups scale reliable fleets. It includes owner-provided experience, service descriptions, sourced articles, and visible FAQs with matching structured data. See `SEO.md` for search goals, publication/indexing steps, and measurement; `data/profile-sources.md` records provenance and verification limits. Legacy template routes are marked `noindex, follow`.
+
 ## Checks
 
 ```sh
@@ -47,7 +53,7 @@ python scripts/check_site.py
 node --check js/site.js
 ```
 
-The site checker covers local links, fragment targets, heading structure, image alt attributes, and résumé removal. Feed tests cover escaping, invalid URLs, empty/malformed feeds, tracking-pixel exclusion, and preserving content outside the generated region. CI runs these checks on pushes and pull requests.
+The site checker covers local links, fragment targets, new-tab behavior, heading structure, image alt attributes, canonical URLs, sitemap coverage, structured entity references, visible FAQ parity, legacy noindex directives, and résumé/Instagram removal. Feed tests cover escaping, invalid URLs, empty/malformed feeds, tracking-pixel exclusion, and preserving content outside the generated region. Link-policy tests cover safe targets, same-page navigation, script preservation, and idempotence. CI runs these checks on pushes and pull requests.
 
 ## Publication
 

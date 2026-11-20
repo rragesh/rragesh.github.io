@@ -6,6 +6,7 @@ exclude:
   - graft
   - PRODUCT.md
   - DESIGN.md
+  - SEO.md
   - README.md
   - requirements.txt
   - Kenedy Personal - Doc

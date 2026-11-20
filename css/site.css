@@ -185,6 +185,76 @@ p {
 .intro {
   padding: 18px 0 60px;
 }
+.specialist-title {
+  display: block;
+  margin-top: 16px;
+  max-width: 38ch;
+  font:
+    500 clamp(20px, 2.5vw, 25px) / 1.5 Manrope,
+    sans-serif;
+  letter-spacing: -0.015em;
+}
+.intro-contact {
+  margin-top: 16px;
+}
+.expertise-list {
+  margin: 0;
+}
+.expertise-list > div {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.expertise-list dt {
+  font-weight: 700;
+  font-size: 16px;
+}
+.expertise-list dd {
+  margin: 10px 0 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+.section-note {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.talk-summary p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--muted);
+}
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+}
+.resource-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.resource-list span {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.professional-quote {
+  margin-top: 32px;
+}
+.faq-item + .faq-item {
+  margin-top: 28px;
+}
+.faq-item p {
+  color: var(--muted);
+  font-size: 15px;
+  margin-top: 10px;
+}
+.journey-list div > p + p {
+  max-width: 55ch;
+  font-size: 13px;
+  margin-top: 10px;
+}
 .intro-nav {
   display: flex;
   gap: 24px;
@@ -770,6 +840,9 @@ figcaption span {
 }
 
 @media (max-width: 600px) {
+  .desktop-break {
+    display: none;
+  }
   .container {
     width: calc(100% - 40px);
   }

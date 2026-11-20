@@ -149,9 +149,9 @@ def render_posts(posts):
         cards.append(f'''<article class="article-card" data-topics="{topics}">
             {image}
             <div class="article-meta"><time datetime="{post['date']}">{post['displayDate']}</time><span>On Medium</span></div>
-            <h3><a href="{url}">{escape(post['title'])}</a></h3>
+            <h3><a href="{url}" target="_blank" rel="noopener">{escape(post['title'])}</a></h3>
             <p>{escape(post['excerpt'])}</p>
-            <a class="text-link" href="{url}" aria-label="Read on Medium: {escape(post['title'], quote=True)}">Read on Medium <span class="arrow diagonal" aria-hidden="true"></span></a>
+            <a class="text-link" href="{url}" target="_blank" rel="noopener" aria-label="Read on Medium: {escape(post['title'], quote=True)}">Read on Medium <span class="arrow diagonal" aria-hidden="true"></span></a>
           </article>''')
     return "\n          ".join(cards)
 

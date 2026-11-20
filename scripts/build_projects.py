@@ -6,6 +6,7 @@ from html import escape, unescape
 import json
 from pathlib import Path
 import re
+from link_policy import open_in_new_tabs
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/projects.json"
@@ -97,5 +98,5 @@ if __name__ == "__main__":
         import_legacy()
     projects = json.loads(DATA.read_text())
     for project in projects:
-        (ROOT / f"projects/{project['slug']}.html").write_text(render(project))
+        (ROOT / f"projects/{project['slug']}.html").write_text(open_in_new_tabs(render(project)))
     print(f"Built {len(projects)} project pages.")
