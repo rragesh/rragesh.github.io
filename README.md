@@ -39,11 +39,30 @@ python3 scripts/build_projects.py
 
 Existing public project URLs and project-publication PDFs are retained. The résumé PDF has been removed; professional profile links point to [LinkedIn](https://www.linkedin.com/in/ragesh-ramachandran/). The old `about.html` route redirects to the homepage’s About section.
 
+## Legacy cleanup
+
+The old Colorlib demo pages are lightweight, JavaScript-free redirects to the current homepage:
+
+| Old route | Destination section |
+| --- | --- |
+| `about.html` | About |
+| `blog-home.html`, `blog-single.html` | Writing |
+| `contact.html` | Contact |
+| `portfolio.html`, `portfolio-details.html` | Projects |
+| `services.html` | Expertise |
+| `elements.html` | Home |
+
+Bootstrap, jQuery and its plugins, template Sass/CSS, icon fonts, the PHP mail handler, bundled template documentation, and unreferenced images have been removed. The site uses `css/site.css`, `js/site.js`, and the self-hosted Manrope font. Project data is maintained directly in `data/projects.json`; the completed one-time legacy importer has been removed.
+
+Original photos used to create the optimized images remain as source assets, as documented in `data/assets.md`. Project-publication PDFs and the original template credit are retained.
+
+## Link policy
+
 Destination-page links open in new tabs with `rel="noopener"`, including generated articles and project pages. Same-page navigation keeps its normal behavior. After adding handwritten links, run `python3 scripts/link_policy.py`. The owner has no Instagram account; do not add an Instagram profile.
 
 ## Search positioning
 
-The homepage positions Ragesh as a **Robotics and Physical AI Deployment & Ops Specialist** helping VC-backed robotics startups scale reliable fleets. It includes owner-provided experience, service descriptions, sourced articles, and visible FAQs with matching structured data. See `SEO.md` for search goals, publication/indexing steps, and measurement; `data/profile-sources.md` records provenance and verification limits. Legacy template routes are marked `noindex, follow`.
+The homepage positions Ragesh as a **Robotics and Physical AI Deployment & Ops Specialist** helping VC-backed robotics startups scale reliable fleets. It includes owner-provided experience, service descriptions, sourced articles, and visible FAQs with matching structured data. See `SEO.md` for search goals, publication/indexing steps, and measurement; `data/profile-sources.md` records provenance and verification limits. Compatibility redirects are marked `noindex, follow` and use the homepage canonical URL.
 
 ## Checks
 
@@ -53,7 +72,7 @@ python scripts/check_site.py
 node --check js/site.js
 ```
 
-The site checker covers local links, fragment targets, new-tab behavior, heading structure, image alt attributes, canonical URLs, sitemap coverage, structured entity references, visible FAQ parity, legacy noindex directives, and résumé/Instagram removal. Feed tests cover escaping, invalid URLs, empty/malformed feeds, tracking-pixel exclusion, and preserving content outside the generated region. Link-policy tests cover safe targets, same-page navigation, script preservation, and idempotence. CI runs these checks on pushes and pull requests.
+The site checker covers local links, stylesheet assets, fragment targets, new-tab behavior, heading structure, image alt attributes, canonical URLs, sitemap coverage, structured entity references, visible FAQ parity, compatibility redirect destinations/fallback links/noindex directives, and résumé/Instagram removal. Feed tests cover escaping, invalid URLs, empty/malformed feeds, tracking-pixel exclusion, and preserving content outside the generated region. Link-policy tests cover safe targets, same-page navigation, script preservation, and idempotence. CI runs these checks on pushes and pull requests.
 
 It also verifies unique page titles/descriptions, social-preview images, project authorship, the Robotair founder relationship, and crawler access. After deployment, run `python scripts/check_live.py` to verify the **public** site rather than just the working copy. Publication tests ensure this check rejects stale pages, incorrect canonicals, and indexing restrictions.
 

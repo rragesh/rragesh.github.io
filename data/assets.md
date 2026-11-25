@@ -15,4 +15,4 @@ All portfolio photographs were already present at repository revision `e60b4e5`;
 | `fonts/manrope-latin.woff2` | Fontsource Manrope variable Latin distribution | Self-hosted, SIL OFL |
 | `img/favicon.svg` | Authored monogram | SVG |
 
-New photographic files include source information in their EXIF image-description metadata. Project detail pages also retain original photographs under `img/work/`.
+New photographic files include source information in their EXIF image-description metadata. Project detail pages also retain original photographs under `img/work/`. Source photographs listed above are intentionally retained for future crops and conversions; unreferenced template artwork, skill icons, recommendation portraits, and unused project images have been removed.

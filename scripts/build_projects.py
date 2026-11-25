@@ -2,57 +2,14 @@
 """Build static project pages from data/projects.json, preserving their public URLs."""
 
 import argparse
-from html import escape, unescape
+from html import escape
 import json
 from pathlib import Path
-import re
 from link_policy import open_in_new_tabs
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/projects.json"
 LINKEDIN = "https://www.linkedin.com/in/ragesh-ramachandran/"
-
-
-def import_legacy():
-    """One-time import of the original project copy; never overwrite saved content."""
-    if DATA.exists():
-        raise SystemExit("Project data already exists. Edit data/projects.json instead.")
-    images = {
-        "recharge": ("optimized/recharge.webp", "Ingeniarius · Coimbra, Portugal"),
-        "localization": ("optimized/localize.webp", "École Centrale de Nantes · France"),
-        "Saksha": ("optimized/saksha.webp", "Amrita University · India"),
-        "astra": ("optimized/astra.webp", "Amrita University · India"),
-        "dhruv": ("work/disaster.jpg", "Amrita University · India"),
-        "phoenix": ("optimized/roveruk.webp", "United Kingdom Rover Challenge · Manchester · 2016"),
-        "phoenix_dummy": ("work/pro1.JPG", "University Rover Challenge · Utah · 2016"),
-        "8_leg": ("work/spider_rover.jpg", "University Rover Challenge · Utah · 2015"),
-        "8_leg_dummy": ("work/spider_1.JPG", "University Rover Challenge · Utah · 2015"),
-    }
-    projects = []
-    for slug, (image, context) in images.items():
-        source = (ROOT / f"projects/{slug}.html").read_text()
-        source = re.sub(r"<!--.*?-->", "", source, flags=re.S)
-        text = lambda value: " ".join(unescape(re.sub(r"<[^>]+>", "", value)).split())
-        title = text(re.search(r"<h1[^>]*>(.*?)</h1>", source, re.S)[1])
-        paragraphs = [text(p) for p in re.findall(r'<p align="justify"[^>]*>(.*?)</p>', source, re.S) if text(p)]
-        links = []
-        for href, label in re.findall(r'<a href="([^"]+)"[^>]*data-text="([^"]+)"', source):
-            if "resume/" in href or href == LINKEDIN:
-                continue
-            label = {"Codes": "Source on GitHub", "Documents": "Project publication", "News": "Read the coverage", "More info": "Project website"}.get(label, label)
-            links.append({"url": href, "label": label})
-        videos = re.findall(r'https://www.youtube.com/embed/([\w-]{11})', source)
-        if slug == "phoenix":
-            title = "Phoenix II: United Kingdom Rover Challenge"
-            paragraphs = ["Phoenix II is a rover built for the United Kingdom Rover Challenge in Manchester in 2016. I was the team lead for the project."]
-        if slug == "phoenix_dummy":
-            title = "Phoenix I: University Rover Challenge"
-            paragraphs = ["Phoenix I is a rover built for the University Rover Challenge in Utah, USA, in 2016. I was the team lead for the project."]
-        if slug == "8_leg_dummy":
-            title = "Rover field trials: University Rover Challenge 2015"
-        projects.append({"slug": slug, "title": title, "context": context, "image": image, "paragraphs": paragraphs, "links": links, "videos": videos})
-    DATA.parent.mkdir(exist_ok=True)
-    DATA.write_text(json.dumps(projects, ensure_ascii=False, indent=2) + "\n")
 
 
 def render(project):
@@ -117,10 +74,7 @@ def render(project):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--import-legacy", action="store_true")
-    args = parser.parse_args()
-    if args.import_legacy:
-        import_legacy()
+    parser.parse_args()
     projects = json.loads(DATA.read_text())
     for project in projects:
         (ROOT / f"projects/{project['slug']}.html").write_text(open_in_new_tabs(render(project)))
