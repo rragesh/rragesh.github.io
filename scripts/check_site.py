@@ -115,7 +115,7 @@ class Page(HTMLParser):
 
 
 pages = {}
-for path in [*(ROOT / name for name in ('index.html', 'about.html', 'work.html', 'writing.html')), *sorted((ROOT / 'projects').glob('*.html'))]:
+for path in [*(ROOT / name for name in ('index.html', 'about.html', 'work.html', 'writing.html', 'how-i-work.html')), *sorted((ROOT / 'projects').glob('*.html'))]:
     page = Page(path)
     page.feed(path.read_text())
     pages[path.resolve()] = page
@@ -135,10 +135,10 @@ for path, page in pages.items():
     if page.h1 != 1:
         page.errors.append(f'Expected one h1, got {page.h1}')
     prefix = '../' if path.parent.name == 'projects' else ''
-    navigation = [prefix + name for name in ('index.html', 'about.html', 'work.html', 'writing.html')]
+    navigation = [prefix + name for name in ('index.html', 'about.html', 'work.html', 'writing.html', 'how-i-work.html')]
     navigation.append('https://www.linkedin.com/in/ragesh-ramachandran/')
     if [href for href, _ in page.navigation] != navigation:
-        page.errors.append('Main navigation must expose Home, My story, Work, Writing, and LinkedIn contact consistently')
+        page.errors.append('Main navigation must expose Home, My story, Work, Writing, How I work, and LinkedIn contact consistently')
     active = [href for href, current in page.navigation if current]
     expected_active = prefix + ('work.html' if prefix else path.name)
     if active != [expected_active]:
@@ -163,11 +163,11 @@ for path, page in pages.items():
         work = next((node for node in nodes if node.get('@type') == 'CreativeWork'), {})
         if work.get('author', {}).get('@id') != BASE + '#ragesh' or work.get('url') != expected:
             page.errors.append('Project schema must connect the canonical project and its author')
-    elif path.name == 'about.html':
+    elif path.name in ('about.html', 'how-i-work.html'):
         nodes = [node for schema in page.schemas for node in schema.get('@graph', [])]
         profile = next((node for node in nodes if node.get('@type') == 'ProfilePage'), {})
         if profile.get('url') != expected or profile.get('mainEntity', {}).get('@id') != BASE + '#ragesh':
-            page.errors.append('Journey profile must connect its canonical URL and the Person entity')
+            page.errors.append('Personal profile must connect its canonical URL and the Person entity')
     elif path.name in ('work.html', 'writing.html'):
         nodes = [node for schema in page.schemas for node in schema.get('@graph', [])]
         collection = next((node for node in nodes if node.get('@type') == 'CollectionPage'), {})

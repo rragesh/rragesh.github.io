@@ -26,8 +26,10 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(publication.validate_html(page(), BASE), [])
 
     def test_accepts_journey_profile(self):
-        canonical = BASE + 'about.html'
-        self.assertEqual(publication.validate_html(page(canonical), canonical), [])
+        for route in ('about.html', 'how-i-work.html'):
+            with self.subTest(route=route):
+                canonical = BASE + route
+                self.assertEqual(publication.validate_html(page(canonical), canonical), [])
 
     def test_collection_pages_require_their_own_published_type(self):
         for route in ('work.html', 'writing.html'):

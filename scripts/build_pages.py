@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the four main pages with shared navigation and page-specific content."""
+"""Build the main pages with shared navigation and page-specific content."""
 
 import argparse
 from html import escape
@@ -188,7 +188,7 @@ def build(only=None, check=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--import-landing", action="store_true")
-    parser.add_argument("--only", choices=("home", "story", "work", "writing"))
+    parser.add_argument("--only", choices=("home", "story", "work", "writing", "approach"))
     parser.add_argument("--check", action="store_true", help="Fail when generated pages differ from their sources")
     args = parser.parse_args()
     if args.import_landing:

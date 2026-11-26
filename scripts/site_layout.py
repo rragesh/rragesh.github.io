@@ -8,6 +8,7 @@ NAVIGATION = (
     ("story", "about.html", "My story"),
     ("work", "work.html", "Work"),
     ("writing", "writing.html", "Writing"),
+    ("approach", "how-i-work.html", "How I work"),
 )
 
 

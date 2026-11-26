@@ -1103,6 +1103,41 @@ figcaption span {
   font-size: 30px;
   font-weight: 400;
 }
+.current-experience {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 32px;
+}
+.experience-feature.current-experience .section-note {
+  font-size: 13px;
+}
+.working-principles {
+  margin-top: 12px;
+}
+.working-principles article {
+  padding-block: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.working-principles article:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.working-principles p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+.working-fit {
+  margin: 24px 0 0;
+}
+.working-fit > div + div {
+  margin-top: 22px;
+}
+.working-fit dt {
+  font-weight: 700;
+}
+.working-fit dd {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
 .experience-role {
   color: var(--muted);
   font-size: 12px;
@@ -1383,6 +1418,23 @@ figcaption span {
 }
 .journey-contact p {
   margin-block: 20px 24px;
+}
+@media (max-width: 1000px) {
+  .site-header.page-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 16px;
+    padding-block: 16px 8px;
+  }
+  .page-header .header-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-between;
+    gap: 4px 16px;
+  }
+  .page-header .theme-toggle {
+    grid-column: 2;
+    grid-row: 1;
+  }
 }
 @media (max-width: 800px) {
   .consulting-page .site-header {

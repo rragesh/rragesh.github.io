@@ -8,9 +8,10 @@ The personal site of [Ragesh Ramachandran](https://rragesh.github.io/), organize
 - `about.html` — My story: the personal robotics journey.
 - `work.html` — Work: professional experience, every project, and collaboration options.
 - `writing.html` — Writing: visible Medium previews, learning notes, and talks.
+- `how-i-work.html` — How I work: working principles, communication preferences, and team fit, with attributed influences from The Almanack of Naval Ravikant.
 - `projects/*.html` — individual projects, with shared navigation and a breadcrumb back to Work.
 
-Every page offers Home, My story, Work, Writing, and **Get in touch**, which links directly to LinkedIn. End-of-page links connect the reading paths. Old homepage fragment links such as `/#writing` and `/#work` forward to their new pages when JavaScript is available; navigation still works without JavaScript.
+Every page offers Home, My story, Work, Writing, How I work, and **Get in touch**, which links directly to LinkedIn. End-of-page links connect the reading paths. Work leads with the current confidential software-factory experience; the employer and position remain private. Old homepage fragment links such as `/#writing` and `/#work` forward to their new pages when JavaScript is available; navigation still works without JavaScript.
 
 Edit the main content in `data/pages/*.html` and metadata in `data/pages.json`, then run `python3 scripts/build_pages.py`. The shared header/footer live in `scripts/site_layout.py`. Commit both sources and generated pages. CI checks that generated output matches its sources.
 

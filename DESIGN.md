@@ -44,6 +44,8 @@ The sky fades into paper over the first 900px. Text contrast is checked against 
 - Project copy begins with a plain-language introduction above the image, followed by short, project-specific narrative sections in the existing reading column. Technical terms are explained where introduced. Separate design ideas from simulated or measured results. Image descriptions and external resource labels describe what readers will find; each embedded demonstration also has a direct YouTube link.
 - Detailed technical scope uses definition-list rows inside a disclosure. Buying FAQs stay expanded in ordinary HTML and exactly match the structured data.
 - My story at `about.html` retains its 740px reading column, 40–64px headline, Phoenix II photograph, quiet chapter links, and approved first-person narrative. Dates and results remain woven into the story. Its global navigation matches the rest of the site; current-work details remain at capability level.
+- How I work uses the same 740px reading column, with nine plainly titled principles, a concise definition-list fit summary, source links, and a LinkedIn invitation. It is a visible self-description for hiring teams and talent-discovery agents. Main navigation includes this destination and moves to two rows below 1000px so the labels stay readable.
+- Work leads with a current-experience block for the stealth defense robotics startup. Capability-level delivery and quality-process contributions come before earlier organizations; current employer and actual position are never named.
 
 ## Interaction
 

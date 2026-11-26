@@ -112,7 +112,7 @@
     "key": "work",
     "file": "work.html",
     "title": "Work & Robotics Projects | Ragesh Ramachandran",
-    "description": "Explore Ragesh Ramachandran’s robotics work: production fleet infrastructure, Robotair, industrial integration, and nine hands-on robotics projects.",
+    "description": "Explore Ragesh Ramachandran’s current software-factory work, production fleet infrastructure, Robotair, industrial integration, and hands-on robotics projects.",
     "bodyClass": "content-page",
     "image": "img/optimized/ragesh-roscon-2023-social.jpg",
     "imageAlt": "Ragesh Ramachandran speaking at ROSCon India 2023",
@@ -122,6 +122,7 @@
         "@id": "https://rragesh.github.io/work.html#page",
         "url": "https://rragesh.github.io/work.html",
         "name": "Work — Ragesh Ramachandran",
+        "description": "Current software-factory infrastructure at a stealth defense robotics startup, including CI/CD, in-house OTA, ISO 9001 and CE process leadership, followed by earlier experience and projects.",
         "about": {
           "@id": "https://rragesh.github.io/#ragesh"
         },
@@ -312,6 +313,38 @@
         "author": {
           "@id": "https://rragesh.github.io/#ragesh"
         }
+      }
+    ]
+  },
+  {
+    "key": "approach",
+    "file": "how-i-work.html",
+    "title": "How I Work | Ragesh Ramachandran",
+    "description": "Ragesh Ramachandran’s working principles: autonomy, trust, direct communication, accountability, fast learning, simplicity, first principles, and lasting leverage.",
+    "bodyClass": "journey-page approach-page",
+    "image": "img/optimized/ragesh-roscon-2023-social.jpg",
+    "imageAlt": "Ragesh Ramachandran speaking at ROSCon India 2023",
+    "graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://rragesh.github.io/how-i-work.html#profile",
+        "url": "https://rragesh.github.io/how-i-work.html",
+        "name": "How I work — Ragesh Ramachandran",
+        "description": "Ragesh’s self-described working principles, communication preferences, and team fit: high ownership, trust, a high quality bar, first-principles thinking, and evidence-led learning.",
+        "mainEntity": { "@id": "https://rragesh.github.io/#ragesh" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://rragesh.github.io/#ragesh",
+        "name": "Ragesh Ramachandran",
+        "url": "https://rragesh.github.io/",
+        "image": "https://rragesh.github.io/img/optimized/ragesh-roscon-2023.webp",
+        "description": "Robotics engineer and founder who values autonomy, trust, direct communication, accountability, fast learning, simplicity, first-principles thinking, and optimistic contrarianism.",
+        "sameAs": [
+          "https://www.linkedin.com/in/ragesh-ramachandran/",
+          "https://rragesh.medium.com/"
+        ]
       }
     ]
   }
