@@ -66,7 +66,7 @@ def import_landing():
     ]
     home = '''<section class="intro consulting-hero" aria-labelledby="intro-title">
       <div class="hero-content">
-        <h1 id="intro-title">I build the systems that make <span>robots dependable.</span></h1>
+        <h1 id="intro-title">I build dependable systems for <span>robotics and physical AI.</span></h1>
         <p class="hero-copy">I’m Ragesh, a robotics engineer and founder. My work connects robot software, reliable deployment, and real-world operations—from planetary rovers to industrial and defense robotics.</p>
         <p class="hero-discovery">Explore what I’ve built, how I think, and what I’m learning along the way.</p>
         <div class="hero-actions">
