@@ -8,7 +8,7 @@ The owner supplied these eight values: autonomy and high-quality results; trust 
 
 ## Ideas drawn from The Almanack of Naval Ravikant
 
-At the owner’s request, the page also draws on the following material from Eric Jorgenson’s published collection. The copy is paraphrased and linked, not represented as a quotation or endorsement. The additional ninth principle, “Build leverage that lasts”, applies the book’s code/knowledge leverage idea to reusable engineering systems and documentation.
+At the owner’s request, the original drafting also drew on the following material from Eric Jorgenson’s published collection. The copy is paraphrased, not represented as a quotation or endorsement. The additional ninth principle, “Build leverage that lasts”, applies the book’s code/knowledge leverage idea to reusable engineering systems and documentation. The owner subsequently asked to remove the public influences block and its navigation link; these references are retained here as development provenance.
 
 - [Play long-term games with long-term people](https://www.navalmanack.com/almanack-of-naval-ravikant/play-long-term-games-with-long-term-people): trust, reputation, and relationships compound through repeated collaboration.
 - [Take on accountability](https://www.navalmanack.com/almanack-of-naval-ravikant/take-on-accountability): visible responsibility includes the consequences of failure as well as success.
