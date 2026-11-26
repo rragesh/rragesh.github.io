@@ -113,7 +113,7 @@
     "file": "work.html",
     "title": "Work & Robotics Projects | Ragesh Ramachandran",
     "description": "Explore Ragesh Ramachandran’s current software-factory work, production fleet infrastructure, Robotair, industrial integration, and hands-on robotics projects.",
-    "bodyClass": "content-page",
+    "bodyClass": "content-page work-page",
     "image": "img/optimized/ragesh-roscon-2023-social.jpg",
     "imageAlt": "Ragesh Ramachandran speaking at ROSCon India 2023",
     "graph": [

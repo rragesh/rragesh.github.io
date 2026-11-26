@@ -165,7 +165,7 @@ p {
   text-wrap: pretty;
 }
 /* Reading blocks share their heading/media edges; compact cards keep natural spacing. */
-:is(.journey-intro, .chapter-copy, .journey-contact, .page-intro, .working-principles article, .project-section, .faq-item, .continue-reading) > p:not(.story-signoff),
+:where(.journey-intro, .chapter-copy, .journey-contact, .page-intro, .working-principles article, .project-section, .faq-item, .continue-reading) > p:not(.story-signoff),
 .project-lead,
 .hero-copy,
 .working-fit dd {
@@ -1116,7 +1116,6 @@ figcaption span {
 .section-intro,
 .about-copy p,
 .supporting-experience article > p:not(.experience-role),
-.follow-on-options p,
 .engagement-steps p {
   font-size: 16px;
   color: var(--muted);
@@ -1200,6 +1199,61 @@ figcaption span {
   font-size: 16px;
   color: var(--muted);
 }
+.work-page .page-intro {
+  max-width: none;
+}
+.work-page .page-intro > :is(h1, p) {
+  max-width: var(--reading-width);
+}
+.work-page .page-intro .chapter-nav {
+  gap: 8px 32px;
+  margin-top: 32px;
+}
+.work-page .page-intro .chapter-nav a {
+  font-size: 15px;
+}
+.work-page .current-experience {
+  row-gap: 24px;
+}
+.work-page .current-experience > .experience-detail {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 48px;
+  margin-top: 0;
+}
+.work-page .current-experience > .experience-detail > div {
+  margin: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+.work-page .experience-detail dt {
+  font-size: 16px;
+}
+.work-page .project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px 28px;
+}
+.work-page .faq-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 48px;
+}
+.work-page .faq-section .section-heading {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+.work-page .faq-item {
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.work-page .faq-item p {
+  text-align: start;
+  text-wrap: pretty;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
 .featured-quote {
   margin: 0;
   border-block: 1px solid var(--line);
@@ -1209,60 +1263,77 @@ figcaption span {
   font-size: 25px;
   max-width: 48ch;
 }
-.supporting-experience,
-.follow-on-options {
+.supporting-experience {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   margin-top: 32px;
 }
-.assessment-offer {
+.engagement-options {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 28px 40px;
-  background: var(--soft);
-  padding: 36px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px 0;
+  border: 1px solid var(--line);
   border-radius: 12px;
+  background: var(--paper);
+  overflow: hidden;
 }
-.assessment-offer h3 {
+.engagement-option {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+  min-width: 0;
+  padding: 32px 24px;
+}
+.engagement-option + .engagement-option {
+  border-left: 1px solid var(--line);
+}
+.engagement-option:nth-child(2) {
+  background: var(--soft);
+}
+.engagement-option h3 {
   font-family: var(--display);
-  font-size: 31px;
-  line-height: 1.25;
+  font-size: 28px;
+  line-height: 1.2;
   font-weight: 400;
+  letter-spacing: -0.015em;
 }
-.assessment-offer h4 {
-  margin: 0;
-  font-size: 14px;
-}
-.assessment-offer > div > p {
+.engagement-option > p {
   font-size: 16px;
+  line-height: 1.7;
   color: var(--muted);
-  margin-top: 18px;
 }
-.assessment-offer .button {
-  margin-top: 24px;
+.engagement-option .button {
+  align-self: end;
+  justify-content: space-between;
+  gap: 12px;
+  padding-inline: 16px;
 }
-.deliverables-list {
-  padding-left: 20px;
-  margin: 12px 0 0;
+.engagement-scope {
+  border-top: 1px solid var(--line);
+  padding: 24px 0 0 18px;
+  margin: 0;
   font-size: 16px;
+  line-height: 1.6;
 }
-.deliverables-list li + li {
+.engagement-scope li + li {
   margin-top: 12px;
 }
-.deliverables-list li::marker,
+.engagement-scope li::marker,
 .engagement-steps li::marker {
   color: var(--link);
 }
-.offer-note {
-  grid-column: 1 / -1;
-  border-top: 1px solid var(--line);
-  padding-top: 20px;
-  font-size: 12px;
+.engagement-context {
+  max-width: var(--reading-width);
+  margin-top: 28px;
+}
+.engagement-context p {
+  font-size: 16px;
   color: var(--muted);
 }
-.follow-on-options p {
+.engagement-context p + p {
   margin-top: 12px;
+  font-size: 14px;
 }
 .technical-scope {
   margin-top: 28px;
@@ -1446,6 +1517,29 @@ figcaption span {
   margin-block: 20px 24px;
 }
 @media (max-width: 1000px) {
+  .work-page .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .engagement-options {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .engagement-option {
+    grid-row: auto;
+    grid-template-rows: auto;
+    gap: 24px;
+    padding: 32px;
+  }
+  .engagement-option + .engagement-option {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .engagement-option > :is(h3, p, ul) {
+    max-width: var(--reading-width);
+  }
+  .engagement-option .button {
+    justify-self: start;
+  }
   .site-header.page-header {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 0 16px;
@@ -1463,6 +1557,9 @@ figcaption span {
   }
 }
 @media (max-width: 800px) {
+  .work-page .faq-section {
+    grid-template-columns: 1fr;
+  }
   .consulting-page .site-header {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 0 16px;
@@ -1479,8 +1576,7 @@ figcaption span {
     grid-row: 1;
   }
   .split-section,
-  .experience-feature,
-  .assessment-offer {
+  .experience-feature {
     grid-template-columns: 1fr;
     gap: 28px;
   }
@@ -1517,8 +1613,7 @@ figcaption span {
   .entry-page .hero-discovery {
     margin-top: 0;
   }
-  .supporting-experience,
-  .follow-on-options {
+  .supporting-experience {
     gap: 28px;
   }
   .about-section > div:first-child {
@@ -1543,6 +1638,10 @@ figcaption span {
   }
 }
 @media (max-width: 600px) {
+  .work-page .project-grid,
+  .work-page .current-experience > .experience-detail {
+    grid-template-columns: 1fr;
+  }
   :root {
     --page-gutter: 20px;
     --prose-align: start;
@@ -1578,15 +1677,14 @@ figcaption span {
   .consulting-page .section {
     padding-block: 44px;
   }
-  .supporting-experience,
-  .follow-on-options {
+  .supporting-experience {
     grid-template-columns: 1fr;
   }
-  .assessment-offer {
-    padding: 24px;
+  .engagement-option {
+    padding: 28px 20px;
   }
-  .assessment-offer h3 {
-    font-size: 28px;
+  .engagement-option .button {
+    justify-self: stretch;
   }
   .consulting-page .contact-section {
     padding: 28px 24px;
