@@ -47,6 +47,10 @@ Current-work disclosure is restricted by the owner's explicit instruction. The p
 7. https://rosconindia.in/
    - Confirms the conference/community. This is an event link, not an independently located recording or speaker listing for Ragesh's talk.
 
+## Mission framing
+
+The owner subsequently requested a more mission-led story for prospective clients and VC scouts, explicitly describing current work as supporting robots protecting democracy on the front line. The story attributes the mission to the robotics work and identifies Ragesh’s own contribution as software infrastructure. It adds no country, theater, customer, deployed fleet count, operational outcome, or confidential identifier.
+
 ## Approved consulting offer
 
 The owner approved the consulting-conversion proposal in this session. The homepage presents a Deployment Readiness Assessment, separately scoped implementation, and fractional Robotics DevOps leadership. These are engagement descriptions, not historical client outcomes. The dedicated journey now adds the owner-supplied historical results above and explicitly separates them from future engagement goals. Fees, duration, and availability are agreed through the inquiry rather than invented on the page.

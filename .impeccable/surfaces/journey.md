@@ -1,6 +1,6 @@
 # Robotics journey
 
-Mode: Read. Leads want the complete story behind the consulting offer, from planetary rovers to current software-factory work. Primary target: about.html.
+Mode: Read. Prospective clients and VC scouts want the story behind the engineer and founder, from planetary rovers to software infrastructure for robots supporting the defense of democracy. Primary target: about.html.
 
 ## Direction contract
 
@@ -10,7 +10,7 @@ OWN-WORLD: Inherit the established Georgia/Manrope, sky-to-paper background, blu
 
 STORY: Follow a widening engineering question: making a rover work, understanding recovery, fitting a factory, building a product, operating at fleet scale, and building a team’s software factory. The conclusion reflects on the engineer that experience produced. The homepage retains the approved high-ticket positioning, offer, and conversion structure; this is an additional personal page.
 
-FIRST VIEWPORT: Name and navigation; “It started with a rover”; a personal introduction and the question that grew with the work; quiet chapter links and the original Phoenix II image. Story content runs in a 740px reading column.
+FIRST VIEWPORT: Name and navigation; “It started with a rover”; the owner-requested arc from a university team in Kerala to software infrastructure behind robots supporting people defending democracy on the front line. Industrial deployments, founding Robotair, and fleet-scale experience ground the ambition. Quiet chapter links and the original Phoenix II image follow. Story content runs in a 740px reading column.
 
 FORM: Continuous editorial essay with headings and dates woven into prose. No timeline columns, achievement cards, repeated takeaway labels, or service lists. seed: none (pinned), “more like a story telling about me which explains what made me the engineer I am today”. Current company, position, internal product names, operational figures, and personal contact details from the private CV are excluded from all website artifacts. The PDF remains private.
 
