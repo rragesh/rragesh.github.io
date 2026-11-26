@@ -12,7 +12,7 @@ Help visitors discover **Ragesh Ramachandran**, understand his work and thinking
 - Work holds service descriptions and visible buying FAQs. Story/Home use ProfilePage data; Work/Writing use CollectionPage data. Person, Service, Organization, Article, and FAQ entities are attached to the pages that contain their corresponding content.
 - Stable entity identifiers and sameAs links connect the website, LinkedIn, Medium, and GitHub identities. Past roles are not mislabeled as current employment in worksFor.
 - Static article previews, text-first HTML, crawlable links, canonical URLs, an XML sitemap, and unrestricted crawling in robots.txt.
-- Legacy template/demo routes have `noindex, follow`, and remain crawlable so search engines can see that instruction. Do not block those routes in robots.txt while expecting their noindex directives to be processed.
+- Legacy template/demo routes are lightweight redirects to the relevant current pages, with fallback links, destination-page canonical URLs, and `noindex, follow`. They remain crawlable so search engines can see those instructions. Do not block those routes in robots.txt while expecting their noindex directives to be processed.
 - Checks validate structured-data references, visible FAQ parity, canonical URLs, and sitemap targets.
 - All nine project pages have unique search titles/descriptions, Open Graph and Twitter previews, and WebPage/CreativeWork data linked to the same Ragesh author identity as the homepage.
 - Robotair's Organization entity identifies Ragesh as its founder, consistent with the visible biography. Search checks also verify access for Googlebot, bingbot, OAI-SearchBot, Claude-SearchBot, and PerplexityBot under the existing open robots policy.

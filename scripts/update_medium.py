@@ -121,8 +121,7 @@ def cache_image(url):
     if existing:
         return existing[0].relative_to(ROOT).as_posix()
     try:
-        legacy = list(directory.glob(name + ".png")) + list(directory.glob(name + ".jpg"))
-        data = legacy[0].read_bytes() if legacy else download(url)
+        data = download(url)
         if len(data) > 12_000_000:
             raise ValueError("Article image exceeded size limit")
         with Image.open(BytesIO(data)) as original:
@@ -132,8 +131,6 @@ def cache_image(url):
             metadata[270] = f"Source: {url}. Published by Ragesh Ramachandran on Medium."
             path = directory / (name + ".webp")
             image.save(path, format="WEBP", quality=82, exif=metadata)
-        for old in legacy:
-            old.unlink()
         return path.relative_to(ROOT).as_posix()
     except Exception as error:
         print(f"Thumbnail unavailable; using text-only preview: {error}", file=sys.stderr)

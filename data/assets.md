@@ -17,4 +17,4 @@ Project photographs were already present at repository revision `e60b4e5`. The o
 | `fonts/source-sans-3-latin-{normal,italic}.woff2` | `@fontsource-variable/source-sans-3@5.3.1`, files `source-sans-3-latin-wght-{normal,italic}.woff2`, via `https://cdn.jsdelivr.net/npm/` | Self-hosted Latin variable faces, weights 200–900; `fonts/SourceSans3-OFL.txt` |
 | `img/favicon.svg` | Authored monogram | SVG |
 
-New photographic files include source information in their EXIF image-description metadata. Project detail pages also retain original photographs under `img/work/`.
+New photographic files include source information in their EXIF image-description metadata. Project detail pages also retain original photographs under `img/work/`. Source photographs listed above are intentionally retained for future crops and conversions; unreferenced template artwork, skill icons, recommendation portraits, and unused project images have been removed.

@@ -1,16 +1,25 @@
 #!/usr/bin/env python3
-"""Check shipped portfolio routes for broken local URLs and removed résumé links."""
+"""Check portfolio pages, assets, and compatibility redirects before publication."""
 
 from html.parser import HTMLParser
 import json
 from pathlib import Path
+import re
 from urllib.parse import unquote, urlsplit
 from urllib.robotparser import RobotFileParser
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://rragesh.github.io/'
-LEGACY = ('blog-home.html', 'blog-single.html', 'contact.html', 'elements.html', 'portfolio.html', 'portfolio-details.html', 'services.html')
+REDIRECTS = {
+    'blog-home.html': 'writing.html',
+    'blog-single.html': 'writing.html',
+    'contact.html': 'work.html',
+    'elements.html': 'index.html',
+    'portfolio.html': 'work.html#projects',
+    'portfolio-details.html': 'work.html#projects',
+    'services.html': 'work.html#expertise',
+}
 
 
 class Page(HTMLParser):
@@ -18,6 +27,7 @@ class Page(HTMLParser):
         super().__init__()
         self.path = path
         self.urls = []
+        self.links = []
         self.ids = set()
         self.h1 = 0
         self.errors = []
@@ -58,11 +68,13 @@ class Page(HTMLParser):
         if tag == 'script' and attrs.get('type') == 'application/ld+json':
             self.schema_parts = []
         if tag == 'meta':
-            self.meta[attrs.get('name', attrs.get('property', ''))] = attrs.get('content', '')
+            key = attrs.get('name', attrs.get('property', attrs.get('http-equiv', '')))
+            self.meta[key.lower()] = attrs.get('content', '')
         if tag == 'link' and attrs.get('rel') == 'canonical':
             self.canonical.append(attrs.get('href'))
         if tag == 'a':
             href = attrs.get('href', '')
+            self.links.append(href)
             if self.in_navigation:
                 self.navigation.append((href, attrs.get('aria-current')))
             if 'project-card' in attrs.get('class', '').split():
@@ -112,6 +124,23 @@ class Page(HTMLParser):
             self.hidden_depth = max(0, self.hidden_depth - 1)
         if tag == 'body':
             self.in_body = False
+
+
+def local_url_errors(path, urls, pages):
+    errors = []
+    for url in urls:
+        parsed = urlsplit(url)
+        if parsed.scheme or parsed.netloc:
+            continue
+        if parsed.path.startswith('/'):
+            target = (ROOT / unquote(parsed.path.lstrip('/'))).resolve()
+        else:
+            target = (path.parent / unquote(parsed.path)).resolve() if parsed.path else path
+        if not target.is_file():
+            errors.append(f'Missing local target: {url}')
+        elif parsed.fragment and target in pages and parsed.fragment not in pages[target].ids:
+            errors.append(f'Missing anchor: {url}')
+    return errors
 
 
 pages = {}
@@ -173,18 +202,10 @@ for path, page in pages.items():
         collection = next((node for node in nodes if node.get('@type') == 'CollectionPage'), {})
         if collection.get('url') != expected:
             page.errors.append('Collection page must identify its canonical URL in structured data')
-    for url in page.urls:
-        parsed = urlsplit(url)
-        if parsed.scheme or parsed.netloc:
-            continue
-        target = (path.parent / unquote(parsed.path)).resolve() if parsed.path else path
-        if not target.is_file():
-            page.errors.append(f'Missing local target: {url}')
-        elif parsed.fragment and target in pages and parsed.fragment not in pages[target].ids:
-            page.errors.append(f'Missing anchor: {url}')
+    page.errors.extend(local_url_errors(path, page.urls, pages))
     errors.extend(f'{path.relative_to(ROOT)}: {error}' for error in page.errors)
-for path in ROOT.rglob('*.html'):
-    if '.git' not in path.parts and 'resume/Ragesh_CV.pdf' in path.read_text(errors='replace'):
+for path in [*ROOT.glob('*.html'), *sorted((ROOT / 'projects').glob('*.html'))]:
+    if 'resume/Ragesh_CV.pdf' in path.read_text():
         errors.append(f'{path.relative_to(ROOT)} still references the removed résumé')
 if (ROOT / 'resume/Ragesh_CV.pdf').exists():
     errors.append('Résumé PDF must not be published')
@@ -236,11 +257,25 @@ def check_references(value):
             check_references(child)
 check_references(graph)
 
-for name in LEGACY:
-    legacy = Page(ROOT / name)
-    legacy.feed((ROOT / name).read_text())
-    if 'noindex' not in legacy.meta.get('robots', ''):
-        errors.append(f'Legacy template page must not be indexed: {name}')
+for name, destination in REDIRECTS.items():
+    path = ROOT / name
+    redirect = Page(path)
+    redirect.feed(path.read_text())
+    if 'noindex' not in redirect.meta.get('robots', ''):
+        redirect.errors.append('Compatibility redirect must not be indexed')
+    if redirect.meta.get('refresh') != f'0;url={destination}':
+        redirect.errors.append(f'Expected an immediate redirect to {destination}')
+    expected_canonical = BASE if destination == 'index.html' else BASE + urlsplit(destination).path
+    if redirect.canonical != [expected_canonical]:
+        redirect.errors.append('Compatibility redirect must use its destination page canonical')
+    if destination not in redirect.links:
+        redirect.errors.append('Compatibility redirect needs a fallback link to its destination')
+    redirect.errors.extend(local_url_errors(path, [*redirect.urls, destination], pages))
+    errors.extend(f'{name}: {error}' for error in redirect.errors)
+
+for path in (ROOT / 'css').rglob('*.css'):
+    urls = [match.strip().strip('\'"') for match in re.findall(r'url\(([^)]+)\)', path.read_text())]
+    errors.extend(f'{path.relative_to(ROOT)}: {error}' for error in local_url_errors(path, urls, pages))
 
 sitemap = ET.parse(ROOT / 'sitemap.xml')
 locations = [node.text for node in sitemap.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
@@ -252,9 +287,9 @@ robots.parse((ROOT / 'robots.txt').read_text().splitlines())
 if robots.site_maps() != [BASE + 'sitemap.xml']:
     errors.append('robots.txt must advertise the canonical sitemap')
 for agent in ('Googlebot', 'bingbot', 'OAI-SearchBot', 'Claude-SearchBot', 'PerplexityBot'):
-    for url in [*locations, BASE + 'css/site.css', BASE + 'js/site.js', *[BASE + name for name in LEGACY]]:
+    for url in [*locations, BASE + 'css/site.css', BASE + 'js/site.js', *[BASE + name for name in REDIRECTS]]:
         if not robots.can_fetch(agent, url):
             errors.append(f'{agent} cannot crawl {url}')
 if errors:
     raise SystemExit('\n'.join(errors))
-print(f'Checked {len(pages)} pages: navigation, links, hero-only home, visible writing/projects, metadata, schema, sitemap, and profile cleanup passed.')
+print(f'Checked {len(pages)} pages and {len(REDIRECTS)} redirects: navigation, links, stylesheet assets, hero-only home, visible writing/projects, metadata, schema, sitemap, redirects, and profile cleanup passed.')

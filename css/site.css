@@ -793,13 +793,6 @@ figcaption span {
   font-size: clamp(34px, 4vw, 48px);
   max-width: 26ch;
 }
-.header-inner {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
 .project-header-links {
   display: flex;
   align-items: center;

@@ -55,6 +55,24 @@ python3 scripts/build_pages.py
 
 Existing public project URLs and project-publication PDFs are retained. Work lists every project directly. The résumé PDF remains private; professional profile links point to [LinkedIn](https://www.linkedin.com/in/ragesh-ramachandran/). `about.html` connects planetary rovers, control and recovery, industrial robotics, Robotair, production fleets, and current software-factory work through first-person narrative. The current employer, position, internal product names, operational metrics, and personal details from the private CV are not published.
 
+## Legacy cleanup
+
+The old Colorlib demo pages are lightweight, JavaScript-free redirects to the current pages:
+
+| Old route | Destination |
+| --- | --- |
+| `blog-home.html`, `blog-single.html` | `writing.html` |
+| `contact.html` | `work.html` (collaboration and LinkedIn contact) |
+| `portfolio.html`, `portfolio-details.html` | `work.html#projects` |
+| `services.html` | `work.html#expertise` |
+| `elements.html` | `index.html` |
+
+Bootstrap, jQuery and its plugins, template Sass/CSS, icon fonts, the PHP mail handler, bundled template documentation, and unreferenced images have been removed. The site uses `css/site.css`, `js/site.js`, and self-hosted Source Serif 4 and Source Sans 3 fonts. Project data is maintained directly in `data/projects.json`; the completed one-time legacy importer has been removed. `about.html` now serves the personal story.
+
+Source photography is documented in `data/assets.md`. Project-publication PDFs are retained; the original template credit was removed from public footers at the owner's request.
+
+## Link policy
+
 Destination-page links open in new tabs with `rel="noopener"`, including generated articles and project pages. Same-page navigation keeps its normal behavior. After adding handwritten links, run `python3 scripts/link_policy.py`. The owner has no Instagram account; do not add an Instagram profile.
 
 ## Search positioning
@@ -71,13 +89,13 @@ python scripts/check_site.py
 node --check js/site.js
 ```
 
-The site checker covers consistent navigation/current-page state, a hero-only Home, visible Medium previews and project links, local targets, link behavior, headings, image alt text, canonical URLs, sitemap coverage, entity references, FAQ parity, legacy noindex directives, and résumé/Instagram removal. Feed tests cover escaping, invalid URLs, empty/malformed feeds, tracking pixels, and preserving content outside the generated region. Link-policy tests cover safe targets, navigation, script preservation, and idempotence. CI runs these checks on pushes and pull requests.
+The site checker covers consistent navigation/current-page state, a hero-only Home, visible Medium previews and project links, local targets, stylesheet assets, link behavior, headings, image alt text, canonical URLs, sitemap coverage, entity references, FAQ parity, compatibility redirect destinations/fallback links/noindex directives, and résumé/Instagram removal. Feed tests cover escaping, invalid URLs, empty/malformed feeds, tracking pixels, and preserving content outside the generated region. Link-policy tests cover safe targets, navigation, script preservation, and idempotence. CI runs these checks on pushes and pull requests.
 
 It also verifies unique page titles/descriptions, social-preview images, project authorship, the Robotair founder relationship, and crawler access. After deployment, run `python scripts/check_live.py` to verify the **public** site rather than just the working copy. Publication tests ensure this check rejects stale pages, incorrect canonicals, and indexing restrictions.
 
 ## Publication
 
-This checkout’s `origin` is `ipa-rar/rragesh.github.io`, a fork of `rragesh/rragesh.github.io`. The public website is published from the original repository. Pushing this fork does **not** update the live website: merge the upstream pull request into the original repository’s `master` branch to publish. Keep its existing branch-based Pages configuration. Development files are excluded through `_config.yml`.
+This checkout’s `origin` is `rragesh/rragesh.github.io`. Publish by merging the feature pull request into `master`; pushing a feature branch does not update the live website. Keep the existing branch-based Pages configuration. Development files are excluded through `_config.yml`.
 
 ## Assets and design
 
