@@ -12,7 +12,7 @@ Open `http://localhost:4173`. The committed HTML works directly on GitHub Pages;
 
 ## Medium articles
 
-Three curated deployment articles remain visible on the homepage. A “Browse recent articles on Medium” disclosure embeds seven recent stories from [the Medium RSS feed](https://rragesh.medium.com/feed), with locally cached, optimized images, excerpts, publication dates, and links to the original articles. The generated region and daily refresh remain intact. The links include UTM parameters to identify referrals from this website. Full stories stay on Medium.
+The homepage’s “Latest writing on Medium” section displays seven recent stories from [the Medium RSS feed](https://rragesh.medium.com/feed) directly, without opening a disclosure. Each preview has a locally cached image, excerpt, publication date, and link to the original article. Search and topic filters enhance the visible feed. Additional LinkedIn writing and the ROSCon talk are available in disclosures below it. The generated region and daily refresh remain intact. Article links include UTM parameters to identify referrals from this website. Full stories stay on Medium.
 
 Previews are real HTML, so they work without JavaScript and are available to search engines. JavaScript adds topic filtering and search. There is no client-side RSS proxy or API key.
 
