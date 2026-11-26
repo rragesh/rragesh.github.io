@@ -4,6 +4,8 @@
 
 The owner supplied these eight values: autonomy and high-quality results; trust and the importance of human relationships; direct opinions and requests shaped by life in Germany; accountability for good and bad outcomes; failing fast; simplicity; first-principles thinking; and optimistic contrarianism.
 
+The owner later added the DevOps philosophy of people over process and process over tooling, describing it as instrumental in becoming a founder, bootstrapping a startup, and contributing to teams of different sizes and types. He approved “People first. Process next. Tools last.” and its two-paragraph founder narrative as the opening working principle.
+
 `how-i-work.html` translates these into self-described working commitments and observable collaboration expectations. It does not present them as independently verified traits, endorsements, psychometric results, ratings, or guarantees of future performance. The fit summary and practical examples are editorial expressions of the owner’s stated values.
 
 ## Ideas drawn from The Almanack of Naval Ravikant
