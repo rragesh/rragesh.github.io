@@ -919,6 +919,25 @@ figcaption span {
 .hero-content {
   min-width: 0;
 }
+.entry-page .consulting-hero {
+  grid-template-areas:
+    "intro portrait"
+    "explore portrait"
+    "proof proof";
+  grid-template-rows: auto 1fr auto;
+  row-gap: 0;
+}
+.entry-page .hero-content {
+  grid-area: intro;
+}
+.entry-page .hero-explore {
+  grid-area: explore;
+  min-width: 0;
+}
+.entry-page .hero-proof {
+  grid-area: proof;
+  margin-top: 32px;
+}
 .hero-discovery {
   color: var(--muted);
   font-size: 16px;
@@ -926,6 +945,7 @@ figcaption span {
   margin-top: 20px;
 }
 .entry-page .hero-speaker {
+  grid-area: portrait;
   width: min(100%, 360px);
   justify-self: end;
 }
@@ -1492,6 +1512,33 @@ figcaption span {
   }
   .hero-speaker {
     width: min(460px, 100%);
+  }
+  .entry-page .consulting-hero {
+    grid-template-areas: "intro" "portrait" "explore" "proof";
+    grid-template-rows: auto;
+    row-gap: 24px;
+  }
+  .entry-page .hero-speaker {
+    display: grid;
+    grid-template-columns: clamp(88px, 26vw, 104px) minmax(0, 1fr);
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    justify-self: start;
+  }
+  .entry-page .hero-speaker figcaption {
+    margin-top: 0;
+    min-width: 0;
+  }
+  .entry-page .hero-speaker figcaption strong {
+    line-height: 1.4;
+  }
+  .entry-page .hero-speaker figcaption a {
+    line-height: 1.5;
+  }
+  .entry-page .hero-discovery,
+  .entry-page .hero-proof {
+    margin-top: 0;
   }
   .supporting-experience,
   .follow-on-options {

@@ -10,7 +10,7 @@ OWN-WORLD: Soft sky fading into off-white paper, restrained blue links, Source S
 
 STORY: Meet a robotics engineer and founder whose work makes robots dependable. Explore Work, My story, or Writing; find consistent navigation and a direct LinkedIn contact route on every destination. No invented outcomes, availability, or current-employer identifiers.
 
-FIRST VIEWPORT: Shared navigation with current-page indication; “I build the systems that make robots dependable”; concise first-person positioning; a primary Work link and clear Story/Writing alternatives. The ROSCon speaker photo and talk link sit beside the copy on desktop. A concise, attributed experience line belongs to the hero. No long sections follow.
+FIRST VIEWPORT: Shared navigation with current-page indication; “I build the systems that make robots dependable”; concise first-person positioning; a primary Work link and clear Story/Writing alternatives. The ROSCon speaker photo and talk link sit beside the copy on desktop. On mobile, a compact horizontal photo-and-identity row follows the introduction and precedes the discovery links; retain the rectangular portrait and visible talk link. A concise, attributed experience line belongs to the hero. No long sections follow.
 
 FORM: Code-led continuation of the established editorial identity. Dedicated static pages replace homepage scrolling: about.html, work.html, writing.html. Shared navigation is visible without a menu interaction. Medium previews and project links are directly visible on their pages. End-of-page links continue discovery or open LinkedIn. Old homepage fragment URLs forward to the new destinations.
 
