@@ -51,6 +51,8 @@ Current-work disclosure is restricted by the owner's explicit instruction. The p
 
 ## Mission framing
 
+The owner clarified that factory-floor deployments span Germany and other parts of the world. The personal story uses “in Germany and around the world” without adding countries or customers.
+
 The owner subsequently requested a more mission-led story for prospective clients and VC scouts, explicitly describing current work as supporting robots protecting democracy on the front line. The story attributes the mission to the robotics work and identifies Ragesh’s own contribution as software infrastructure. It adds no country, theater, customer, deployed fleet count, operational outcome, or confidential identifier.
 
 ## Approved consulting offer

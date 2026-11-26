@@ -109,7 +109,7 @@ def render(project):
     <div class="project-body"><h2>About the project</h2>{paragraphs}<div class="project-links">{links}<a class="text-link" href="{LINKEDIN}">Connect on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a></div>{videos}</div>
     <div class="project-return"><a class="text-link" href="../index.html#work">Explore more projects <span class="arrow" aria-hidden="true"></span></a><a class="text-link" href="../index.html#writing">Read my engineering notes <span class="arrow" aria-hidden="true"></span></a></div>
   </main>
-  <footer class="site-footer container"><p>© <span id="year">2026</span> Ragesh Ramachandran</p><nav aria-label="Social links"><a href="{LINKEDIN}">LinkedIn</a><a href="https://rragesh.medium.com/">Medium</a><a href="https://github.com/EnigmaRagesh">GitHub</a></nav><p class="template-credit">Original portfolio template by <a href="https://colorlib.com">Colorlib</a>.</p></footer>
+  <footer class="site-footer container"><p>© <span id="year">2026</span> Ragesh Ramachandran</p><nav aria-label="Social links"><a href="{LINKEDIN}">LinkedIn</a><a href="https://rragesh.medium.com/">Medium</a><a href="https://github.com/EnigmaRagesh">GitHub</a></nav></footer>
 </body>
 </html>
 '''

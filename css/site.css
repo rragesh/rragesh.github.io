@@ -759,10 +759,6 @@ figcaption span {
   color: var(--link);
   text-decoration: underline;
 }
-.template-credit {
-  flex-basis: 100%;
-  opacity: 0.9;
-}
 .project-page {
   padding-block: 32px 64px;
 }
