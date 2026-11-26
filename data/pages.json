@@ -185,9 +185,9 @@
         "url": "https://rragesh.github.io/work.html#expertise",
         "audience": {
           "@type": "Audience",
-          "audienceType": "VC-backed robotics startups and robotics engineering teams"
+          "audienceType": "Robotics founders, CTOs, and engineering teams in the EU and US scaling from pilots to production fleets"
         },
-        "description": "Deployment readiness assessments, hands-on implementation, and part-time Robotics DevOps leadership for teams scaling beyond pilots. Scope, deliverables, timing, and fees are agreed before work begins."
+        "description": "Deployment readiness assessments, production deployment engineering, and fractional Robotics DevOps leadership for robotics companies in the EU and US scaling beyond pilots. Scope, deliverables, timing, and fees are agreed before work begins."
       },
       {
         "@type": "FAQPage",
@@ -207,7 +207,7 @@
             "name": "Do you implement changes or only advise?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Both are possible. An assessment produces findings and an implementation roadmap. A separately scoped implementation engagement can cover release pipelines, OTA workflows, observability, and team handover. Part-time leadership is an option for ongoing technical direction."
+              "text": "Both are possible. An assessment produces findings and an implementation roadmap. A separately scoped implementation engagement can cover release pipelines, OTA workflows, observability, and team handover. Fractional leadership provides ongoing technical direction with an agreed scope and level of involvement."
             }
           },
           {

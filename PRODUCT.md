@@ -11,6 +11,8 @@ The primary conversion funnel is discovery → learning about Ragesh through his
 ## Users
 Prospective collaborators, robotics founders, CTOs, engineering leaders, VC scouts, and technical readers learning about Ragesh’s experience and thinking. Some visitors need help scaling deployments; others arrive through his writing or want to understand the person behind the work. Make exploration clear before asking for contact.
 
+The Work page’s implementation and leadership offers target high-value engagements with robotics companies in the EU and US. Address founders and CTOs scaling from pilots to production fleets through technical ownership, customer commitments, operational risk, infrastructure costs, and delivery capability. Keep the voice personal and concrete; no pricing, guaranteed savings, regional client claims, or expanded certification claims have been supplied.
+
 ## Capabilities and Constraints
 Static HTML, CSS, and JavaScript hosted on GitHub Pages. Article previews should link to the original Medium stories and remain usable without browser-side third-party services. Preserve existing project URLs. Use `https://www.linkedin.com/in/ragesh-ramachandran/` for the professional profile; do not republish a résumé PDF. Do not invent dates, employment status, achievements, or metrics.
 
