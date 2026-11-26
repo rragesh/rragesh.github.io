@@ -110,6 +110,8 @@ def render(project):
   <meta name="theme-color" content="#dceef3">
   <link rel="canonical" href="{canonical}">
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/source-serif-4-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/source-sans-3-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../css/site.css">
   <script src="../js/site.js" defer></script>
   <script type="application/ld+json">{structured}</script>

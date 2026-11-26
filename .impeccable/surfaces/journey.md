@@ -6,7 +6,7 @@ Mode: Read. Prospective clients and VC scouts want the story behind the engineer
 
 THESIS: A personal first-person story about how the work shaped Ragesh as an engineer. The user rejected the résumé-like version with uniform dated chapters and repeated consulting takeaways. Let value emerge through the story and concrete historical results.
 
-OWN-WORLD: Inherit the established Georgia/Manrope, sky-to-paper background, blue links, quiet section rules, and day/evening theme. Use the existing rover photograph as historical evidence.
+OWN-WORLD: Inherit the established Source Serif 4/Source Sans 3 pairing, sky-to-paper background, blue links, quiet section rules, and day/evening theme. Use the existing rover photograph as historical evidence.
 
 STORY: Follow a widening engineering question: making a rover work, understanding recovery, fitting a factory, building a product, operating at fleet scale, and building a team’s software factory. The conclusion reflects on the engineer that experience produced. Shared navigation connects the story to the hero-only Home, Work, Writing, and LinkedIn contact. Preserve the narrative during this structural update.
 

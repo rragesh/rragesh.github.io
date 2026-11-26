@@ -6,7 +6,7 @@ Mode: Persuade. The owner’s latest instruction is a discovery-first funnel: le
 
 THESIS: Understand who Ragesh is and choose a clear route into his work, story, or thinking. Exploration is the primary action; contact stays available everywhere.
 
-OWN-WORLD: Soft sky fading into off-white paper, restrained blue links, Georgia positioning headline, Manrope body copy, and a 980px editorial layout. Evening changes the paper to deep blue and links to pale blue. The discovery action, compact speaking portrait, and quiet supporting proof provide hierarchy.
+OWN-WORLD: Soft sky fading into off-white paper, restrained blue links, Source Serif 4 positioning headline, Source Sans 3 body copy, and a 980px editorial layout. Evening changes the paper to deep blue and links to pale blue. The discovery action, compact speaking portrait, and quiet supporting proof provide hierarchy.
 
 STORY: Meet a robotics engineer and founder whose work makes robots dependable. Explore Work, My story, or Writing; find consistent navigation and a direct LinkedIn contact route on every destination. No invented outcomes, availability, or current-employer identifiers.
 

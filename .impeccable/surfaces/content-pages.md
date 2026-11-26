@@ -6,7 +6,7 @@ Mode: Read. These dedicated pages let visitors understand Ragesh’s work and th
 
 THESIS: Give each reader a named place to go and a useful next step. Keep project links and Medium previews visible, with consistent navigation back to the wider site.
 
-OWN-WORLD: Inherit Georgia/Manrope, sky-to-paper colors, blue links, quiet rules, and the day/evening switch. Shared header/footer across all main and project pages; active-section indication and project breadcrumbs.
+OWN-WORLD: Inherit Source Serif 4/Source Sans 3, sky-to-paper colors, blue links, quiet rules, and the day/evening switch. Shared header/footer across all main and project pages; active-section indication and project breadcrumbs.
 
 STORY: Work presents professional experience, nine project entry points, and collaboration options. Writing presents the Medium feed first, then additional technical writing and the ROSCon talk. Closing sections invite another relevant page or a LinkedIn conversation.
 

@@ -81,4 +81,4 @@ This checkout’s `origin` is `ipa-rar/rragesh.github.io`, a fork of `rragesh/rr
 
 ## Assets and design
 
-`PRODUCT.md`, `DESIGN.md`, and `.impeccable/surfaces/home.md` record the content constraints and design. Photography comes from the original portfolio and the owner-supplied ROSCon photo; Medium covers come from the author’s RSS feed. See `data/assets.md` for sources. Manrope is self-hosted under the SIL Open Font License (`fonts/Manrope-OFL.txt`).
+`PRODUCT.md`, `DESIGN.md`, and `.impeccable/surfaces/home.md` record the content constraints and design. Photography comes from the original portfolio and the owner-supplied ROSCon photo; Medium covers come from the author’s RSS feed. Source Serif 4 and Source Sans 3 are self-hosted variable Latin fonts, with normal/italic faces and OFL licenses in `fonts/`. Only normal faces are preloaded. See `data/assets.md` for pinned sources and `DESIGN.md` for type roles.

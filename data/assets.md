@@ -13,7 +13,8 @@ Project photographs were already present at repository revision `e60b4e5`. The o
 | `img/optimized/ragesh-roscon-2023-social.jpg` | Same owner-supplied ROSCon India 2023 photograph | 1200 × 630 social crop, JPEG; no generative edits |
 | `img/social-preview.jpg` | `img/work/roveruk.jpg` | Crop to 1200 × 630 |
 | `img/medium/*.webp` | Individual `image` URLs in `data/medium-posts.json` | Bounded to 800 × 600, WebP conversion |
-| `fonts/manrope-latin.woff2` | Fontsource Manrope variable Latin distribution | Self-hosted, SIL OFL |
+| `fonts/source-serif-4-latin-{normal,italic}.woff2` | `@fontsource-variable/source-serif-4@5.3.1`, files `source-serif-4-latin-wght-{normal,italic}.woff2`, via `https://cdn.jsdelivr.net/npm/` | Self-hosted Latin variable faces, weights 200–900; `fonts/SourceSerif4-OFL.txt` |
+| `fonts/source-sans-3-latin-{normal,italic}.woff2` | `@fontsource-variable/source-sans-3@5.3.1`, files `source-sans-3-latin-wght-{normal,italic}.woff2`, via `https://cdn.jsdelivr.net/npm/` | Self-hosted Latin variable faces, weights 200–900; `fonts/SourceSans3-OFL.txt` |
 | `img/favicon.svg` | Authored monogram | SVG |
 
 New photographic files include source information in their EXIF image-description metadata. Project detail pages also retain original photographs under `img/work/`.

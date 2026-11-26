@@ -2,13 +2,15 @@
 
 ## Direction
 
-The owner’s latest direction is a hero-only homepage and a discovery-first funnel: Home → My story / Work / Writing → LinkedIn contact. Preserve the established personal editorial identity: Georgia, Manrope, soft sky colors, quiet rules, and the day/evening switch. The shared navigation names each destination and highlights the current page; project pages identify Work as their parent and include breadcrumbs. Ragesh’s full name, actual photography, and documented experience establish the identity throughout.
+The owner’s latest direction is a hero-only homepage and a discovery-first funnel: Home → My story / Work / Writing / How I work → LinkedIn contact. Preserve the personal editorial identity: Source Serif 4 headings, Source Sans 3 reading text, soft sky colors, quiet rules, and the day/evening switch. The owner requested this font refinement after the page-based structure was established. The shared navigation names each destination and highlights the current page; project pages identify Work as their parent and include breadcrumbs.
 
 ## Typography
 
-- Georgia with Times New Roman/serif fallbacks for the outcome headline, section headings, identity, and featured offer.
-- Self-hosted Manrope variable Latin for body and controls, `font-display: swap`.
-- Homepage headline: up to 60px desktop, 38–52px mobile, 1.08 line height. The dependability phrase uses the link color in roman type. Content-page section headings: 30–40px. Hero copy: 17px desktop and 16px mobile; supporting prose: 15–17px. Keep readable line lengths.
+- Self-hosted Source Serif 4 variable Latin for display headings, identity, quotations, and the featured offer; Georgia/Times New Roman/serif fallbacks. A genuine italic face serves the personal signoff.
+- Self-hosted Source Sans 3 variable Latin for body, controls, navigation, and working subheadings; Arial/sans-serif fallbacks. A genuine italic face serves citations and emphasized prose.
+- Both families support weights 200–900 and use `font-display: swap`. Only the two normal files are preloaded; italic files load when used. Font synthesis is disabled. Local WOFF2 assets and their OFL licenses are recorded in `data/assets.md`.
+- Ordinary body: 17px / 1.75; story copy: 17px / 1.8 desktop and 16px mobile. Supporting reading text, blog excerpts, project descriptions, and assessment deliverables use at least 16px. Labels/metadata use 13px, with 14px navigation and a 16px search input. Paragraph measures stay within the existing 64–70ch limits.
+- Homepage headline: up to 60px desktop, 38–52px mobile, 1.12 line height and -0.025em tracking. H2 tracking is -0.015em with 1.25 line height. Preserve serif/sans hierarchy and allow natural wrapping rather than shrinking long titles.
 - Project and article headings use restrained sans-serif, with wrapping rather than truncation.
 
 ## Colors
@@ -44,7 +46,7 @@ The sky fades into paper over the first 900px. Text contrast is checked against 
 - Project copy begins with a plain-language introduction above the image, followed by short, project-specific narrative sections in the existing reading column. Technical terms are explained where introduced. Separate design ideas from simulated or measured results. Image descriptions and external resource labels describe what readers will find; each embedded demonstration also has a direct YouTube link.
 - Detailed technical scope uses definition-list rows inside a disclosure. Buying FAQs stay expanded in ordinary HTML and exactly match the structured data.
 - My story at `about.html` retains its 740px reading column, 40–64px headline, Phoenix II photograph, quiet chapter links, and approved first-person narrative. Dates and results remain woven into the story. Its global navigation matches the rest of the site; current-work details remain at capability level.
-- How I work uses the same 740px reading column, with nine plainly titled principles, a concise definition-list fit summary, source links, and a LinkedIn invitation. It is a visible self-description for hiring teams and talent-discovery agents. Main navigation includes this destination and moves to two rows below 1000px so the labels stay readable.
+- How I work uses the same 740px reading column, with nine plainly titled principles, a concise definition-list fit summary, source links, and a LinkedIn invitation. It is a visible self-description for hiring teams and talent-discovery agents. Main navigation includes this destination and wraps below 1000px so the labels stay readable.
 - Work leads with a current-experience block for the stealth defense robotics startup. Capability-level delivery and quality-process contributions come before earlier organizations; current employer and actual position are never named.
 
 ## Interaction

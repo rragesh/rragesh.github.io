@@ -6,7 +6,7 @@ Mode: Read. Hiring teams, collaborators, and talent-discovery agents need a clea
 
 THESIS: Turn the owner’s stated values into concrete expectations: autonomy with quality, trust, respectful directness, accountability, fast learning, simplicity, first principles, and optimistic contrarianism. Add durable engineering leverage as an attributed Naval-inspired idea.
 
-OWN-WORLD: Inherit the existing Georgia/Manrope, sky-to-paper colors, blue links, quiet rules, and 740px reading column. No new visual identity or decorative imagery.
+OWN-WORLD: Inherit the existing Source Serif 4/Source Sans 3 pairing, sky-to-paper colors, blue links, quiet rules, and 740px reading column. No new visual identity or decorative imagery.
 
 STORY: Understand the working commitments, assess team fit, optionally inspect the supporting work, and reach out through LinkedIn. Clearly distinguish self-description from independently verified results.
 
