@@ -1115,7 +1115,6 @@ figcaption span {
 }
 .section-intro,
 .about-copy p,
-.supporting-experience article > p:not(.experience-role),
 .engagement-steps p {
   font-size: 16px;
   color: var(--muted);
@@ -1130,23 +1129,26 @@ figcaption span {
   border-bottom: 1px solid var(--line);
   font-size: 15px;
 }
-.experience-feature {
+.experience-entry {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 48px;
-  padding-block: 8px 32px;
+  grid-template-columns: 264px minmax(0, 1fr);
+  gap: 56px;
+  padding-block: 32px;
 }
-.experience-feature h3 {
+.experience-entry:first-of-type {
+  padding-top: 0;
+}
+.experience-entry + .experience-entry {
+  border-top: 1px solid var(--line);
+}
+.experience-entry h3 {
   font-family: var(--display);
-  font-size: 30px;
+  font-size: 28px;
+  line-height: 1.25;
   font-weight: 400;
 }
-.current-experience {
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 32px;
-}
-.experience-feature.current-experience .section-note {
-  font-size: 13px;
+.experience-entry header .text-link {
+  margin-top: 12px;
 }
 .working-principles {
   margin-top: 12px;
@@ -1178,26 +1180,72 @@ figcaption span {
 }
 .experience-role {
   color: var(--muted);
-  font-size: 13px;
-  margin: 8px 0 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 12px;
 }
-.experience-feature > div > p:not(.experience-role) {
+.experience-content {
+  min-width: 0;
+}
+.experience-content > p {
   font-size: 17px;
 }
 .experience-detail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 32px;
   margin: 24px 0 0;
 }
-.experience-detail > div + div {
-  margin-top: 18px;
+.experience-detail > div {
+  border-top: 1px solid var(--line);
+  padding: 16px 0 12px;
 }
 .experience-detail dt {
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.5;
   font-weight: 700;
 }
 .experience-detail dd {
-  margin: 4px 0 0;
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.experience-results {
+  padding-left: 20px;
+  margin: 20px 0 0;
   font-size: 16px;
   color: var(--muted);
+}
+.experience-results li + li {
+  margin-top: 8px;
+}
+.experience-results li::marker {
+  color: var(--link);
+}
+.experience-results strong {
+  color: var(--ink);
+}
+.experience-recommendation {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin-top: 24px;
+}
+.experience-recommendation blockquote {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.experience-recommendation figcaption {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.experience-recommendation figcaption a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
 }
 .work-page .page-intro {
   max-width: none;
@@ -1211,24 +1259,6 @@ figcaption span {
 }
 .work-page .page-intro .chapter-nav a {
   font-size: 15px;
-}
-.work-page .current-experience {
-  row-gap: 24px;
-}
-.work-page .current-experience > .experience-detail {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px 48px;
-  margin-top: 0;
-}
-.work-page .current-experience > .experience-detail > div {
-  margin: 0;
-  border-top: 1px solid var(--line);
-  padding-top: 16px;
-}
-.work-page .experience-detail dt {
-  font-size: 16px;
 }
 .work-page .project-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1253,21 +1283,6 @@ figcaption span {
   text-wrap: pretty;
   hyphens: manual;
   -webkit-hyphens: manual;
-}
-.featured-quote {
-  margin: 0;
-  border-block: 1px solid var(--line);
-  padding-block: 28px;
-}
-.featured-quote blockquote {
-  font-size: 25px;
-  max-width: 48ch;
-}
-.supporting-experience {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  margin-top: 32px;
 }
 .engagement-options {
   display: grid;
@@ -1626,7 +1641,7 @@ figcaption span {
     grid-row: 1;
   }
   .split-section,
-  .experience-feature {
+  .experience-entry {
     grid-template-columns: 1fr;
     gap: 28px;
   }
@@ -1663,9 +1678,6 @@ figcaption span {
   .entry-page .hero-discovery {
     margin-top: 0;
   }
-  .supporting-experience {
-    gap: 28px;
-  }
   .about-section > div:first-child {
     display: flex;
     align-items: center;
@@ -1700,7 +1712,7 @@ figcaption span {
     gap: 12px;
   }
   .work-page .project-grid,
-  .work-page .current-experience > .experience-detail {
+  .experience-detail {
     grid-template-columns: 1fr;
   }
   :root {
@@ -1738,9 +1750,6 @@ figcaption span {
   .consulting-page .section {
     padding-block: 44px;
   }
-  .supporting-experience {
-    grid-template-columns: 1fr;
-  }
   .engagement-option {
     padding: 28px 20px;
   }
@@ -1750,9 +1759,6 @@ figcaption span {
   .consulting-page .contact-section {
     padding: 28px 24px;
     margin-bottom: 44px;
-  }
-  .featured-quote blockquote {
-    font-size: 22px;
   }
   .page-header .quiet-name {
     font-size: 18px;
