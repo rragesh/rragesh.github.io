@@ -1361,6 +1361,12 @@ figcaption span {
   color: var(--muted);
   margin-top: 20px;
 }
+.journey-page:not(.approach-page) :is(.journey-intro, .chapter-copy, .journey-contact) > p:not(.story-signoff) {
+  text-align: justify;
+  text-align-last: start;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
 .journey-intro .journey-lead {
   color: var(--ink);
   font-size: 19px;
