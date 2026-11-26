@@ -32,7 +32,7 @@ jobs:
       - name: Commit changed previews
         id: commit
         run: |
-          git add index.html data/medium-posts.json img/medium/
+          git add writing.html data/pages/writing.html data/medium-posts.json img/medium/
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0

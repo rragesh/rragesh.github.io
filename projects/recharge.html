@@ -28,8 +28,16 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header container"><a class="wordmark" href="../index.html" aria-label="Ragesh Ramachandran, home" target="_blank" rel="noopener">ragesh<span>.</span></a><div class="project-header-links"><a class="text-link" href="../index.html#work" target="_blank" rel="noopener">All projects <span class="arrow" aria-hidden="true"></span></a><button class="theme-toggle" type="button" aria-label="Switch to evening theme" aria-pressed="false" hidden><span class="theme-label">Evening</span></button></div></header>
+  <header class="site-header container page-header">
+      <a class="quiet-name" href="../index.html" aria-label="Ragesh Ramachandran, home" target="_blank" rel="noopener">Ragesh Ramachandran</a>
+      <nav class="header-nav" aria-label="Main navigation"><a href="../index.html" target="_blank" rel="noopener">Home</a><a href="../about.html" target="_blank" rel="noopener">My story</a><a href="../work.html" aria-current="true" target="_blank" rel="noopener">Work</a><a href="../writing.html" target="_blank" rel="noopener">Writing</a><a href="https://www.linkedin.com/in/ragesh-ramachandran/" aria-label="Get in touch on LinkedIn" target="_blank" rel="noopener">Get in touch <span class="arrow diagonal" aria-hidden="true"></span></a></nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to evening theme" aria-pressed="false" hidden>
+        <svg class="sun-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" /></svg>
+        <span class="theme-label">Evening</span>
+      </button>
+    </header>
   <main id="main" class="project-page container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html" target="_blank" rel="noopener">Home</a><span aria-hidden="true">/</span><a href="../work.html#projects" target="_blank" rel="noopener">Work</a></nav>
     <h1>Autonomous docking: finding the way back to charge</h1>
     <p class="project-context">Ingeniarius · Coimbra, Portugal</p>
     <p class="project-lead">A robot that can patrol on its own also needs a way to return to its charger. This project built and tested that return-to-charge routine in simulation.</p>
@@ -37,9 +45,17 @@
     <div class="project-body"><section class="project-section"><h2>The quiet problem behind an autonomous patrol</h2><p>Imagine a robot halfway through its patrol when its battery starts to run low. Finding the way back to a charging station is part of keeping that robot useful throughout its operating cycle.</p><p>The STOP project used a small team of robots to patrol a single floor. My task was to develop the software routine that would take a robot to a charging station when its battery fell below a chosen threshold.</p></section>
 <section class="project-section"><h2>Turning a charging request into a journey home</h2><p>The routine identified the nearest charging station and passed its location to the robot’s navigation software. Once the robot docked, it returned its charging status so the rest of the system could tell what had happened.</p><p>I used ROS—the Robot Operating System, a framework that connects robot software components—to fit the routine into the existing application. A ROS service provided the request-and-response interface, while the ROS navigation stack handled travel to the station.</p></section>
 <section class="project-section"><h2>Testing the complete sequence</h2><p>The application was developed and successfully tested in Gazebo, a virtual environment for simulating robots. That made it possible to exercise the return-to-charge sequence as a connected workflow.</p><p>The useful result was a routine that linked battery state, navigation, docking, and charging feedback. It addressed an everyday operational need: giving the robot a defined way to stop working and recover its energy.</p></section><div class="project-links"><a class="button" href="https://github.com/EnigmaRagesh/ctcv_gazebo" target="_blank" rel="noopener">Explore the code</a>
-<a class="button" href="http://stop.ingeniarius.pt/" target="_blank" rel="noopener">About the STOP project</a><a class="text-link" href="https://www.linkedin.com/in/ragesh-ramachandran/" target="_blank" rel="noopener">Discuss robotics on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a></div></div>
-    <div class="project-return"><a class="text-link" href="../index.html#work" target="_blank" rel="noopener">Explore more projects <span class="arrow" aria-hidden="true"></span></a><a class="text-link" href="../index.html#writing" target="_blank" rel="noopener">Read my engineering notes <span class="arrow" aria-hidden="true"></span></a></div>
+<a class="button" href="http://stop.ingeniarius.pt/" target="_blank" rel="noopener">About the STOP project</a></div></div>
+    <section class="section continue-reading">
+      <h2>Working on something similar?</h2>
+      <p>If this project connects with a problem or idea you’re exploring, I’d enjoy comparing notes.</p>
+      <div class="continue-actions"><a class="button primary-button" href="https://www.linkedin.com/in/ragesh-ramachandran/" target="_blank" rel="noopener">Get in touch on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a>
+      <a class="text-link" href="../work.html#projects" target="_blank" rel="noopener">Explore more projects <span class="arrow" aria-hidden="true"></span></a></div>
+    </section>
   </main>
-  <footer class="site-footer container"><p>© <span id="year">2026</span> Ragesh Ramachandran</p><nav aria-label="Social links"><a href="https://www.linkedin.com/in/ragesh-ramachandran/" target="_blank" rel="noopener">LinkedIn</a><a href="https://rragesh.medium.com/" target="_blank" rel="noopener">Medium</a><a href="https://github.com/EnigmaRagesh" target="_blank" rel="noopener">GitHub</a></nav></footer>
+  <footer class="site-footer container">
+      <p>© <span id="year">2026</span> Ragesh Ramachandran</p>
+      <nav aria-label="Footer navigation"><a href="../index.html" target="_blank" rel="noopener">Home</a><a href="../about.html" target="_blank" rel="noopener">My story</a><a href="../work.html" target="_blank" rel="noopener">Work</a><a href="../writing.html" target="_blank" rel="noopener">Writing</a><a href="https://www.linkedin.com/in/ragesh-ramachandran/" target="_blank" rel="noopener">LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a></nav>
+    </footer>
 </body>
 </html>

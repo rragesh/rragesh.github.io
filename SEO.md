@@ -2,21 +2,21 @@
 
 ## Objective
 
-Help search systems and visitors identify **Ragesh Ramachandran** as a **Robotics and Physical AI Deployment & Ops Specialist** serving **VC-backed robotics startups**. The target problem is moving from fragile pilots to repeatable operations at 1,000+ robot scale.
+Help visitors discover **Ragesh Ramachandran**, understand his work and thinking, and decide to reach out on LinkedIn. Home introduces the robotics engineer/founder; Story, Work, and Writing each serve a distinct reading intent. Deployment and fleet operations remain clear specialties, without making every entry point a consulting pitch.
 
 ## Implemented
 
-- An outcome-led H1 with the full name in the header and hero identity, specialty in the biography, consulting-focused title/description/social metadata, and a consistent Person entity. The homepage social image is the owner-supplied ROSCon India 2023 speaking photograph.
+- A hero-only homepage with clear positioning, full identity, and links to dedicated content pages. Each destination has unique search/social metadata. The homepage social image is the owner-supplied ROSCon India 2023 speaking photograph.
 - Specific service coverage: ROS/ROS 2 CI/CD, packaging, releases, OTA updates, fleet observability, incident response, and on-premise/hybrid/cloud infrastructure.
 - Owner-supplied professional experience at NODE Robotics, Robotair, Fraunhofer IPA, and ROS-Industrial, with public links to organizations and relevant published articles.
-- Visible buying FAQs cover engagement fit, implementation, team collaboration, scope/fees, and the relationship to Robotair. ProfilePage, Person, Service, WebSite, and FAQ structured data reflect page content.
+- Work holds service descriptions and visible buying FAQs. Story/Home use ProfilePage data; Work/Writing use CollectionPage data. Person, Service, Organization, Article, and FAQ entities are attached to the pages that contain their corresponding content.
 - Stable entity identifiers and sameAs links connect the website, LinkedIn, Medium, and GitHub identities. Past roles are not mislabeled as current employment in worksFor.
 - Static article previews, text-first HTML, crawlable links, canonical URLs, an XML sitemap, and unrestricted crawling in robots.txt.
 - Legacy template/demo routes have `noindex, follow`, and remain crawlable so search engines can see that instruction. Do not block those routes in robots.txt while expecting their noindex directives to be processed.
 - Checks validate structured-data references, visible FAQ parity, canonical URLs, and sitemap targets.
 - All nine project pages have unique search titles/descriptions, Open Graph and Twitter previews, and WebPage/CreativeWork data linked to the same Ragesh author identity as the homepage.
 - Robotair's Organization entity identifies Ragesh as its founder, consistent with the visible biography. Search checks also verify access for Googlebot, bingbot, OAI-SearchBot, Claude-SearchBot, and PerplexityBot under the existing open robots policy.
-- `about.html` is a canonical, sitemap-listed personal story with its own ProfilePage entity connected to the existing Person identity. The homepage biography and footer link to the story; its internal chapter anchors allow readers to jump ahead. Current employer and position are absent from visible copy, metadata, structured data, and repository notes; the private CV is not published.
+- `about.html`, `work.html`, and `writing.html` are canonical, sitemap-listed destinations linked from every main navigation. Project pages link back to Work and Writing. Old homepage fragment links forward to the new locations. Current employer and position remain absent from visible copy, metadata, structured data, and repository notes; the private CV is not published.
 
 ## Readiness verification
 
@@ -53,7 +53,7 @@ These are intent-based content targets, not measured keyword-volume or ranking c
 3. Keep the website link, professional title, and core biography consistent on LinkedIn, Medium, GitHub, and Robotair. Where possible, obtain links from real conference speaker pages, professional biographies, and relevant project pages.
 4. The owner-supplied ROSCon India 2023 recording is linked from the homepage. Add detailed, permission-cleared deployment case studies when available. Describe context, personal contribution, technical decisions, and measured outcomes; do not invent customer details or fleet reliability metrics.
 5. Record a Search Console baseline and compare branded and non-branded impressions, queries, clicks, and click-through rate after recrawling. Review monthly. AI Overviews and AI Mode traffic are included in Google's overall Web search reporting; they are not a separate guaranteed acquisition channel.
-6. Monitor qualified inbound LinkedIn conversations, proposals, and won engagements alongside search traffic and Medium referrals. Record which problem and engagement brought the buyer in; a click is not a qualified inquiry. The Medium links already carry referral parameters; no new tracking service was added.
+6. Measure the discovery-to-contact funnel: visits to Story/Work/Writing, deeper project or article reading, and intent to reach out on LinkedIn. Meaningful conversations are the final outcome; an outbound click alone is not a qualified conversation. Medium links retain referral parameters. No new tracking service was added, and no conversion improvement is claimed without measurement.
 
 ## Limits
 

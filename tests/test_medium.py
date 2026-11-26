@@ -1,6 +1,14 @@
 import importlib.util
+import json
+import os
 from pathlib import Path
+import sys
+import tempfile
 import unittest
+from unittest.mock import patch
+
+sys.path.insert(0, str(Path(__file__).parents[1] / 'scripts'))
+import build_pages
 
 spec = importlib.util.spec_from_file_location("medium", Path(__file__).parents[1] / "scripts/update_medium.py")
 medium = importlib.util.module_from_spec(spec)
@@ -48,6 +56,36 @@ class MediumTests(unittest.TestCase):
         parser = medium.PreviewParser()
         parser.feed('<img src="https://medium.com/_/stat?event=view"><img src="https://cdn-images-1.medium.com/max/800/cover.png">')
         self.assertEqual(parser.image, "https://cdn-images-1.medium.com/max/800/cover.png")
+
+    def test_refresh_updates_writing_without_reintroducing_articles_on_home(self):
+        with tempfile.TemporaryDirectory(dir=os.environ.get('PANE_SCRATCH_DIR')) as directory:
+            root = Path(directory)
+            (root / 'data/pages').mkdir(parents=True)
+            (root / 'index.html').write_text('<h1>Hero only</h1>')
+            source = root / 'data/pages/writing.html'
+            source.write_text('Writing intro' + medium.START + 'old' + medium.END + 'Contact links')
+            manifest = root / 'data/pages.json'
+            manifest.write_text(json.dumps([{
+                'key': 'writing', 'file': 'writing.html', 'title': 'Writing',
+                'description': 'Notes', 'bodyClass': 'content-page',
+                'image': 'img/speaker.jpg', 'imageAlt': 'Speaker', 'graph': [],
+            }]))
+            rss = root / 'feed.xml'
+            rss.write_text(feed())
+            with patch.object(medium, 'ROOT', root), patch.object(build_pages, 'MANIFEST', manifest), patch.object(sys, 'argv', ['update_medium.py', '--feed-file', str(rss)]), patch('builtins.print'):
+                self.assertEqual(medium.main(), 0)
+                self.assertEqual((root / 'index.html').read_text(), '<h1>Hero only</h1>')
+                self.assertIn('A &amp; B', source.read_text())
+                output = (root / 'writing.html').read_text()
+                self.assertIn('Writing intro', output)
+                self.assertIn('Contact links', output)
+                self.assertIn('Read on Medium', output)
+                self.assertEqual(len(json.loads((root / 'data/medium-posts.json').read_text())), 1)
+                last_source = source.read_text()
+                rss.write_text('<rss><channel/></rss>')
+                self.assertEqual(medium.main(), 1)
+                self.assertEqual((root / 'writing.html').read_text(), output)
+                self.assertEqual(source.read_text(), last_source)
 
 
 if __name__ == "__main__":

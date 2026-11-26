@@ -1,17 +1,17 @@
-# Robotics deployment consulting homepage
+# Hero-only personal homepage
 
-Mode: Persuade. The user approved implementing the conversion review: outcome-led positioning, relevant proof, a defined assessment engagement, and a clear LinkedIn inquiry path. Retain the established personal editorial visual identity.
+Mode: Persuade. The owner’s latest instruction is a discovery-first funnel: learn about Ragesh through story, work, and writing, then reach out on LinkedIn. The homepage contains only the hero, global navigation, and footer.
 
 ## Direction contract
 
-THESIS: A specialist who understands what happens between a working robot and a repeatable customer rollout. Lead with the buyer’s outcome and substantiate it through relevant experience and a concrete engagement.
+THESIS: Understand who Ragesh is and choose a clear route into his work, story, or thinking. Exploration is the primary action; contact stays available everywhere.
 
-OWN-WORLD: Soft sky fading into off-white paper, restrained blue links, Georgia outcome headline and headings, Manrope body copy, and a 980px editorial layout with readable prose measures. Evening changes the paper to deep blue and links to pale blue. Strong primary actions and two soft offer/contact surfaces provide hierarchy.
+OWN-WORLD: Soft sky fading into off-white paper, restrained blue links, Georgia positioning headline, Manrope body copy, and a 980px editorial layout. Evening changes the paper to deep blue and links to pale blue. The discovery action, compact speaking portrait, and quiet supporting proof provide hierarchy.
 
-STORY: Recognize the cost of manual deployment and field firefighting; inspect NODE Robotics, Robotair, and Fraunhofer experience; understand the assessment and follow-on implementation options; learn how the work fits the team; send a useful inquiry on LinkedIn. Writing and older projects remain secondary evidence. Never invent outcomes, customer details, employment dates, fees, or availability.
+STORY: Meet a robotics engineer and founder whose work makes robots dependable. Explore Work, My story, or Writing; find consistent navigation and a direct LinkedIn contact route on every destination. No invented outcomes, availability, or current-employer identifiers.
 
-FIRST VIEWPORT: Name, short navigation, and theme switch; “Turn robot pilots into reliable production fleets”; an explicit audience and operational benefit; a Deployment Readiness Assessment with risks/roadmap deliverables; one filled “Request a deployment assessment” action with visible LinkedIn destination guidance and a secondary deliverables anchor. The owner-supplied ROSCon India 2023 speaker photograph and verified recording sit beside the offer on desktop, after the action on mobile. An attributed fleet-scale experience line follows.
+FIRST VIEWPORT: Shared navigation with current-page indication; “I build the systems that make robots dependable”; concise first-person positioning; a primary Work link and clear Story/Writing alternatives. The ROSCon speaker photo and talk link sit beside the copy on desktop. A concise, attributed experience line belongs to the hero. No long sections follow.
 
-FORM: Code-led evolution of the established reference-led style. The owner explicitly requested a stronger hero value proposition/CTA and replacement of the old portrait with the supplied ROSCon photo. Keep the rest of the approved conversion structure and the separate personal story. Medium previews must be directly visible, as requested by the owner; retain article search and filters. Use native disclosures for technical scope, additional LinkedIn writing, the talk, and project/career archives. The talk is an outbound link; no new framework, tracking service, or client-side third-party request.
+FORM: Code-led continuation of the established editorial identity. Dedicated static pages replace homepage scrolling: about.html, work.html, writing.html. Shared navigation is visible without a menu interaction. Medium previews and project links are directly visible on their pages. End-of-page links continue discovery or open LinkedIn. Old homepage fragment URLs forward to the new destinations.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

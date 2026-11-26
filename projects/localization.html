@@ -28,8 +28,16 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header container"><a class="wordmark" href="../index.html" aria-label="Ragesh Ramachandran, home" target="_blank" rel="noopener">ragesh<span>.</span></a><div class="project-header-links"><a class="text-link" href="../index.html#work" target="_blank" rel="noopener">All projects <span class="arrow" aria-hidden="true"></span></a><button class="theme-toggle" type="button" aria-label="Switch to evening theme" aria-pressed="false" hidden><span class="theme-label">Evening</span></button></div></header>
+  <header class="site-header container page-header">
+      <a class="quiet-name" href="../index.html" aria-label="Ragesh Ramachandran, home" target="_blank" rel="noopener">Ragesh Ramachandran</a>
+      <nav class="header-nav" aria-label="Main navigation"><a href="../index.html" target="_blank" rel="noopener">Home</a><a href="../about.html" target="_blank" rel="noopener">My story</a><a href="../work.html" aria-current="true" target="_blank" rel="noopener">Work</a><a href="../writing.html" target="_blank" rel="noopener">Writing</a><a href="https://www.linkedin.com/in/ragesh-ramachandran/" aria-label="Get in touch on LinkedIn" target="_blank" rel="noopener">Get in touch <span class="arrow diagonal" aria-hidden="true"></span></a></nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to evening theme" aria-pressed="false" hidden>
+        <svg class="sun-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" /></svg>
+        <span class="theme-label">Evening</span>
+      </button>
+    </header>
   <main id="main" class="project-page container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html" target="_blank" rel="noopener">Home</a><span aria-hidden="true">/</span><a href="../work.html#projects" target="_blank" rel="noopener">Work</a></nav>
     <h1>Helping robots find their place indoors</h1>
     <p class="project-context">École Centrale de Nantes · France</p>
     <p class="project-lead">Before robots can work together, they need to agree on where they are. This project used overhead infrared cameras to give them a shared view of an indoor workspace.</p>
@@ -37,9 +45,17 @@
     <div class="project-body"><section class="project-section"><h2>Why counting wheel turns is not enough</h2><p>A mobile robot can estimate how far it has travelled by tracking its wheels. This is called odometry. Small errors accumulate over time, so the robot’s estimate can drift away from its real position.</p><p>This project explored another reference: cameras fixed above the workspace. By observing infrared light markers on the robots, the system could locate them relative to the room, rather than relying only on how far their wheels appeared to move.</p></section>
 <section class="project-section"><h2>Four cameras, one coordinate system</h2><p>Four ceiling-mounted cameras were arranged at the corners of an approximately one-metre square, with overlapping views. The overlap helped connect the cameras’ individual observations into a common frame of reference.</p><p>Camera readings travelled over a CAN bus, a communication link used to exchange data between devices. Software built with ROS, a framework for connecting robot software components, translated those readings into coordinates. RViz—a robot-data visualization tool—displayed the camera coverage and detected points.</p></section>
 <section class="project-section"><h2>Calibration made the readings useful</h2><p>The cameras needed to agree on how their measurements related to the same physical space. Calibration is that alignment process: it turns separate camera views into positions the rest of the system can use.</p><p>The project used ROS calibration software and boards fitted with infrared LEDs. After calibration, the reported localization accuracy was approximately 5 cm in the experimental setup. The modular approach also provided a way to calibrate additional cameras as the array grew.</p></section><div class="project-links"><a class="button" href="https://github.com/EnigmaRagesh/2X2_IR-sensor-array-Calibration" target="_blank" rel="noopener">Explore the calibration code</a>
-<a class="button" href="../img/exp/Localization system using overhead IR image sensors.pdf" target="_blank" rel="noopener">Read the technical paper</a><a class="text-link" href="https://www.linkedin.com/in/ragesh-ramachandran/" target="_blank" rel="noopener">Discuss robotics on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a></div></div>
-    <div class="project-return"><a class="text-link" href="../index.html#work" target="_blank" rel="noopener">Explore more projects <span class="arrow" aria-hidden="true"></span></a><a class="text-link" href="../index.html#writing" target="_blank" rel="noopener">Read my engineering notes <span class="arrow" aria-hidden="true"></span></a></div>
+<a class="button" href="../img/exp/Localization system using overhead IR image sensors.pdf" target="_blank" rel="noopener">Read the technical paper</a></div></div>
+    <section class="section continue-reading">
+      <h2>Working on something similar?</h2>
+      <p>If this project connects with a problem or idea you’re exploring, I’d enjoy comparing notes.</p>
+      <div class="continue-actions"><a class="button primary-button" href="https://www.linkedin.com/in/ragesh-ramachandran/" target="_blank" rel="noopener">Get in touch on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a>
+      <a class="text-link" href="../work.html#projects" target="_blank" rel="noopener">Explore more projects <span class="arrow" aria-hidden="true"></span></a></div>
+    </section>
   </main>
-  <footer class="site-footer container"><p>© <span id="year">2026</span> Ragesh Ramachandran</p><nav aria-label="Social links"><a href="https://www.linkedin.com/in/ragesh-ramachandran/" target="_blank" rel="noopener">LinkedIn</a><a href="https://rragesh.medium.com/" target="_blank" rel="noopener">Medium</a><a href="https://github.com/EnigmaRagesh" target="_blank" rel="noopener">GitHub</a></nav></footer>
+  <footer class="site-footer container">
+      <p>© <span id="year">2026</span> Ragesh Ramachandran</p>
+      <nav aria-label="Footer navigation"><a href="../index.html" target="_blank" rel="noopener">Home</a><a href="../about.html" target="_blank" rel="noopener">My story</a><a href="../work.html" target="_blank" rel="noopener">Work</a><a href="../writing.html" target="_blank" rel="noopener">Writing</a><a href="https://www.linkedin.com/in/ragesh-ramachandran/" target="_blank" rel="noopener">LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a></nav>
+    </footer>
 </body>
 </html>

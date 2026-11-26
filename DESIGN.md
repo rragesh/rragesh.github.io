@@ -2,13 +2,13 @@
 
 ## Direction
 
-The user supplied `https://www.soorajchandran.com/` as the original style reference, then approved a consulting-conversion direction. Keep the personal editorial identity: Georgia, Manrope, softly fading sky colors, quiet rules, and a day/evening switch. The homepage now leads with the buyer outcome, followed by deployment problems, relevant experience, an assessment offer, process, biography, selected writing, archives, buying FAQs, and a specific LinkedIn invitation. Ragesh’s full name remains in the header, hero identity, metadata, and Person entity; his specialty is explicit in the biography. All professional claims, photography, articles, and profile links belong to Ragesh.
+The owner’s latest direction is a hero-only homepage and a discovery-first funnel: Home → My story / Work / Writing → LinkedIn contact. Preserve the established personal editorial identity: Georgia, Manrope, soft sky colors, quiet rules, and the day/evening switch. The shared navigation names each destination and highlights the current page; project pages identify Work as their parent and include breadcrumbs. Ragesh’s full name, actual photography, and documented experience establish the identity throughout.
 
 ## Typography
 
 - Georgia with Times New Roman/serif fallbacks for the outcome headline, section headings, identity, and featured offer.
 - Self-hosted Manrope variable Latin for body and controls, `font-display: swap`.
-- Homepage headline: up to 60px desktop, 38–52px mobile, 1.08 line height. The production-fleet outcome uses the link color in roman type. Homepage section headings: 30–40px. Hero copy: 17px desktop and 16px mobile; supporting prose: 15–17px. Keep readable line lengths.
+- Homepage headline: up to 60px desktop, 38–52px mobile, 1.08 line height. The dependability phrase uses the link color in roman type. Content-page section headings: 30–40px. Hero copy: 17px desktop and 16px mobile; supporting prose: 15–17px. Keep readable line lengths.
 - Project and article headings use restrained sans-serif, with wrapping rather than truncation.
 
 ## Colors
@@ -34,16 +34,16 @@ The sky fades into paper over the first 900px. Text contrast is checked against 
 
 ## Components
 
-- Primary buttons use link-color fill, paper-color text, a 52px minimum height, and an ink-color hover. The hero’s “Request a deployment assessment” opens LinkedIn; visible guidance, linked through `aria-describedby`, identifies the destination and purpose. Its secondary link navigates to assessment deliverables. The offer section’s assessment CTA navigates to the contact brief.
-- The hero is an editorial two-column composition: buyer outcome, assessment value, and action on the left; a 4:5 crop of the owner-supplied ROSCon India 2023 speaker photo, professional identity, and talk link on the right. Below 800px, the action comes before the photo. A full-width line attributes the 1,500+ production-robot infrastructure experience to NODE Robotics. The photo replaces the previous portrait everywhere, including Person and homepage social metadata.
+- Primary buttons use link-color fill, paper-color text, a 52px minimum height, and an ink-color hover. The homepage primary action is “Explore my work”, followed by Story and Writing links. “Get in touch” consistently opens LinkedIn; it is available in every header and at the end of reading paths. Collaboration options live on Work.
+- The hero is an editorial two-column composition: personal positioning, value, and discovery links on the left; a 4:5 crop of the owner-supplied ROSCon India 2023 photo, professional identity, and talk link on the right. The home figure is capped at 360px wide. Below 800px, the action comes before the photo. A concise line attributes fleet-scale experience to NODE Robotics. Home has no subsequent content sections.
 - NODE Robotics experience and an exact attributed recommendation lead the detailed proof section; Robotair and Fraunhofer support it. Do not fabricate case-study outcomes.
-- The assessment and final contact invitation use soft-color surfaces with 12px corners. Deliverables and first-message guidance are ordinary HTML lists; there is no nonfunctional inquiry form or booking widget.
-- Seven automatically refreshed Medium previews are directly visible in “Latest writing on Medium”, with search and topic filters. Do not hide this feed inside a disclosure. Additional LinkedIn articles and the ROSCon talk use disclosures below the feed. Existing thumbnails remain 150 × 112px desktop and 88px mobile.
-- Earlier project imagery and the original career history/recommendations live inside native disclosures. The rover is historical work, not the primary commercial proof. Project URLs remain available.
+- The assessment on Work uses a soft-color surface with 12px corners. Content pages end with a prominent LinkedIn action and a secondary further-reading link. Deliverables are ordinary HTML lists; there is no inquiry form or booking widget.
+- Seven automatically refreshed Medium previews are directly visible on Writing, with search and topic filters. Do not hide the feed inside a disclosure. Additional LinkedIn articles and the ROSCon talk use disclosures below the feed. Thumbnails remain 150 × 112px desktop and 88px mobile.
+- Work places professional experience before a visible nine-project grid. All project titles, introductions, and links come from `data/projects.json`. Do not hide projects in an archive disclosure. The rover remains historical work, distinct from current professional experience.
 - Project detail pages share the same tokens, readable text measure, fluid images, and 16:9 video embeds.
 - Project copy begins with a plain-language introduction above the image, followed by short, project-specific narrative sections in the existing reading column. Technical terms are explained where introduced. Separate design ideas from simulated or measured results. Image descriptions and external resource labels describe what readers will find; each embedded demonstration also has a direct YouTube link.
 - Detailed technical scope uses definition-list rows inside a disclosure. Buying FAQs stay expanded in ordinary HTML and exactly match the structured data.
-- The additional story at `about.html` inherits these tokens with a 740px reading column, a 40–64px headline, the existing Phoenix II photograph, quiet chapter anchors, and continuous 16–17px first-person prose. Dates and results are woven into the narrative. It explains how the experience shaped Ragesh without timeline columns, repeated takeaway blocks, or a duplicate service pitch. Current-work content stays at capability level. The homepage keeps its approved conversion copy and structure; the biography and footer link to the story.
+- My story at `about.html` retains its 740px reading column, 40–64px headline, Phoenix II photograph, quiet chapter links, and approved first-person narrative. Dates and results remain woven into the story. Its global navigation matches the rest of the site; current-work details remain at capability level.
 
 ## Interaction
 

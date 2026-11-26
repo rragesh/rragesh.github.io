@@ -53,7 +53,12 @@ def validate_html(document, canonical, header_robots=''):
     if not page.meta.get('description') or page.meta.get('og:url') != canonical:
         errors.append('search metadata is missing or stale')
     nodes = [node for schema in page.schemas for node in schema.get('@graph', [])]
-    expected_type = 'ProfilePage' if canonical in (CANONICAL, CANONICAL + 'about.html') else 'CreativeWork'
+    if canonical in (CANONICAL, CANONICAL + 'about.html'):
+        expected_type = 'ProfilePage'
+    elif canonical in (CANONICAL + 'work.html', CANONICAL + 'writing.html'):
+        expected_type = 'CollectionPage'
+    else:
+        expected_type = 'CreativeWork'
     if not any(node.get('@type') == expected_type for node in nodes):
         errors.append(f'{expected_type} structured data not published; the old site may still be live')
     if not any(node.get('@type') == 'Person' and node.get('@id') == CANONICAL + '#ragesh' for node in nodes):

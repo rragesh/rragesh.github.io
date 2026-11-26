@@ -891,6 +891,73 @@ figcaption span {
 .hero-content {
   min-width: 0;
 }
+.hero-discovery {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+.entry-page .hero-speaker {
+  width: min(100%, 360px);
+  justify-self: end;
+}
+.page-header.container,
+.content-page .container {
+  width: min(980px, calc(100% - 64px));
+}
+.header-nav a[aria-current] {
+  color: var(--link);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+}
+.page-intro {
+  padding-block: 48px 32px;
+}
+.page-intro h1 {
+  max-width: 24ch;
+}
+.page-intro > p {
+  max-width: 64ch;
+  font-size: 18px;
+  margin-top: 24px;
+  color: var(--muted);
+}
+.page-intro .chapter-nav {
+  margin-bottom: 0;
+}
+.writing-page-content {
+  padding-top: 48px;
+}
+.feed-title {
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+.continue-reading p {
+  margin-top: 18px;
+  color: var(--muted);
+}
+.continue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  margin-top: 24px;
+}
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+.breadcrumbs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
 .consulting-hero h1 {
   font-size: clamp(42px, 4.6vw, 60px);
   line-height: 1.08;
@@ -1210,13 +1277,13 @@ figcaption span {
 .journey-page main.container {
   width: min(740px, calc(100% - 64px));
 }
-.journey-header {
+.page-header {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
   gap: 24px;
   border-bottom: 1px solid var(--line);
 }
-.journey-header .quiet-name {
+.page-header .quiet-name {
   font-family: var(--display);
   font-size: 21px;
   color: var(--ink);
@@ -1317,9 +1384,6 @@ figcaption span {
 .journey-contact p {
   margin-block: 20px 24px;
 }
-.journey-contact .text-link {
-  margin-right: 24px;
-}
 @media (max-width: 800px) {
   .consulting-page .site-header {
     grid-template-columns: minmax(0, 1fr) auto;
@@ -1364,17 +1428,33 @@ figcaption span {
     margin: 0;
     flex-shrink: 0;
   }
-  .journey-header {
+  .page-header {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 0 16px;
     padding-block: 16px 8px;
   }
-  .journey-header .theme-toggle {
+  .page-header .theme-toggle {
     grid-column: 2;
     grid-row: 1;
   }
 }
 @media (max-width: 600px) {
+  .page-header.container,
+  .content-page .container {
+    width: calc(100% - 40px);
+  }
+  .entry-page .hero-speaker {
+    justify-self: start;
+  }
+  .page-intro {
+    padding-block: 32px;
+  }
+  .page-intro > p {
+    font-size: 16px;
+  }
+  .writing-page-content {
+    padding-top: 32px;
+  }
   .consulting-page .container {
     width: calc(100% - 40px);
   }
@@ -1416,7 +1496,7 @@ figcaption span {
   .journey-page main.container {
     width: calc(100% - 40px);
   }
-  .journey-header .quiet-name {
+  .page-header .quiet-name {
     font-size: 18px;
   }
   .journey-intro {
@@ -1582,7 +1662,8 @@ figcaption span {
 }
 @media (max-width: 360px) {
   .consulting-page .theme-label,
-  .journey-page .theme-label {
+  .journey-page .theme-label,
+  .page-header .theme-label {
     display: none;
   }
   .header-nav {

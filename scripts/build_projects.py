@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import re
 from link_policy import open_in_new_tabs
+from site_layout import header, footer, continue_reading
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/projects.json"
@@ -115,16 +116,17 @@ def render(project):
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header container"><a class="wordmark" href="../index.html" aria-label="Ragesh Ramachandran, home">ragesh<span>.</span></a><div class="project-header-links"><a class="text-link" href="../index.html#work">All projects <span class="arrow" aria-hidden="true"></span></a><button class="theme-toggle" type="button" aria-label="Switch to evening theme" aria-pressed="false" hidden><span class="theme-label">Evening</span></button></div></header>
+  {header("work", "../")}
   <main id="main" class="project-page container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../work.html#projects">Work</a></nav>
     <h1>{title}</h1>
     <p class="project-context">{escape(project['context'])}</p>
     {intro}
     <img class="project-hero-image" src="../img/{project['image']}" alt="{image_alt}" fetchpriority="high">
-    <div class="project-body">{body}<div class="project-links">{links}<a class="text-link" href="{LINKEDIN}">Discuss robotics on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a></div>{videos}</div>
-    <div class="project-return"><a class="text-link" href="../index.html#work">Explore more projects <span class="arrow" aria-hidden="true"></span></a><a class="text-link" href="../index.html#writing">Read my engineering notes <span class="arrow" aria-hidden="true"></span></a></div>
+    <div class="project-body">{body}<div class="project-links">{links}</div>{videos}</div>
+    {continue_reading("Working on something similar?", "If this project connects with a problem or idea you’re exploring, I’d enjoy comparing notes.", "../work.html#projects", "Explore more projects")}
   </main>
-  <footer class="site-footer container"><p>© <span id="year">2026</span> Ragesh Ramachandran</p><nav aria-label="Social links"><a href="{LINKEDIN}">LinkedIn</a><a href="https://rragesh.medium.com/">Medium</a><a href="https://github.com/EnigmaRagesh">GitHub</a></nav></footer>
+  {footer("../")}
 </body>
 </html>
 '''
@@ -133,10 +135,20 @@ def render(project):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--import-legacy", action="store_true")
+    parser.add_argument("--check", action="store_true", help="Fail when generated project pages are stale")
     args = parser.parse_args()
     if args.import_legacy:
         import_legacy()
     projects = json.loads(DATA.read_text())
+    stale = []
     for project in projects:
-        (ROOT / f"projects/{project['slug']}.html").write_text(open_in_new_tabs(render(project)))
-    print(f"Built {len(projects)} project pages.")
+        target = ROOT / f"projects/{project['slug']}.html"
+        output = open_in_new_tabs(render(project))
+        if args.check:
+            if not target.exists() or target.read_text() != output:
+                stale.append(project["slug"])
+        else:
+            target.write_text(output)
+    if stale:
+        raise SystemExit("Regenerate project pages with scripts/build_projects.py: " + ", ".join(stale))
+    print(f"{'Checked' if args.check else 'Built'} {len(projects)} project pages.")

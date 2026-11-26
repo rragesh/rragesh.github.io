@@ -1,5 +1,28 @@
 "use strict";
 
+// Keep existing homepage bookmarks useful after moving content to dedicated pages.
+if (document.body.classList.contains("entry-page")) {
+  const legacyRoutes = {
+    "#about": "about.html",
+    "#background": "about.html",
+    "#exp": "work.html#exp",
+    "#work": "work.html#projects",
+    "#expertise": "work.html#expertise",
+    "#process": "work.html#process",
+    "#faq": "work.html#faq",
+    "#writing": "writing.html",
+    "#articles": "writing.html#articles",
+    "#talks": "writing.html#talks",
+    "#contact": "https://www.linkedin.com/in/ragesh-ramachandran/",
+  };
+  function followLegacyLink() {
+    const destination = legacyRoutes[window.location.hash];
+    if (destination) window.location.replace(new URL(destination, document.baseURI).href);
+  }
+  followLegacyLink();
+  window.addEventListener("hashchange", followLegacyLink);
+}
+
 const themeToggle = document.querySelector(".theme-toggle");
 let theme = "day";
 try {
