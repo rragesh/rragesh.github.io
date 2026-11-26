@@ -243,7 +243,7 @@
     "file": "writing.html",
     "title": "Writing & Learning | Ragesh Ramachandran",
     "description": "Read Ragesh Ramachandran’s Medium articles, engineering notes, and ROSCon talk on ROS 2, deployment, containers, and operating robot fleets.",
-    "bodyClass": "content-page",
+    "bodyClass": "content-page writing-page",
     "image": "img/optimized/ragesh-roscon-2023-social.jpg",
     "imageAlt": "Ragesh Ramachandran speaking at ROSCon India 2023",
     "graph": [

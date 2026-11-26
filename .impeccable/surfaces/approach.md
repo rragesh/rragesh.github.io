@@ -6,7 +6,7 @@ Mode: Read. Hiring teams, collaborators, and talent-discovery agents need a clea
 
 THESIS: Turn the owner’s stated values into concrete expectations: autonomy with quality, trust, respectful directness, accountability, fast learning, simplicity, first principles, optimistic contrarianism, and durable engineering leverage. Focus the public page on Ragesh’s own commitments; keep supporting references in development notes.
 
-OWN-WORLD: Inherit the existing Source Serif 4/Source Sans 3 pairing, sky-to-paper colors, blue links, quiet rules, and 740px reading column. No new visual identity or decorative imagery.
+OWN-WORLD: Inherit the existing Source Serif 4/Source Sans 3 pairing, sky-to-paper colors, blue links, quiet rules, and shared 660px reading column. Headings, paragraphs, and principle dividers share edges. Desktop prose is justified; mobile prose is naturally left-aligned with 20px gutters. No new visual identity or decorative imagery.
 
 STORY: Understand the working commitments, assess team fit, optionally inspect the supporting work, and reach out through LinkedIn. Clearly distinguish self-description from independently verified results.
 

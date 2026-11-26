@@ -39,6 +39,12 @@
   --focus: #8d4300;
   --display: "Source Serif 4", Georgia, "Times New Roman", serif;
   --body: "Source Sans 3", Arial, sans-serif;
+  --site-width: 980px;
+  --reading-width: 660px;
+  --page-gutter: 32px;
+  --prose-align: justify;
+  --prose-wrap: wrap;
+  --prose-hyphens: auto;
 }
 
 :root[data-theme="evening"] {
@@ -115,8 +121,13 @@ img {
   display: none !important;
 }
 .container {
-  width: min(780px, calc(100% - 64px));
+  width: min(var(--site-width), calc(100% - 2 * var(--page-gutter)));
   margin-inline: auto;
+}
+.journey-page main.container,
+.writing-page main.container,
+.project-page.container {
+  width: min(var(--reading-width), calc(100% - 2 * var(--page-gutter)));
 }
 h1,
 h2,
@@ -151,8 +162,19 @@ h3 {
   text-wrap: pretty;
 }
 p {
-  max-width: 70ch;
   text-wrap: pretty;
+}
+/* Reading blocks share their heading/media edges; compact cards keep natural spacing. */
+:is(.journey-intro, .chapter-copy, .journey-contact, .page-intro, .working-principles article, .project-section, .faq-item, .continue-reading) > p:not(.story-signoff),
+.project-lead,
+.hero-copy,
+.working-fit dd {
+  text-align: var(--prose-align);
+  text-align-last: start;
+  text-wrap: var(--prose-wrap);
+  hyphens: var(--prose-hyphens);
+  -webkit-hyphens: var(--prose-hyphens);
+  hyphenate-limit-chars: 8 4 4;
 }
 .skip-link {
   position: fixed;
@@ -383,6 +405,10 @@ p {
   align-items: flex-start;
   gap: 24px;
   margin-bottom: 26px;
+}
+.section-heading > div {
+  min-width: 0;
+  max-width: var(--reading-width);
 }
 .section-heading p {
   color: var(--muted);
@@ -752,7 +778,7 @@ figcaption span {
 .contact-section p {
   color: var(--muted);
   font-size: 16px;
-  max-width: 55ch;
+  max-width: var(--reading-width);
   margin-block: 15px 12px;
 }
 .site-footer {
@@ -791,7 +817,6 @@ figcaption span {
 }
 .project-page h1 {
   font-size: clamp(34px, 4vw, 48px);
-  max-width: 26ch;
 }
 .project-header-links {
   display: flex;
@@ -810,7 +835,6 @@ figcaption span {
   margin-top: 20px;
 }
 .project-lead {
-  max-width: 65ch;
   font-size: 18px;
   line-height: 1.8;
   margin-top: 20px;
@@ -820,15 +844,13 @@ figcaption span {
 }
 .project-hero-image {
   width: 100%;
-  max-height: 540px;
   object-fit: contain;
   background: var(--soft);
   border-radius: 6px;
   margin-block: 36px 48px;
 }
 .project-body {
-  max-width: 680px;
-  margin-inline: auto;
+  width: 100%;
 }
 .project-body p {
   margin-top: 23px;
@@ -865,9 +887,6 @@ figcaption span {
 }
 
 /* Consulting homepage: the personal editorial identity, with a buyer-led hierarchy. */
-.consulting-page .container {
-  width: min(980px, calc(100% - 64px));
-}
 .consulting-page .site-header {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
@@ -937,10 +956,6 @@ figcaption span {
   width: min(100%, 360px);
   justify-self: end;
 }
-.page-header.container,
-.content-page .container {
-  width: min(980px, calc(100% - 64px));
-}
 .header-nav a[aria-current] {
   color: var(--link);
   font-weight: 700;
@@ -949,13 +964,10 @@ figcaption span {
   text-underline-offset: 7px;
 }
 .page-intro {
+  max-width: var(--reading-width);
   padding-block: 48px 32px;
 }
-.page-intro h1 {
-  max-width: 24ch;
-}
 .page-intro > p {
-  max-width: 64ch;
   font-size: 18px;
   margin-top: 24px;
   color: var(--muted);
@@ -973,6 +985,9 @@ figcaption span {
 .continue-reading p {
   margin-top: 18px;
   color: var(--muted);
+}
+.continue-reading > :is(h2, p) {
+  max-width: var(--reading-width);
 }
 .continue-actions {
   display: flex;
@@ -1005,7 +1020,6 @@ figcaption span {
   color: var(--link);
 }
 .hero-copy {
-  max-width: 54ch;
   font-size: 17px;
   line-height: 1.75;
   margin-top: 24px;
@@ -1086,7 +1100,7 @@ figcaption span {
 }
 .consulting-page h2 {
   font-size: clamp(30px, 3.3vw, 40px);
-  max-width: 30ch;
+  max-width: var(--reading-width);
 }
 .consulting-page .section-heading {
   margin-bottom: 32px;
@@ -1302,8 +1316,8 @@ figcaption span {
 .consulting-page #work .section-heading {
   margin-bottom: 12px;
 }
-.consulting-page .faq-item {
-  max-width: 720px;
+.faq-item {
+  max-width: var(--reading-width);
 }
 .consulting-page .faq-item h3 {
   font-size: 17px;
@@ -1331,22 +1345,6 @@ figcaption span {
   font-size: 12px;
   margin: 16px 0 0;
 }
-.journey-page .container {
-  width: min(980px, calc(100% - 64px));
-}
-.journey-page main.container {
-  width: min(var(--journey-width, 740px), calc(100% - 64px));
-}
-.journey-page:not(.approach-page) {
-  --journey-width: 660px;
-}
-.journey-page:not(.approach-page) main :is(h1, h2, p, figcaption) {
-  max-width: none;
-}
-.journey-page:not(.approach-page) .journey-photo img {
-  aspect-ratio: auto;
-  max-height: none;
-}
 .page-header {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
@@ -1362,27 +1360,16 @@ figcaption span {
   padding-top: 56px;
 }
 .journey-intro h1 {
-  max-width: 26ch;
   font-size: clamp(40px, 5vw, 64px);
   line-height: 1.12;
 }
 .journey-intro > p {
-  max-width: 66ch;
   color: var(--muted);
   margin-top: 20px;
-}
-.journey-page:not(.approach-page) :is(.journey-intro, .chapter-copy, .journey-contact) > p:not(.story-signoff) {
-  text-align: justify;
-  text-align-last: start;
-  text-wrap: wrap;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphenate-limit-chars: 8 4 4;
 }
 .journey-intro .journey-lead {
   color: var(--ink);
   font-size: 19px;
-  max-width: 60ch;
   margin-top: 28px;
 }
 .chapter-nav {
@@ -1402,16 +1389,12 @@ figcaption span {
 }
 .journey-photo img {
   width: 100%;
-  max-height: 480px;
-  object-fit: cover;
-  object-position: center 57%;
   border-radius: 6px;
 }
 .journey-photo figcaption {
   color: var(--muted);
   font-weight: 400;
   margin-top: 12px;
-  max-width: 78ch;
 }
 .journey-chapter {
   padding: 0;
@@ -1560,9 +1543,11 @@ figcaption span {
   }
 }
 @media (max-width: 600px) {
-  .page-header.container,
-  .content-page .container {
-    width: calc(100% - 40px);
+  :root {
+    --page-gutter: 20px;
+    --prose-align: start;
+    --prose-wrap: pretty;
+    --prose-hyphens: manual;
   }
   .entry-page .hero-speaker {
     justify-self: start;
@@ -1575,9 +1560,6 @@ figcaption span {
   }
   .writing-page-content {
     padding-top: 32px;
-  }
-  .consulting-page .container {
-    width: calc(100% - 40px);
   }
   .consulting-page .quiet-name {
     font-size: 18px;
@@ -1613,10 +1595,6 @@ figcaption span {
   .featured-quote blockquote {
     font-size: 22px;
   }
-  .journey-page .container,
-  .journey-page main.container {
-    width: calc(100% - 40px);
-  }
   .page-header .quiet-name {
     font-size: 18px;
   }
@@ -1625,15 +1603,6 @@ figcaption span {
   }
   .journey-intro .journey-lead {
     font-size: 17px;
-  }
-  .journey-page:not(.approach-page) :is(.journey-intro, .chapter-copy, .journey-contact) > p:not(.story-signoff) {
-    text-align: start;
-    text-wrap: pretty;
-    hyphens: manual;
-    -webkit-hyphens: manual;
-  }
-  .journey-photo img {
-    aspect-ratio: 4 / 3;
   }
   .chapter-nav {
     gap: 4px 20px;
@@ -1647,9 +1616,6 @@ figcaption span {
   }
   .desktop-break {
     display: none;
-  }
-  .container {
-    width: calc(100% - 40px);
   }
   .site-header {
     min-height: 80px;
