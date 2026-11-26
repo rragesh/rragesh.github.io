@@ -41,7 +41,7 @@ The sky fades into paper over the first 900px. Text contrast is checked against 
 - Earlier project imagery and the original career history/recommendations live inside native disclosures. The rover is historical work, not the primary commercial proof. Project URLs remain available.
 - Project detail pages share the same tokens, readable text measure, fluid images, and 16:9 video embeds.
 - Detailed technical scope uses definition-list rows inside a disclosure. Buying FAQs stay expanded in ordinary HTML and exactly match the structured data.
-- The dedicated journey at `about.html` inherits these tokens. It uses a 980px editorial column, a 40–64px headline, the existing Phoenix II photograph, chapter anchors, and chronological split sections (single-column below 800px). Dates follow chapter headings; contributions and lessons lead instead of job titles. Current-work content stays at capability level. The final section connects the history to scoped consulting deliverables.
+- The additional story at `about.html` inherits these tokens with a 740px reading column, a 40–64px headline, the existing Phoenix II photograph, quiet chapter anchors, and continuous 16–17px first-person prose. Dates and results are woven into the narrative. It explains how the experience shaped Ragesh without timeline columns, repeated takeaway blocks, or a duplicate service pitch. Current-work content stays at capability level. The homepage keeps its approved conversion copy and structure; the biography and footer link to the story.
 
 ## Interaction
 

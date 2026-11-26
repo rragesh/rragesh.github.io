@@ -1164,6 +1164,9 @@ figcaption span {
 .journey-page .container {
   width: min(980px, calc(100% - 64px));
 }
+.journey-page main.container {
+  width: min(740px, calc(100% - 64px));
+}
 .journey-header {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
@@ -1223,41 +1226,28 @@ figcaption span {
   max-width: 78ch;
 }
 .journey-chapter {
-  display: grid;
-  grid-template-columns: 0.8fr 1.5fr;
-  gap: 56px;
-  padding-block: 64px;
+  padding: 0;
+  border: 0;
+  margin-top: 56px;
 }
 .chapter-heading h2 {
   font-size: 32px;
   text-wrap: pretty;
-}
-.chapter-heading > p {
-  color: var(--muted);
-  font-size: 13px;
-  margin-top: 16px;
+  margin-bottom: 22px;
 }
 .chapter-copy {
   min-width: 0;
 }
-.chapter-copy > p + p,
-.chapter-copy .professional-quote {
+.chapter-copy > p + p {
   margin-top: 22px;
 }
-.chapter-copy p,
-.journey-results {
-  font-size: 15px;
-}
-.chapter-copy > p:not(.chapter-takeaway),
-.journey-results {
-  color: var(--muted);
+.chapter-copy p {
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--ink);
 }
 .chapter-copy strong {
   color: var(--ink);
-}
-.chapter-copy .chapter-takeaway {
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
 }
 .chapter-links {
   display: flex;
@@ -1271,47 +1261,21 @@ figcaption span {
   min-height: 44px;
   font-size: 13px;
 }
-.journey-results {
-  padding-left: 20px;
-  margin-block: 24px;
-}
-.journey-results li + li {
-  margin-top: 18px;
-}
-.journey-results li::marker {
-  color: var(--link);
-}
-.current-contributions {
-  margin: 24px 0;
-}
-.current-contributions > div {
-  padding-block: 18px;
-  border-bottom: 1px solid var(--line);
-}
-.current-contributions dt {
-  font-size: 15px;
-  font-weight: 700;
-}
-.current-contributions > div:last-child {
-  border-bottom: 0;
-}
-.current-contributions dd {
-  color: var(--muted);
-  font-size: 15px;
-  margin: 8px 0 0;
-}
-.chapter-copy .confidentiality-note {
-  font-size: 12px;
+.chapter-copy .story-signoff {
+  font-family: var(--display);
+  font-size: 28px;
+  font-style: italic;
+  margin-top: 28px;
 }
 .journey-contact {
-  padding: 40px;
-  background: var(--soft);
-  border: 0;
-  border-radius: 12px;
-  margin-bottom: 56px;
+  padding-block: 40px;
+  margin-block: 48px 24px;
 }
 .journey-contact p {
   margin-block: 20px 24px;
+}
+.journey-contact .text-link {
+  margin-right: 24px;
 }
 @media (max-width: 800px) {
   .consulting-page .site-header {
@@ -1361,11 +1325,6 @@ figcaption span {
   .journey-header .theme-toggle {
     grid-column: 2;
     grid-row: 1;
-  }
-  .journey-chapter {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding-block: 44px;
   }
 }
 @media (max-width: 600px) {
@@ -1417,7 +1376,8 @@ figcaption span {
   .featured-quote blockquote {
     font-size: 22px;
   }
-  .journey-page .container {
+  .journey-page .container,
+  .journey-page main.container {
     width: calc(100% - 40px);
   }
   .journey-header .quiet-name {
@@ -1435,8 +1395,12 @@ figcaption span {
   .chapter-nav {
     gap: 4px 20px;
   }
-  .journey-contact {
-    padding: 28px 24px;
+  .journey-page .journey-chapter {
+    padding: 0;
+    margin-top: 40px;
+  }
+  .chapter-copy p {
+    font-size: 16px;
   }
   .desktop-break {
     display: none;

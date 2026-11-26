@@ -16,7 +16,7 @@ Help search systems and visitors identify **Ragesh Ramachandran** as a **Robotic
 - Checks validate structured-data references, visible FAQ parity, canonical URLs, and sitemap targets.
 - All nine project pages have unique search titles/descriptions, Open Graph and Twitter previews, and WebPage/CreativeWork data linked to the same Ragesh author identity as the homepage.
 - Robotair's Organization entity identifies Ragesh as its founder, consistent with the visible biography. Search checks also verify access for Googlebot, bingbot, OAI-SearchBot, Claude-SearchBot, and PerplexityBot under the existing open robots policy.
-- `about.html` is a canonical, sitemap-listed journey page with its own ProfilePage entity connected to the existing Person identity. The homepage links to the full story and the fleet-scale/current-work chapters. Current employer and position are absent from visible copy, metadata, structured data, and repository notes; the private CV is not published.
+- `about.html` is a canonical, sitemap-listed personal story with its own ProfilePage entity connected to the existing Person identity. The homepage biography and footer link to the story; its internal chapter anchors allow readers to jump ahead. Current employer and position are absent from visible copy, metadata, structured data, and repository notes; the private CV is not published.
 
 ## Readiness verification
 

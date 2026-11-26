@@ -37,7 +37,7 @@ Edit `data/projects.json`, then regenerate the nine static project pages:
 python3 scripts/build_projects.py
 ```
 
-Existing public project URLs and project-publication PDFs are retained. The résumé PDF remains private; professional profile links point to [LinkedIn](https://www.linkedin.com/in/ragesh-ramachandran/). `about.html` is now the dedicated robotics journey, linked from the homepage navigation, identity, biography, and footer. It connects planetary rovers, control and recovery, industrial robotics, Robotair, production fleets, and current software-factory work. The current employer, position, internal product names, operational metrics, and personal details from the private CV are not published.
+Existing public project URLs and project-publication PDFs are retained. The résumé PDF remains private; professional profile links point to [LinkedIn](https://www.linkedin.com/in/ragesh-ramachandran/). `about.html` is an additional personal story, linked from the homepage biography and footer. The homepage retains its approved consulting copy and conversion structure. The story connects planetary rovers, control and recovery, industrial robotics, Robotair, production fleets, and current software-factory work through first-person narrative rather than a résumé-style timeline or service list. The current employer, position, internal product names, operational metrics, and personal details from the private CV are not published.
 
 Destination-page links open in new tabs with `rel="noopener"`, including generated articles and project pages. Same-page navigation keeps its normal behavior. After adding handwritten links, run `python3 scripts/link_policy.py`. The owner has no Instagram account; do not add an Instagram profile.
 
