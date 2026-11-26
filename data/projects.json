@@ -141,13 +141,11 @@
         "heading": "What the prototype explored",
         "paragraphs": [
           "The project combined remote observation, robot navigation, and the exchange of information between machines. Its tests used robots close together in a low-interference wireless environment.",
-          "The work is an example of multi-robot integration: giving separate machines a way to exchange useful information while bringing their sensing and control software into one system. The demonstration and original project document provide a closer look at that prototype."
+          "The work is an example of multi-robot integration: giving separate machines a way to exchange useful information while bringing their sensing and control software into one system. The demonstration provides a closer look at that prototype."
         ]
       }
     ],
-    "links": [
-      { "url": "../img/exp/BORDER SWARM FORCE.pdf", "label": "Read the project document" }
-    ],
+    "links": [],
     "videos": ["gJsC4f8IdxI"]
   },
   {
