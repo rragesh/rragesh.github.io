@@ -1,17 +1,17 @@
-# Personal portfolio
+# Robotics deployment consulting homepage
 
-Mode: Read. The user delegated a code-first build, then specifically requested inspiration from https://www.soorajchandran.com/. This supersedes the earlier exhibition-catalogue direction.
+Mode: Persuade. The user approved implementing the conversion review: outcome-led positioning, relevant proof, a defined assessment engagement, and a clear LinkedIn inquiry path. Retain the established personal editorial visual identity.
 
 ## Direction contract
 
-THESIS: A personal letter followed by a useful index of writing and work. A conversational introduction replaces the large promotional hero.
+THESIS: A specialist who understands what happens between a working robot and a repeatable customer rollout. Lead with the buyer’s outcome and substantiate it through relevant experience and a concrete engagement.
 
-OWN-WORLD: A softly fading sky over off-white paper, restrained blue links, Georgia serif greeting and headings, Manrope body copy, and a narrow 780px reading column. Evening changes the paper to deep blue and the links to pale blue. These reference-led choices are intentional.
+OWN-WORLD: Soft sky fading into off-white paper, restrained blue links, Georgia outcome headline and headings, Manrope body copy, and a 980px editorial layout with readable prose measures. Evening changes the paper to deep blue and links to pale blue. Strong primary actions and two soft offer/contact surfaces provide hierarchy.
 
-STORY: Identify Ragesh as a Robotics and Physical AI Deployment & Ops Specialist for VC-backed startups, understand his services and owner-provided experience at fleet scale, inspect supporting writing and projects, and connect on LinkedIn. Accurate search/answer-engine understanding is the primary goal. Never invent locations, employment dates, or achievements.
+STORY: Recognize the cost of manual deployment and field firefighting; inspect NODE Robotics, Robotair, and Fraunhofer experience; understand the assessment and follow-on implementation options; learn how the work fits the team; send a useful inquiry on LinkedIn. Writing and older projects remain secondary evidence. Never invent outcomes, customer details, employment dates, fees, or availability.
 
-FIRST VIEWPORT: A quiet identity and theme switch, the full name in serif with a smaller readable specialist title, simple section links, and a direct statement about helping VC-backed robotics startups scale fleets. Owner-provided professional experience and a LinkedIn CTA follow. No large banner, metric tiles, or stock illustration.
+FIRST VIEWPORT: Name, short navigation, and theme switch; “Scale your robot fleet without scaling the firefighting”; a specific audience and deployment promise; one filled LinkedIn action and one experience anchor; portrait and concise credibility. Keep the inquiry action prominent on mobile.
 
-FORM: User steering: “take inspiration from this style https://www.soorajchandran.com/”. Original seed:3bb9be6b9a20713f; reference-led refinement replaces its visual direction. The meaningful interaction is an accessible, persistent day/evening switch. Article filtering and native archive disclosure remain practical enhancements.
+FORM: Code-led evolution of the established reference-led style, approved by “lets do it then” following the consulting-conversion proposal. Persistent day/evening switch; native disclosures for scope, articles, and archives; existing article search and filters. No new framework, tracking service, or client-side third-party request.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

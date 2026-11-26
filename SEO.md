@@ -6,16 +6,17 @@ Help search systems and visitors identify **Ragesh Ramachandran** as a **Robotic
 
 ## Implemented
 
-- Name and specialty in the visible H1, title, description, social metadata, opening summary, and consistent Person entity.
+- An outcome-led H1 with the full name in the header and hero identity, specialty in the biography, consulting-focused title/description/social metadata, and a consistent Person entity. The homepage social image is Ragesh’s existing portrait rather than the historical rover project.
 - Specific service coverage: ROS/ROS 2 CI/CD, packaging, releases, OTA updates, fleet observability, incident response, and on-premise/hybrid/cloud infrastructure.
 - Owner-supplied professional experience at NODE Robotics, Robotair, Fraunhofer IPA, and ROS-Industrial, with public links to organizations and relevant published articles.
-- A visible, concise question-and-answer section; ProfilePage, Person, Service, WebSite, and FAQ structured data reflect page content.
+- Visible buying FAQs cover engagement fit, implementation, team collaboration, scope/fees, and the relationship to Robotair. ProfilePage, Person, Service, WebSite, and FAQ structured data reflect page content.
 - Stable entity identifiers and sameAs links connect the website, LinkedIn, Medium, and GitHub identities. Past roles are not mislabeled as current employment in worksFor.
 - Static article previews, text-first HTML, crawlable links, canonical URLs, an XML sitemap, and unrestricted crawling in robots.txt.
 - Legacy template/demo routes have `noindex, follow`, and remain crawlable so search engines can see that instruction. Do not block those routes in robots.txt while expecting their noindex directives to be processed.
 - Checks validate structured-data references, visible FAQ parity, canonical URLs, and sitemap targets.
 - All nine project pages have unique search titles/descriptions, Open Graph and Twitter previews, and WebPage/CreativeWork data linked to the same Ragesh author identity as the homepage.
 - Robotair's Organization entity identifies Ragesh as its founder, consistent with the visible biography. Search checks also verify access for Googlebot, bingbot, OAI-SearchBot, Claude-SearchBot, and PerplexityBot under the existing open robots policy.
+- `about.html` is a canonical, sitemap-listed journey page with its own ProfilePage entity connected to the existing Person identity. The homepage links to the full story and the fleet-scale/current-work chapters. Current employer and position are absent from visible copy, metadata, structured data, and repository notes; the private CV is not published.
 
 ## Readiness verification
 
@@ -52,7 +53,7 @@ These are intent-based content targets, not measured keyword-volume or ranking c
 3. Keep the website link, professional title, and core biography consistent on LinkedIn, Medium, GitHub, and Robotair. Where possible, obtain links from real conference speaker pages, professional biographies, and relevant project pages.
 4. Add a public ROSCon talk/recording link and detailed, permission-cleared deployment case studies when available. Describe context, personal contribution, technical decisions, and measured outcomes; do not invent customer details or fleet reliability metrics.
 5. Record a Search Console baseline and compare branded and non-branded impressions, queries, clicks, and click-through rate after recrawling. Review monthly. AI Overviews and AI Mode traffic are included in Google's overall Web search reporting; they are not a separate guaranteed acquisition channel.
-6. Monitor inbound LinkedIn conversations and Medium referrals alongside search traffic. The Medium links already carry referral parameters; no new tracking service was added.
+6. Monitor qualified inbound LinkedIn conversations, proposals, and won engagements alongside search traffic and Medium referrals. Record which problem and engagement brought the buyer in; a click is not a qualified inquiry. The Medium links already carry referral parameters; no new tracking service was added.
 
 ## Limits
 

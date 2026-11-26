@@ -839,7 +839,605 @@ figcaption span {
   padding-top: 20px;
 }
 
+/* Consulting homepage: the personal editorial identity, with a buyer-led hierarchy. */
+.consulting-page .container {
+  width: min(980px, calc(100% - 64px));
+}
+.consulting-page .site-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.consulting-page .quiet-name {
+  font-family: var(--display);
+  font-size: 21px;
+  color: var(--ink);
+}
+.header-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  align-items: center;
+}
+.header-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.header-nav a:hover {
+  text-decoration: underline;
+}
+.header-nav a:last-child {
+  color: var(--link);
+  font-weight: 700;
+}
+.consulting-hero {
+  padding-block: 64px 60px;
+}
+.consulting-hero h1 {
+  font-size: clamp(44px, 6.2vw, 76px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-wrap: initial;
+}
+.consulting-hero h1 em {
+  color: var(--link);
+  font-weight: 400;
+}
+.hero-copy {
+  max-width: 60ch;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-top: 28px;
+}
+.hero-specialty {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 16px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 28px;
+  margin-top: 28px;
+}
+.primary-button {
+  background: var(--link);
+  color: var(--paper);
+  border: 1px solid var(--link);
+  min-height: 52px;
+  padding: 12px 20px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.primary-button:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+  text-decoration: none;
+}
+.hero-person {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 660px;
+  margin-top: 36px;
+}
+.hero-person img {
+  width: 58px;
+  height: 66px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.hero-person strong {
+  font-size: 14px;
+}
+.hero-person p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.consulting-page .section {
+  padding-block: 72px;
+}
+.consulting-page h2 {
+  font-size: clamp(30px, 3.3vw, 40px);
+  max-width: 30ch;
+}
+.consulting-page .section-heading {
+  margin-bottom: 32px;
+}
+.split-section {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+}
+.split-section .section-heading {
+  margin: 0;
+}
+.section-intro,
+.about-copy p,
+.supporting-experience article > p:not(.experience-role),
+.follow-on-options p,
+.engagement-steps p {
+  font-size: 15px;
+  color: var(--muted);
+}
+.challenge-list {
+  padding: 0;
+  margin: 24px 0 0;
+  list-style: none;
+}
+.challenge-list li {
+  padding-block: 14px;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.experience-feature {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  padding-block: 8px 32px;
+}
+.experience-feature h3 {
+  font-family: var(--display);
+  font-size: 30px;
+  font-weight: 400;
+}
+.experience-role {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 8px 0 14px;
+}
+.experience-feature > div > p:not(.experience-role) {
+  font-size: 17px;
+}
+.experience-detail {
+  margin: 24px 0 0;
+}
+.experience-detail > div + div {
+  margin-top: 18px;
+}
+.experience-detail dt {
+  font-size: 13px;
+  font-weight: 700;
+}
+.experience-detail dd {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+.featured-quote {
+  margin: 0;
+  border-block: 1px solid var(--line);
+  padding-block: 28px;
+}
+.featured-quote blockquote {
+  font-size: 25px;
+  max-width: 48ch;
+}
+.supporting-experience,
+.follow-on-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 32px;
+}
+.assessment-offer {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px 40px;
+  background: var(--soft);
+  padding: 36px;
+  border-radius: 12px;
+}
+.assessment-offer h3 {
+  font-family: var(--display);
+  font-size: 31px;
+  line-height: 1.25;
+  font-weight: 400;
+}
+.assessment-offer h4 {
+  margin: 0;
+  font-size: 14px;
+}
+.assessment-offer > div > p {
+  font-size: 15px;
+  color: var(--muted);
+  margin-top: 18px;
+}
+.assessment-offer .button {
+  margin-top: 24px;
+}
+.deliverables-list {
+  padding-left: 20px;
+  margin: 12px 0 0;
+  font-size: 14px;
+}
+.deliverables-list li + li {
+  margin-top: 12px;
+}
+.deliverables-list li::marker,
+.engagement-steps li::marker {
+  color: var(--link);
+}
+.offer-note {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.follow-on-options p {
+  margin-top: 12px;
+}
+.technical-scope {
+  margin-top: 28px;
+  border-block: 1px solid var(--line);
+}
+.technical-scope .expertise-list > div:last-child {
+  border: 0;
+}
+.engagement-steps {
+  padding: 0 0 0 24px;
+  margin: 0;
+}
+.engagement-steps li {
+  padding-left: 10px;
+}
+.engagement-steps li + li {
+  margin-top: 28px;
+}
+.engagement-steps h3 {
+  font-size: 17px;
+}
+.engagement-steps p {
+  margin-top: 8px;
+}
+.about-portrait {
+  width: 120px;
+  height: 135px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-top: 28px;
+}
+.about-copy p + p {
+  margin-top: 20px;
+}
+.about-copy .text-link {
+  margin-top: 20px;
+}
+.writing-archive,
+.background-archive {
+  border-top: 1px solid var(--line);
+}
+.consulting-page .resource-list {
+  margin-block: 8px 24px;
+}
+.consulting-page .talk-summary h3 {
+  font-size: 16px;
+}
+.consulting-page .talk-summary[open] {
+  padding-bottom: 24px;
+}
+.consulting-page #work .section-heading {
+  margin-bottom: 12px;
+}
+.consulting-page .faq-item {
+  max-width: 720px;
+}
+.consulting-page .faq-item h3 {
+  font-size: 17px;
+}
+.consulting-page .contact-section {
+  padding: 48px;
+  margin-bottom: 64px;
+  background: var(--soft);
+  border: 0;
+  border-radius: 12px;
+}
+.contact-brief {
+  margin-block: 24px 28px;
+}
+.contact-brief h3 {
+  font-size: 14px;
+}
+.contact-brief ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.contact-section .contact-next {
+  font-size: 12px;
+  margin: 16px 0 0;
+}
+.journey-page .container {
+  width: min(980px, calc(100% - 64px));
+}
+.journey-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.journey-header .quiet-name {
+  font-family: var(--display);
+  font-size: 21px;
+  color: var(--ink);
+}
+.journey-intro {
+  padding-top: 56px;
+}
+.journey-intro h1 {
+  max-width: 26ch;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.12;
+}
+.journey-intro > p {
+  max-width: 66ch;
+  color: var(--muted);
+  margin-top: 20px;
+}
+.journey-intro .journey-lead {
+  color: var(--ink);
+  font-size: 19px;
+  max-width: 60ch;
+  margin-top: 28px;
+}
+.chapter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 28px;
+  margin-block: 24px 28px;
+}
+.chapter-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 13px;
+}
+.journey-photo {
+  margin-bottom: 48px;
+}
+.journey-photo img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center 57%;
+  border-radius: 6px;
+}
+.journey-photo figcaption {
+  color: var(--muted);
+  font-weight: 400;
+  margin-top: 12px;
+  max-width: 78ch;
+}
+.journey-chapter {
+  display: grid;
+  grid-template-columns: 0.8fr 1.5fr;
+  gap: 56px;
+  padding-block: 64px;
+}
+.chapter-heading h2 {
+  font-size: 32px;
+  text-wrap: pretty;
+}
+.chapter-heading > p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 16px;
+}
+.chapter-copy {
+  min-width: 0;
+}
+.chapter-copy > p + p,
+.chapter-copy .professional-quote {
+  margin-top: 22px;
+}
+.chapter-copy p,
+.journey-results {
+  font-size: 15px;
+}
+.chapter-copy > p:not(.chapter-takeaway),
+.journey-results {
+  color: var(--muted);
+}
+.chapter-copy strong {
+  color: var(--ink);
+}
+.chapter-copy .chapter-takeaway {
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.chapter-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin-top: 18px;
+}
+.chapter-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 13px;
+}
+.journey-results {
+  padding-left: 20px;
+  margin-block: 24px;
+}
+.journey-results li + li {
+  margin-top: 18px;
+}
+.journey-results li::marker {
+  color: var(--link);
+}
+.current-contributions {
+  margin: 24px 0;
+}
+.current-contributions > div {
+  padding-block: 18px;
+  border-bottom: 1px solid var(--line);
+}
+.current-contributions dt {
+  font-size: 15px;
+  font-weight: 700;
+}
+.current-contributions > div:last-child {
+  border-bottom: 0;
+}
+.current-contributions dd {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 8px 0 0;
+}
+.chapter-copy .confidentiality-note {
+  font-size: 12px;
+}
+.journey-contact {
+  padding: 40px;
+  background: var(--soft);
+  border: 0;
+  border-radius: 12px;
+  margin-bottom: 56px;
+}
+.journey-contact p {
+  margin-block: 20px 24px;
+}
+@media (max-width: 800px) {
+  .consulting-page .site-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 16px;
+    padding-block: 16px 8px;
+  }
+  .header-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-between;
+    gap: 4px 16px;
+  }
+  .consulting-page .theme-toggle {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .split-section,
+  .experience-feature,
+  .assessment-offer {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .consulting-hero {
+    padding-top: 44px;
+  }
+  .supporting-experience,
+  .follow-on-options {
+    gap: 28px;
+  }
+  .about-section > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .about-portrait {
+    width: 72px;
+    height: 81px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .journey-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 16px;
+    padding-block: 16px 8px;
+  }
+  .journey-header .theme-toggle {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .journey-chapter {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-block: 44px;
+  }
+}
 @media (max-width: 600px) {
+  .consulting-page .container {
+    width: calc(100% - 40px);
+  }
+  .consulting-page .quiet-name {
+    font-size: 18px;
+  }
+  .consulting-page .consulting-hero {
+    padding-block: 36px 44px;
+  }
+  .consulting-page .consulting-hero h1 {
+    font-size: clamp(40px, 10.2vw, 58px);
+    max-width: 16ch;
+  }
+  .hero-copy {
+    font-size: 16px;
+    margin-top: 24px;
+  }
+  .hero-specialty {
+    font-size: 12px;
+  }
+  .hero-actions {
+    gap: 8px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .hero-person {
+    margin-top: 28px;
+  }
+  .consulting-page .section {
+    padding-block: 44px;
+  }
+  .supporting-experience,
+  .follow-on-options {
+    grid-template-columns: 1fr;
+  }
+  .assessment-offer {
+    padding: 24px;
+  }
+  .assessment-offer h3 {
+    font-size: 28px;
+  }
+  .consulting-page .contact-section {
+    padding: 28px 24px;
+    margin-bottom: 44px;
+  }
+  .featured-quote blockquote {
+    font-size: 22px;
+  }
+  .journey-page .container {
+    width: calc(100% - 40px);
+  }
+  .journey-header .quiet-name {
+    font-size: 18px;
+  }
+  .journey-intro {
+    padding-top: 36px;
+  }
+  .journey-intro .journey-lead {
+    font-size: 17px;
+  }
+  .journey-photo img {
+    aspect-ratio: 4 / 3;
+  }
+  .chapter-nav {
+    gap: 4px 20px;
+  }
+  .journey-contact {
+    padding: 28px 24px;
+  }
   .desktop-break {
     display: none;
   }
@@ -980,6 +1578,18 @@ figcaption span {
   }
   .project-page {
     padding-top: 22px;
+  }
+}
+@media (max-width: 360px) {
+  .consulting-page .theme-label,
+  .journey-page .theme-label {
+    display: none;
+  }
+  .header-nav {
+    gap: 4px 12px;
+  }
+  .header-nav a {
+    font-size: 12px;
   }
 }
 .article-meta,

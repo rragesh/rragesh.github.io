@@ -1,6 +1,6 @@
 # Ragesh Ramachandran
 
-Personal robotics portfolio and technical writing at [rragesh.github.io](https://rragesh.github.io/). The reading-first layout takes inspiration from [Sooraj Chandran’s personal site](https://www.soorajchandran.com/), with a conversational introduction, soft sky colors, and a persistent day/evening theme switch.
+Robotics deployment consulting, professional experience, and technical writing at [rragesh.github.io](https://rragesh.github.io/). The homepage leads with the client outcome, relevant deployment experience, a Deployment Readiness Assessment, implementation options, and a LinkedIn inquiry path. Its personal editorial identity retains the serif typography, soft sky colors, and persistent day/evening theme inspired by [Sooraj Chandran’s personal site](https://www.soorajchandran.com/).
 
 ## Preview locally
 
@@ -12,7 +12,7 @@ Open `http://localhost:4173`. The committed HTML works directly on GitHub Pages;
 
 ## Medium articles
 
-The homepage embeds seven recent stories from [the Medium RSS feed](https://rragesh.medium.com/feed), with locally cached, optimized images, excerpts, publication dates, and links to the original articles. The links include UTM parameters to identify referrals from this website. Full stories stay on Medium.
+Three curated deployment articles remain visible on the homepage. A “Browse recent articles on Medium” disclosure embeds seven recent stories from [the Medium RSS feed](https://rragesh.medium.com/feed), with locally cached, optimized images, excerpts, publication dates, and links to the original articles. The generated region and daily refresh remain intact. The links include UTM parameters to identify referrals from this website. Full stories stay on Medium.
 
 Previews are real HTML, so they work without JavaScript and are available to search engines. JavaScript adds topic filtering and search. There is no client-side RSS proxy or API key.
 
@@ -37,13 +37,13 @@ Edit `data/projects.json`, then regenerate the nine static project pages:
 python3 scripts/build_projects.py
 ```
 
-Existing public project URLs and project-publication PDFs are retained. The résumé PDF has been removed; professional profile links point to [LinkedIn](https://www.linkedin.com/in/ragesh-ramachandran/). The old `about.html` route redirects to the homepage’s About section.
+Existing public project URLs and project-publication PDFs are retained. The résumé PDF remains private; professional profile links point to [LinkedIn](https://www.linkedin.com/in/ragesh-ramachandran/). `about.html` is now the dedicated robotics journey, linked from the homepage navigation, identity, biography, and footer. It connects planetary rovers, control and recovery, industrial robotics, Robotair, production fleets, and current software-factory work. The current employer, position, internal product names, operational metrics, and personal details from the private CV are not published.
 
 Destination-page links open in new tabs with `rel="noopener"`, including generated articles and project pages. Same-page navigation keeps its normal behavior. After adding handwritten links, run `python3 scripts/link_policy.py`. The owner has no Instagram account; do not add an Instagram profile.
 
 ## Search positioning
 
-The homepage positions Ragesh as a **Robotics and Physical AI Deployment & Ops Specialist** helping VC-backed robotics startups scale reliable fleets. It includes owner-provided experience, service descriptions, sourced articles, and visible FAQs with matching structured data. See `SEO.md` for search goals, publication/indexing steps, and measurement; `data/profile-sources.md` records provenance and verification limits. Legacy template routes are marked `noindex, follow`.
+The homepage positions Ragesh as a **Robotics and Physical AI Deployment & Ops Specialist** helping VC-backed robotics startups make production deployment repeatable. It includes owner-provided experience, an assessment offer, separately scoped implementation/leadership options, sourced articles, and buying FAQs with matching structured data. Pricing, availability, and quantified client outcomes are not invented. See `SEO.md` for search goals, publication/indexing steps, and measurement; `data/profile-sources.md` records provenance and verification limits. Legacy template routes are marked `noindex, follow`.
 
 ## Checks
 

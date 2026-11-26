@@ -25,6 +25,15 @@ class PublicationTests(unittest.TestCase):
     def test_accepts_published_profile(self):
         self.assertEqual(publication.validate_html(page(), BASE), [])
 
+    def test_accepts_journey_profile(self):
+        canonical = BASE + 'about.html'
+        self.assertEqual(publication.validate_html(page(canonical), canonical), [])
+
+    def test_rejects_old_about_redirect(self):
+        document = '<meta http-equiv="refresh" content="0;url=index.html#about">' + page()
+        errors = publication.validate_html(document, BASE + 'about.html')
+        self.assertIn('canonical URL missing or incorrect', errors)
+
     def test_rejects_header_and_html_indexing_blocks(self):
         for document, header in ((page(), 'noindex'), (page() + '<meta name="robots" content="none">', ''), (page(), 'nosnippet')):
             with self.subTest(header=header):

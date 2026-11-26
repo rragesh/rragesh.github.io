@@ -1,6 +1,6 @@
 # Professional profile sources
 
-Reviewed 2026-11-20. Keep visible copy and structured data aligned. These notes are development material, excluded from publication by `_config.yml`.
+Updated 2026-11-26. Keep visible copy and structured data aligned. These notes are development material, excluded from publication by `_config.yml`. Do not record confidential identifiers from the private CV here.
 
 ## Owner-provided positioning and facts
 
@@ -8,11 +8,23 @@ The user explicitly supplied:
 - Robotics and Physical AI Deployment & Ops Specialist, helping VC-backed robotics startups scale reliable fleets from pilots to 1,000+ robots.
 - 10+ years across planetary rovers, industrial AGVs, and AMRs.
 - Fraunhofer IPA / ROS-Industrial: ROS 2 systems, CI/CD automation, and factory deployments with industry partners.
-- NODE Robotics: led Robotics DevOps and Infrastructure; deployments for 1,200–1,500+ robots.
+- NODE Robotics: the original deployment range is superseded by the owner’s Q4 2026 CV, which states infrastructure supporting more than 1,500 production robots.
 - Founder of Robotair: robotics DevOps infrastructure, packaging, OTA updates, monitoring.
 - ROSCon India talk on DevOps for ROS.
 
-The fleet count is the user's experience claim, not independently verified from a public employment record. No talk year, recording URL, employment dates, client names, guaranteed outcomes, or current availability was inferred.
+The fleet count is the user's experience claim, not independently verified from a public employment record. No talk year, recording URL, client names, guaranteed outcomes, or current availability was inferred. The journey’s historical dates come from the owner’s private CV, summarized below.
+
+## Private CV and direct owner update · 2026-11-26
+
+Use the CV as an input, never as a public download. Public historical details used on the journey page:
+- 2013–2017: electronics and communication degree at Amrita; 2016 planetary-rover work with a 15-person multidisciplinary team. The 2015 rover and earlier project links are supported by the existing portfolio.
+- 2017: EMG-based prosthetic-arm control at the Mechatronics and Intelligent Systems Research Lab.
+- 2017–2019: master’s in Control and Robotics at École Centrale de Nantes; 2019 thesis at Fraunhofer on manipulator fault detection and recovery planning.
+- 2019–2023: Fraunhofer industrial ROS 2 fleets, project architecture, CI/CD, and ROS-Industrial partner training.
+- 2023–2025: Robotair; 15 paying beta customers across Europe and India during a 12-month beta. Revenue details were not needed for this narrative.
+- 2024–2025: NODE Robotics; more than 1,500 production robots, three software releases per month, Ansible/Terraform provisioning, hybrid on-premises/VPC architecture with a 50% infrastructure-cost reduction, and DORA/deployment metrics.
+
+Current-work disclosure is restricted by the owner's explicit instruction. The public page uses only “a stealth defense robotics startup” and capability-level contributions. The owner directly supplied software-factory infrastructure, CI/CD, in-house OTA, and ISO 9001 / CE process leadership; the CV also supports verification and release-process evidence. The page describes process leadership and conformity work, without inventing a certifying body, standard version, product approval, or certification award. Current employer, position, internal product names, operational figures, exact employment dates, home address, phone, and private email/reference contacts are not copied into any repository artifact.
 
 ## Public sources reviewed
 
@@ -34,6 +46,10 @@ The fleet count is the user's experience claim, not independently verified from 
    - Describes industrial robot software and production deployments. Its present company-wide fleet figures must not be used as evidence of Ragesh's personal deployment scope.
 7. https://rosconindia.in/
    - Confirms the conference/community. This is an event link, not an independently located recording or speaker listing for Ragesh's talk.
+
+## Approved consulting offer
+
+The owner approved the consulting-conversion proposal in this session. The homepage presents a Deployment Readiness Assessment, separately scoped implementation, and fractional Robotics DevOps leadership. These are engagement descriptions, not historical client outcomes. The dedicated journey now adds the owner-supplied historical results above and explicitly separates them from future engagement goals. Fees, duration, and availability are agreed through the inquiry rather than invented on the page.
 
 ## Search implementation references
 

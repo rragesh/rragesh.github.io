@@ -2,16 +2,16 @@
 
 ## Direction
 
-The user supplied `https://www.soorajchandran.com/` as a style reference during implementation. The finished site follows its personal-letter feel: serif identity typography, a narrow readable column, softly fading sky colors, simple inline navigation, and a day/evening switch. The subsequent SEO/AEO brief makes the full name and Robotics/Physical AI deployment specialty explicit in the H1. All biography, project photography, articles, and profile links belong to Ragesh. The earlier cobalt exhibition direction is superseded.
+The user supplied `https://www.soorajchandran.com/` as the original style reference, then approved a consulting-conversion direction. Keep the personal editorial identity: Georgia, Manrope, softly fading sky colors, quiet rules, and a day/evening switch. The homepage now leads with the buyer outcome, followed by deployment problems, relevant experience, an assessment offer, process, biography, selected writing, archives, buying FAQs, and a specific LinkedIn invitation. Ragesh’s full name remains in the header, hero identity, metadata, and Person entity; his specialty is explicit in the biography. All professional claims, photography, articles, and profile links belong to Ragesh.
 
 ## Typography
 
-- Georgia with Times New Roman/serif fallbacks for greeting, section headings, and the personal signoff. This follows the user’s reference-led direction.
+- Georgia with Times New Roman/serif fallbacks for the outcome headline, section headings, identity, and featured offer.
 - Self-hosted Manrope variable Latin for body and controls, `font-display: swap`.
-- Desktop name: 58px maximum; mobile: 42px. The specialty is a subordinate 20–25px Manrope line inside the H1. Section headings: 34px desktop, 30px mobile. Introduction: 17px desktop, 16px mobile at a generous line height.
+- Homepage headline: up to 76px desktop, 40–58px mobile, 1.08 line height. The italic closing phrase uses the link color. Homepage section headings: 30–40px. Hero copy: 18px desktop and 16px mobile; supporting prose: 15–17px. Keep readable line lengths.
 - Project and article headings use restrained sans-serif, with wrapping rather than truncation.
 
-## Color tokens
+## Colors
 
 | Token | Day | Evening |
 | --- | --- | --- |
@@ -26,16 +26,22 @@ The user supplied `https://www.soorajchandran.com/` as a style reference during 
 
 The sky fades into paper over the first 900px. Text contrast is checked against both gradient endpoints and the soft control background. Inline prose links retain an underline. Selection, caret, scrollbars, and focus colors use the same token system.
 
-## Layout and components
+## Layout
 
-- Main column: 780px maximum; introduction prose: 660px. Side gutters: 32px, reduced to 20px below 600px.
+- Homepage column: 980px maximum, with narrower prose measures. Project pages retain the 780px column. Side gutters: 32px, reduced to 20px below 600px.
 - Header is not sticky. Navigation is always visible and wraps naturally.
-- Sections are separated by quiet 1px rules and 56px vertical padding (42px mobile).
-- Medium stories form an unboxed list with 150 × 112px thumbnails on desktop and 88px thumbnails on mobile. Text, dates, and outbound links are always present in HTML.
-- The featured rover has a larger photo; supporting projects use a two-column desktop grid and small image/text rows on mobile.
-- Native disclosure controls hold the project archive and original recommendations.
+- Homepage sections use quiet 1px rules and 72px vertical padding (44px mobile). Editorial split sections and the assessment become one column below 800px. Supporting experience and follow-on options become one column below 600px.
+
+## Components
+
+- Primary buttons use link-color fill, paper-color text, a 52px minimum height, and an ink-color hover. Destination labels explicitly identify LinkedIn. Assessment CTAs navigate to the contact brief.
+- A portrait and concise professional identity follow the hero actions. NODE Robotics experience and an exact attributed recommendation lead the proof section; Robotair and Fraunhofer support it. Do not fabricate case-study outcomes.
+- The assessment and final contact invitation use soft-color surfaces with 12px corners. Deliverables and first-message guidance are ordinary HTML lists; there is no nonfunctional inquiry form or booking widget.
+- Three curated articles stay visible. Seven automatically refreshed Medium previews, search, and topic filters live inside a native disclosure. Existing thumbnails remain 150 × 112px desktop and 88px mobile.
+- Earlier project imagery and the original career history/recommendations live inside native disclosures. The rover is historical work, not the primary commercial proof. Project URLs remain available.
 - Project detail pages share the same tokens, readable text measure, fluid images, and 16:9 video embeds.
-- Expertise uses readable definition-list rows; sourced articles and a professional recommendation support the positioning. FAQs stay expanded in ordinary HTML and match the structured data.
+- Detailed technical scope uses definition-list rows inside a disclosure. Buying FAQs stay expanded in ordinary HTML and exactly match the structured data.
+- The dedicated journey at `about.html` inherits these tokens. It uses a 980px editorial column, a 40–64px headline, the existing Phoenix II photograph, chapter anchors, and chronological split sections (single-column below 800px). Dates follow chapter headings; contributions and lessons lead instead of job titles. Current-work content stays at capability level. The final section connects the history to scoped consulting deliverables.
 
 ## Interaction
 

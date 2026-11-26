@@ -6,20 +6,24 @@
 web
 
 ## Product Purpose
-The primary goal is SEO and answer-engine discovery of Ragesh as a Robotics and Physical AI Deployment & Ops Specialist helping VC-backed robotics startups scale reliable fleets from pilots to 1,000+ robots. The user supplied this positioning and biography after the initial redesign. Present supporting professional experience, clear capabilities, published work, and contact through LinkedIn. Medium readership remains a secondary goal. The user requested an upstream push and removal of the résumé PDF.
+The primary goal is qualified consulting inquiries from robotics founders and engineering leaders scaling beyond pilots. The user approved converting the portfolio into a premium consulting landing page: lead with repeatable production deployment, demonstrate relevant experience, explain a defined engagement, and invite a conversation on LinkedIn. Search and answer-engine discovery of Ragesh as a Robotics and Physical AI Deployment & Ops Specialist remains a supporting goal. Technical writing and earlier projects provide secondary evidence.
 
 ## Users
-Founders, CTOs, and engineering leaders at VC-backed robotics startups seeking deployment, DevOps, infrastructure, and fleet-operations expertise; technical readers and search systems identifying a relevant specialist.
+Founders, CTOs, and engineering leaders at VC-backed robotics startups whose pilots work but customer-site deployments, software updates, or field incidents are becoming difficult to manage as their fleets expand. Technical readers and search systems identifying a relevant specialist are secondary audiences.
 
 ## Capabilities and Constraints
 Static HTML, CSS, and JavaScript hosted on GitHub Pages. Article previews should link to the original Medium stories and remain usable without browser-side third-party services. Preserve existing project URLs. Use `https://www.linkedin.com/in/ragesh-ramachandran/` for the professional profile; do not republish a résumé PDF. Do not invent dates, employment status, achievements, or metrics.
 
+The entry offer is a Deployment Readiness Assessment: workflow map, prioritized operational gaps, implementation roadmap, and team review. Hands-on implementation and fractional Robotics DevOps leadership are separately scoped follow-on options. Timing, fees, access, and responsibilities are agreed before starting; no fixed prices, guaranteed outcomes, booking calendar, or availability claims have been supplied. Robotair is supporting founder experience; the contact route invites a conversation with Ragesh and asks product-specific inquiries to identify themselves.
+
 ## Evidence on Hand
 The existing homepage contains career history, project descriptions, recommendations, and social links. Project detail pages and photographs live in `projects/` and `img/work/`. Published articles are available from `https://rragesh.medium.com/feed`.
 
-The user supplied 10+ years of robotics experience, work at Fraunhofer IPA and ROS-Industrial, leading Robotics DevOps and Infrastructure at NODE Robotics for deployments of 1,200–1,500+ robots, founding Robotair, and a ROSCon India talk on DevOps for ROS. Use these as owner-provided claims without inventing employment dates, client outcomes, or present employment. Public LinkedIn supports the specialist focus, relevant articles, and recommendations; the complete employment history is sign-in restricted. Source notes are in `data/profile-sources.md`.
+The owner supplied 10+ years of robotics experience, Fraunhofer IPA / ROS-Industrial work, NODE Robotics deployment infrastructure, founding Robotair, and a ROSCon India talk. The owner’s private Q4 2026 CV now supplies dated history and past results: a 15-person rover team; more than 1,500 production robots, three monthly software releases, and a 50% infrastructure-cost reduction at NODE Robotics; 15 paying Robotair beta customers. These are owner-provided claims, not independently verified client results. Source notes are in `data/profile-sources.md`.
+
+The owner requested a dedicated chronological journey at `about.html`, focused on contributions and value rather than titles. Current work may be described only at capability level at a stealth defense robotics startup: software-factory infrastructure, CI/CD, in-house OTA, ISO 9001 and CE process leadership, verification, and engineering visibility. Do not copy the current employer, position, internal program names, exact employment dates, operational figures, private contact details, references’ contacts, or the CV itself into website artifacts or repository notes. Do not infer completion of a certification award from process leadership.
 
 ## Brand Commitments
-During implementation the user asked to take inspiration from `https://www.soorajchandran.com/`. Use its personal, reading-first feel while retaining Ragesh’s own biography, photographs, projects, and writing.
+The user originally requested inspiration from `https://www.soorajchandran.com/`. The approved conversion direction retains the personal editorial tone, serif typography, sky colors, and day/evening switch, with stronger outcome-led hierarchy and a more prominent contact action. Retain Ragesh’s own biography, photographs, projects, and writing.
 
 The user explicitly confirmed founding `robotair.io` and stated that they have no Instagram account. Do not add Instagram links or identities. Article, project, and other destination-page links open in a new tab; in-page navigation and the skip link remain in the current page.

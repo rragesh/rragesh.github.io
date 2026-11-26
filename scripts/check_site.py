@@ -89,7 +89,7 @@ class Page(HTMLParser):
 
 
 pages = {}
-for path in [ROOT / 'index.html', *sorted((ROOT / 'projects').glob('*.html'))]:
+for path in [ROOT / 'index.html', ROOT / 'about.html', *sorted((ROOT / 'projects').glob('*.html'))]:
     page = Page(path)
     page.feed(path.read_text())
     pages[path.resolve()] = page
@@ -128,6 +128,11 @@ for path, page in pages.items():
         work = next((node for node in nodes if node.get('@type') == 'CreativeWork'), {})
         if work.get('author', {}).get('@id') != BASE + '#ragesh' or work.get('url') != expected:
             page.errors.append('Project schema must connect the canonical project and its author')
+    elif path.name == 'about.html':
+        nodes = [node for schema in page.schemas for node in schema.get('@graph', [])]
+        profile = next((node for node in nodes if node.get('@type') == 'ProfilePage'), {})
+        if profile.get('url') != expected or profile.get('mainEntity', {}).get('@id') != BASE + '#ragesh':
+            page.errors.append('Journey profile must connect its canonical URL and the Person entity')
     for url in page.urls:
         parsed = urlsplit(url)
         if parsed.scheme or parsed.netloc:
