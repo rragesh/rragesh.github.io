@@ -922,9 +922,8 @@ figcaption span {
 .entry-page .consulting-hero {
   grid-template-areas:
     "intro portrait"
-    "explore portrait"
-    "proof proof";
-  grid-template-rows: auto 1fr auto;
+    "explore portrait";
+  grid-template-rows: auto 1fr;
   row-gap: 0;
 }
 .entry-page .hero-content {
@@ -933,10 +932,6 @@ figcaption span {
 .entry-page .hero-explore {
   grid-area: explore;
   min-width: 0;
-}
-.entry-page .hero-proof {
-  grid-area: proof;
-  margin-top: 32px;
 }
 .hero-discovery {
   color: var(--muted);
@@ -1092,17 +1087,6 @@ figcaption span {
   padding-block: 8px;
   font-size: 13px;
   font-weight: 500;
-}
-.hero-proof {
-  grid-column: 1 / -1;
-  border-top: 1px solid var(--line);
-  padding-top: 24px;
-  max-width: none;
-  font-size: 14px;
-  color: var(--muted);
-}
-.hero-proof strong {
-  color: var(--ink);
 }
 .consulting-page .section {
   padding-block: 72px;
@@ -1514,7 +1498,7 @@ figcaption span {
     width: min(460px, 100%);
   }
   .entry-page .consulting-hero {
-    grid-template-areas: "intro" "portrait" "explore" "proof";
+    grid-template-areas: "intro" "portrait" "explore";
     grid-template-rows: auto;
     row-gap: 24px;
   }
@@ -1536,8 +1520,7 @@ figcaption span {
   .entry-page .hero-speaker figcaption a {
     line-height: 1.5;
   }
-  .entry-page .hero-discovery,
-  .entry-page .hero-proof {
+  .entry-page .hero-discovery {
     margin-top: 0;
   }
   .supporting-experience,

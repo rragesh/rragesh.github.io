@@ -81,7 +81,6 @@ def import_landing():
           <a href="https://www.youtube.com/watch?v=p302LwKIhQg">Watch my ROSCon India 2023 talk <span class="arrow diagonal" aria-hidden="true"></span></a>
         </figcaption>
       </figure>
-      <p class="hero-proof"><strong>10+ years of hands-on robotics.</strong> Experience building deployment infrastructure supporting more than 1,500 production robots at NODE Robotics.</p>
     </section>'''
     work_intro = '''<section class="page-intro" aria-labelledby="work-page-title">
       <h1 id="work-page-title">Work, from prototypes to production.</h1>
