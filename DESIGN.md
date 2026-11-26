@@ -8,7 +8,7 @@ The user supplied `https://www.soorajchandran.com/` as the original style refere
 
 - Georgia with Times New Roman/serif fallbacks for the outcome headline, section headings, identity, and featured offer.
 - Self-hosted Manrope variable Latin for body and controls, `font-display: swap`.
-- Homepage headline: up to 76px desktop, 40–58px mobile, 1.08 line height. The italic closing phrase uses the link color. Homepage section headings: 30–40px. Hero copy: 18px desktop and 16px mobile; supporting prose: 15–17px. Keep readable line lengths.
+- Homepage headline: up to 60px desktop, 38–52px mobile, 1.08 line height. The production-fleet outcome uses the link color in roman type. Homepage section headings: 30–40px. Hero copy: 17px desktop and 16px mobile; supporting prose: 15–17px. Keep readable line lengths.
 - Project and article headings use restrained sans-serif, with wrapping rather than truncation.
 
 ## Colors
@@ -34,8 +34,9 @@ The sky fades into paper over the first 900px. Text contrast is checked against 
 
 ## Components
 
-- Primary buttons use link-color fill, paper-color text, a 52px minimum height, and an ink-color hover. Destination labels explicitly identify LinkedIn. Assessment CTAs navigate to the contact brief.
-- A portrait and concise professional identity follow the hero actions. NODE Robotics experience and an exact attributed recommendation lead the proof section; Robotair and Fraunhofer support it. Do not fabricate case-study outcomes.
+- Primary buttons use link-color fill, paper-color text, a 52px minimum height, and an ink-color hover. The hero’s “Request a deployment assessment” opens LinkedIn; visible guidance, linked through `aria-describedby`, identifies the destination and purpose. Its secondary link navigates to assessment deliverables. The offer section’s assessment CTA navigates to the contact brief.
+- The hero is an editorial two-column composition: buyer outcome, assessment value, and action on the left; a 4:5 crop of the owner-supplied ROSCon India 2023 speaker photo, professional identity, and talk link on the right. Below 800px, the action comes before the photo. A full-width line attributes the 1,500+ production-robot infrastructure experience to NODE Robotics. The photo replaces the previous portrait everywhere, including Person and homepage social metadata.
+- NODE Robotics experience and an exact attributed recommendation lead the detailed proof section; Robotair and Fraunhofer support it. Do not fabricate case-study outcomes.
 - The assessment and final contact invitation use soft-color surfaces with 12px corners. Deliverables and first-message guidance are ordinary HTML lists; there is no nonfunctional inquiry form or booking widget.
 - Three curated articles stay visible. Seven automatically refreshed Medium previews, search, and topic filters live inside a native disclosure. Existing thumbnails remain 150 × 112px desktop and 88px mobile.
 - Earlier project imagery and the original career history/recommendations live inside native disclosures. The rover is historical work, not the primary commercial proof. Project URLs remain available.

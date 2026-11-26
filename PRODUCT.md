@@ -16,6 +16,8 @@ Static HTML, CSS, and JavaScript hosted on GitHub Pages. Article previews should
 
 The entry offer is a Deployment Readiness Assessment: workflow map, prioritized operational gaps, implementation roadmap, and team review. Hands-on implementation and fractional Robotics DevOps leadership are separately scoped follow-on options. Timing, fees, access, and responsibilities are agreed before starting; no fixed prices, guaranteed outcomes, booking calendar, or availability claims have been supplied. Robotair is supporting founder experience; the contact route invites a conversation with Ragesh and asks product-specific inquiries to identify themselves.
 
+The latest hero refinement makes this offer explicit in the first viewport, with “Request a deployment assessment” and clear LinkedIn messaging guidance. The owner supplied a ROSCon India 2023 speaker photo and `https://www.youtube.com/watch?v=p302LwKIhQg`; use them as the main professional image and talk reference. The previous portrait was removed, including from social and Person metadata.
+
 ## Evidence on Hand
 The existing homepage contains career history, project descriptions, recommendations, and social links. Project detail pages and photographs live in `projects/` and `img/work/`. Published articles are available from `https://rragesh.medium.com/feed`.
 

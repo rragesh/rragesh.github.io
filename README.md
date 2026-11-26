@@ -1,6 +1,6 @@
 # Ragesh Ramachandran
 
-Robotics deployment consulting, professional experience, and technical writing at [rragesh.github.io](https://rragesh.github.io/). The homepage leads with the client outcome, relevant deployment experience, a Deployment Readiness Assessment, implementation options, and a LinkedIn inquiry path. Its personal editorial identity retains the serif typography, soft sky colors, and persistent day/evening theme inspired by [Sooraj Chandran’s personal site](https://www.soorajchandran.com/).
+Robotics deployment consulting, professional experience, and technical writing at [rragesh.github.io](https://rragesh.github.io/). The hero pairs “Turn robot pilots into reliable production fleets” with an assessment offer, explicit deliverables, and a LinkedIn request CTA. The owner’s ROSCon India 2023 speaking photograph and talk recording provide prominent credibility. The rest of the homepage covers relevant experience, implementation options, and the personal story. Its editorial identity retains the serif typography, soft sky colors, and persistent day/evening theme inspired by [Sooraj Chandran’s personal site](https://www.soorajchandran.com/).
 
 ## Preview locally
 

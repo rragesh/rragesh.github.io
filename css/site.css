@@ -877,35 +877,59 @@ figcaption span {
   font-weight: 700;
 }
 .consulting-hero {
-  padding-block: 64px 60px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
+  gap: 32px 44px;
+  align-items: start;
+  padding-block: 48px;
+}
+.hero-content {
+  min-width: 0;
 }
 .consulting-hero h1 {
-  font-size: clamp(44px, 6.2vw, 76px);
+  font-size: clamp(42px, 4.6vw, 60px);
   line-height: 1.08;
   letter-spacing: -0.035em;
-  text-wrap: initial;
+  text-wrap: pretty;
 }
-.consulting-hero h1 em {
+.consulting-hero h1 span {
+  display: block;
   color: var(--link);
-  font-weight: 400;
 }
 .hero-copy {
-  max-width: 60ch;
-  font-size: 18px;
+  max-width: 54ch;
+  font-size: 17px;
   line-height: 1.8;
-  margin-top: 28px;
+  margin-top: 24px;
 }
-.hero-specialty {
+.hero-offer {
+  margin-top: 24px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.hero-offer strong,
+.hero-offer span {
+  display: block;
+}
+.hero-offer span {
+  margin-top: 6px;
   color: var(--muted);
-  font-size: 13px;
-  margin-top: 16px;
 }
 .hero-actions {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 28px;
-  margin-top: 28px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 20px;
+}
+.hero-actions .primary-button {
+  max-width: 100%;
+  font-size: 15px;
+}
+#hero-contact-note {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--muted);
 }
 .primary-button {
   background: var(--link);
@@ -923,28 +947,42 @@ figcaption span {
   border-color: var(--ink);
   text-decoration: none;
 }
-.hero-person {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  max-width: 660px;
-  margin-top: 36px;
-}
-.hero-person img {
-  width: 58px;
-  height: 66px;
+.hero-speaker > img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  border-radius: 4px;
-  flex-shrink: 0;
+  border-radius: 8px;
 }
-.hero-person strong {
-  font-size: 14px;
+.hero-speaker figcaption {
+  margin-top: 16px;
 }
-.hero-person p {
-  font-size: 12px;
-  line-height: 1.7;
-  color: var(--muted);
+.hero-speaker figcaption strong {
+  display: block;
+  font-size: 16px;
+}
+.hero-speaker figcaption > span {
   margin-top: 4px;
+}
+.hero-speaker figcaption a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding-block: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.hero-proof {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  max-width: none;
+  font-size: 14px;
+  color: var(--muted);
+}
+.hero-proof strong {
+  color: var(--ink);
 }
 .consulting-page .section {
   padding-block: 72px;
@@ -1300,7 +1338,11 @@ figcaption span {
     gap: 28px;
   }
   .consulting-hero {
+    grid-template-columns: 1fr;
     padding-top: 44px;
+  }
+  .hero-speaker {
+    width: min(460px, 100%);
   }
   .supporting-experience,
   .follow-on-options {
@@ -1338,23 +1380,12 @@ figcaption span {
     padding-block: 36px 44px;
   }
   .consulting-page .consulting-hero h1 {
-    font-size: clamp(40px, 10.2vw, 58px);
-    max-width: 16ch;
+    font-size: clamp(38px, 10.2vw, 52px);
+    max-width: none;
   }
   .hero-copy {
     font-size: 16px;
     margin-top: 24px;
-  }
-  .hero-specialty {
-    font-size: 12px;
-  }
-  .hero-actions {
-    gap: 8px;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-  .hero-person {
-    margin-top: 28px;
   }
   .consulting-page .section {
     padding-block: 44px;
