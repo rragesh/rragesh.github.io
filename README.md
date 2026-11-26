@@ -31,6 +31,8 @@ If the feed is unavailable, invalid, or empty, refresh fails without changing th
 
 ## Project pages
 
+Each project has a plain-language `intro`, descriptive `imageAlt`, search `summary`, and `sections` containing a `heading` and `paragraphs`. Explain the problem before introducing the engineering, define technical terms in context, and distinguish prototypes, simulations, and measured results. The builder still accepts the original flat `paragraphs` format for legacy imports. Publications, repositories, and demonstration links remain available for deeper reading.
+
 Edit `data/projects.json`, then regenerate the nine static project pages:
 
 ```sh

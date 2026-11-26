@@ -58,8 +58,9 @@ def import_legacy():
 def render(project):
     title = escape(project["title"])
     seo_title = escape(project.get("seoTitle", project["title"] + " | Ragesh Ramachandran"))
-    summary = project.get("summary", project["paragraphs"][0][:180])
+    summary = project.get("summary") or project.get("intro") or " ".join(project.get("paragraphs", []))[:180]
     description = escape(summary, quote=True)
+    image_alt = escape(project.get("imageAlt", project["title"]), quote=True)
     canonical = f"https://rragesh.github.io/projects/{project['slug']}.html"
     image = f"https://rragesh.github.io/img/{project['image']}"
     person = {"@type": "Person", "@id": "https://rragesh.github.io/#ragesh", "name": "Ragesh Ramachandran", "url": "https://rragesh.github.io/"}
@@ -68,9 +69,22 @@ def render(project):
         {"@type": "CreativeWork", "@id": canonical + "#project", "name": project["title"], "description": summary, "url": canonical, "image": image, "author": {"@id": person["@id"]}},
         person
     ]}, ensure_ascii=False).replace("<", "\\u003c")
-    paragraphs = "\n".join(f"<p>{escape(p)}</p>" for p in project["paragraphs"])
+    intro = f'<p class="project-lead">{escape(project["intro"])}</p>' if project.get("intro") else ""
+    sections = project.get("sections") or [{"heading": "About the project", "paragraphs": project.get("paragraphs", [])}]
+    body = "\n".join(
+        f'<section class="project-section"><h2>{escape(section["heading"])}</h2>'
+        + "".join(f"<p>{escape(p)}</p>" for p in section["paragraphs"])
+        + "</section>"
+        for section in sections
+    )
     links = "\n".join(f'<a class="button" href="{escape(link["url"], quote=True)}">{escape(link["label"])}</a>' for link in project["links"])
-    videos = "\n".join(f'<iframe class="project-video" src="https://www.youtube-nocookie.com/embed/{video}" title="{title} — demonstration {i + 1}" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>' for i, video in enumerate(project["videos"]))
+    videos = "\n".join(
+        f'<iframe class="project-video" src="https://www.youtube-nocookie.com/embed/{video}" title="{title} — demonstration {i + 1}" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>'
+        f'<a class="text-link" href="https://www.youtube.com/watch?v={video}">Watch demonstration {i + 1} on YouTube <span class="arrow diagonal" aria-hidden="true"></span></a>'
+        for i, video in enumerate(project["videos"])
+    )
+    if videos:
+        videos = f'<section class="project-section"><h2>Watch the project in motion</h2>{videos}</section>'
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -86,12 +100,12 @@ def render(project):
   <meta property="og:description" content="{description}">
   <meta property="og:url" content="{canonical}">
   <meta property="og:image" content="{image}">
-  <meta property="og:image:alt" content="{title}">
+  <meta property="og:image:alt" content="{image_alt}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{seo_title}">
   <meta name="twitter:description" content="{description}">
   <meta name="twitter:image" content="{image}">
-  <meta name="twitter:image:alt" content="{title}">
+  <meta name="twitter:image:alt" content="{image_alt}">
   <meta name="theme-color" content="#dceef3">
   <link rel="canonical" href="{canonical}">
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
@@ -105,8 +119,9 @@ def render(project):
   <main id="main" class="project-page container">
     <h1>{title}</h1>
     <p class="project-context">{escape(project['context'])}</p>
-    <img class="project-hero-image" src="../img/{project['image']}" alt="{title}" fetchpriority="high">
-    <div class="project-body"><h2>About the project</h2>{paragraphs}<div class="project-links">{links}<a class="text-link" href="{LINKEDIN}">Connect on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a></div>{videos}</div>
+    {intro}
+    <img class="project-hero-image" src="../img/{project['image']}" alt="{image_alt}" fetchpriority="high">
+    <div class="project-body">{body}<div class="project-links">{links}<a class="text-link" href="{LINKEDIN}">Discuss robotics on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a></div>{videos}</div>
     <div class="project-return"><a class="text-link" href="../index.html#work">Explore more projects <span class="arrow" aria-hidden="true"></span></a><a class="text-link" href="../index.html#writing">Read my engineering notes <span class="arrow" aria-hidden="true"></span></a></div>
   </main>
   <footer class="site-footer container"><p>© <span id="year">2026</span> Ragesh Ramachandran</p><nav aria-label="Social links"><a href="{LINKEDIN}">LinkedIn</a><a href="https://rragesh.medium.com/">Medium</a><a href="https://github.com/EnigmaRagesh">GitHub</a></nav></footer>

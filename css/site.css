@@ -789,6 +789,15 @@ figcaption span {
   font-size: 13px;
   margin-top: 20px;
 }
+.project-lead {
+  max-width: 65ch;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+.project-section + .project-section {
+  margin-top: 40px;
+}
 .project-hero-image {
   width: 100%;
   max-height: 540px;
