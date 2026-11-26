@@ -10,9 +10,9 @@ The user explicitly supplied:
 - Fraunhofer IPA / ROS-Industrial: ROS 2 systems, CI/CD automation, and factory deployments with industry partners.
 - NODE Robotics: the original deployment range is superseded by the owner’s Q4 2026 CV, which states infrastructure supporting more than 1,500 production robots.
 - Founder of Robotair: robotics DevOps infrastructure, packaging, OTA updates, monitoring.
-- ROSCon India talk on DevOps for ROS.
+- ROSCon India 2023 talk, with an owner-supplied photograph and recording link.
 
-The fleet count is the user's experience claim, not independently verified from a public employment record. No talk year, recording URL, client names, guaranteed outcomes, or current availability was inferred. The journey’s historical dates come from the owner’s private CV, summarized below.
+The fleet count is the user's experience claim, not independently verified from a public employment record. The owner supplied the talk year and recording URL; no client names, guaranteed outcomes, or current availability was inferred. The journey’s historical dates come from the owner’s private CV, summarized below.
 
 ## Private CV and direct owner update · 2026-11-26
 
@@ -45,7 +45,9 @@ Current-work disclosure is restricted by the owner's explicit instruction. The p
 6. https://node-robotics.com/
    - Describes industrial robot software and production deployments. Its present company-wide fleet figures must not be used as evidence of Ragesh's personal deployment scope.
 7. https://rosconindia.in/
-   - Confirms the conference/community. This is an event link, not an independently located recording or speaker listing for Ragesh's talk.
+    - Confirms the conference/community.
+8. https://www.youtube.com/watch?v=p302LwKIhQg
+    - Owner-supplied recording. YouTube’s public oEmbed metadata confirms the title “Ragesh Ramachandran - robotair.io | Tech Talk @ROSCon India 2023” and channel “ROSCon India”. The supplied speaking photograph replaces the old portrait; source metadata is recorded in the optimized files and `data/assets.md`.
 
 ## Mission framing
 

@@ -6,7 +6,7 @@ Help search systems and visitors identify **Ragesh Ramachandran** as a **Robotic
 
 ## Implemented
 
-- An outcome-led H1 with the full name in the header and hero identity, specialty in the biography, consulting-focused title/description/social metadata, and a consistent Person entity. The homepage social image is Ragesh’s existing portrait rather than the historical rover project.
+- An outcome-led H1 with the full name in the header and hero identity, specialty in the biography, consulting-focused title/description/social metadata, and a consistent Person entity. The homepage social image is the owner-supplied ROSCon India 2023 speaking photograph.
 - Specific service coverage: ROS/ROS 2 CI/CD, packaging, releases, OTA updates, fleet observability, incident response, and on-premise/hybrid/cloud infrastructure.
 - Owner-supplied professional experience at NODE Robotics, Robotair, Fraunhofer IPA, and ROS-Industrial, with public links to organizations and relevant published articles.
 - Visible buying FAQs cover engagement fit, implementation, team collaboration, scope/fees, and the relationship to Robotair. ProfilePage, Person, Service, WebSite, and FAQ structured data reflect page content.
@@ -51,7 +51,7 @@ These are intent-based content targets, not measured keyword-volume or ranking c
 1. Merge the upstream PR into `rragesh/rragesh.github.io` and verify the resulting public HTML. A push to the fork alone does not publish this domain.
 2. In Google Search Console, verify the existing property, submit `https://rragesh.github.io/sitemap.xml`, and inspect/request indexing for the homepage. Use Bing Webmaster Tools for Bing discovery. These account-side actions require the owner's access; they were not performed by this change.
 3. Keep the website link, professional title, and core biography consistent on LinkedIn, Medium, GitHub, and Robotair. Where possible, obtain links from real conference speaker pages, professional biographies, and relevant project pages.
-4. Add a public ROSCon talk/recording link and detailed, permission-cleared deployment case studies when available. Describe context, personal contribution, technical decisions, and measured outcomes; do not invent customer details or fleet reliability metrics.
+4. The owner-supplied ROSCon India 2023 recording is linked from the homepage. Add detailed, permission-cleared deployment case studies when available. Describe context, personal contribution, technical decisions, and measured outcomes; do not invent customer details or fleet reliability metrics.
 5. Record a Search Console baseline and compare branded and non-branded impressions, queries, clicks, and click-through rate after recrawling. Review monthly. AI Overviews and AI Mode traffic are included in Google's overall Web search reporting; they are not a separate guaranteed acquisition channel.
 6. Monitor qualified inbound LinkedIn conversations, proposals, and won engagements alongside search traffic and Medium referrals. Record which problem and engagement brought the buyer in; a click is not a qualified inquiry. The Medium links already carry referral parameters; no new tracking service was added.
 
