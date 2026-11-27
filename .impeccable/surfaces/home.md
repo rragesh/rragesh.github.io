@@ -12,6 +12,6 @@ STORY: Meet a robotics engineer and founder whose work makes robots dependable. 
 
 FIRST VIEWPORT: Shared navigation with current-page indication; “I build dependable systems for robotics and physical AI”; concise first-person positioning; a primary Work link and clear Story/Writing alternatives. The ROSCon speaker photo and talk link sit beside the copy on desktop. On mobile, a compact horizontal photo-and-identity row follows the introduction and precedes the discovery links; retain the rectangular portrait and visible talk link. The owner removed the separate experience-metrics line so the hero ends with discovery. No long sections follow.
 
-FORM: Code-led continuation of the established editorial identity. Dedicated static pages replace homepage scrolling: about.html, work.html, writing.html. Shared navigation is visible without a menu interaction. Medium previews and project links are directly visible on their pages. End-of-page links continue discovery or open LinkedIn. Old homepage fragment URLs forward to the new destinations.
+FORM: Code-led continuation of the established editorial identity. Dedicated static pages replace homepage scrolling: about.html, work.html, writing.html. Shared navigation is visible without a menu interaction. Medium previews and project links are directly visible on their pages. End-of-page links continue discovery or open LinkedIn.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

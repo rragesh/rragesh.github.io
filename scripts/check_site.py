@@ -3,7 +3,7 @@
 
 Runs against the build output directory (default: dist/, override with --dist PATH)
 so it validates exactly what GitHub Pages will serve: pages, bundled assets,
-compatibility redirects, the sitemap, and robots.txt. Run `npm run build` first.
+published HTML files, the sitemap, and robots.txt. Run `npm run build` first.
 """
 
 import argparse
@@ -21,15 +21,8 @@ BASE = 'https://rragesh.github.io/'
 LINKEDIN = 'https://www.linkedin.com/in/ragesh-ramachandran/'
 MAIN_PAGES = ('index.html', 'about.html', 'work.html', 'writing.html', 'how-i-work.html')
 NAVIGATION = ['/', '/about.html', '/work.html', '/writing.html', '/how-i-work.html', LINKEDIN]
-REDIRECTS = {
-    'blog-home.html': 'writing.html',
-    'blog-single.html': 'writing.html',
-    'contact.html': 'work.html',
-    'elements.html': 'index.html',
-    'portfolio.html': 'about.html#origins',
-    'portfolio-details.html': 'about.html#origins',
-    'services.html': 'work.html#expertise',
-}
+# HTML files that are published but are not portfolio pages.
+NON_PAGE_HTML = {'google84685ae9ed10fc43.html'}
 PROJECT_LINK = re.compile(r'/projects/[^/]+\.html')
 
 
@@ -328,24 +321,9 @@ def check(dist):
                 check_references(child)
     check_references(graph)
 
-    for name, destination in REDIRECTS.items():
-        path = dist / name
-        if not path.is_file():
-            errors.append(f'{name}: Missing compatibility redirect')
-            continue
-        redirect = Page(path)
-        redirect.feed(path.read_text())
-        if 'noindex' not in redirect.meta.get('robots', ''):
-            redirect.errors.append('Compatibility redirect must not be indexed')
-        if redirect.meta.get('refresh') != f'0;url={destination}':
-            redirect.errors.append(f'Expected an immediate redirect to {destination}')
-        expected_canonical = BASE if destination == 'index.html' else BASE + urlsplit(destination).path
-        if redirect.canonical != [expected_canonical]:
-            redirect.errors.append('Compatibility redirect must use its destination page canonical')
-        if destination not in redirect.links:
-            redirect.errors.append('Compatibility redirect needs a fallback link to its destination')
-        redirect.errors.extend(local_url_errors(dist, path, [*redirect.urls, destination], pages))
-        errors.extend(f'{name}: {error}' for error in redirect.errors)
+    published = {path.relative_to(dist).as_posix() for path in dist.rglob('*.html')}
+    unexpected = published - {path.relative_to(dist).as_posix() for path in pages} - NON_PAGE_HTML
+    errors.extend(f'{name}: Unexpected published HTML file (not a canonical portfolio page)' for name in sorted(unexpected))
 
     stylesheets = sorted(dist.rglob('*.css'))
     if not stylesheets:
@@ -371,7 +349,7 @@ def check(dist):
         errors.append('robots.txt must advertise the canonical sitemap')
     assets = sorted({BASE + urlsplit(asset).path.lstrip('/') for page in pages.values() for asset in page.assets if not urlsplit(asset).netloc})
     for agent in ('Googlebot', 'bingbot', 'OAI-SearchBot', 'Claude-SearchBot', 'PerplexityBot'):
-        for url in [*locations, *assets, *[BASE + name for name in REDIRECTS]]:
+        for url in [*locations, *assets]:
             if not robots.can_fetch(agent, url):
                 errors.append(f'{agent} cannot crawl {url}')
     return errors, len(pages)
@@ -387,7 +365,7 @@ def main():
     errors, count = check(dist)
     if errors:
         raise SystemExit('\n'.join(errors))
-    print(f'Checked {count} built pages and {len(REDIRECTS)} redirects in {dist}: navigation, links, bundled assets, hero-only home, visible writing/projects, metadata, schema, sitemap, robots, redirects, and profile cleanup passed.')
+    print(f'Checked {count} built pages in {dist}: navigation, links, bundled assets, hero-only home, visible writing/projects, metadata, schema, sitemap, robots, published files, and profile cleanup passed.')
 
 
 if __name__ == '__main__':

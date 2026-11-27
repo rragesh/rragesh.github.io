@@ -11,7 +11,7 @@ The personal site of [Ragesh Ramachandran](https://rragesh.github.io/), organize
 - `how-i-work.html` — How I work: working principles, communication preferences, team fit, and a direct LinkedIn invitation. Supporting source references live in development notes.
 - `projects/*.html` — individual projects, with My story active in navigation and breadcrumbs/return links to their story chapter.
 
-Every page offers Home, My story, Work, Writing, How I work, and **Get in touch**, which links directly to LinkedIn. End-of-page links connect the reading paths. Work introduces the engagement options, supports them with professional experience and an engineering-story invitation, then answers questions before contact. The FAQ covers scope, collaboration, and handover; the old `work.html#process` bookmark lands at its heading. The current employer and position remain private. Old homepage fragment links such as `/#writing` and `/#work` forward to their new pages when JavaScript is available; navigation still works without JavaScript.
+Every page offers Home, My story, Work, Writing, How I work, and **Get in touch**, which links directly to LinkedIn. End-of-page links connect the reading paths. Work introduces the engagement options, supports them with professional experience and an engineering-story invitation, then answers questions before contact. The FAQ covers scope, collaboration, and handover. The current employer and position remain private. Navigation works without JavaScript.
 
 The site is built with [Astro](https://astro.build/) as fully static HTML. Pages ship no framework JavaScript; only the small progressive-enhancement script runs in the browser.
 
@@ -24,7 +24,7 @@ The site is built with [Astro](https://astro.build/) as fully static HTML. Pages
 | Shared `<head>`, header, footer | `src/layouts/BaseLayout.astro`, `src/components/` |
 | Styles and browser script | `src/styles/site.css`, `src/scripts/site.js` (bundled and fingerprinted) |
 | Images to optimize | `src/assets/` (served as responsive AVIF/WebP) |
-| Files served as-is | `public/` (fonts, favicon, PDFs, redirects, robots.txt) |
+| Files served as-is | `public/` (fonts, favicon, PDFs, social images, robots.txt, Search Console verification) |
 
 `build.format: "file"` keeps every historical URL (`about.html`, `projects/Saksha.html`, …). Write internal links as root-absolute paths such as `/work.html` and `/about.html#origins`. In `.astro` markup, keep inline elements on the same line as neighbouring text: Astro's HTML compression removes whitespace that contains a line break next to a tag, which would run words together.
 
@@ -63,21 +63,11 @@ Each project has a plain-language `intro`, descriptive `imageAlt`, search `summa
 
 Edit `src/data/projects.json`; the build regenerates the nine project pages. The schema in `src/content.config.ts` fails the build on a missing image, an unknown story chapter, empty text, or unexpected fields. `image` paths are relative to the JSON file (for example `../assets/work/pro1.JPG`); the page serves responsive AVIF/WebP versions and a 1200px social preview instead of the original photo.
 
-Existing public project URLs and project-publication PDFs are retained. My story links every project exactly once through two captioned visual examples, an inline docking link, and small contextual link groups. Work's former `#projects` anchor remains as a visible invitation to the story, including without JavaScript. The résumé PDF remains private; professional profile links point to [LinkedIn](https://www.linkedin.com/in/ragesh-ramachandran/). `about.html` connects planetary rovers, control and recovery, industrial robotics, Robotair, production fleets, and current software-factory work through first-person narrative. The current employer, position, internal product names, operational metrics, and personal details from the private CV are not published.
+Existing public project URLs and project-publication PDFs are retained. My story links every project exactly once through two captioned visual examples, an inline docking link, and small contextual link groups. Work's `#projects` section is a short invitation to the story. The résumé PDF remains private; professional profile links point to [LinkedIn](https://www.linkedin.com/in/ragesh-ramachandran/). `about.html` connects planetary rovers, control and recovery, industrial robotics, Robotair, production fleets, and current software-factory work through first-person narrative. The current employer, position, internal product names, operational metrics, and personal details from the private CV are not published.
 
 ## Legacy cleanup
 
-The old Colorlib demo pages are lightweight, JavaScript-free redirects in `public/`, copied to the build unchanged:
-
-| Old route | Destination |
-| --- | --- |
-| `blog-home.html`, `blog-single.html` | `writing.html` |
-| `contact.html` | `work.html` (collaboration and LinkedIn contact) |
-| `portfolio.html`, `portfolio-details.html` | `about.html#origins` |
-| `services.html` | `work.html#expertise` |
-| `elements.html` | `index.html` |
-
-Bootstrap, jQuery and its plugins, template Sass/CSS, icon fonts, the PHP mail handler, bundled template documentation, and unreferenced images have been removed. The site uses `src/styles/site.css`, `src/scripts/site.js`, and self-hosted Source Serif 4 and Source Sans 3 fonts. Project data is maintained directly in `src/data/projects.json`. `about.html` now serves the personal story.
+The old Colorlib demo routes (`blog-home.html`, `blog-single.html`, `contact.html`, `elements.html`, `portfolio.html`, `portfolio-details.html`, `services.html`) and the forwarding of old homepage fragments such as `/#writing` have been retired; those URLs return 404. Bootstrap, jQuery and its plugins, template Sass/CSS, icon fonts, the PHP mail handler, bundled template documentation, and unreferenced images have been removed. The site uses `src/styles/site.css`, `src/scripts/site.js`, and self-hosted Source Serif 4 and Source Sans 3 fonts. Project data is maintained directly in `src/data/projects.json`. `about.html` now serves the personal story.
 
 Source photography is documented in `data/assets.md`. Project-publication PDFs are retained; the original template credit was removed from public footers at the owner's request.
 
@@ -99,7 +89,7 @@ python3 scripts/check_site.py              # checks dist/ (or --dist PATH)
 python3 -m unittest discover -s tests -v   # live-publication checker tests
 ```
 
-`sitemap.xml` is generated from the page metadata and the projects collection (`src/pages/sitemap.xml.ts`). The site checker validates the built output and covers consistent navigation/current-page state, a hero-only Home, visible Medium previews, all nine projects linked from their declared story chapters, project breadcrumbs/return paths, the Work story bridge, local targets, stylesheet assets, link behavior, headings, image alt text, canonical URLs, sitemap coverage, entity references, FAQ parity, compatibility redirect destinations/fallback links/noindex directives, and résumé/Instagram removal. It also checks bundled CSS/JS, font URLs inside the built CSS, responsive image sources, and that social images exist in the build. Feed tests cover entity decoding, invalid URLs, empty/malformed feeds, tracking pixels, and leaving files untouched when a refresh fails. Link-policy tests cover safe targets, navigation, script preservation, and idempotence. The `Check website` workflow runs these checks on pull requests; `Deploy website` runs them before every deployment.
+`sitemap.xml` is generated from the page metadata and the projects collection (`src/pages/sitemap.xml.ts`). The site checker validates the built output and covers consistent navigation/current-page state, a hero-only Home, visible Medium previews, all nine projects linked from their declared story chapters, project breadcrumbs/return paths, the Work story bridge, local targets, stylesheet assets, link behavior, headings, image alt text, canonical URLs, sitemap coverage, entity references, FAQ parity, that no HTML other than the canonical pages (and the Search Console verification file) is published, and résumé/Instagram removal. It also checks bundled CSS/JS, font URLs inside the built CSS, responsive image sources, and that social images exist in the build. Feed tests cover entity decoding, invalid URLs, empty/malformed feeds, tracking pixels, and leaving files untouched when a refresh fails. Link-policy tests cover safe targets, navigation, script preservation, and idempotence. The `Check website` workflow runs these checks on pull requests; `Deploy website` runs them before every deployment.
 
 It also verifies unique page titles/descriptions, social-preview images, project authorship, the Robotair founder relationship, and crawler access. After deployment, run `python scripts/check_live.py` to verify the **public** site rather than just the working copy. Publication tests ensure this check rejects stale pages, incorrect canonicals, and indexing restrictions.
 
