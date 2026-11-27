@@ -17,7 +17,7 @@ const projects = defineCollection({
       title: text,
       intro: text,
       context: text,
-      /** Path relative to src/data/projects.json, e.g. "../assets/optimized/recharge.webp". A missing file fails the build. */
+      /** Path relative to src/data/projects.json, e.g. "../assets/work/recharge.jpeg". A missing file fails the build. */
       image: image(),
       imageAlt: text,
       sections: z.array(z.strictObject({ heading: text, paragraphs: z.array(text).min(1) })).min(1),

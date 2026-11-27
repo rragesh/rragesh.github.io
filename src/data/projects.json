@@ -7,7 +7,7 @@
     "title": "Autonomous docking: finding the way back to charge",
     "intro": "A robot that can patrol on its own also needs a way to return to its charger. This project built and tested that return-to-charge routine in simulation.",
     "context": "Ingeniarius · Coimbra, Portugal",
-    "image": "../assets/optimized/recharge.webp",
+    "image": "../assets/work/recharge.jpeg",
     "imageAlt": "A service robot with a touchscreen and illuminated face",
     "sections": [
       {
@@ -46,7 +46,7 @@
     "title": "Helping robots find their place indoors",
     "intro": "Before robots can work together, they need to agree on where they are. This project used overhead infrared cameras to give them a shared view of an indoor workspace.",
     "context": "École Centrale de Nantes · France",
-    "image": "../assets/optimized/localize.webp",
+    "image": "../assets/work/localize.png",
     "imageAlt": "The infrared-camera localization experiment for an indoor robot workspace",
     "sections": [
       {
@@ -85,7 +85,7 @@
     "title": "SAKSHA: teaching a robot by moving an arm",
     "intro": "What if showing a robot a movement were as direct as moving an arm yourself? SAKSHA explored that idea with two linked robotic arms and a record-and-replay workflow.",
     "context": "Amrita University · India",
-    "image": "../assets/optimized/saksha.webp",
+    "image": "../assets/work/saksha.jpg",
     "imageAlt": "The paired control and follower arms in the SAKSHA project",
     "sections": [
       {
@@ -124,7 +124,7 @@
     "title": "ASTRA: giving robots a shared view",
     "intro": "A robot on the ground and a robot in the air see different parts of the same place. ASTRA explored how those perspectives could be connected in a multi-robot system.",
     "context": "Amrita University · India",
-    "image": "../assets/optimized/astra.webp",
+    "image": "../assets/work/astra.jpg",
     "imageAlt": "Three small ASTRA ground-robot prototypes arranged outdoors",
     "sections": [
       {
@@ -198,7 +198,7 @@
     "title": "Phoenix II: one rover, fifteen people",
     "intro": "A planetary rover brings many engineering disciplines into one machine. I led a 15-person team building Phoenix II for the 2016 United Kingdom Rover Challenge.",
     "context": "United Kingdom Rover Challenge · Manchester · 2016",
-    "image": "../assets/optimized/roveruk.webp",
+    "image": "../assets/work/roveruk.jpg",
     "imageAlt": "Phoenix II planetary-rover prototype with a robotic arm and articulated wheels",
     "sections": [
       {
