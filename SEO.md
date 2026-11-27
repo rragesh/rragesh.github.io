@@ -22,11 +22,13 @@ Help visitors discover **Ragesh Ramachandran**, understand his work and thinking
 ## Readiness verification
 
 ```sh
-python -m unittest discover -s tests -v
-python scripts/check_site.py
+npm test
+npm run build
+python3 scripts/check_site.py
+python3 -m unittest discover -s tests -v
 ```
 
-After the original GitHub Pages site deploys, run:
+After the `Deploy website` workflow publishes the site, run:
 
 ```sh
 python scripts/check_live.py
@@ -34,7 +36,7 @@ python scripts/check_live.py
 
 This verifies the actual HTTP responses, canonical metadata, published structured identities, sitemap, and crawler access across every sitemap page. It fails if the old homepage still returns HTTP 200 without the new profile. It also checks `X-Robots-Tag` and HTML indexing directives. Passing means publication is technically accessible; it does not mean Google or an answer engine has indexed or recommended the site.
 
-For a local server, use `python scripts/check_live.py --base-url http://127.0.0.1:4173/`. Production canonicals are still expected in local HTML.
+For a local server, run `npm run preview` and use `python scripts/check_live.py --base-url http://localhost:4321/`. Production canonicals are still expected in local HTML.
 
 ## Query themes
 
@@ -49,7 +51,7 @@ These are intent-based content targets, not measured keyword-volume or ranking c
 
 ## Publication and measurement
 
-1. Merge the upstream PR into `rragesh/rragesh.github.io` and verify the resulting public HTML. A push to the fork alone does not publish this domain.
+1. Set **Settings → Pages → Source** to **GitHub Actions**, merge the PR into `rragesh/rragesh.github.io`, and verify the resulting public HTML with `scripts/check_live.py`. A push to a feature branch or fork does not publish this domain.
 2. In Google Search Console, verify the existing property, submit `https://rragesh.github.io/sitemap.xml`, and inspect/request indexing for the homepage. Use Bing Webmaster Tools for Bing discovery. These account-side actions require the owner's access; they were not performed by this change.
 3. Keep the website link, professional title, and core biography consistent on LinkedIn, Medium, GitHub, and Robotair. Where possible, obtain links from real conference speaker pages, professional biographies, and relevant project pages.
 4. The owner-supplied ROSCon India 2023 recording is linked from the homepage. Add detailed, permission-cleared deployment case studies when available. Describe context, personal contribution, technical decisions, and measured outcomes; do not invent customer details or fleet reliability metrics.
