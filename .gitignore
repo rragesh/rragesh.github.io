@@ -5,3 +5,6 @@ __pycache__/
 .impeccable/mocks/
 .impeccable/questions/
 .impeccable/config.local.json
+node_modules/
+dist/
+.astro/
