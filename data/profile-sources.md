@@ -34,7 +34,8 @@ Current-work disclosure is restricted by the owner's explicit instruction. The p
    - Public About excerpt identifies robotics/AI engineering focused on DevOps, deployment, and fleet operations.
    - Full employment details are masked behind sign-in; the site does not attempt to reconstruct them.
    - Public recommendations from Philipp Schnattinger and Mohammad Mujtahid support NODE collaboration, ROS navigation, GitLab CI/CD, Ansible, and cloud/edge infrastructure work.
-   - Exact quoted excerpt from Philipp: “He is an expert with Ansible and other deployment tooling.”
+    - Exact quoted excerpt from Philipp: “He is an expert with Ansible and other deployment tooling.”
+    - On 2026-11-27, the owner identified Philipp Schnattinger as CRO at NODE Robotics. His profile URL, `https://www.linkedin.com/in/philipp-schnattinger-5341b8110/`, was found in the recommendation on Ragesh's public LinkedIn page; the destination confirms his name and NODE Robotics affiliation. The CRO title is owner-provided, as the public profile masks the title.
    - Public structured article data supplies the titles and URLs below.
 2. https://www.linkedin.com/pulse/open-source-tools-robot-devops-pipeline-ragesh-ramachandran
    - “Open source tools in Robot DevOps pipeline”, listed on the profile as published 2023-01-27.
