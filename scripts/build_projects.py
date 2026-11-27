@@ -6,17 +6,24 @@ from html import escape
 import json
 from pathlib import Path
 from link_policy import open_in_new_tabs
+from site_layout import header, footer
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/projects.json"
 LINKEDIN = "https://www.linkedin.com/in/ragesh-ramachandran/"
+STORY_CHAPTERS = {"origins": "Rover years", "control": "Sensing & recovery"}
 
 
 def render(project):
+    chapter = project["storyChapter"]
+    chapter_title = escape(STORY_CHAPTERS[chapter])
+    story_route = f"../about.html#{chapter}"
+    return_label = escape("Return to " + STORY_CHAPTERS[chapter].lower())
     title = escape(project["title"])
     seo_title = escape(project.get("seoTitle", project["title"] + " | Ragesh Ramachandran"))
-    summary = project.get("summary", project["paragraphs"][0][:180])
+    summary = project.get("summary") or project.get("intro") or " ".join(project.get("paragraphs", []))[:180]
     description = escape(summary, quote=True)
+    image_alt = escape(project.get("imageAlt", project["title"]), quote=True)
     canonical = f"https://rragesh.github.io/projects/{project['slug']}.html"
     image = f"https://rragesh.github.io/img/{project['image']}"
     person = {"@type": "Person", "@id": "https://rragesh.github.io/#ragesh", "name": "Ragesh Ramachandran", "url": "https://rragesh.github.io/"}
@@ -25,9 +32,22 @@ def render(project):
         {"@type": "CreativeWork", "@id": canonical + "#project", "name": project["title"], "description": summary, "url": canonical, "image": image, "author": {"@id": person["@id"]}},
         person
     ]}, ensure_ascii=False).replace("<", "\\u003c")
-    paragraphs = "\n".join(f"<p>{escape(p)}</p>" for p in project["paragraphs"])
+    intro = f'<p class="project-lead">{escape(project["intro"])}</p>' if project.get("intro") else ""
+    sections = project.get("sections") or [{"heading": "About the project", "paragraphs": project.get("paragraphs", [])}]
+    body = "\n".join(
+        f'<section class="project-section"><h2>{escape(section["heading"])}</h2>'
+        + "".join(f"<p>{escape(p)}</p>" for p in section["paragraphs"])
+        + "</section>"
+        for section in sections
+    )
     links = "\n".join(f'<a class="button" href="{escape(link["url"], quote=True)}">{escape(link["label"])}</a>' for link in project["links"])
-    videos = "\n".join(f'<iframe class="project-video" src="https://www.youtube-nocookie.com/embed/{video}" title="{title} — demonstration {i + 1}" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>' for i, video in enumerate(project["videos"]))
+    videos = "\n".join(
+        f'<iframe class="project-video" src="https://www.youtube-nocookie.com/embed/{video}" title="{title} — demonstration {i + 1}" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>'
+        f'<a class="text-link" href="https://www.youtube.com/watch?v={video}">Watch demonstration {i + 1} on YouTube <span class="arrow diagonal" aria-hidden="true"></span></a>'
+        for i, video in enumerate(project["videos"])
+    )
+    if videos:
+        videos = f'<section class="project-section"><h2>Watch the project in motion</h2>{videos}</section>'
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -43,30 +63,41 @@ def render(project):
   <meta property="og:description" content="{description}">
   <meta property="og:url" content="{canonical}">
   <meta property="og:image" content="{image}">
-  <meta property="og:image:alt" content="{title}">
+  <meta property="og:image:alt" content="{image_alt}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{seo_title}">
   <meta name="twitter:description" content="{description}">
   <meta name="twitter:image" content="{image}">
-  <meta name="twitter:image:alt" content="{title}">
+  <meta name="twitter:image:alt" content="{image_alt}">
   <meta name="theme-color" content="#dceef3">
   <link rel="canonical" href="{canonical}">
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/source-serif-4-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/source-sans-3-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../css/site.css">
   <script src="../js/site.js" defer></script>
   <script type="application/ld+json">{structured}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header container"><a class="wordmark" href="../index.html" aria-label="Ragesh Ramachandran, home">ragesh<span>.</span></a><div class="project-header-links"><a class="text-link" href="../index.html#work">All projects <span class="arrow" aria-hidden="true"></span></a><button class="theme-toggle" type="button" aria-label="Switch to evening theme" aria-pressed="false" hidden><span class="theme-label">Evening</span></button></div></header>
+  {header("story", "../")}
   <main id="main" class="project-page container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../about.html">My story</a><span aria-hidden="true">/</span><a href="{story_route}">{chapter_title}</a></nav>
     <h1>{title}</h1>
     <p class="project-context">{escape(project['context'])}</p>
-    <img class="project-hero-image" src="../img/{project['image']}" alt="{title}" fetchpriority="high">
-    <div class="project-body"><h2>About the project</h2>{paragraphs}<div class="project-links">{links}<a class="text-link" href="{LINKEDIN}">Connect on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a></div>{videos}</div>
-    <div class="project-return"><a class="text-link" href="../index.html#work">Explore more projects <span class="arrow" aria-hidden="true"></span></a><a class="text-link" href="../index.html#writing">Read my engineering notes <span class="arrow" aria-hidden="true"></span></a></div>
+    {intro}
+    <img class="project-hero-image" src="../img/{project['image']}" alt="{image_alt}" fetchpriority="high">
+    <div class="project-body">{body}<div class="project-links">{links}</div>{videos}</div>
+    <section class="section continue-reading">
+      <h2>Continue the story.</h2>
+      <p>See how this chapter connects to the engineering work that followed—or get in touch if it connects with something you’re building.</p>
+      <div class="continue-actions">
+        <a class="button primary-button" href="{story_route}">{return_label} <span class="arrow" aria-hidden="true"></span></a>
+        <a class="text-link" href="{LINKEDIN}">Talk with me on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer container"><p>© <span id="year">2026</span> Ragesh Ramachandran</p><nav aria-label="Social links"><a href="{LINKEDIN}">LinkedIn</a><a href="https://rragesh.medium.com/">Medium</a><a href="https://github.com/EnigmaRagesh">GitHub</a></nav><p class="template-credit">Original portfolio template by <a href="https://colorlib.com">Colorlib</a>.</p></footer>
+  {footer("../")}
 </body>
 </html>
 '''
@@ -74,8 +105,18 @@ def render(project):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.parse_args()
+    parser.add_argument("--check", action="store_true", help="Fail when generated project pages are stale")
+    args = parser.parse_args()
     projects = json.loads(DATA.read_text())
+    stale = []
     for project in projects:
-        (ROOT / f"projects/{project['slug']}.html").write_text(open_in_new_tabs(render(project)))
-    print(f"Built {len(projects)} project pages.")
+        target = ROOT / f"projects/{project['slug']}.html"
+        output = open_in_new_tabs(render(project))
+        if args.check:
+            if not target.exists() or target.read_text() != output:
+                stale.append(project["slug"])
+        else:
+            target.write_text(output)
+    if stale:
+        raise SystemExit("Regenerate project pages with scripts/build_projects.py: " + ", ".join(stale))
+    print(f"{'Checked' if args.check else 'Built'} {len(projects)} project pages.")

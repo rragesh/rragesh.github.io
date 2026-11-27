@@ -1,0 +1,359 @@
+[
+  {
+    "key": "home",
+    "file": "index.html",
+    "title": "Ragesh Ramachandran | Robotics Engineer & Founder",
+    "description": "Explore the work, writing, and story of Ragesh Ramachandran: robotics engineering, reliable deployment, and the systems behind real-world robot fleets.",
+    "bodyClass": "consulting-page entry-page",
+    "image": "img/optimized/ragesh-roscon-2023-social.jpg",
+    "imageAlt": "Ragesh Ramachandran speaking at ROSCon India 2023",
+    "graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://rragesh.github.io/#website",
+        "url": "https://rragesh.github.io/",
+        "name": "Ragesh Ramachandran",
+        "publisher": {
+          "@id": "https://rragesh.github.io/#ragesh"
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://rragesh.github.io/#profile",
+        "url": "https://rragesh.github.io/",
+        "name": "Ragesh Ramachandran — Robotics engineer and founder",
+        "mainEntity": {
+          "@id": "https://rragesh.github.io/#ragesh"
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://rragesh.github.io/#ragesh",
+        "name": "Ragesh Ramachandran",
+        "givenName": "Ragesh",
+        "familyName": "Ramachandran",
+        "url": "https://rragesh.github.io/",
+        "image": "https://rragesh.github.io/img/optimized/ragesh-roscon-2023.webp",
+        "mainEntityOfPage": {
+          "@id": "https://rragesh.github.io/#profile"
+        },
+        "description": "Robotics engineer with 10+ years of experience spanning planetary rovers, industrial robot fleets, and software-factory infrastructure. Founder of Robotair, with deployment experience at NODE Robotics and robotics research and integration at Fraunhofer IPA and ROS-Industrial.",
+        "knowsAbout": [
+          "Robotics DevOps",
+          "Physical AI deployment",
+          "Robot fleet operations",
+          "ROS",
+          "ROS 2",
+          "CI/CD",
+          "OTA updates",
+          "Robot observability",
+          "Incident response",
+          "On-premise and cloud infrastructure",
+          "Ansible",
+          "GitLab CI/CD",
+          "Autonomous mobile robots",
+          "Automated guided vehicles"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/ragesh-ramachandran/",
+          "https://rragesh.medium.com/",
+          "https://github.com/EnigmaRagesh"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://rragesh.github.io/#robotair",
+        "name": "Robotair",
+        "url": "https://robotair.io/",
+        "founder": {
+          "@id": "https://rragesh.github.io/#ragesh"
+        },
+        "description": "A robotics DevOps infrastructure layer for application packaging, over-the-air updates, and monitoring."
+      }
+    ]
+  },
+  {
+    "key": "story",
+    "file": "about.html",
+    "title": "My Story | Ragesh Ramachandran",
+    "description": "From a rover team in Kerala to software infrastructure for defense robotics. Ragesh Ramachandran’s story of engineering, company-building, and deployment at scale.",
+    "bodyClass": "journey-page",
+    "image": "img/optimized/roveruk.webp",
+    "imageAlt": "Phoenix II, the planetary rover built for the 2016 United Kingdom Rover Challenge",
+    "graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://rragesh.github.io/about.html#profile",
+        "url": "https://rragesh.github.io/about.html",
+        "name": "My Story — Ragesh Ramachandran",
+        "description": "A personal story from a university rover team through industrial robotics, company-building, and production fleets to software-factory infrastructure for defense robotics.",
+        "mainEntity": {
+          "@id": "https://rragesh.github.io/#ragesh"
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://rragesh.github.io/#ragesh",
+        "name": "Ragesh Ramachandran",
+        "url": "https://rragesh.github.io/",
+        "image": "https://rragesh.github.io/img/optimized/ragesh-roscon-2023.webp",
+        "description": "Robotics engineer working across robot systems, production deployment, release infrastructure, and operational reliability.",
+        "sameAs": [
+          "https://www.linkedin.com/in/ragesh-ramachandran/",
+          "https://rragesh.medium.com/"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "work",
+    "file": "work.html",
+    "title": "Work & Collaboration | Ragesh Ramachandran",
+    "description": "Explore Ragesh Ramachandran’s software-factory work, production fleet experience, and robotics deployment engineering and leadership engagements.",
+    "bodyClass": "content-page work-page",
+    "image": "img/optimized/ragesh-roscon-2023-social.jpg",
+    "imageAlt": "Ragesh Ramachandran speaking at ROSCon India 2023",
+    "graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://rragesh.github.io/work.html#page",
+        "url": "https://rragesh.github.io/work.html",
+        "name": "Work — Ragesh Ramachandran",
+        "description": "Current software-factory infrastructure at a stealth defense robotics startup, including CI/CD, in-house OTA, ISO 9001 and CE process leadership, alongside earlier professional experience and collaboration options.",
+        "about": {
+          "@id": "https://rragesh.github.io/#ragesh"
+        },
+        "hasPart": {
+          "@id": "https://rragesh.github.io/work.html#faq"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://rragesh.github.io/#ragesh",
+        "name": "Ragesh Ramachandran",
+        "givenName": "Ragesh",
+        "familyName": "Ramachandran",
+        "url": "https://rragesh.github.io/",
+        "image": "https://rragesh.github.io/img/optimized/ragesh-roscon-2023.webp",
+        "mainEntityOfPage": {
+          "@id": "https://rragesh.github.io/#profile"
+        },
+        "description": "Robotics engineer with 10+ years of experience spanning planetary rovers, industrial robot fleets, and software-factory infrastructure. Founder of Robotair, with deployment experience at NODE Robotics and robotics research and integration at Fraunhofer IPA and ROS-Industrial.",
+        "knowsAbout": [
+          "Robotics DevOps",
+          "Physical AI deployment",
+          "Robot fleet operations",
+          "ROS",
+          "ROS 2",
+          "CI/CD",
+          "OTA updates",
+          "Robot observability",
+          "Incident response",
+          "On-premise and cloud infrastructure",
+          "Ansible",
+          "GitLab CI/CD",
+          "Autonomous mobile robots",
+          "Automated guided vehicles"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/ragesh-ramachandran/",
+          "https://rragesh.medium.com/",
+          "https://github.com/EnigmaRagesh"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://rragesh.github.io/#robotair",
+        "name": "Robotair",
+        "url": "https://robotair.io/",
+        "founder": {
+          "@id": "https://rragesh.github.io/#ragesh"
+        },
+        "description": "A robotics DevOps infrastructure layer for application packaging, over-the-air updates, and monitoring."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://rragesh.github.io/#robotics-deployment",
+        "name": "Robotics DevOps and Physical AI deployment",
+        "serviceType": "ROS and ROS 2 CI/CD, release engineering, OTA deployment, observability, and robot fleet operations",
+        "provider": {
+          "@id": "https://rragesh.github.io/#ragesh"
+        },
+        "url": "https://rragesh.github.io/work.html#expertise",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Robotics founders, CTOs, and engineering teams in the EU and US scaling from pilots to production fleets"
+        },
+        "description": "Deployment readiness assessments, production deployment engineering, and fractional Robotics DevOps leadership for robotics companies in the EU and US scaling beyond pilots. Scope, deliverables, timing, and fees are agreed before work begins."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://rragesh.github.io/work.html#faq",
+        "url": "https://rragesh.github.io/work.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "When is your involvement most valuable?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When deployment is becoming a constraint on the business: pilots are moving into customer environments, fleets are expanding, or release and recovery work depends on a few people. I focus on the infrastructure and engineering practices needed to make that next stage repeatable."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which engagement should we start with?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start with an assessment to clarify risks and priorities, production engineering to deliver an agreed system, or fractional leadership for ongoing technical direction. We choose the engagement around the outcome you need."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How will you work with our engineering team?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "I work with your engineers on the agreed scope, using your robot platform, deployment environment, and existing workflows as the starting point. We define access, decision-making responsibilities, and review milestones upfront, so ownership is clear throughout the engagement."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How are timing and fees determined?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each engagement is scoped individually. The work required, system complexity, access, and level of involvement shape the proposal. We agree deliverables, milestones, responsibilities, and fees before starting; implementation and ongoing leadership are scoped separately from an assessment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens at handover?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Implementation includes documentation and an engineering handover, covering the key decisions and workflows your team needs to operate and maintain the system. We agree handover expectations and any ongoing support as part of the scope."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does this relate to Robotair?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "I founded Robotair. This page describes working directly with me on deployment engineering and technical leadership. For a Robotair-specific inquiry, mention the product in your message so we can clarify the scope."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "writing",
+    "file": "writing.html",
+    "title": "Writing & Learning | Ragesh Ramachandran",
+    "description": "Read Ragesh Ramachandran’s Medium articles, engineering notes, and ROSCon talk on ROS 2, deployment, containers, and operating robot fleets.",
+    "bodyClass": "content-page writing-page",
+    "image": "img/optimized/ragesh-roscon-2023-social.jpg",
+    "imageAlt": "Ragesh Ramachandran speaking at ROSCon India 2023",
+    "graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://rragesh.github.io/writing.html#page",
+        "url": "https://rragesh.github.io/writing.html",
+        "name": "Writing and learning — Ragesh Ramachandran",
+        "about": {
+          "@id": "https://rragesh.github.io/#ragesh"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://rragesh.github.io/#ragesh",
+        "name": "Ragesh Ramachandran",
+        "givenName": "Ragesh",
+        "familyName": "Ramachandran",
+        "url": "https://rragesh.github.io/",
+        "image": "https://rragesh.github.io/img/optimized/ragesh-roscon-2023.webp",
+        "mainEntityOfPage": {
+          "@id": "https://rragesh.github.io/#profile"
+        },
+        "description": "Robotics engineer with 10+ years of experience spanning planetary rovers, industrial robot fleets, and software-factory infrastructure. Founder of Robotair, with deployment experience at NODE Robotics and robotics research and integration at Fraunhofer IPA and ROS-Industrial.",
+        "knowsAbout": [
+          "Robotics DevOps",
+          "Physical AI deployment",
+          "Robot fleet operations",
+          "ROS",
+          "ROS 2",
+          "CI/CD",
+          "OTA updates",
+          "Robot observability",
+          "Incident response",
+          "On-premise and cloud infrastructure",
+          "Ansible",
+          "GitLab CI/CD",
+          "Autonomous mobile robots",
+          "Automated guided vehicles"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/ragesh-ramachandran/",
+          "https://rragesh.medium.com/",
+          "https://github.com/EnigmaRagesh"
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "Open source tools in Robot DevOps pipeline",
+        "url": "https://www.linkedin.com/pulse/open-source-tools-robot-devops-pipeline-ragesh-ramachandran",
+        "author": {
+          "@id": "https://rragesh.github.io/#ragesh"
+        }
+      },
+      {
+        "@type": "Article",
+        "headline": "Continuous Integration and Deployment in Robotics",
+        "url": "https://www.linkedin.com/pulse/continuous-integration-deployment-robotics-ragesh-ramachandran",
+        "author": {
+          "@id": "https://rragesh.github.io/#ragesh"
+        }
+      },
+      {
+        "@type": "Article",
+        "headline": "Deploying ROS2 packages using Ansible",
+        "url": "https://www.linkedin.com/pulse/deploying-ros2-packages-using-ansible-ragesh-ramachandran",
+        "author": {
+          "@id": "https://rragesh.github.io/#ragesh"
+        }
+      }
+    ]
+  },
+  {
+    "key": "approach",
+    "file": "how-i-work.html",
+    "title": "How I Work | Ragesh Ramachandran",
+    "description": "Ragesh Ramachandran’s working principles: autonomy, trust, direct communication, accountability, fast learning, simplicity, first principles, and lasting leverage.",
+    "bodyClass": "journey-page approach-page",
+    "image": "img/optimized/ragesh-roscon-2023-social.jpg",
+    "imageAlt": "Ragesh Ramachandran speaking at ROSCon India 2023",
+    "graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://rragesh.github.io/how-i-work.html#profile",
+        "url": "https://rragesh.github.io/how-i-work.html",
+        "name": "How I work — Ragesh Ramachandran",
+        "description": "Ragesh’s self-described working principles, communication preferences, and team fit: high ownership, trust, a high quality bar, first-principles thinking, and evidence-led learning.",
+        "mainEntity": { "@id": "https://rragesh.github.io/#ragesh" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://rragesh.github.io/#ragesh",
+        "name": "Ragesh Ramachandran",
+        "url": "https://rragesh.github.io/",
+        "image": "https://rragesh.github.io/img/optimized/ragesh-roscon-2023.webp",
+        "description": "Robotics engineer and founder who values autonomy, trust, direct communication, accountability, fast learning, simplicity, first-principles thinking, and optimistic contrarianism.",
+        "sameAs": [
+          "https://www.linkedin.com/in/ragesh-ramachandran/",
+          "https://rragesh.medium.com/"
+        ]
+      }
+    ]
+  }
+]

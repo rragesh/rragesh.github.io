@@ -9,9 +9,9 @@ spec.loader.exec_module(publication)
 BASE = publication.CANONICAL
 
 
-def page(canonical=BASE):
+def page(canonical=BASE, kind='ProfilePage'):
     graph = {'@graph': [
-        {'@type': 'ProfilePage'},
+        {'@type': kind},
         {'@type': 'Person', '@id': BASE + '#ragesh'}
     ]}
     return f'<link rel="canonical" href="{canonical}"><meta name="description" content="Robotics deployment"><meta property="og:url" content="{canonical}"><script type="application/ld+json">{json.dumps(graph)}</script>'
@@ -24,6 +24,25 @@ class PublicationTests(unittest.TestCase):
 
     def test_accepts_published_profile(self):
         self.assertEqual(publication.validate_html(page(), BASE), [])
+
+    def test_accepts_journey_profile(self):
+        for route in ('about.html', 'how-i-work.html'):
+            with self.subTest(route=route):
+                canonical = BASE + route
+                self.assertEqual(publication.validate_html(page(canonical), canonical), [])
+
+    def test_collection_pages_require_their_own_published_type(self):
+        for route in ('work.html', 'writing.html'):
+            canonical = BASE + route
+            with self.subTest(route=route):
+                self.assertEqual(publication.validate_html(page(canonical, 'CollectionPage'), canonical), [])
+                errors = publication.validate_html(page(canonical), canonical)
+                self.assertTrue(any('CollectionPage structured data not published' in error for error in errors))
+
+    def test_rejects_old_about_redirect(self):
+        document = '<meta http-equiv="refresh" content="0;url=index.html#about">' + page()
+        errors = publication.validate_html(document, BASE + 'about.html')
+        self.assertIn('canonical URL missing or incorrect', errors)
 
     def test_rejects_header_and_html_indexing_blocks(self):
         for document, header in ((page(), 'noindex'), (page() + '<meta name="robots" content="none">', ''), (page(), 'nosnippet')):

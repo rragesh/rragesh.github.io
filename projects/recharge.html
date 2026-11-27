@@ -3,42 +3,63 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ROS Autonomous Docking | Ragesh Ramachandran</title>
-  <meta name="description" content="Ragesh Ramachandran&#x27;s ROS autonomous docking project for service robots at Ingeniarius, covering charging-station navigation and simulation in Gazebo.">
+  <title>Autonomous Robot Charging | Ragesh Ramachandran</title>
+  <meta name="description" content="Helping a patrol robot find its charger: Ragesh Ramachandran’s ROS docking routine for the STOP project, developed and tested in Gazebo simulation.">
   <meta name="author" content="Ragesh Ramachandran">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Ragesh Ramachandran">
-  <meta property="og:title" content="ROS Autonomous Docking | Ragesh Ramachandran">
-  <meta property="og:description" content="Ragesh Ramachandran&#x27;s ROS autonomous docking project for service robots at Ingeniarius, covering charging-station navigation and simulation in Gazebo.">
+  <meta property="og:title" content="Autonomous Robot Charging | Ragesh Ramachandran">
+  <meta property="og:description" content="Helping a patrol robot find its charger: Ragesh Ramachandran’s ROS docking routine for the STOP project, developed and tested in Gazebo simulation.">
   <meta property="og:url" content="https://rragesh.github.io/projects/recharge.html">
   <meta property="og:image" content="https://rragesh.github.io/img/optimized/recharge.webp">
-  <meta property="og:image:alt" content="Development of an autonomous docking ROS routine for the STOP project">
+  <meta property="og:image:alt" content="A service robot with a touchscreen and illuminated face">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ROS Autonomous Docking | Ragesh Ramachandran">
-  <meta name="twitter:description" content="Ragesh Ramachandran&#x27;s ROS autonomous docking project for service robots at Ingeniarius, covering charging-station navigation and simulation in Gazebo.">
+  <meta name="twitter:title" content="Autonomous Robot Charging | Ragesh Ramachandran">
+  <meta name="twitter:description" content="Helping a patrol robot find its charger: Ragesh Ramachandran’s ROS docking routine for the STOP project, developed and tested in Gazebo simulation.">
   <meta name="twitter:image" content="https://rragesh.github.io/img/optimized/recharge.webp">
-  <meta name="twitter:image:alt" content="Development of an autonomous docking ROS routine for the STOP project">
+  <meta name="twitter:image:alt" content="A service robot with a touchscreen and illuminated face">
   <meta name="theme-color" content="#dceef3">
   <link rel="canonical" href="https://rragesh.github.io/projects/recharge.html">
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/source-serif-4-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/source-sans-3-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../css/site.css">
   <script src="../js/site.js" defer></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://rragesh.github.io/projects/recharge.html#webpage", "url": "https://rragesh.github.io/projects/recharge.html", "name": "Development of an autonomous docking ROS routine for the STOP project", "description": "Ragesh Ramachandran's ROS autonomous docking project for service robots at Ingeniarius, covering charging-station navigation and simulation in Gazebo.", "inLanguage": "en", "mainEntity": {"@id": "https://rragesh.github.io/projects/recharge.html#project"}}, {"@type": "CreativeWork", "@id": "https://rragesh.github.io/projects/recharge.html#project", "name": "Development of an autonomous docking ROS routine for the STOP project", "description": "Ragesh Ramachandran's ROS autonomous docking project for service robots at Ingeniarius, covering charging-station navigation and simulation in Gazebo.", "url": "https://rragesh.github.io/projects/recharge.html", "image": "https://rragesh.github.io/img/optimized/recharge.webp", "author": {"@id": "https://rragesh.github.io/#ragesh"}}, {"@type": "Person", "@id": "https://rragesh.github.io/#ragesh", "name": "Ragesh Ramachandran", "url": "https://rragesh.github.io/"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://rragesh.github.io/projects/recharge.html#webpage", "url": "https://rragesh.github.io/projects/recharge.html", "name": "Autonomous docking: finding the way back to charge", "description": "Helping a patrol robot find its charger: Ragesh Ramachandran’s ROS docking routine for the STOP project, developed and tested in Gazebo simulation.", "inLanguage": "en", "mainEntity": {"@id": "https://rragesh.github.io/projects/recharge.html#project"}}, {"@type": "CreativeWork", "@id": "https://rragesh.github.io/projects/recharge.html#project", "name": "Autonomous docking: finding the way back to charge", "description": "Helping a patrol robot find its charger: Ragesh Ramachandran’s ROS docking routine for the STOP project, developed and tested in Gazebo simulation.", "url": "https://rragesh.github.io/projects/recharge.html", "image": "https://rragesh.github.io/img/optimized/recharge.webp", "author": {"@id": "https://rragesh.github.io/#ragesh"}}, {"@type": "Person", "@id": "https://rragesh.github.io/#ragesh", "name": "Ragesh Ramachandran", "url": "https://rragesh.github.io/"}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header container"><a class="wordmark" href="../index.html" aria-label="Ragesh Ramachandran, home" target="_blank" rel="noopener">ragesh<span>.</span></a><div class="project-header-links"><a class="text-link" href="../index.html#work" target="_blank" rel="noopener">All projects <span class="arrow" aria-hidden="true"></span></a><button class="theme-toggle" type="button" aria-label="Switch to evening theme" aria-pressed="false" hidden><span class="theme-label">Evening</span></button></div></header>
+  <header class="site-header container page-header">
+      <a class="quiet-name" href="../index.html" aria-label="Ragesh Ramachandran, home" target="_blank" rel="noopener">Ragesh Ramachandran</a>
+      <nav class="header-nav" aria-label="Main navigation"><a href="../index.html" target="_blank" rel="noopener">Home</a><a href="../about.html" aria-current="true" target="_blank" rel="noopener">My story</a><a href="../work.html" target="_blank" rel="noopener">Work</a><a href="../writing.html" target="_blank" rel="noopener">Writing</a><a href="../how-i-work.html" target="_blank" rel="noopener">How I work</a><a href="https://www.linkedin.com/in/ragesh-ramachandran/" aria-label="Get in touch on LinkedIn" target="_blank" rel="noopener">Get in touch <span class="arrow diagonal" aria-hidden="true"></span></a></nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to evening theme" aria-pressed="false" hidden>
+        <svg class="sun-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" /></svg>
+        <span class="theme-label">Evening</span>
+      </button>
+    </header>
   <main id="main" class="project-page container">
-    <h1>Development of an autonomous docking ROS routine for the STOP project</h1>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../about.html" target="_blank" rel="noopener">My story</a><span aria-hidden="true">/</span><a href="../about.html#control" target="_blank" rel="noopener">Sensing &amp; recovery</a></nav>
+    <h1>Autonomous docking: finding the way back to charge</h1>
     <p class="project-context">Ingeniarius · Coimbra, Portugal</p>
-    <img class="project-hero-image" src="../img/optimized/recharge.webp" alt="Development of an autonomous docking ROS routine for the STOP project" fetchpriority="high">
-    <div class="project-body"><h2>About the project</h2><p>STOP robot is a single-floor multi-robot patrol system with a small team, focusing mainly on inter-robot communication to coordinate distributed decision-making and optimize patrolling actions performed individually by mobile robots, but also including automatic deployment features and programmed and staged stop of the robots for automatic battery charging.</p>
-<p>The task was to develop a service routine for the automatic battery charging of these multi-robots. The charging station is located in Specific locations in the patrolling area. Whenever the robot&#x27;s battery level falls below a threshold value it looks for the nearest docking station and then navigates to the location to dock itself for charging.</p>
-<p>ROS was chosen for the application development because the entire software package for the robot was developed in ROS. Custom ROS service is created, which when called sends the location of the nearest docking station to the robot. Once the robot succesfully docks to the charding station it replies back the charging state. To navigate the robot from its current position to its docking station navigation stack of ROS was used. The entire application was developed and succesfully simulated in Gazebo.</p><div class="project-links"><a class="button" href="https://github.com/EnigmaRagesh/ctcv_gazebo" target="_blank" rel="noopener">Source on GitHub</a>
-<a class="button" href="http://stop.ingeniarius.pt/" target="_blank" rel="noopener">Project website</a><a class="text-link" href="https://www.linkedin.com/in/ragesh-ramachandran/" target="_blank" rel="noopener">Connect on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a></div></div>
-    <div class="project-return"><a class="text-link" href="../index.html#work" target="_blank" rel="noopener">Explore more projects <span class="arrow" aria-hidden="true"></span></a><a class="text-link" href="../index.html#writing" target="_blank" rel="noopener">Read my engineering notes <span class="arrow" aria-hidden="true"></span></a></div>
+    <p class="project-lead">A robot that can patrol on its own also needs a way to return to its charger. This project built and tested that return-to-charge routine in simulation.</p>
+    <img class="project-hero-image" src="../img/optimized/recharge.webp" alt="A service robot with a touchscreen and illuminated face" fetchpriority="high">
+    <div class="project-body"><section class="project-section"><h2>The quiet problem behind an autonomous patrol</h2><p>Imagine a robot halfway through its patrol when its battery starts to run low. Finding the way back to a charging station is part of keeping that robot useful throughout its operating cycle.</p><p>The STOP project used a small team of robots to patrol a single floor. My task was to develop the software routine that would take a robot to a charging station when its battery fell below a chosen threshold.</p></section>
+<section class="project-section"><h2>Turning a charging request into a journey home</h2><p>The routine identified the nearest charging station and passed its location to the robot’s navigation software. Once the robot docked, it returned its charging status so the rest of the system could tell what had happened.</p><p>I used ROS—the Robot Operating System, a framework that connects robot software components—to fit the routine into the existing application. A ROS service provided the request-and-response interface, while the ROS navigation stack handled travel to the station.</p></section>
+<section class="project-section"><h2>Testing the complete sequence</h2><p>The application was developed and successfully tested in Gazebo, a virtual environment for simulating robots. That made it possible to exercise the return-to-charge sequence as a connected workflow.</p><p>The useful result was a routine that linked battery state, navigation, docking, and charging feedback. It addressed an everyday operational need: giving the robot a defined way to stop working and recover its energy.</p></section><div class="project-links"><a class="button" href="https://github.com/EnigmaRagesh/ctcv_gazebo" target="_blank" rel="noopener">Explore the code</a>
+<a class="button" href="http://stop.ingeniarius.pt/" target="_blank" rel="noopener">About the STOP project</a></div></div>
+    <section class="section continue-reading">
+      <h2>Continue the story.</h2>
+      <p>See how this chapter connects to the engineering work that followed—or get in touch if it connects with something you’re building.</p>
+      <div class="continue-actions">
+        <a class="button primary-button" href="../about.html#control" target="_blank" rel="noopener">Return to sensing &amp; recovery <span class="arrow" aria-hidden="true"></span></a>
+        <a class="text-link" href="https://www.linkedin.com/in/ragesh-ramachandran/" target="_blank" rel="noopener">Talk with me on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer container"><p>© <span id="year">2026</span> Ragesh Ramachandran</p><nav aria-label="Social links"><a href="https://www.linkedin.com/in/ragesh-ramachandran/" target="_blank" rel="noopener">LinkedIn</a><a href="https://rragesh.medium.com/" target="_blank" rel="noopener">Medium</a><a href="https://github.com/EnigmaRagesh" target="_blank" rel="noopener">GitHub</a></nav><p class="template-credit">Original portfolio template by <a href="https://colorlib.com" target="_blank" rel="noopener">Colorlib</a>.</p></footer>
+  <footer class="site-footer container">
+      <p>© <span id="year">2026</span> Ragesh Ramachandran</p>
+      <nav aria-label="Footer navigation"><a href="../index.html" target="_blank" rel="noopener">Home</a><a href="../about.html" target="_blank" rel="noopener">My story</a><a href="../work.html" target="_blank" rel="noopener">Work</a><a href="../writing.html" target="_blank" rel="noopener">Writing</a><a href="../how-i-work.html" target="_blank" rel="noopener">How I work</a><a href="https://www.linkedin.com/in/ragesh-ramachandran/" target="_blank" rel="noopener">LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a></nav>
+    </footer>
 </body>
 </html>

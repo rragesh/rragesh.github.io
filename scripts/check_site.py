@@ -12,14 +12,13 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://rragesh.github.io/'
 REDIRECTS = {
-    'about.html': 'index.html#about',
-    'blog-home.html': 'index.html#writing',
-    'blog-single.html': 'index.html#writing',
-    'contact.html': 'index.html#contact',
-    'elements.html': 'index.html#home',
-    'portfolio.html': 'index.html#work',
-    'portfolio-details.html': 'index.html#work',
-    'services.html': 'index.html#expertise',
+    'blog-home.html': 'writing.html',
+    'blog-single.html': 'writing.html',
+    'contact.html': 'work.html',
+    'elements.html': 'index.html',
+    'portfolio.html': 'about.html#origins',
+    'portfolio-details.html': 'about.html#origins',
+    'services.html': 'work.html#expertise',
 }
 
 
@@ -41,9 +40,35 @@ class Page(HTMLParser):
         self.hidden_depth = 0
         self.title = []
         self.in_title = False
+        self.navigation = []
+        self.in_navigation = False
+        self.section_count = 0
+        self.details_depth = 0
+        self.article_count = 0
+        self.project_links = []
+        self.project_chapters = {}
+        self.section_ids = []
+        self.section_classes = []
+        self.breadcrumb_links = []
+        self.return_links = []
+        self.in_breadcrumbs = False
 
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
+        if tag == 'nav' and attrs.get('aria-label') == 'Main navigation':
+            self.in_navigation = True
+        if tag == 'nav' and attrs.get('aria-label') == 'Breadcrumb':
+            self.in_breadcrumbs = True
+        if tag == 'section':
+            self.section_count += 1
+            self.section_ids.append(attrs.get('id'))
+            self.section_classes.append(attrs.get('class', '').split())
+        if tag == 'details':
+            self.details_depth += 1
+        if tag == 'article' and 'article-card' in attrs.get('class', '').split():
+            self.article_count += 1
+            if self.details_depth:
+                self.errors.append('Medium previews must be visible without opening a disclosure')
         if tag == 'title':
             self.in_title = True
         if tag == 'body':
@@ -60,6 +85,17 @@ class Page(HTMLParser):
         if tag == 'a':
             href = attrs.get('href', '')
             self.links.append(href)
+            if self.in_breadcrumbs:
+                self.breadcrumb_links.append(href)
+            if self.section_classes and 'continue-reading' in self.section_classes[-1]:
+                self.return_links.append(href)
+            if self.in_navigation:
+                self.navigation.append((href, attrs.get('aria-current')))
+            if re.fullmatch(r'projects/[^/]+\.html', urlsplit(href).path):
+                self.project_links.append(href)
+                self.project_chapters[href] = self.section_ids[-1] if self.section_ids else None
+                if self.details_depth:
+                    self.errors.append('Project links must be visible without opening a disclosure')
             host = urlsplit(href).hostname or ''
             if host == 'instagram.com' or host.endswith('.instagram.com'):
                 self.errors.append('Instagram is not an owner profile')
@@ -87,6 +123,14 @@ class Page(HTMLParser):
             self.visible.append(data)
 
     def handle_endtag(self, tag):
+        if tag == 'section' and self.section_ids:
+            self.section_ids.pop()
+            self.section_classes.pop()
+        if tag == 'nav':
+            self.in_navigation = False
+            self.in_breadcrumbs = False
+        if tag == 'details':
+            self.details_depth = max(0, self.details_depth - 1)
         if tag == 'title':
             self.in_title = False
         if tag == 'script' and self.schema_parts is not None:
@@ -118,8 +162,9 @@ def local_url_errors(path, urls, pages):
     return errors
 
 
+project_index = {project['slug']: project for project in json.loads((ROOT / 'data/projects.json').read_text())}
 pages = {}
-for path in [ROOT / 'index.html', *sorted((ROOT / 'projects').glob('*.html'))]:
+for path in [*(ROOT / name for name in ('index.html', 'about.html', 'work.html', 'writing.html', 'how-i-work.html')), *sorted((ROOT / 'projects').glob('*.html'))]:
     page = Page(path)
     page.feed(path.read_text())
     pages[path.resolve()] = page
@@ -138,6 +183,15 @@ for path, page in pages.items():
     descriptions.add(description)
     if page.h1 != 1:
         page.errors.append(f'Expected one h1, got {page.h1}')
+    prefix = '../' if path.parent.name == 'projects' else ''
+    navigation = [prefix + name for name in ('index.html', 'about.html', 'work.html', 'writing.html', 'how-i-work.html')]
+    navigation.append('https://www.linkedin.com/in/ragesh-ramachandran/')
+    if [href for href, _ in page.navigation] != navigation:
+        page.errors.append('Main navigation must expose Home, My story, Work, Writing, How I work, and LinkedIn contact consistently')
+    active = [href for href, current in page.navigation if current]
+    expected_active = prefix + ('about.html' if prefix else path.name)
+    if active != [expected_active]:
+        page.errors.append('Main navigation must identify the current page or parent section')
     expected = BASE if path.name == 'index.html' else BASE + path.relative_to(ROOT).as_posix()
     if page.canonical != [expected]:
         page.errors.append(f'Expected one canonical URL: {expected}')
@@ -154,10 +208,25 @@ for path, page in pages.items():
     if not image.startswith(BASE) or not (ROOT / unquote(urlsplit(image).path.lstrip('/'))).is_file():
         page.errors.append('Social preview must reference an existing public image')
     if path.parent.name == 'projects':
+        chapter = project_index.get(path.stem, {}).get('storyChapter')
+        if chapter not in ('origins', 'control'):
+            page.errors.append('Project must identify a supported story chapter')
+        elif any(f'../about.html#{chapter}' not in links for links in (page.breadcrumb_links, page.return_links)):
+            page.errors.append('Project breadcrumb and closing link must return to its story chapter')
         nodes = [node for schema in page.schemas for node in schema.get('@graph', [])]
         work = next((node for node in nodes if node.get('@type') == 'CreativeWork'), {})
         if work.get('author', {}).get('@id') != BASE + '#ragesh' or work.get('url') != expected:
             page.errors.append('Project schema must connect the canonical project and its author')
+    elif path.name in ('about.html', 'how-i-work.html'):
+        nodes = [node for schema in page.schemas for node in schema.get('@graph', [])]
+        profile = next((node for node in nodes if node.get('@type') == 'ProfilePage'), {})
+        if profile.get('url') != expected or profile.get('mainEntity', {}).get('@id') != BASE + '#ragesh':
+            page.errors.append('Personal profile must connect its canonical URL and the Person entity')
+    elif path.name in ('work.html', 'writing.html'):
+        nodes = [node for schema in page.schemas for node in schema.get('@graph', [])]
+        collection = next((node for node in nodes if node.get('@type') == 'CollectionPage'), {})
+        if collection.get('url') != expected:
+            page.errors.append('Collection page must identify its canonical URL in structured data')
     page.errors.extend(local_url_errors(path, page.urls, pages))
     errors.extend(f'{path.relative_to(ROOT)}: {error}' for error in page.errors)
 for path in [*ROOT.glob('*.html'), *sorted((ROOT / 'projects').glob('*.html'))]:
@@ -167,7 +236,22 @@ if (ROOT / 'resume/Ragesh_CV.pdf').exists():
     errors.append('Résumé PDF must not be published')
 
 home = pages[(ROOT / 'index.html').resolve()]
-graph = [node for schema in home.schemas for node in schema.get('@graph', [])]
+if home.section_count != 1 or home.article_count:
+    errors.append('Homepage must contain only the introductory hero, with content on dedicated pages')
+writing = pages[(ROOT / 'writing.html').resolve()]
+if writing.article_count != len(json.loads((ROOT / 'data/medium-posts.json').read_text())):
+    errors.append('Writing page must contain every cached Medium preview')
+work_page = pages[(ROOT / 'work.html').resolve()]
+story_page = pages[(ROOT / 'about.html').resolve()]
+expected_projects = {f"projects/{slug}.html" for slug in project_index}
+if set(story_page.project_links) != expected_projects or len(story_page.project_links) != len(expected_projects):
+    errors.append('My story must expose every project exactly once')
+for slug, project in project_index.items():
+    if story_page.project_chapters.get(f'projects/{slug}.html') != project.get('storyChapter'):
+        errors.append(f'Project {slug} must be linked from its declared story chapter')
+if work_page.project_links or 'about.html#origins' not in work_page.links or 'projects' not in work_page.ids:
+    errors.append('Work must retain the legacy projects anchor and point readers to My story')
+graph = [node for page in pages.values() for schema in page.schemas for node in schema.get('@graph', [])]
 entities = {node.get('@id'): node for node in graph if node.get('@id')}
 person_id = BASE + '#ragesh'
 person = entities.get(person_id, {})
@@ -179,18 +263,19 @@ if entities.get(BASE + '#robotics-deployment', {}).get('provider', {}).get('@id'
     errors.append('Deployment service must reference the Person provider')
 if entities.get(BASE + '#robotair', {}).get('founder', {}).get('@id') != person_id:
     errors.append('Robotair must reference Ragesh as its founder')
-visible = ' '.join(' '.join(home.visible).split())
-questions = entities.get(BASE + '#faq', {}).get('mainEntity', [])
-if not questions:
+if not entities.get(BASE + 'work.html#faq', {}).get('mainEntity', []):
     errors.append('Missing structured FAQ')
-for question in questions:
-    for text in (question.get('name', ''), question.get('acceptedAnswer', {}).get('text', '')):
-        if not text or ' '.join(text.split()) not in visible:
-            errors.append(f'FAQ schema must match visible content: {text[:90]}')
-for node in graph:
-    if node.get('@type') == 'Article':
-        if node.get('url') not in home.urls or node.get('headline', '') not in visible:
-            errors.append('Structured article must be linked and named in visible content')
+for page in pages.values():
+    visible = ' '.join(' '.join(page.visible).split())
+    for node in [node for schema in page.schemas for node in schema.get('@graph', [])]:
+        if node.get('@type') == 'FAQPage':
+            for question in node.get('mainEntity', []):
+                for text in (question.get('name', ''), question.get('acceptedAnswer', {}).get('text', '')):
+                    if not text or ' '.join(text.split()) not in visible:
+                        errors.append(f'FAQ schema must match its page content: {text[:90]}')
+        if node.get('@type') == 'Article':
+            if node.get('url') not in page.urls or node.get('headline', '') not in visible:
+                errors.append('Structured article must be linked and named on its page')
 
 def check_references(value):
     if isinstance(value, dict):
@@ -211,8 +296,9 @@ for name, destination in REDIRECTS.items():
         redirect.errors.append('Compatibility redirect must not be indexed')
     if redirect.meta.get('refresh') != f'0;url={destination}':
         redirect.errors.append(f'Expected an immediate redirect to {destination}')
-    if redirect.canonical != [BASE]:
-        redirect.errors.append('Compatibility redirect must use the homepage canonical')
+    expected_canonical = BASE if destination == 'index.html' else BASE + urlsplit(destination).path
+    if redirect.canonical != [expected_canonical]:
+        redirect.errors.append('Compatibility redirect must use its destination page canonical')
     if destination not in redirect.links:
         redirect.errors.append('Compatibility redirect needs a fallback link to its destination')
     redirect.errors.extend(local_url_errors(path, [*redirect.urls, destination], pages))
@@ -237,4 +323,4 @@ for agent in ('Googlebot', 'bingbot', 'OAI-SearchBot', 'Claude-SearchBot', 'Perp
             errors.append(f'{agent} cannot crawl {url}')
 if errors:
     raise SystemExit('\n'.join(errors))
-print(f'Checked {len(pages)} pages and {len(REDIRECTS)} redirects: links, stylesheet assets, new-tab behavior, headings, metadata, schema/visible FAQ parity, sitemap, redirects, and profile cleanup passed.')
+print(f'Checked {len(pages)} pages and {len(REDIRECTS)} redirects: navigation, links, stylesheet assets, hero-only home, visible writing/projects, metadata, schema, sitemap, redirects, and profile cleanup passed.')

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Embed Medium RSS previews in static HTML; keep last-good content on failure."""
+"""Refresh the Writing page's Medium previews; keep last-good content on failure."""
 
 import argparse
 from datetime import timezone
@@ -166,20 +166,24 @@ def main():
     args.add_argument("--feed-file", type=Path, help="Use a local RSS file instead of the network")
     options = args.parse_args()
     try:
-        # Parse fully before touching the homepage so malformed feeds never erase it.
+        # Parse fully before touching the Writing page so malformed feeds never erase it.
         feed = options.feed_file.read_bytes() if options.feed_file else download(FEED_URL)
         posts = parse_feed(feed)
-        document = (ROOT / "index.html").read_text()
+        document = (ROOT / "data/pages/writing.html").read_text()
         replace_previews(document, "")
         for post in posts:
             post["localImage"] = cache_image(post["image"])
         rendered = replace_previews(document, render_posts(posts))
+        from build_pages import MANIFEST, render
+        page = next(page for page in json.loads(MANIFEST.read_text()) if page["key"] == "writing")
+        output = render(page, rendered)
         (ROOT / "data").mkdir(exist_ok=True)
         (ROOT / "data/medium-posts.json").write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n")
-        (ROOT / "index.html").write_text(rendered)
+        (ROOT / "data/pages/writing.html").write_text(rendered)
+        (ROOT / "writing.html").write_text(output)
         print(f"Embedded {len(posts)} Medium article previews.")
     except Exception as error:
-        print(f"Medium refresh failed; existing homepage retained: {error}", file=sys.stderr)
+        print(f"Medium refresh failed: {error}", file=sys.stderr)
         return 1
     return 0
 
