@@ -7,7 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test": "node --test tests/",
+    "test": "node --test \"tests/**/*.test.mjs\"",
+    "check:site": "python3 scripts/check_site.py",
     "medium:refresh": "node scripts/update-medium.mjs"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
+    "htmlparser2": "^12.0.0",
     "typescript": "^6.0.3"
   }
 }

@@ -11,7 +11,7 @@
       "Docker"
     ],
     "image": "https://cdn-images-1.medium.com/max/1024/1*3k7akbfg6WIwgnPIK8PiEQ.png",
-    "localImage": "img/medium/320b4e91669ec769.webp"
+    "localImage": "medium/320b4e91669ec769.webp"
   },
   {
     "title": "The Complete Guide to Docker for ROS 2 (2026 Edition): From Zero to Production-Ready Robotics",
@@ -24,7 +24,7 @@
       "Robotics"
     ],
     "image": "https://cdn-images-1.medium.com/max/1024/1*ctK06-09hvu8rGuWSnh27A.png",
-    "localImage": "img/medium/209a883e6007b5c9.webp"
+    "localImage": "medium/209a883e6007b5c9.webp"
   },
   {
     "title": "Docker on NVIDIA Jetson Orin: The Right Docker Base Image for Reliable Robots",
@@ -39,7 +39,7 @@
       "GPU"
     ],
     "image": "https://cdn-images-1.medium.com/max/1024/1*xv3kCJJOZjn7_RYDflKpQQ.png",
-    "localImage": "img/medium/add514558a5628f5.webp"
+    "localImage": "medium/add514558a5628f5.webp"
   },
   {
     "title": "What Is NVIDIA L4T Base, and Why Matters for Robotics on Jetson",
@@ -54,7 +54,7 @@
       "ROS 2"
     ],
     "image": "https://cdn-images-1.medium.com/max/1024/1*VHUrY3citHRi2B3f2yUeZQ.png",
-    "localImage": "img/medium/4aa440396dbe8c4a.webp"
+    "localImage": "medium/4aa440396dbe8c4a.webp"
   },
   {
     "title": "Faster ROS2 development with Pixi",
@@ -68,7 +68,7 @@
       "Docker"
     ],
     "image": "https://cdn-images-1.medium.com/max/1024/1*OBXhZkYtkoVQ_DY3lsj77Q.png",
-    "localImage": "img/medium/a5d509dfd8a71e1f.webp"
+    "localImage": "medium/a5d509dfd8a71e1f.webp"
   },
   {
     "title": "Managing Multi-Robot Fleets",
@@ -81,7 +81,7 @@
       "Fleet Management"
     ],
     "image": "https://cdn-images-1.medium.com/max/1024/1*qD27zQeOXNdm9xHlX3PT9A.png",
-    "localImage": "img/medium/3a7a5fecdb48f262.webp"
+    "localImage": "medium/3a7a5fecdb48f262.webp"
   },
   {
     "title": "A Robot Demo Day That Broke My Heart (And How It Changed My Deployment Strategy)",
@@ -95,6 +95,6 @@
       "DevOps"
     ],
     "image": "https://cdn-images-1.medium.com/max/892/1*yew3GiOGxlEky8BR_t--4A.png",
-    "localImage": "img/medium/9ffc7d998ee47f66.webp"
+    "localImage": "medium/9ffc7d998ee47f66.webp"
   }
 ]
