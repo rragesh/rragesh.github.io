@@ -7,7 +7,7 @@
     "title": "Autonomous docking: finding the way back to charge",
     "intro": "A robot that can patrol on its own also needs a way to return to its charger. This project built and tested that return-to-charge routine in simulation.",
     "context": "Ingeniarius · Coimbra, Portugal",
-    "image": "optimized/recharge.webp",
+    "image": "../assets/optimized/recharge.webp",
     "imageAlt": "A service robot with a touchscreen and illuminated face",
     "sections": [
       {
@@ -46,7 +46,7 @@
     "title": "Helping robots find their place indoors",
     "intro": "Before robots can work together, they need to agree on where they are. This project used overhead infrared cameras to give them a shared view of an indoor workspace.",
     "context": "École Centrale de Nantes · France",
-    "image": "optimized/localize.webp",
+    "image": "../assets/optimized/localize.webp",
     "imageAlt": "The infrared-camera localization experiment for an indoor robot workspace",
     "sections": [
       {
@@ -73,7 +73,7 @@
     ],
     "links": [
       { "url": "https://github.com/EnigmaRagesh/2X2_IR-sensor-array-Calibration", "label": "Explore the calibration code" },
-      { "url": "../img/exp/Localization system using overhead IR image sensors.pdf", "label": "Read the technical paper" }
+      { "url": "/img/exp/Localization system using overhead IR image sensors.pdf", "label": "Read the technical paper" }
     ],
     "videos": []
   },
@@ -85,7 +85,7 @@
     "title": "SAKSHA: teaching a robot by moving an arm",
     "intro": "What if showing a robot a movement were as direct as moving an arm yourself? SAKSHA explored that idea with two linked robotic arms and a record-and-replay workflow.",
     "context": "Amrita University · India",
-    "image": "optimized/saksha.webp",
+    "image": "../assets/optimized/saksha.webp",
     "imageAlt": "The paired control and follower arms in the SAKSHA project",
     "sections": [
       {
@@ -124,7 +124,7 @@
     "title": "ASTRA: giving robots a shared view",
     "intro": "A robot on the ground and a robot in the air see different parts of the same place. ASTRA explored how those perspectives could be connected in a multi-robot system.",
     "context": "Amrita University · India",
-    "image": "optimized/astra.webp",
+    "image": "../assets/optimized/astra.webp",
     "imageAlt": "Three small ASTRA ground-robot prototypes arranged outdoors",
     "sections": [
       {
@@ -160,7 +160,7 @@
     "title": "DHRUV: a closer look at hazardous spaces",
     "intro": "Before entering a potentially dangerous area, people need information. DHRUV brought environmental sensing, cameras, and a robotic arm together on a remotely operated rover.",
     "context": "Amrita University · India",
-    "image": "work/disaster.jpg",
+    "image": "../assets/work/disaster.jpg",
     "imageAlt": "DHRUV rover with a raised robotic arm, gripper, sensors, and articulated wheels",
     "sections": [
       {
@@ -198,7 +198,7 @@
     "title": "Phoenix II: one rover, fifteen people",
     "intro": "A planetary rover brings many engineering disciplines into one machine. I led a 15-person team building Phoenix II for the 2016 United Kingdom Rover Challenge.",
     "context": "United Kingdom Rover Challenge · Manchester · 2016",
-    "image": "optimized/roveruk.webp",
+    "image": "../assets/optimized/roveruk.webp",
     "imageAlt": "Phoenix II planetary-rover prototype with a robotic arm and articulated wheels",
     "sections": [
       {
@@ -217,8 +217,8 @@
       }
     ],
     "links": [
-      { "url": "phoenix_dummy.html", "label": "Meet Phoenix I" },
-      { "url": "../about.html#origins", "label": "Read the story behind the rover work" }
+      { "url": "/projects/phoenix_dummy.html", "label": "Meet Phoenix I" },
+      { "url": "/about.html#origins", "label": "Read the story behind the rover work" }
     ],
     "videos": []
   },
@@ -230,7 +230,7 @@
     "title": "Phoenix I: bringing a rover team’s work together",
     "intro": "I led the Phoenix I project for the 2016 University Rover Challenge in Utah. It was an early lesson in turning a team’s individual contributions into one working robot.",
     "context": "University Rover Challenge · Utah · 2016",
-    "image": "work/pro1.JPG",
+    "image": "../assets/work/pro1.JPG",
     "imageAlt": "Phoenix I rover with a black and green body, front camera, and six articulated wheels",
     "sections": [
       {
@@ -249,8 +249,8 @@
       }
     ],
     "links": [
-      { "url": "phoenix.html", "label": "Meet Phoenix II" },
-      { "url": "../about.html#origins", "label": "Read about my early robotics work" }
+      { "url": "/projects/phoenix.html", "label": "Meet Phoenix II" },
+      { "url": "/about.html#origins", "label": "Read about my early robotics work" }
     ],
     "videos": ["eb4B5Us4b5w"]
   },
@@ -262,7 +262,7 @@
     "title": "An eight-wheeled rover with a different way over obstacles",
     "intro": "A wheel can only climb so far before the vehicle’s shape gets in the way. This student rover explored what happens when some wheels can also be lifted on leg-like supports.",
     "context": "University Rover Challenge · Utah · 2015",
-    "image": "work/spider_rover.jpg",
+    "image": "../assets/work/spider_rover.jpg",
     "imageAlt": "The eight-wheeled rover prototype with its adjustable wheel-support mechanism",
     "sections": [
       {
@@ -289,8 +289,8 @@
     ],
     "links": [
       { "url": "https://www.amrita.edu/news/amrita-team-participates-university-rover-challenge-usa", "label": "Read the university coverage" },
-      { "url": "../img/exp/rover_paper.pdf", "label": "Read the suspension research paper" },
-      { "url": "8_leg_dummy.html", "label": "Explore the field-trial companion" }
+      { "url": "/img/exp/rover_paper.pdf", "label": "Read the suspension research paper" },
+      { "url": "/projects/8_leg_dummy.html", "label": "Explore the field-trial companion" }
     ],
     "videos": ["mWysfPfZIGI", "-HYnqNPgKkU"]
   },
@@ -302,7 +302,7 @@
     "title": "Taking the rover from the drawing board to the ground",
     "intro": "A drawing can explain how a mechanism should move. A physical rover makes its weight, wheel contact, and coordination visible. This page collects field-trial material from our 2015 project.",
     "context": "University Rover Challenge · Utah · 2015",
-    "image": "work/spider_1.JPG",
+    "image": "../assets/work/spider_1.JPG",
     "imageAlt": "The 2015 rover prototype during outdoor field testing",
     "sections": [
       {
@@ -321,9 +321,9 @@
       }
     ],
     "links": [
-      { "url": "8_leg.html", "label": "Understand the rover design" },
+      { "url": "/projects/8_leg.html", "label": "Understand the rover design" },
       { "url": "https://www.amrita.edu/news/amrita-team-participates-university-rover-challenge-usa", "label": "Read the university coverage" },
-      { "url": "../img/exp/rover2_paper.pdf", "label": "Read the complete system paper" }
+      { "url": "/img/exp/rover2_paper.pdf", "label": "Read the complete system paper" }
     ],
     "videos": ["bEimLRsp5GA"]
   }
