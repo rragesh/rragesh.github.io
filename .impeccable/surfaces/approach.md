@@ -10,7 +10,7 @@ OWN-WORLD: Inherit the existing Source Serif 4/Source Sans 3 pairing, sky-to-pap
 
 STORY: Understand the working commitments, assess team fit, and continue to Writing before subscribing on Medium or connecting on LinkedIn. A secondary Stay in touch link gives returning or ready visitors a direct route. Clearly distinguish self-description from independently verified results.
 
-FIRST VIEWPORT: Shared navigation with How I work selected; a plain page title and a concise value proposition; direct links to principles and team fit.
+FIRST VIEWPORT: Shared navigation with How I work selected; a plain page title and a conversational account of trust, clear goals, and independent judgment; direct links to principles and team fit. The owner’s personal-refinement direction prioritizes like-minded peers and an approachable voice. Preserve all ten substantive principles, including the approved people-first opening, and let the introduction sound like a conversation about working together.
 
 FORM: Headed, visible HTML prose plus a definition-list fit summary, followed by the primary Writing invitation. Standard ProfilePage/Person data mirrors the visible purpose. The owner removed the separate influences block; do not reintroduce it. seed: none (pinned), “make it clear value proposition” and “clear to my hirers and also to AI agents scouting for talents”.
 

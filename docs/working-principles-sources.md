@@ -8,6 +8,10 @@ The owner later added the DevOps philosophy of people over process and process o
 
 `how-i-work.html` translates these into self-described working commitments and observable collaboration expectations. It does not present them as independently verified traits, endorsements, psychometric results, ratings, or guarantees of future performance. The fit summary and practical examples are editorial expressions of the owner’s stated values.
 
+## Personal-refinement direction
+
+The owner asked for a site that reflects the person behind the work, primarily for like-minded peers, and identified the existing presentation as too impersonal and formal. The revised homepage introduction draws on the principles above: people-first engineering, simplicity, candor, and sharing knowledge. The conversational introductions and reading invitations paraphrase existing public material; they add no personal interests, employment details, achievements, regional client claims, or new engagement scope. The approved story and all ten substantive working principles remain intact.
+
 ## Ideas drawn from The Almanack of Naval Ravikant
 
 At the owner’s request, the original drafting also drew on the following material from Eric Jorgenson’s published collection. The copy is paraphrased, not represented as a quotation or endorsement. The additional ninth principle, “Build leverage that lasts”, applies the book’s code/knowledge leverage idea to reusable engineering systems and documentation. The owner subsequently asked to remove the public influences block and its navigation link; these references are retained here as development provenance.

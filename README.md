@@ -1,6 +1,6 @@
 # Ragesh Ramachandran
 
-The personal site of [Ragesh Ramachandran](https://rragesh.github.io/), organized around My story → Work → How I work → Writing → subscribing on Medium or connecting on LinkedIn. The homepage contains only the positioning hero, ROSCon photograph, and a story-first invitation. Its editorial identity retains the serif typography, soft sky colors, and day/evening theme inspired by [Sooraj Chandran’s personal site](https://www.soorajchandran.com/).
+The personal site of [Ragesh Ramachandran](https://rragesh.github.io/), organized around My story → Work → How I work → Writing → subscribing on Medium or connecting on LinkedIn. The hero-only homepage combines a personal greeting, the tagline “I build dependable systems for robotics and physical AI,” a people-first introduction, the ROSCon photograph, and a story-first invitation. Its editorial identity retains the serif typography, soft sky colors, and day/evening theme inspired by [Sooraj Chandran’s personal site](https://www.soorajchandran.com/).
 
 ## Pages and navigation
 

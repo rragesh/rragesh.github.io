@@ -14,7 +14,7 @@ EXPERIENCE: Four consistent organization-and-evidence rows lead with confidentia
 
 STORY: Work follows the buyer's questions: how Ragesh can help (three engagement options), why trust the work (professional experience), where the approach began (story invitation), and what to expect (FAQ), before continuing to How I work. The separate process section is removed; its scoping and handover substance belongs in the FAQ. The #projects section is a story bridge. Writing presents the Medium feed first, then additional technical writing and the ROSCon talk, and ends with Medium subscription and LinkedIn connection options.
 
-FIRST VIEWPORT: A clear page title and purpose, current-page navigation, then meaningful content. Work introduces the collaboration path and leads into the engagement comparison, with local links ordered as working together, experience, and questions. Writing exposes the latest articles and filters directly.
+FIRST VIEWPORT: A clear page title and purpose, current-page navigation, then meaningful content. Work introduces the collaboration path in a conversational voice and leads into the engagement comparison, with local links ordered as working together, experience, and questions. Writing gives its title the full reading-column width, uses a readable personal introduction, and exposes the latest articles and filters directly. The owner’s personal-refinement direction prioritizes like-minded peers while preserving the established content and engagement scope.
 
 FORM: Established-world content migration, seed: none (pinned): “everything else should be redirected from here”. Existing project URLs, story prose, photo, publication links, and Medium refresh behavior are retained. The shared Astro layout keeps navigation synchronized.
 
