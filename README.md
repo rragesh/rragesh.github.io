@@ -25,6 +25,7 @@ The site is built with [Astro](https://astro.build/) as fully static HTML. Pages
 | Styles and browser script | `src/styles/site.css`, `src/scripts/site.js` (bundled and fingerprinted) |
 | Images to optimize | `src/assets/` (served as responsive AVIF/WebP) |
 | Files served as-is | `public/` (fonts, favicon, PDFs, social images, robots.txt, Search Console verification) |
+| Development notes (provenance, sources; not published) | `docs/` |
 
 `build.format: "file"` keeps every historical URL (`about.html`, `projects/Saksha.html`, …). Write internal links as root-absolute paths such as `/work.html` and `/about.html#origins`. In `.astro` markup, keep inline elements on the same line as neighbouring text: Astro's HTML compression removes whitespace that contains a line break next to a tag, which would run words together.
 
@@ -69,7 +70,7 @@ Existing public project URLs and project-publication PDFs are retained. My story
 
 The old Colorlib demo routes (`blog-home.html`, `blog-single.html`, `contact.html`, `elements.html`, `portfolio.html`, `portfolio-details.html`, `services.html`) and the forwarding of old homepage fragments such as `/#writing` have been retired; those URLs return 404. Bootstrap, jQuery and its plugins, template Sass/CSS, icon fonts, the PHP mail handler, bundled template documentation, and unreferenced images have been removed. The site uses `src/styles/site.css`, `src/scripts/site.js`, and self-hosted Source Serif 4 and Source Sans 3 fonts. Project data is maintained directly in `src/data/projects.json`. `about.html` now serves the personal story.
 
-Source photography is documented in `data/assets.md`. Project-publication PDFs are retained; the original template credit was removed from public footers at the owner's request.
+Source photography is documented in `docs/assets.md`. Project-publication PDFs are retained; the original template credit was removed from public footers at the owner's request.
 
 ## Link policy
 
@@ -77,7 +78,7 @@ Destination-page links open in new tabs with `rel="noopener"`, including generat
 
 ## Search positioning
 
-Home introduces Ragesh as a robotics engineer and founder. Story provides the personal context; Work holds professional evidence, services, and matching FAQs; Writing holds article references and previews. Each page has its own canonical URL, metadata, and appropriate structured data connected to the same Person identity. Pricing and availability are not invented. See `SEO.md` for publication/indexing steps and `data/profile-sources.md` for provenance. Legacy template routes remain marked `noindex, follow`.
+Home introduces Ragesh as a robotics engineer and founder. Story provides the personal context; Work holds professional evidence, services, and matching FAQs; Writing holds article references and previews. Each page has its own canonical URL, metadata, and appropriate structured data connected to the same Person identity. Pricing and availability are not invented. See `SEO.md` for publication/indexing steps and `docs/profile-sources.md` for provenance.
 
 ## Checks
 
@@ -101,4 +102,4 @@ GitHub Pages must use **Settings → Pages → Build and deployment → Source: 
 
 ## Assets and design
 
-`PRODUCT.md`, `DESIGN.md`, and `.impeccable/surfaces/home.md` record the content constraints and design. Photography comes from the original portfolio and the owner-supplied ROSCon photo; Medium covers come from the author’s RSS feed. Source Serif 4 and Source Sans 3 are self-hosted variable Latin fonts, with normal/italic faces and OFL licenses in `public/fonts/`. Only normal faces are preloaded. See `data/assets.md` for pinned sources and `DESIGN.md` for type roles.
+`PRODUCT.md`, `DESIGN.md`, and `.impeccable/surfaces/home.md` record the content constraints and design. Photography comes from the original portfolio and the owner-supplied ROSCon photo; Medium covers come from the author’s RSS feed. Source Serif 4 and Source Sans 3 are self-hosted variable Latin fonts, with normal/italic faces and OFL licenses in `public/fonts/`. Only normal faces are preloaded. See `docs/assets.md` for pinned sources and `DESIGN.md` for type roles.

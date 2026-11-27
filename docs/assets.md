@@ -4,7 +4,7 @@ Project photographs were already present at repository revision `e60b4e5`. The o
 
 | Asset | Source | Treatment |
 | --- | --- | --- |
-| `src/assets/work/*` | Original project photographs (see `data/project-copy-sources.md`) | Unmodified sources; Astro generates responsive AVIF/WebP and 1200px social JPEGs at build time |
+| `src/assets/work/*` | Original project photographs (see `docs/project-copy-sources.md`) | Unmodified sources; Astro generates responsive AVIF/WebP and 1200px social JPEGs at build time |
 | `src/assets/ragesh-roscon-2023.webp` | Owner-supplied 2000 × 1333 photograph of Ragesh speaking at ROSCon India 2023; related recording: `https://www.youtube.com/watch?v=p302LwKIhQg` | Speaker-centered crop, 800 × 1000 WebP; no generative edits. Homepage portrait, resized responsively by Astro |
 | `public/img/optimized/ragesh-roscon-2023.webp` | Same crop | Stable public URL used as the Person `image` in structured data |
 | `public/img/optimized/ragesh-roscon-2023-social.jpg` | Same owner-supplied ROSCon India 2023 photograph | 1200 × 630 social crop, JPEG; no generative edits |

@@ -1,6 +1,6 @@
 # Project copy sources
 
-The owner requested accessible, engaging copy across all nine project pages. The rewrite uses the original `data/projects.json` material, existing project photographs, and the sources below. Historical project URLs, publications, repositories, and demonstration IDs are preserved.
+The owner requested accessible, engaging copy across all nine project pages. The rewrite uses the original project data (now `src/data/projects.json`), existing project photographs, and the sources below. Historical project URLs, publications, repositories, and demonstration IDs are preserved.
 
 ## Content boundaries
 

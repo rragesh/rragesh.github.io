@@ -1,6 +1,6 @@
 # Professional profile sources
 
-Updated 2026-11-26. Keep visible copy and structured data aligned. These notes are development material, excluded from publication by `_config.yml`. Do not record confidential identifiers from the private CV here.
+Updated 2026-11-26. Keep visible copy and structured data aligned. These notes are development material; only `public/` and the built pages are published. Do not record confidential identifiers from the private CV here.
 
 ## Owner-provided positioning and facts
 
@@ -50,7 +50,7 @@ Current-work disclosure is restricted by the owner's explicit instruction. The p
 7. https://rosconindia.in/
     - Confirms the conference/community.
 8. https://www.youtube.com/watch?v=p302LwKIhQg
-    - Owner-supplied recording. YouTube’s public oEmbed metadata confirms the title “Ragesh Ramachandran - robotair.io | Tech Talk @ROSCon India 2023” and channel “ROSCon India”. The supplied speaking photograph replaces the old portrait; source metadata is recorded in the optimized files and `data/assets.md`.
+    - Owner-supplied recording. YouTube’s public oEmbed metadata confirms the title “Ragesh Ramachandran - robotair.io | Tech Talk @ROSCon India 2023” and channel “ROSCon India”. The supplied speaking photograph replaces the old portrait; source metadata is recorded in the optimized files and `docs/assets.md`.
 
 ## Mission framing
 

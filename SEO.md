@@ -62,4 +62,4 @@ These are intent-based content targets, not measured keyword-volume or ranking c
 
 Google's [AI-feature guidance](https://developers.google.com/search/docs/appearance/ai-features) says there are no special AI-search optimization requirements. Clear content, evidence, crawlability, and accurate structured data improve eligibility and understanding; they do not guarantee indexing, rankings, AI citations, or recommendations. FAQ structured data does not make this site eligible for Google's government/health-focused FAQ rich results. No keyword volume, ranking, or backlink measurements were available in this implementation.
 
-Factual provenance and verification limitations are recorded in `data/profile-sources.md`.
+Factual provenance and verification limitations are recorded in `docs/profile-sources.md`.
