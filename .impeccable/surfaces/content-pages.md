@@ -12,9 +12,9 @@ ALIGNMENT: Use the shared 980px header/footer shell and 660px reading measure. W
 
 EXPERIENCE: Four consistent organization-and-evidence rows lead with confidential current work, followed by NODE Robotics, Robotair, and Fraunhofer IPA / ROS-Industrial. Current capabilities stay visible, NODE's previously approved fleet/release/cost results are concise, and the attributed recommendation sits within that entry. Founder and research evidence uses the same alignment. Mobile stacks organization context before the evidence; current-work identifiers and operating figures remain private.
 
-STORY: Work presents professional experience, three comparable engagement options, a short invitation to My story, the engagement process, and FAQs. Its former #projects anchor remains a useful bridge for old bookmarks. Writing presents the Medium feed first, then additional technical writing and the ROSCon talk. Closing sections invite another relevant page or a LinkedIn conversation.
+STORY: Work follows the buyer's questions: how Ragesh can help (three engagement options), why trust the work (professional experience), where the approach began (story invitation), how an engagement runs (process), common questions, and contact. Its former #projects anchor remains a useful bridge for old bookmarks. Writing presents the Medium feed first, then additional technical writing and the ROSCon talk. Closing sections invite another relevant page or a LinkedIn conversation.
 
-FIRST VIEWPORT: A clear page title and purpose, current-page navigation, then meaningful content. Work has local links to experience, working together, the engineering-story invitation, and process; Writing exposes the latest articles and filters directly.
+FIRST VIEWPORT: A clear page title and purpose, current-page navigation, then meaningful content. Work introduces the collaboration path and leads into the engagement comparison, with local links ordered as working together, experience, process, and questions. Writing exposes the latest articles and filters directly.
 
 FORM: Established-world content migration, seed: none (pinned): “everything else should be redirected from here”. Existing project URLs, story prose, photo, publication links, and Medium refresh behavior are retained. The source templates and shared renderer keep navigation synchronized.
 
