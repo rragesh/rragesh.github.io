@@ -22,7 +22,10 @@ LINKEDIN = 'https://www.linkedin.com/in/ragesh-ramachandran/'
 MAIN_PAGES = ('index.html', 'about.html', 'work.html', 'writing.html', 'how-i-work.html')
 NAVIGATION = ['/', '/about.html', '/work.html', '/writing.html', '/how-i-work.html', LINKEDIN]
 # HTML files that are published but are not portfolio pages.
-NON_PAGE_HTML = {'google84685ae9ed10fc43.html'}
+NON_PAGE_HTML = {
+    'google50c6424adfbe2f59.html',
+    'google84685ae9ed10fc43.html',
+}
 PROJECT_LINK = re.compile(r'/projects/[^/]+\.html')
 
 
