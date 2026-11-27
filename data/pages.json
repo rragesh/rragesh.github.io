@@ -196,34 +196,42 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "When is it a good time to work together?",
+            "name": "When is your involvement most valuable?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "When your robots work in pilots but releases, customer-site deployments, or field incidents are becoming harder to manage. The assessment is a starting point for teams preparing to expand a fleet or improve an existing deployment workflow."
+              "text": "When deployment is becoming a constraint on the business: pilots are moving into customer environments, fleets are expanding, or release and recovery work depends on a few people. I focus on the infrastructure and engineering practices needed to make that next stage repeatable."
             }
           },
           {
             "@type": "Question",
-            "name": "Do you implement changes or only advise?",
+            "name": "Which engagement should we start with?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Both are possible. An assessment produces findings and an implementation roadmap. A separately scoped implementation engagement can cover release pipelines, OTA workflows, observability, and team handover. Fractional leadership provides ongoing technical direction with an agreed scope and level of involvement."
+              "text": "Start with an assessment to clarify risks and priorities, production engineering to deliver an agreed system, or fractional leadership for ongoing technical direction. We choose the engagement around the outcome you need."
             }
           },
           {
             "@type": "Question",
-            "name": "Can you work with our existing team and infrastructure?",
+            "name": "How will you work with our engineering team?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. The starting point is your current robot platform, release process, and team. My experience covers ROS and ROS 2, on-premise, hybrid, and cloud-connected environments. We agree the access and engineering involvement needed for the scope before starting."
+              "text": "I work with your engineers on the agreed scope, using your robot platform, deployment environment, and existing workflows as the starting point. We define access, decision-making responsibilities, and review milestones upfront, so ownership is clear throughout the engagement."
             }
           },
           {
             "@type": "Question",
-            "name": "How are scope, timing, and fees agreed?",
+            "name": "How are timing and fees determined?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Start with a LinkedIn message describing your fleet, deployment bottleneck, and next milestone. We discuss fit, then agree deliverables, responsibilities, timing, and fees before work begins. Implementation and ongoing support are scoped explicitly."
+              "text": "Each engagement is scoped individually. The work required, system complexity, access, and level of involvement shape the proposal. We agree deliverables, milestones, responsibilities, and fees before starting; implementation and ongoing leadership are scoped separately from an assessment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens at handover?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Implementation includes documentation and an engineering handover, covering the key decisions and workflows your team needs to operate and maintain the system. We agree handover expectations and any ongoing support as part of the scope."
             }
           },
           {
@@ -231,7 +239,7 @@
             "name": "How does this relate to Robotair?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "I founded Robotair, a robotics DevOps infrastructure layer for packaging, OTA updates, and monitoring. This page is an invitation to discuss working with me on your deployment challenges. If your inquiry is about Robotair specifically, mention that in your message so we can clarify the appropriate scope."
+              "text": "I founded Robotair. This page describes working directly with me on deployment engineering and technical leadership. For a Robotair-specific inquiry, mention the product in your message so we can clarify the scope."
             }
           }
         ]

@@ -8,7 +8,7 @@ if (document.body.classList.contains("entry-page")) {
     "#exp": "work.html#exp",
     "#work": "about.html#origins",
     "#expertise": "work.html#expertise",
-    "#process": "work.html#process",
+    "#process": "work.html#faq",
     "#faq": "work.html#faq",
     "#writing": "writing.html",
     "#articles": "writing.html#articles",

@@ -1114,8 +1114,7 @@ figcaption span {
   margin: 0;
 }
 .section-intro,
-.about-copy p,
-.engagement-steps p {
+.about-copy p {
   font-size: 16px;
   color: var(--muted);
 }
@@ -1279,16 +1278,26 @@ figcaption span {
   grid-column: 1 / -1;
   margin: 0;
 }
+.work-page .faq-section .section-heading p {
+  font-size: 17px;
+  line-height: 1.75;
+}
 .work-page .faq-item {
   margin: 0;
   padding-top: 20px;
   border-top: 1px solid var(--line);
 }
 .work-page .faq-item p {
+  font-size: 17px;
+  line-height: 1.75;
   text-align: start;
   text-wrap: pretty;
   hyphens: manual;
   -webkit-hyphens: manual;
+}
+.work-page .faq-item strong {
+  color: var(--ink);
+  font-weight: 600;
 }
 .engagement-options {
   display: grid;
@@ -1340,8 +1349,7 @@ figcaption span {
 .engagement-scope li + li {
   margin-top: 12px;
 }
-.engagement-scope li::marker,
-.engagement-steps li::marker {
+.engagement-scope li::marker {
   color: var(--link);
 }
 .engagement-context {
@@ -1412,22 +1420,6 @@ figcaption span {
 .technical-scope .expertise-list dt {
   font-size: 18px;
   line-height: 1.45;
-}
-.engagement-steps {
-  padding: 0 0 0 24px;
-  margin: 0;
-}
-.engagement-steps li {
-  padding-left: 10px;
-}
-.engagement-steps li + li {
-  margin-top: 28px;
-}
-.engagement-steps h3 {
-  font-size: 17px;
-}
-.engagement-steps p {
-  margin-top: 8px;
 }
 .about-portrait {
   width: 120px;
@@ -1732,6 +1724,10 @@ figcaption span {
   }
 }
 @media (max-width: 600px) {
+  .work-page .faq-item p,
+  .work-page .faq-section .section-heading p {
+    font-size: 16px;
+  }
   .technical-scope summary {
     align-items: flex-start;
     gap: 16px;
