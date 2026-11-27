@@ -1294,6 +1294,11 @@ figcaption span {
   min-height: 44px;
   font-size: 14px;
 }
+.work-page {
+  --prose-align: start;
+  --prose-wrap: pretty;
+  --prose-hyphens: manual;
+}
 .work-page .page-intro {
   max-width: none;
 }
@@ -1309,10 +1314,6 @@ figcaption span {
 }
 .work-page .page-intro > .work-proof {
   font-size: 16px;
-  text-align: start;
-  text-wrap: pretty;
-  hyphens: manual;
-  -webkit-hyphens: manual;
 }
 .work-proof strong {
   color: var(--ink);
@@ -1396,10 +1397,6 @@ figcaption span {
 .work-page .faq-item p {
   font-size: 17px;
   line-height: 1.75;
-  text-align: start;
-  text-wrap: pretty;
-  hyphens: manual;
-  -webkit-hyphens: manual;
 }
 .work-page .faq-item strong {
   color: var(--ink);

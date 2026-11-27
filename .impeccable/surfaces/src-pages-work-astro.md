@@ -30,3 +30,9 @@ Use the already supplied historical results and their attribution. Describe deli
 ## Finish record
 
 The independent rendered-page review returned **ship**, with no material fixes, on 2026-11-27. Desktop (1440px), phone (390px), and the actual Pane viewport (785px) were inspected, with day/evening, engagement, contact, and expanded-disclosure evidence. The extension follows the existing `DESIGN.md` fonts, tokens, reading measure, comparison treatment, and native interaction patterns; the global design system was preserved. Automated site checks, keyboard/no-JavaScript checks, and responsive overflow checks passed. No new raster assets were introduced.
+
+## Reading alignment
+
+In the owner's follow-up review, the mixture of justified and left-aligned paragraphs felt inconsistent. The approved refinement left-aligns all Work-page body text at every viewport, with natural word spacing, `pretty` wrapping, and manual hyphenation. Set this once through the `.work-page` prose tokens; the introduction, proof, FAQs, and closing invitation follow the same rule.
+
+Verified the rendered alignment of all 56 paragraph, definition, and list blocks at 1440px, 751px, and 390px in both themes, with no horizontal overflow. The local review preview was refreshed and confirmed to contain no justified body-text blocks. The build, 14-page site validation, and typography detector passed.
