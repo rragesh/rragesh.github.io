@@ -19,8 +19,10 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'src/data'
 BASE = 'https://rragesh.github.io/'
 LINKEDIN = 'https://www.linkedin.com/in/ragesh-ramachandran/'
+MEDIUM = 'https://rragesh.medium.com/'
+STAY_IN_TOUCH = '/writing.html#stay-in-touch'
 MAIN_PAGES = ('index.html', 'about.html', 'work.html', 'writing.html', 'how-i-work.html')
-NAVIGATION = ['/', '/about.html', '/work.html', '/writing.html', '/how-i-work.html', LINKEDIN]
+NAVIGATION = ['/', '/about.html', '/work.html', '/how-i-work.html', '/writing.html', STAY_IN_TOUCH]
 # HTML files that are published but are not portfolio pages.
 NON_PAGE_HTML = {
     'google50c6424adfbe2f59.html',
@@ -59,6 +61,8 @@ class Page(HTMLParser):
         self.section_classes = []
         self.breadcrumb_links = []
         self.return_links = []
+        self.primary_links = []
+        self.connection_links = []
         self.in_breadcrumbs = False
 
     def handle_starttag(self, tag, attributes):
@@ -95,6 +99,10 @@ class Page(HTMLParser):
         if tag == 'a':
             href = attrs.get('href') or ''
             self.links.append(href)
+            if 'primary-button' in (attrs.get('class') or '').split():
+                self.primary_links.append(href)
+            if 'stay-in-touch' in self.section_ids:
+                self.connection_links.append(href)
             if self.in_breadcrumbs:
                 self.breadcrumb_links.append(href)
             if self.section_classes and 'continue-reading' in self.section_classes[-1]:
@@ -109,9 +117,14 @@ class Page(HTMLParser):
             host = urlsplit(href).hostname or ''
             if host == 'instagram.com' or host.endswith('.instagram.com'):
                 self.errors.append('Instagram is not an owner profile')
-            if href and not href.startswith('#') and urlsplit(href).scheme in ('', 'http', 'https'):
-                if attrs.get('target') != '_blank' or 'noopener' not in (attrs.get('rel') or '').split():
-                    self.errors.append(f'Destination link must open safely in a new tab: {href}')
+            if href and urlsplit(href).scheme in ('', 'http', 'https'):
+                new_tab = any(host == domain or host.endswith('.' + domain)
+                              for domain in ('linkedin.com', 'youtube.com', 'youtu.be', 'youtube-nocookie.com'))
+                if new_tab:
+                    if attrs.get('target') != '_blank' or 'noopener' not in (attrs.get('rel') or '').split():
+                        self.errors.append(f'LinkedIn/YouTube link must open safely in a new tab: {href}')
+                elif attrs.get('target', '_self') != '_self':
+                    self.errors.append(f'Link must stay in the current tab: {href}')
         if tag == 'h1':
             self.h1 += 1
         if 'id' in attrs:
@@ -217,7 +230,7 @@ def check(dist):
         if page.h1 != 1:
             page.errors.append(f'Expected one h1, got {page.h1}')
         if [href for href, _ in page.navigation] != NAVIGATION:
-            page.errors.append('Main navigation must expose Home, My story, Work, Writing, How I work, and LinkedIn contact consistently')
+            page.errors.append('Main navigation must follow Home, My story, Work, How I work, Writing, and Stay in touch consistently')
         active = [href for href, current in page.navigation if current]
         expected_active = '/about.html' if in_projects else ('/' if relative == 'index.html' else '/' + relative)
         if active != [expected_active]:
@@ -273,7 +286,15 @@ def check(dist):
     home = page_at('index.html')
     if home.section_count != 1 or home.article_count:
         errors.append('Homepage must contain only the introductory hero, with content on dedicated pages')
+    if home.primary_links != ['/about.html']:
+        errors.append('Homepage must start the reading path with My story')
+    for current, following in [('about.html', '/work.html'), ('work.html', '/how-i-work.html'), ('how-i-work.html', '/writing.html')]:
+        page = page_at(current)
+        if not page.return_links or page.return_links[0] != following or following not in page.primary_links:
+            errors.append(f'{current}: closing primary action must continue to {following}')
     writing = page_at('writing.html')
+    if writing.connection_links != [MEDIUM, LINKEDIN]:
+        errors.append('Writing must end with Medium subscription and LinkedIn connection destinations')
     if writing.article_count != len(json.loads((DATA / 'medium-posts.json').read_text())):
         errors.append('Writing page must contain every cached Medium preview')
     work_page = page_at('work.html')

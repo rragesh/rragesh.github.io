@@ -1,12 +1,13 @@
 ---
-import { LINKEDIN, NAVIGATION } from "../data/site";
+import { LINKEDIN, MEDIUM } from "../data/site";
 const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer container">
   <p>© <span id="year">{year}</span> Ragesh Ramachandran</p>
   <nav aria-label="Footer navigation">
-    {NAVIGATION.map(({ href, label }) => <a href={href}>{label}</a>)}
-    <a href={LINKEDIN}>LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a>
+    <a href="/about.html">Start with my story</a>
+    <a href={MEDIUM}>Subscribe on Medium</a>
+    <a href={LINKEDIN}>Connect on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a>
   </nav>
 </footer>

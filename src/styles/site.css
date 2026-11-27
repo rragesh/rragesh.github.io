@@ -802,6 +802,7 @@ figcaption span {
 .site-footer nav a {
   display: inline-flex;
   align-items: center;
+  gap: 10px;
   min-height: 44px;
   font-size: 11px;
   color: var(--muted);
@@ -995,6 +996,30 @@ figcaption span {
   align-items: center;
   gap: 12px 24px;
   margin-top: 24px;
+}
+.journey-page .continue-reading {
+  margin-top: 48px;
+}
+.stay-in-touch-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+}
+.stay-in-touch-options > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+}
+.stay-in-touch-options p {
+  margin-block: 12px 24px;
+  font-size: 16px;
+}
+.stay-in-touch-options .button {
+  margin-top: auto;
+  min-height: 52px;
 }
 .breadcrumbs {
   display: flex;
@@ -1724,6 +1749,9 @@ figcaption span {
   }
 }
 @media (max-width: 600px) {
+  .stay-in-touch-options {
+    grid-template-columns: 1fr;
+  }
   .work-page .faq-item p,
   .work-page .faq-section .section-heading p {
     font-size: 16px;

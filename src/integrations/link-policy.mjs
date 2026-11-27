@@ -1,7 +1,7 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import { openInNewTabs } from "./link-policy-core.mjs";
+import { applyLinkPolicy } from "./link-policy-core.mjs";
 
 async function* htmlFiles(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -12,8 +12,8 @@ async function* htmlFiles(directory) {
 }
 
 /**
- * Rewrites built HTML after `astro build` so destination links open in new tabs with
- * rel="noopener" (owner preference). See ./link-policy-core.mjs for the exact rules.
+ * Rewrites built HTML after `astro build` so only LinkedIn and YouTube open in
+ * safe new tabs. See ./link-policy-core.mjs for the exact rules.
  * @returns {import("astro").AstroIntegration}
  */
 export default function linkPolicy() {
@@ -27,13 +27,13 @@ export default function linkPolicy() {
         for await (const file of htmlFiles(root)) {
           checked++;
           const source = await readFile(file, "utf8");
-          const result = openInNewTabs(source);
+          const result = applyLinkPolicy(source);
           if (result !== source) {
             await writeFile(file, result);
             updated++;
           }
         }
-        logger.info(`Applied new-tab link policy to ${updated} of ${checked} HTML files.`);
+        logger.info(`Applied link policy to ${updated} of ${checked} HTML files.`);
       },
     },
   };

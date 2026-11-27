@@ -1,6 +1,6 @@
 # Robotics journey
 
-Mode: Read. Prospective clients and VC scouts want the story behind the engineer and founder, from planetary rovers to software infrastructure for robots supporting the defense of democracy. Primary target: about.html.
+Mode: Read. Prospective clients and VC scouts want the story behind the engineer and founder, from planetary rovers to software infrastructure for robots supporting the defense of democracy. Primary target: about.html. This is the first page in the guided reading path: its closing primary action continues to Work, with a quieter link to the Medium/LinkedIn invitation. Project detours return to their story chapters in the same tab.
 
 ## Direction contract
 

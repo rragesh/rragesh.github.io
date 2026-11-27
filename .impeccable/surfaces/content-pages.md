@@ -1,6 +1,6 @@
 # Work and Writing
 
-Mode: Read. These dedicated pages let visitors understand Ragesh’s work and thinking before reaching out. Targets: work.html and writing.html.
+Mode: Read. These dedicated pages let visitors understand Ragesh’s work and thinking before subscribing on Medium or connecting on LinkedIn. Targets: work.html and writing.html. Work continues to How I work, which continues to Writing. Writing ends with both relationship destinations; its Medium option explains Follow and email notifications. All links stay in the current tab except LinkedIn and YouTube.
 
 ## Direction contract
 
@@ -12,7 +12,7 @@ ALIGNMENT: Use the shared 980px header/footer shell and 660px reading measure. W
 
 EXPERIENCE: Four consistent organization-and-evidence rows lead with confidential current work, followed by NODE Robotics, Robotair, and Fraunhofer IPA / ROS-Industrial. Current capabilities stay visible, NODE's previously approved fleet/release/cost results are concise, and the attributed recommendation sits within that entry. Founder and research evidence uses the same alignment. Mobile stacks organization context before the evidence; current-work identifiers and operating figures remain private.
 
-STORY: Work follows the buyer's questions: how Ragesh can help (three engagement options), why trust the work (professional experience), where the approach began (story invitation), what to expect (FAQ), and contact. The separate process section is removed; its scoping and handover substance belongs in the FAQ. The #projects section is a story bridge. Writing presents the Medium feed first, then additional technical writing and the ROSCon talk. Closing sections invite another relevant page or a LinkedIn conversation.
+STORY: Work follows the buyer's questions: how Ragesh can help (three engagement options), why trust the work (professional experience), where the approach began (story invitation), and what to expect (FAQ), before continuing to How I work. The separate process section is removed; its scoping and handover substance belongs in the FAQ. The #projects section is a story bridge. Writing presents the Medium feed first, then additional technical writing and the ROSCon talk, and ends with Medium subscription and LinkedIn connection options.
 
 FIRST VIEWPORT: A clear page title and purpose, current-page navigation, then meaningful content. Work introduces the collaboration path and leads into the engagement comparison, with local links ordered as working together, experience, and questions. Writing exposes the latest articles and filters directly.
 
@@ -20,6 +20,6 @@ FORM: Established-world content migration, seed: none (pinned): “everything el
 
 ENGAGEMENT COMPARISON: Within Work, the owner requested “3 options like a pricing section” with premium EU/US positioning. Use three equal editorial columns for assessment, production engineering, and fractional leadership, with aligned serif titles, concise buyer-fit descriptions, four concrete scope items, and individual LinkedIn actions. A single framed comparison and quiet dividers inherit the existing palette; no invented prices or popularity claims. Stack the options below 1000px, preserve readable 16px copy, and show verified production-fleet experience and individually agreed commercial terms beneath the comparison.
 
-BUYER QUESTIONS: Six visible answers resolve fit, engagement choice, engineering collaboration, timing/fees, handover, and Robotair-related inquiries. Use specific first-person language and defined responsibilities; scope and commercial terms are agreed rather than invented. Question headings, generous reading text, quiet separators, and selective emphasis support scanning. Keep FAQ structured data identical to the visible answers, and end with a concrete invitation to share the platform, deployment challenge, and next milestone.
+BUYER QUESTIONS: Six visible answers resolve fit, engagement choice, engineering collaboration, timing/fees, handover, and Robotair-related inquiries. Use specific first-person language and defined responsibilities; scope and commercial terms are agreed rather than invented. Question headings, generous reading text, quiet separators, and selective emphasis support scanning. Keep FAQ structured data identical to the visible answers. Readers continue to How I work or use Stay in touch to reach the final invitation.
 
 FINISH: Verify navigation and content routes across every page, visible articles/projects, keyboard navigation, mobile wrapping, and LinkedIn contact. Do not claim a measured conversion uplift.

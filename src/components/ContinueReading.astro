@@ -1,18 +1,21 @@
 ---
-import { LINKEDIN } from "../data/site";
+import { STAY_IN_TOUCH } from "../data/site";
 
 interface Props {
   heading: string;
   description: string;
-  /** Secondary destination shown next to the LinkedIn call to action. */
+  /** The next page in the story → work → approach → writing reading path. */
   href: string;
   label: string;
+  id?: string;
 }
-const { heading, description, href, label } = Astro.props;
+const { heading, description, href, label, id = "next-step" } = Astro.props;
 ---
-<section class="section continue-reading">
-  <h2>{heading}</h2>
+<section class="section continue-reading" id={id} aria-labelledby={`${id}-title`}>
+  <h2 id={`${id}-title`}>{heading}</h2>
   <p>{description}</p>
-  <div class="continue-actions"><a class="button primary-button" href={LINKEDIN}>Get in touch on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a>
-  <a class="text-link" href={href}>{label} <span class="arrow" aria-hidden="true"></span></a></div>
+  <div class="continue-actions">
+    <a class="button primary-button" href={href}>{label} <span class="arrow" aria-hidden="true"></span></a>
+    <a class="text-link" href={STAY_IN_TOUCH}>Ready to stay in touch? <span class="arrow" aria-hidden="true"></span></a>
+  </div>
 </section>

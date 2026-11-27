@@ -1,8 +1,9 @@
 /**
- * Owner preference: every destination link opens in a new tab with rel="noopener".
- * Same-page fragments ("#..."), non-web schemes (mailto:, tel:, javascript:, …) and
- * markup inside <script>/<style>/comments are left untouched. The transform only
- * rewrites matching <a> start tags, so the rest of the document is preserved byte for byte,
+ * Only LinkedIn and YouTube links open in a new tab with rel="noopener".
+ * Other web links and fragments stay in the current tab. Non-web schemes
+ * (mailto:, tel:, javascript:, …) and markup inside <script>/<style>/comments
+ * are left untouched. The transform only rewrites matching <a> start tags,
+ * so the rest of the document is preserved byte for byte,
  * and running it twice gives the same result.
  */
 
@@ -79,13 +80,29 @@ function scheme(href) {
   return match ? match[1].toLowerCase() : "";
 }
 
+function opensInNewTab(href) {
+  try {
+    const url = new URL(href, "https://rragesh.github.io/");
+    return ["http:", "https:"].includes(url.protocol) &&
+      ["linkedin.com", "youtube.com", "youtu.be", "youtube-nocookie.com"].some(
+        (host) => url.hostname === host || url.hostname.endsWith(`.${host}`),
+      );
+  } catch {
+    return false;
+  }
+}
+
 function rewriteAnchor(source, tag) {
   const attr = (name) => tag.attrs.find((entry) => entry.name === name);
   const href = attr("href")?.value;
-  if (!href || href.startsWith("#") || !["", "http", "https"].includes(scheme(href))) return null;
+  if (!href || !["", "http", "https"].includes(scheme(href))) return null;
+  const newTab = opensInNewTab(href);
+  if (!newTab && !attr("target")) return null;
   const rel = new Set((attr("rel")?.value ?? "").split(/\s+/).filter(Boolean));
-  rel.delete("opener");
-  rel.add("noopener");
+  for (const token of rel) {
+    if (token.toLowerCase() === "opener") rel.delete(token);
+  }
+  if (newTab) rel.add("noopener");
   let raw = "";
   let cursor = tag.start;
   for (const entry of tag.attrs) {
@@ -95,15 +112,18 @@ function rewriteAnchor(source, tag) {
   }
   raw += source.slice(cursor, tag.close).replace(/\s+$/, "");
   const close = source.slice(tag.close, tag.end) === "/>" ? ">" : source.slice(tag.close, tag.end);
-  return `${raw} target="_blank" rel="${[...rel].sort().join(" ")}"${close}`;
+  const target = newTab ? ' target="_blank"' : "";
+  const relValue = [...rel].sort().join(" ").replace(/&/g, "&amp;").replace(/"/g, "&quot;");
+  const relationship = relValue ? ` rel="${relValue}"` : "";
+  return `${raw}${target}${relationship}${close}`;
 }
 
 /**
- * Give every destination link target="_blank" and a rel containing "noopener".
+ * Apply the owner's same-tab default, with safe new tabs for LinkedIn and YouTube.
  * @param {string} source HTML document or fragment
  * @returns {string}
  */
-export function openInNewTabs(source) {
+export function applyLinkPolicy(source) {
   const lower = source.toLowerCase();
   let output = "";
   let copied = 0;
