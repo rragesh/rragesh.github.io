@@ -1,0 +1,83 @@
+name: Deploy website
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+  schedule:
+    # Daily Medium refresh; the site is rebuilt and redeployed with the latest previews.
+    - cron: "23 7 * * *"
+
+permissions:
+  contents: read
+
+# One Pages deployment at a time; never cancel a deployment that is already running.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Full history only when the Medium refresh may need to rebase onto a newer master.
+          fetch-depth: ${{ github.event_name == 'push' && 1 || 0 }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      - name: Refresh Medium previews
+        id: medium
+        if: github.event_name != 'push'
+        # On failure the script exits 1 without touching the cached data, so the
+        # last good previews are built and deployed instead.
+        continue-on-error: true
+        run: npm run medium:refresh
+
+      - run: npm test
+      - run: npm run build
+      - run: python3 scripts/check_site.py
+
+      - name: Commit refreshed Medium previews
+        # Only after the refreshed data has passed the tests, build, and site checks.
+        # Pushing with GITHUB_TOKEN does not trigger another workflow run, so this
+        # cannot cause a second deployment; this run deploys the refreshed site itself.
+        if: github.event_name != 'push' && github.ref == 'refs/heads/master'
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          git add -A -- src/data/medium-posts.json src/assets/medium
+          if git diff --cached --quiet; then
+            echo "Medium previews unchanged."
+            exit 0
+          fi
+          git commit -m "Refresh Medium article previews"
+          git pull --rebase origin master
+          git push origin HEAD:master
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
