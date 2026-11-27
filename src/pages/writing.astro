@@ -11,11 +11,10 @@ const posts = mediumPosts as MediumPost[];
 ---
 <BaseLayout {...meta} active="writing" bodyClass={meta.bodyClass}>
   <section class="writing-page-content" id="writing" aria-labelledby="writing-title">
-    <div class="section-heading">
-      <div>
-        <h1 id="writing-title">Writing &amp; learning.</h1>
-        <p>My latest Medium articles on ROS 2, deployment, and the lessons learned from building and operating robots.</p>
-      </div>
+    <div class="page-intro writing-intro">
+      <h1 id="writing-title">Writing &amp; learning.</h1>
+      <p>Notes from building robots, untangling deployment problems, and figuring
+        things out along the way. I share what I learn on Medium.</p>
       <a class="text-link" href="#stay-in-touch">Subscribe or connect <span class="arrow" aria-hidden="true"></span></a>
     </div>
     <div class="writing-section">
@@ -65,7 +64,7 @@ const posts = mediumPosts as MediumPost[];
   </section>
   <section class="section continue-reading stay-in-touch" id="stay-in-touch" aria-labelledby="stay-in-touch-title">
     <h2 id="stay-in-touch-title">Let’s keep the conversation going.</h2>
-    <p>If my work or ideas resonate with you, here are two ways to stay in touch.</p>
+    <p>Working through a similar problem? Have a different take? I’d enjoy comparing notes.</p>
     <div class="stay-in-touch-options">
       <div>
         <h3>Keep learning with me.</h3>
@@ -73,7 +72,7 @@ const posts = mediumPosts as MediumPost[];
         <a class="button primary-button" href={MEDIUM}>Subscribe on Medium <span class="arrow" aria-hidden="true"></span></a>
       </div>
       <div>
-        <h3>Have something in mind?</h3>
+        <h3>Say hello.</h3>
         <p>Tell me what you’re building, a challenge you’re working through, or an idea from the writing you’d like to discuss.</p>
         <a class="button" href={LINKEDIN}>Connect on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a>
       </div>

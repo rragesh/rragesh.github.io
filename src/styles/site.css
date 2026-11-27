@@ -69,6 +69,7 @@ html {
 }
 body {
   margin: 0;
+  min-height: 100svh;
   background:
     linear-gradient(180deg, var(--sky), var(--paper) 900px) no-repeat,
     var(--paper);
@@ -464,7 +465,7 @@ p {
   background: transparent;
   color: var(--muted);
   padding: 6px 11px;
-  min-height: 40px;
+  min-height: 44px;
   font-size: 14px;
   border-radius: 5px;
 }
@@ -492,7 +493,7 @@ p {
   color: var(--ink);
   border-radius: 5px;
   font-size: 16px;
-  min-height: 40px;
+  min-height: 44px;
 }
 .search-label input::placeholder {
   color: var(--muted);
@@ -794,6 +795,10 @@ figcaption span {
   font-size: 11px;
   color: var(--muted);
 }
+.footer-credit {
+  display: block;
+  margin-top: 6px;
+}
 .site-footer nav {
   display: flex;
   flex-wrap: wrap;
@@ -887,7 +892,7 @@ figcaption span {
   padding-top: 20px;
 }
 
-/* Consulting homepage: the personal editorial identity, with a buyer-led hierarchy. */
+/* Personal homepage: a greeting, the person behind the work, and a path into the story. */
 .consulting-page .site-header {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
@@ -946,10 +951,16 @@ figcaption span {
   grid-area: explore;
   min-width: 0;
 }
-.hero-discovery {
+.hero-lead {
+  margin-top: 20px;
+  font-size: 25px;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+.hero-perspective {
   color: var(--muted);
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.75;
   margin-top: 20px;
 }
 .entry-page .hero-speaker {
@@ -978,6 +989,12 @@ figcaption span {
 }
 .writing-page-content {
   padding-top: 48px;
+}
+.writing-intro {
+  padding-block: 0 32px;
+}
+.writing-intro .text-link {
+  margin-top: 12px;
 }
 .feed-title {
   font-size: 26px;
@@ -1041,7 +1058,6 @@ figcaption span {
   text-wrap: pretty;
 }
 .consulting-hero h1 span {
-  display: block;
   color: var(--link);
 }
 .hero-copy {
@@ -1064,10 +1080,10 @@ figcaption span {
 }
 .hero-actions {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  margin-top: 32px;
 }
 .hero-actions .primary-button {
   max-width: 100%;
@@ -1188,6 +1204,13 @@ figcaption span {
 .working-principles p {
   margin-top: 10px;
   color: var(--muted);
+}
+.working-principles h3 {
+  font-size: 20px;
+  line-height: 1.4;
+}
+.approach-page .section-note {
+  font-size: 16px;
 }
 .working-fit {
   margin: 24px 0 0;
@@ -1724,7 +1747,7 @@ figcaption span {
   .entry-page .hero-speaker figcaption a {
     line-height: 1.5;
   }
-  .entry-page .hero-discovery {
+  .entry-page .hero-actions {
     margin-top: 0;
   }
   .about-section > div:first-child {
@@ -1785,6 +1808,9 @@ figcaption span {
   .page-intro > p {
     font-size: 16px;
   }
+  .writing-intro {
+    padding-top: 0;
+  }
   .writing-page-content {
     padding-top: 32px;
   }
@@ -1800,7 +1826,26 @@ figcaption span {
   }
   .hero-copy {
     font-size: 16px;
-    margin-top: 24px;
+    margin-top: 20px;
+  }
+  .hero-lead {
+    margin-top: 16px;
+    font-size: 22px;
+  }
+  .hero-perspective {
+    margin-top: 16px;
+    font-size: 16px;
+  }
+  .hero-actions {
+    gap: 8px 20px;
+  }
+  .page-header .header-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 12px;
+  }
+  .header-nav a:last-child .arrow {
+    display: none;
   }
   .consulting-page .section {
     padding-block: 44px;
