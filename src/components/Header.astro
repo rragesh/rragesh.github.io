@@ -1,5 +1,5 @@
 ---
-import { LINKEDIN, NAVIGATION, type NavKey } from "../data/site";
+import { STAY_IN_TOUCH, NAVIGATION, type NavKey } from "../data/site";
 
 interface Props {
   active: NavKey;
@@ -15,7 +15,7 @@ const { active, current = "page" } = Astro.props;
     {NAVIGATION.map(({ key, href, label }) => (
       <a href={href} aria-current={key === active ? current : undefined}>{label}</a>
     ))}
-    <a href={LINKEDIN} aria-label="Get in touch on LinkedIn">Get in touch <span class="arrow diagonal" aria-hidden="true"></span></a>
+    <a href={STAY_IN_TOUCH}>Stay in touch <span class="arrow" aria-hidden="true"></span></a>
   </nav>
   <button class="theme-toggle" type="button" aria-label="Switch to evening theme" aria-pressed="false" hidden>
     <svg class="sun-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" /></svg>

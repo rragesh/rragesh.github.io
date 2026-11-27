@@ -1,6 +1,6 @@
 # Ragesh Ramachandran
 
-The personal site of [Ragesh Ramachandran](https://rragesh.github.io/), organized around discovery → reading and exploration → a LinkedIn conversation. The homepage contains only the positioning hero, ROSCon photograph, and clear paths into the site. Its editorial identity retains the serif typography, soft sky colors, and day/evening theme inspired by [Sooraj Chandran’s personal site](https://www.soorajchandran.com/).
+The personal site of [Ragesh Ramachandran](https://rragesh.github.io/), organized around My story → Work → How I work → Writing → subscribing on Medium or connecting on LinkedIn. The homepage contains only the positioning hero, ROSCon photograph, and a story-first invitation. Its editorial identity retains the serif typography, soft sky colors, and day/evening theme inspired by [Sooraj Chandran’s personal site](https://www.soorajchandran.com/).
 
 ## Pages and navigation
 
@@ -11,7 +11,7 @@ The personal site of [Ragesh Ramachandran](https://rragesh.github.io/), organize
 - `how-i-work.html` — How I work: working principles, communication preferences, team fit, and a direct LinkedIn invitation. Supporting source references live in development notes.
 - `projects/*.html` — individual projects, with My story active in navigation and breadcrumbs/return links to their story chapter.
 
-Every page offers Home, My story, Work, Writing, How I work, and **Get in touch**, which links directly to LinkedIn. End-of-page links connect the reading paths. Work introduces the engagement options, supports them with professional experience and an engineering-story invitation, then answers questions before contact. The FAQ covers scope, collaboration, and handover. The current employer and position remain private. Navigation works without JavaScript.
+Every page offers Home, My story, Work, How I work, Writing, and **Stay in touch**, which leads to `writing.html#stay-in-touch`. End-of-page primary actions follow that reading order. Writing ends with Medium subscription and LinkedIn connection options; the footer also exposes both destinations. Medium subscriptions are completed on the profile via Follow and email notifications. Work introduces the engagement options, supports them with professional experience and an engineering-story invitation, then answers questions. The FAQ covers scope, collaboration, and handover. The current employer and position remain private. Navigation works without JavaScript.
 
 The site is built with [Astro](https://astro.build/) as fully static HTML. Pages ship no framework JavaScript; only the small progressive-enhancement script runs in the browser.
 
@@ -74,7 +74,7 @@ Source photography is documented in `docs/assets.md`. Project-publication PDFs a
 
 ## Link policy
 
-Destination-page links open in new tabs with `rel="noopener"`, including generated articles and project pages. Same-page navigation keeps its normal behavior. The `link-policy` integration (`src/integrations/`) applies this to every built page after `astro build`, so do not write `target`/`rel` by hand. The owner has no Instagram account; do not add an Instagram profile.
+Only LinkedIn and YouTube links open in new tabs with `rel="noopener"`. Internal pages, generated project pages, Medium articles/subscription, other external sites, and same-page navigation stay in the current tab. The `link-policy` integration (`src/integrations/`) applies this to every built page after `astro build`, so do not write `target`/`rel` by hand. Verify tab behavior with `npm run build` and `npm run preview`; the post-build transform does not run in the dev server. The owner has no Instagram account; do not add an Instagram profile.
 
 ## Search positioning
 

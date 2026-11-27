@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ContinueReading from "../components/ContinueReading.astro";
 import { pageMeta } from "../data/pages";
-import { LINKEDIN } from "../data/site";
 import roverUk from "../assets/work/roveruk.jpg";
 import localize from "../assets/work/localize.png";
 
@@ -217,13 +217,11 @@ const photoSizes = "(max-width: 800px) 100vw, 720px";
     </div>
   </section>
 
-  <section class="section contact-section journey-contact" id="work-together" aria-labelledby="contact-title">
-    <h2 id="contact-title">Let’s compare notes.</h2>
-    <p>If you’re building a robotics company, scaling a fleet, or looking for
-      the people turning technical ambition into real-world capability,
-      I’d enjoy comparing notes.</p>
-    <div class="continue-actions">
-    <a class="button primary-button" href={LINKEDIN}>Talk with me on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a> <a class="text-link" href="/how-i-work.html">How I work with a team <span class="arrow" aria-hidden="true"></span></a>
-    </div>
-  </section>
+  <ContinueReading
+    id="work-together"
+    heading="Next, see the work behind the story."
+    description="From that first rover to production fleets, here’s the experience I bring to a team and the ways we could work together."
+    href="/work.html"
+    label="Explore my work"
+  />
 </BaseLayout>
