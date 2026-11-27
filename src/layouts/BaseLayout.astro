@@ -1,0 +1,70 @@
+---
+import "../styles/site.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { absolute, GOOGLE_SITE_VERIFICATION, type NavKey } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+  /** Canonical site path: "/" for home, "/about.html", "/projects/astra.html", … */
+  path: string;
+  /** Social preview image: a site path ("/img/...", "/_astro/...") or absolute URL. */
+  image: string;
+  imageAlt: string;
+  active: NavKey;
+  /** aria-current value for the active nav item ("true" for child pages such as projects). */
+  current?: "page" | "true";
+  bodyClass?: string;
+  mainClass?: string;
+  /** JSON-LD @graph nodes for this page. */
+  graph: unknown[];
+}
+
+const { title, description, path, image, imageAlt, active, current, bodyClass, mainClass = "container", graph } = Astro.props;
+const canonical = absolute(path);
+const imageUrl = /^https?:/.test(image) ? image : absolute(image);
+const structured = JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c");
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Ragesh Ramachandran" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />
+    <meta name="theme-color" content="#dceef3" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/fonts/source-serif-4-latin-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/source-sans-3-latin-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="alternate" type="application/rss+xml" title="Ragesh on Medium" href="https://rragesh.medium.com/feed" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ragesh Ramachandran" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+    <script is:inline type="application/ld+json" set:html={structured} />
+    <slot name="head" />
+  </head>
+  <body class={bodyClass}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header active={active} current={current} />
+    <main id="main" class={mainClass}>
+      <slot />
+    </main>
+    <Footer />
+    <script src="../scripts/site.js"></script>
+  </body>
+</html>

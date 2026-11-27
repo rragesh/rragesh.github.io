@@ -1,7 +1,9 @@
 .DS_Store
 __pycache__/
-.venv/
 .impeccable/review/
 .impeccable/mocks/
 .impeccable/questions/
 .impeccable/config.local.json
+node_modules/
+dist/
+.astro/

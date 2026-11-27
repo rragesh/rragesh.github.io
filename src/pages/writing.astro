@@ -1,0 +1,72 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContinueReading from "../components/ContinueReading.astro";
+import ArticleCard, { type MediumPost } from "../components/writing/ArticleCard.astro";
+import { pageMeta } from "../data/pages";
+import mediumPosts from "../data/medium-posts.json";
+
+const meta = pageMeta("writing");
+// Refreshed by `npm run medium:refresh` (scripts/update-medium.mjs).
+const posts = mediumPosts as MediumPost[];
+---
+<BaseLayout {...meta} active="writing" bodyClass={meta.bodyClass}>
+  <section class="writing-page-content" id="writing" aria-labelledby="writing-title">
+    <div class="section-heading">
+      <div>
+        <h1 id="writing-title">Writing &amp; learning.</h1>
+        <p>My latest Medium articles on ROS 2, deployment, and the lessons learned from building and operating robots.</p>
+      </div>
+      <a class="text-link" href="https://rragesh.medium.com/">All articles <span class="arrow diagonal" aria-hidden="true"></span></a>
+    </div>
+    <div class="writing-section">
+      <h2 class="feed-title">Latest articles on Medium</h2>
+      <div class="writing-tools" hidden>
+        <div class="topic-filters" role="group" aria-label="Filter articles by topic"></div>
+        <label class="search-label" for="article-search">Search stories<input
+            id="article-search"
+            type="search"
+            placeholder="Try Docker or ROS 2"
+            autocomplete="off"
+          /></label>
+      </div>
+      <p id="article-count" class="result-count" role="status" hidden></p>
+      <div class="article-grid" id="articles">
+        {posts.map((post) => <ArticleCard post={post} />)}
+      </div>
+      <div id="no-articles" class="empty-state" hidden>
+        <h3>No matching stories.</h3>
+        <p>Try another topic or search term.</p>
+        <button id="reset-articles" class="button" type="button">Show all stories</button>
+      </div>
+      <div class="writing-footer">
+        <a class="text-link" href="https://rragesh.medium.com/">Follow along on Medium <span class="arrow diagonal" aria-hidden="true"></span></a><a href="https://rragesh.medium.com/feed">RSS feed</a>
+      </div>
+    </div>
+    <details class="additional-writing">
+      <summary>More writing on LinkedIn <span class="plus" aria-hidden="true"></span></summary>
+      <ul class="resource-list">
+        <li>
+          <a href="https://www.linkedin.com/pulse/open-source-tools-robot-devops-pipeline-ragesh-ramachandran">Open source tools in Robot DevOps pipeline</a> <span>Tooling across the robot software delivery lifecycle · LinkedIn</span>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/pulse/continuous-integration-deployment-robotics-ragesh-ramachandran">Continuous Integration and Deployment in Robotics</a> <span>CI/CD practices for robotics teams · LinkedIn</span>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/pulse/deploying-ros2-packages-using-ansible-ragesh-ramachandran">Deploying ROS2 packages using Ansible</a> <span>Automating ROS 2 deployments · LinkedIn</span>
+        </li>
+      </ul>
+    </details>
+    <details class="talk-summary" id="talks">
+      <summary>Watch my ROSCon India 2023 talk <span class="plus" aria-hidden="true"></span></summary>
+      <h3>Robotair · Tech talk at ROSCon India 2023</h3>
+      <p>I shared my work on robotics DevOps and Robotair with the <a href="https://rosconindia.in/">ROSCon India</a> community, drawing on the challenges of taking ROS software into production.</p>
+      <a class="text-link" href="https://www.youtube.com/watch?v=p302LwKIhQg">Watch the talk on YouTube <span class="arrow diagonal" aria-hidden="true"></span></a>
+    </details>
+  </section>
+  <ContinueReading
+    heading="Let’s compare notes."
+    description="If something here connects with what you’re building or learning, I’d enjoy hearing about it. You can also explore the projects behind the writing."
+    href="/work.html"
+    label="Explore my work"
+  />
+</BaseLayout>

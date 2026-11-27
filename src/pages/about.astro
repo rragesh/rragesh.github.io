@@ -1,0 +1,229 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { pageMeta } from "../data/pages";
+import { LINKEDIN } from "../data/site";
+import roverUk from "../assets/work/roveruk.jpg";
+import localize from "../assets/work/localize.png";
+
+const meta = pageMeta("story");
+const photoSizes = "(max-width: 800px) 100vw, 720px";
+---
+<BaseLayout {...meta} active="story" bodyClass={meta.bodyClass}>
+  <section class="journey-intro" aria-labelledby="journey-title">
+    <h1 id="journey-title">It started with a rover.</h1>
+    <p class="journey-lead">I’m Ragesh. My journey has taken me from a university
+      rover team in Kerala to building the software infrastructure behind robots
+      that support the people defending democracy on the front line.</p>
+    <p>Along the way, I’ve taken robotics systems onto factory floors in Germany
+      and around the world, founded Robotair, and built delivery infrastructure
+      supporting more than 1,500 production robots. Each chapter brought the same question into sharper
+      focus: how do we turn a robot that works into a system people can depend on?</p>
+    <p>This is the story of how that question shaped me—as an engineer,
+      a founder, and someone who cares about what happens after the demo.</p>
+    <nav class="chapter-nav" aria-label="Journey chapters">
+      <a href="#origins">Rover years</a> <a href="#control">Sensing &amp; recovery</a> <a href="#industrial">Industrial robotics</a> <a href="#fleet-scale">Fleet scale</a> <a href="#today">The software factory</a>
+    </nav>
+  </section>
+
+  <section class="journey-chapter" id="origins" aria-labelledby="origins-title">
+    <div class="chapter-heading">
+      <h2 id="origins-title">Learning to see the whole machine.</h2>
+    </div>
+    <div class="chapter-copy">
+      <p>I studied electronics and communication engineering at Amrita
+        University between 2013 and 2017. Building robots gave those subjects
+        a shared purpose: a sensor reading had to become a decision, and that
+        decision had to turn into something a real machine could do.</p>
+      <p>In 2015, I worked on system integration for a planetary rover. A year
+        later, I led a 15-person multidisciplinary team building a rover with
+        autonomous navigation and manipulation capabilities for the United
+        Kingdom Rover Challenge. Phoenix I and Phoenix II are still an
+         important part of how I think about engineering.</p>
+      <figure class="journey-photo">
+        <Image src={roverUk} widths={[480, 720, 936]} sizes={photoSizes} loading="lazy"
+          alt="Phoenix II rover with articulated wheels and a robotic arm on the grass" />
+        <figcaption><strong>Phoenix II · United Kingdom Rover Challenge, 2016</strong> I led the 15-person team bringing navigation, manipulation, and the
+          rover’s subsystems together. <a class="text-link" href="/projects/phoenix.html">Explore Phoenix II <span class="arrow" aria-hidden="true"></span></a>
+        </figcaption>
+      </figure>
+      <p>A rover makes the dependencies hard to ignore. Electronics, mechanics,
+        control, and software all meet in the same machine. Leading that team
+        also meant thinking about the interfaces between people: how one
+        person’s decision affects what someone else can build or test.</p>
+      <p>That is where my habit of looking at the whole system took shape.
+        Today, when I look at a deployment pipeline, I still follow it all the
+        way to the robot and the person who will operate it.</p>
+      <nav class="chapter-projects" aria-label="Earlier rover projects">
+        <p>Earlier rover work</p>
+        <div class="chapter-links">
+          <a href="/projects/8_leg.html">2015 rover design</a> <a href="/projects/8_leg_dummy.html">2015 field trials</a> <a href="/projects/phoenix_dummy.html">Phoenix I</a>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <section class="journey-chapter" id="control" aria-labelledby="control-title">
+    <div class="chapter-heading">
+      <h2 id="control-title">What happens when something goes wrong?</h2>
+    </div>
+    <div class="chapter-copy">
+      <p>The years around those rover projects let me explore very different
+        sides of robotics: <a href="/projects/recharge.html">autonomous docking</a> at Ingeniarius, RobotCraft,
+        robotic teaching arms, and systems that brought ground and aerial
+        robots together. Other university work explored remotely operated
+        inspection. In 2017, at the Mechatronics and Intelligent Systems
+        Research Lab, I worked on EMG-based control for a prosthetic arm.</p>
+      <nav class="chapter-projects" aria-label="University robotics projects">
+        <p>Other work from this period</p>
+        <div class="chapter-links">
+          <a href="/projects/Saksha.html">SAKSHA: teaching by movement</a> <a href="/projects/astra.html">ASTRA: shared robot sensing</a> <a href="/projects/dhruv.html">DHRUV: remote inspection</a>
+        </div>
+      </nav>
+      <p>I then moved to France for a master’s in Control and Robotics at
+        École Centrale de Nantes. Working on infrared-camera localization,
+        calibration, and ROS integration gave me a deeper understanding of
+        how a robot’s view of the world is constructed.</p>
+      <figure class="journey-photo">
+        <Image src={localize} width={720} height={720} widths={[480, 720]} sizes={photoSizes} loading="lazy"
+          alt="ROS visualization of four infrared cameras covering a shared indoor workspace" />
+        <figcaption><strong>Indoor localization · École Centrale de Nantes</strong> My work connected infrared-camera readings, calibration, and ROS
+          so robots could locate themselves in a shared workspace. <a class="text-link" href="/projects/localization.html">Explore the localization project <span class="arrow" aria-hidden="true"></span></a>
+        </figcaption>
+      </figure>
+      <p>My 2019 master’s thesis at Fraunhofer IPA took that thinking in another
+        direction: detecting faults in industrial manipulators and generating
+        recovery actions after abnormal operating conditions.</p>
+      <p>Recovery became part of the engineering question itself. That idea
+        has stayed with me through release systems and fleet operations:
+        knowing what went wrong, and having a way back, matters as much as
+        getting the happy path to work.</p>
+    </div>
+  </section>
+
+  <section class="journey-chapter" id="industrial" aria-labelledby="industrial-title">
+    <div class="chapter-heading">
+      <h2 id="industrial-title">The factory floor changes the question.</h2>
+    </div>
+    <div class="chapter-copy">
+      <p>I stayed at Fraunhofer IPA, working on industrial robotics from 2019
+        to 2023. I developed and deployed ROS 2-based autonomous robot fleets,
+        designed architectures for EU-funded projects, and worked with
+        industry partners to turn their requirements into running systems.</p>
+      <p>A factory introduces another set of realities. The robot has to fit
+        an existing environment. Software changes have to reach it reliably.
+        The people responsible for the system need to understand what they
+        are running and how to keep it working.</p>
+      <p>Alongside the robotics applications, I began building CI/CD and
+        deployment workflows. Through ROS-Industrial, I also delivered ROS 2
+        training and technical guidance to industry partners. Building the
+        system and helping another team take ownership of it became connected
+        parts of my work.</p>
+      <p>This is where deployment became central to my thinking. The value of
+        a robotics system depends on whether people can put it to work,
+        maintain it, and trust the next change.</p>
+    </div>
+  </section>
+
+  <section class="journey-chapter" id="robotair" aria-labelledby="robotair-title">
+    <div class="chapter-heading">
+      <h2 id="robotair-title">Building a company around the delivery problem.</h2>
+    </div>
+    <div class="chapter-copy">
+      <p>In 2023, I founded <a href="https://robotair.io/">Robotair</a>.
+        I wanted robotics teams to have a more connected way to move from a
+        software repository to delivery workflows, OTA updates, and visibility
+        into their fleets.</p>
+      <p>During a 12-month beta, Robotair reached 15 paying customers across
+        Europe and India. That added a different kind of feedback to the
+        engineering process. A capability had to be useful enough for someone
+        to adopt it, use it, and pay for it.</p>
+      <p>Founding a company made the product side of infrastructure much more
+        concrete for me. Technical decisions also become decisions about
+        usability, cost, and the work a customer can get done. It is a
+        perspective I bring into an engineering team as much as into a product.</p>
+      <p>Robotair continued into 2025, overlapping with my work at NODE
+        Robotics. The experience fed directly into the in-house delivery
+        capabilities I built there.</p>
+    </div>
+  </section>
+
+  <section class="journey-chapter" id="fleet-scale" aria-labelledby="fleet-title">
+    <div class="chapter-heading">
+      <h2 id="fleet-title">When one deployment becomes a fleet.</h2>
+    </div>
+    <div class="chapter-copy">
+      <p>At NODE Robotics in 2024–2025, I took ownership of delivery
+        infrastructure supporting more than 1,500 production robots across
+        different customer environments.</p>
+      <p>The work connected the whole route from a software change to a
+        customer deployment. I built provisioning and deployment workflows
+        with Ansible and Terraform, enabling deployments on demand while
+        supporting three software releases a month.</p>
+      <p>Architecture mattered commercially, too. A hybrid on-premises and
+        VPC design reduced infrastructure costs by 50%. DORA metrics and
+        deployment KPIs made release performance and system stability visible
+        to the engineering team.</p>
+      <p>Those results came from treating delivery as a system: the build,
+        the environment, the rollout, and the feedback after it reaches the
+        fleet. This was the rover lesson at a different scale. The connections
+        between the parts still determined whether the whole thing worked.</p>
+    </div>
+  </section>
+
+  <section class="journey-chapter" id="today" aria-labelledby="today-title">
+    <div class="chapter-heading">
+      <h2 id="today-title">The mission behind my work today.</h2>
+    </div>
+    <div class="chapter-copy">
+      <p>Today, I work at a stealth defense robotics startup, building the
+        software factory behind the robots. The purpose is concrete: help make
+        those robots dependable for the people using them in the defense of
+        democracy. Some details of this chapter remain private.</p>
+      <p>I build the infrastructure connecting development, testing, release,
+        and deployment: CI/CD pipelines, verification gates, and an in-house
+        OTA system, including the engineering work behind its CE conformity.</p>
+      <p>I have also led ISO 9001 and CE certification processes, bringing
+        engineering workflows, quality practices, and software evidence
+        together. Release notes, engineering KPIs, and delivery coordination
+        help the team understand both what is changing and how the work is progressing.</p>
+      <p>In this setting, the release process is part of how a team earns
+        confidence in what reaches the field. My focus has grown from the robot
+        to the capability of the people building it: a repeatable way to deliver,
+        verify, and maintain software when reliability has consequences beyond
+        the engineering team.</p>
+    </div>
+  </section>
+
+  <section class="journey-chapter" id="working-with-me" aria-labelledby="working-title">
+    <div class="chapter-heading">
+      <h2 id="working-title">The engineer I have become.</h2>
+    </div>
+    <div class="chapter-copy">
+      <p>The rover years taught me to see the whole machine. Research gave me
+        a deeper understanding of control and recovery. Factory deployments
+        brought the customer’s environment into the picture. Building Robotair
+        added the discipline of making something people would adopt and pay
+        for. Production fleets made repeatability and cost impossible to ignore.</p>
+      <p>I bring all of that into my work now. I can follow a problem from
+        the robot through the software, infrastructure, and working practices
+        around it—and connect those decisions to what a customer needs and
+        what a company can sustain.</p>
+      <p>That is the work I want to keep taking on: the difficult stretch
+        between a promising robot, a useful product, and dependable deployment
+        at scale. Building the technology and building the capability around
+        it have become inseparable for me.</p>
+      <p class="story-signoff">Ragesh</p>
+    </div>
+  </section>
+
+  <section class="section contact-section journey-contact" id="work-together" aria-labelledby="contact-title">
+    <h2 id="contact-title">Let’s compare notes.</h2>
+    <p>If you’re building a robotics company, scaling a fleet, or looking for
+      the people turning technical ambition into real-world capability,
+      I’d enjoy comparing notes.</p>
+    <div class="continue-actions">
+    <a class="button primary-button" href={LINKEDIN}>Talk with me on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a> <a class="text-link" href="/how-i-work.html">How I work with a team <span class="arrow" aria-hidden="true"></span></a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,330 @@
+[
+  {
+    "slug": "recharge",
+    "storyChapter": "control",
+    "seoTitle": "Autonomous Robot Charging | Ragesh Ramachandran",
+    "summary": "Helping a patrol robot find its charger: Ragesh Ramachandran’s ROS docking routine for the STOP project, developed and tested in Gazebo simulation.",
+    "title": "Autonomous docking: finding the way back to charge",
+    "intro": "A robot that can patrol on its own also needs a way to return to its charger. This project built and tested that return-to-charge routine in simulation.",
+    "context": "Ingeniarius · Coimbra, Portugal",
+    "image": "../assets/work/recharge.jpeg",
+    "imageAlt": "A service robot with a touchscreen and illuminated face",
+    "sections": [
+      {
+        "heading": "The quiet problem behind an autonomous patrol",
+        "paragraphs": [
+          "Imagine a robot halfway through its patrol when its battery starts to run low. Finding the way back to a charging station is part of keeping that robot useful throughout its operating cycle.",
+          "The STOP project used a small team of robots to patrol a single floor. My task was to develop the software routine that would take a robot to a charging station when its battery fell below a chosen threshold."
+        ]
+      },
+      {
+        "heading": "Turning a charging request into a journey home",
+        "paragraphs": [
+          "The routine identified the nearest charging station and passed its location to the robot’s navigation software. Once the robot docked, it returned its charging status so the rest of the system could tell what had happened.",
+          "I used ROS—the Robot Operating System, a framework that connects robot software components—to fit the routine into the existing application. A ROS service provided the request-and-response interface, while the ROS navigation stack handled travel to the station."
+        ]
+      },
+      {
+        "heading": "Testing the complete sequence",
+        "paragraphs": [
+          "The application was developed and successfully tested in Gazebo, a virtual environment for simulating robots. That made it possible to exercise the return-to-charge sequence as a connected workflow.",
+          "The useful result was a routine that linked battery state, navigation, docking, and charging feedback. It addressed an everyday operational need: giving the robot a defined way to stop working and recover its energy."
+        ]
+      }
+    ],
+    "links": [
+      { "url": "https://github.com/EnigmaRagesh/ctcv_gazebo", "label": "Explore the code" },
+      { "url": "http://stop.ingeniarius.pt/", "label": "About the STOP project" }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "localization",
+    "storyChapter": "control",
+    "seoTitle": "Indoor Robot Positioning | Ragesh Ramachandran",
+    "summary": "An overhead infrared-camera system that helps robots locate themselves indoors, with shared coordinates, ROS integration, and calibration.",
+    "title": "Helping robots find their place indoors",
+    "intro": "Before robots can work together, they need to agree on where they are. This project used overhead infrared cameras to give them a shared view of an indoor workspace.",
+    "context": "École Centrale de Nantes · France",
+    "image": "../assets/work/localize.png",
+    "imageAlt": "The infrared-camera localization experiment for an indoor robot workspace",
+    "sections": [
+      {
+        "heading": "Why counting wheel turns is not enough",
+        "paragraphs": [
+          "A mobile robot can estimate how far it has travelled by tracking its wheels. This is called odometry. Small errors accumulate over time, so the robot’s estimate can drift away from its real position.",
+          "This project explored another reference: cameras fixed above the workspace. By observing infrared light markers on the robots, the system could locate them relative to the room, rather than relying only on how far their wheels appeared to move."
+        ]
+      },
+      {
+        "heading": "Four cameras, one coordinate system",
+        "paragraphs": [
+          "Four ceiling-mounted cameras were arranged at the corners of an approximately one-metre square, with overlapping views. The overlap helped connect the cameras’ individual observations into a common frame of reference.",
+          "Camera readings travelled over a CAN bus, a communication link used to exchange data between devices. Software built with ROS, a framework for connecting robot software components, translated those readings into coordinates. RViz—a robot-data visualization tool—displayed the camera coverage and detected points."
+        ]
+      },
+      {
+        "heading": "Calibration made the readings useful",
+        "paragraphs": [
+          "The cameras needed to agree on how their measurements related to the same physical space. Calibration is that alignment process: it turns separate camera views into positions the rest of the system can use.",
+          "The project used ROS calibration software and boards fitted with infrared LEDs. After calibration, the reported localization accuracy was approximately 5 cm in the experimental setup. The modular approach also provided a way to calibrate additional cameras as the array grew."
+        ]
+      }
+    ],
+    "links": [
+      { "url": "https://github.com/EnigmaRagesh/2X2_IR-sensor-array-Calibration", "label": "Explore the calibration code" },
+      { "url": "/img/exp/Localization system using overhead IR image sensors.pdf", "label": "Read the technical paper" }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "Saksha",
+    "storyChapter": "control",
+    "seoTitle": "SAKSHA: Teach a Robot by Moving | Ragesh Ramachandran",
+    "summary": "SAKSHA explores a more hands-on way to teach a robotic arm: move a linked control arm, record its joint positions, and replay the movement.",
+    "title": "SAKSHA: teaching a robot by moving an arm",
+    "intro": "What if showing a robot a movement were as direct as moving an arm yourself? SAKSHA explored that idea with two linked robotic arms and a record-and-replay workflow.",
+    "context": "Amrita University · India",
+    "image": "../assets/work/saksha.jpg",
+    "imageAlt": "The paired control and follower arms in the SAKSHA project",
+    "sections": [
+      {
+        "heading": "Let the movement be the instruction",
+        "paragraphs": [
+          "Programming a robot arm often involves moving it through a sequence of positions using a handheld controller, known as a teach pendant. SAKSHA explored a more physical interface: guide one arm and let a second arm follow its joint movements.",
+          "The aim was to make the desired motion easier to express. The person demonstrates it through the control arm, and the system translates that demonstration into commands for the working arm."
+        ]
+      },
+      {
+        "heading": "Two arms connected through their joint positions",
+        "paragraphs": [
+          "The control arm’s joint sensors measured its position. A small Arduino-based controller mapped those readings to servo motors—motors that move to a commanded position—on the follower arm, which reproduced the corresponding movements.",
+          "This is a leader–follower arrangement: one arm supplies the instruction and the other carries it out. The original implementation mapped the input signals on a 25-millisecond cycle."
+        ]
+      },
+      {
+        "heading": "Teach once, then play it back",
+        "paragraphs": [
+          "In teach mode, the follower arm copied the movement of the control arm. Recording stored a sequence of joint-position readings, creating a motion that could be used again.",
+          "In play mode, the controller stepped through the stored sequence and drove the follower arm through the recorded motion. The project combined physical interaction, position sensing, and embedded control into a small demonstration of robot teaching."
+        ]
+      }
+    ],
+    "links": [
+      { "url": "https://github.com/EnigmaRagesh/haptic-arm", "label": "Explore the control code" },
+      { "url": "https://www.sciencedirect.com/science/article/pii/S1877050918310810", "label": "Read the research paper" }
+    ],
+    "videos": ["uxLMUj7yzW4"]
+  },
+  {
+    "slug": "astra",
+    "storyChapter": "control",
+    "seoTitle": "ASTRA: Robots Sharing a View | Ragesh Ramachandran",
+    "summary": "ASTRA explores coordination between ground and aerial robots through shared sensor information, mapping, and communication in a research prototype.",
+    "title": "ASTRA: giving robots a shared view",
+    "intro": "A robot on the ground and a robot in the air see different parts of the same place. ASTRA explored how those perspectives could be connected in a multi-robot system.",
+    "context": "Amrita University · India",
+    "image": "../assets/work/astra.jpg",
+    "imageAlt": "Three small ASTRA ground-robot prototypes arranged outdoors",
+    "sections": [
+      {
+        "heading": "From individual machines to a connected team",
+        "paragraphs": [
+          "ASTRA was a security-oriented research prototype combining ground and aerial robots for observation and information sharing. Its central engineering question was how several machines could contribute to a shared picture of their surroundings.",
+          "That required more than putting cameras on moving platforms. Sensor readings, robot movement, and communication had to fit together so information from one part of the system could be useful elsewhere."
+        ]
+      },
+      {
+        "heading": "Connecting sensing, movement, and communication",
+        "paragraphs": [
+          "The ground platform brought together cameras, distance sensors, satellite positioning, and an inertial sensor that measures movement and orientation. Mapping software helped the robot represent its surroundings and estimate its position within them.",
+          "ROS—the Robot Operating System—connected the software components. Embedded controllers handled hardware inputs and outputs, while an onboard Raspberry Pi ran higher-level software. The prototype robots communicated over a local wireless network with a central computer."
+        ]
+      },
+      {
+        "heading": "What the prototype explored",
+        "paragraphs": [
+          "The project combined remote observation, robot navigation, and the exchange of information between machines. Its tests used robots close together in a low-interference wireless environment.",
+          "The work is an example of multi-robot integration: giving separate machines a way to exchange useful information while bringing their sensing and control software into one system. The demonstration provides a closer look at that prototype."
+        ]
+      }
+    ],
+    "links": [],
+    "videos": ["gJsC4f8IdxI"]
+  },
+  {
+    "slug": "dhruv",
+    "storyChapter": "control",
+    "seoTitle": "DHRUV Hazard-Inspection Rover | Ragesh Ramachandran",
+    "summary": "DHRUV is a remotely operated rover prototype combining gas sensing, thermal imaging, and a robotic arm for inspecting potentially hazardous spaces.",
+    "title": "DHRUV: a closer look at hazardous spaces",
+    "intro": "Before entering a potentially dangerous area, people need information. DHRUV brought environmental sensing, cameras, and a robotic arm together on a remotely operated rover.",
+    "context": "Amrita University · India",
+    "image": "../assets/work/disaster.jpg",
+    "imageAlt": "DHRUV rover with a raised robotic arm, gripper, sensors, and articulated wheels",
+    "sections": [
+      {
+        "heading": "Send back information from a distance",
+        "paragraphs": [
+          "An industrial incident can leave responders with basic questions: what is in the air, what can be seen, and what can be reached? DHRUV was designed as a rover prototype for gathering information and supporting remote inspection in that setting.",
+          "The rover combined gas sensors, thermal cameras, and a movable arm. Together, they offered ways to observe conditions and interact with objects while the operator controlled the machine from a distance."
+        ]
+      },
+      {
+        "heading": "Several kinds of sensing on one platform",
+        "paragraphs": [
+          "The sensor set covered gases including carbon monoxide, methane, and ammonia. Readings were presented through a web-based interface, making the measurements available to the operator as the robot explored.",
+          "Thermal imaging added a view of heat patterns, while infrared camera feedback and ultrasonic distance sensors supported navigation. A five-degree-of-freedom arm—an arm with five independent movements—positioned a gripper for remote manipulation."
+        ]
+      },
+      {
+        "heading": "Making the information reach the operator",
+        "paragraphs": [
+          "A Raspberry Pi computer and an ATmega2560 microcontroller, a small controller for electronic devices, handled onboard processing and hardware control. ROS, a framework for robot software, carried control commands and telemetry: the sensor readings and status information sent back from the rover.",
+          "The engineering task was to make mobility, sensing, manipulation, and the operator interface work together. DHRUV illustrates how a mobile robot can bring several kinds of information to a person who needs to understand a place before entering it."
+        ]
+      }
+    ],
+    "links": [
+      { "url": "https://www.amrita.edu/news/amrita-mechanical-engineering-students-win-prizes-robotsavam-2017", "label": "Read the university coverage" }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "phoenix",
+    "storyChapter": "origins",
+    "seoTitle": "Phoenix II Planetary Rover | Ragesh Ramachandran",
+    "summary": "The story of Phoenix II, a student planetary rover built for the 2016 United Kingdom Rover Challenge by a multidisciplinary team led by Ragesh Ramachandran.",
+    "title": "Phoenix II: one rover, fifteen people",
+    "intro": "A planetary rover brings many engineering disciplines into one machine. I led a 15-person team building Phoenix II for the 2016 United Kingdom Rover Challenge.",
+    "context": "United Kingdom Rover Challenge · Manchester · 2016",
+    "image": "../assets/work/roveruk.jpg",
+    "imageAlt": "Phoenix II planetary-rover prototype with a robotic arm and articulated wheels",
+    "sections": [
+      {
+        "heading": "A shared goal for a multidisciplinary team",
+        "paragraphs": [
+          "Phoenix II was built for the United Kingdom Rover Challenge in Manchester. The project brought autonomous navigation and manipulation—the ability to move through an environment and interact with objects—into a student-built planetary rover.",
+          "As team lead, I worked across a 15-person multidisciplinary team. The challenge was to bring mechanical design, electronics, control, and software together around a single functioning platform."
+        ]
+      },
+      {
+        "heading": "The important work happens between the parts",
+        "paragraphs": [
+          "A rover’s arm depends on its power and control system. Its movement depends on the way its wheels, sensors, and software fit together. A successful component only becomes useful when the surrounding system can work with it.",
+          "Phoenix II made that relationship concrete for me. Leading the project meant looking beyond individual tasks to the whole machine and the people building it. That systems perspective still shapes how I approach robot deployment and infrastructure today."
+        ]
+      }
+    ],
+    "links": [
+      { "url": "/projects/phoenix_dummy.html", "label": "Meet Phoenix I" },
+      { "url": "/about.html#origins", "label": "Read the story behind the rover work" }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "phoenix_dummy",
+    "storyChapter": "origins",
+    "seoTitle": "Phoenix I Rover Project | Ragesh Ramachandran",
+    "summary": "Meet Phoenix I, built for the 2016 University Rover Challenge in Utah. Ragesh Ramachandran reflects on leading the team, with an original demonstration video.",
+    "title": "Phoenix I: bringing a rover team’s work together",
+    "intro": "I led the Phoenix I project for the 2016 University Rover Challenge in Utah. It was an early lesson in turning a team’s individual contributions into one working robot.",
+    "context": "University Rover Challenge · Utah · 2016",
+    "image": "../assets/work/pro1.JPG",
+    "imageAlt": "Phoenix I rover with a black and green body, front camera, and six articulated wheels",
+    "sections": [
+      {
+        "heading": "Building toward a real engineering challenge",
+        "paragraphs": [
+          "A rover challenge gives a student team a concrete reason to connect what it knows about mechanics, electronics, and software. Phoenix I was our project for the 2016 University Rover Challenge in Utah, USA.",
+          "My role was team lead. The work called for a view of the complete robot: how the pieces fitted together, where they depended on one another, and how the team could bring them into a shared result."
+        ]
+      },
+      {
+        "heading": "An early chapter in how I think about robots",
+        "paragraphs": [
+          "Phoenix I belongs to the same formative period as my other planetary-rover projects. It helped establish the habit of following an engineering decision through to its effect on the entire machine.",
+          "The original demonstration below is a visual record of the project. Alongside the photograph, it offers a more direct introduction to the rover than a list of parts could provide."
+        ]
+      }
+    ],
+    "links": [
+      { "url": "/projects/phoenix.html", "label": "Meet Phoenix II" },
+      { "url": "/about.html#origins", "label": "Read about my early robotics work" }
+    ],
+    "videos": ["eb4B5Us4b5w"]
+  },
+  {
+    "slug": "8_leg",
+    "storyChapter": "origins",
+    "seoTitle": "Eight-Wheeled Rover Design | Ragesh Ramachandran",
+    "summary": "Explore the 2015 student rover’s adjustable wheel supports, rough-terrain suspension, and integrated robotics systems, with its published design paper.",
+    "title": "An eight-wheeled rover with a different way over obstacles",
+    "intro": "A wheel can only climb so far before the vehicle’s shape gets in the way. This student rover explored what happens when some wheels can also be lifted on leg-like supports.",
+    "context": "University Rover Challenge · Utah · 2015",
+    "image": "../assets/work/spider_rover.jpg",
+    "imageAlt": "The eight-wheeled rover prototype with its adjustable wheel-support mechanism",
+    "sections": [
+      {
+        "heading": "Keeping a rover moving on uneven ground",
+        "paragraphs": [
+          "The rover was developed for the Mars Society’s University Rover Challenge in 2015, which brings student engineering into a Mars-like landscape. Its design addressed the connected problems of getting over obstacles, maintaining wheel contact, and keeping the body stable.",
+          "I worked on system integration as part of the rover team and co-authored the published research. The complete project brought the drive mechanism, a robotic arm, sensing, and control into one platform."
+        ]
+      },
+      {
+        "heading": "Wheels with an extra way to move",
+        "paragraphs": [
+          "The design combined four rocker wheels with four wheels mounted on adjustable, spider-like supports. A rocker-bogie arrangement lets connected wheel supports pivot as the ground changes. Powered supports added a way to raise or lower selected wheels relative to the body.",
+          "Springs and dampers absorbed movement and helped maintain contact with the ground. The idea was to give the rover more freedom to position its wheels while managing the weight and stability of the rest of the machine."
+        ]
+      },
+      {
+        "heading": "From a design model to a physical prototype",
+        "paragraphs": [
+          "The team developed computer-aided design models, analysed the mechanism’s motion and structural loads, and built a working prototype for experiments. The published paper records that the design passed the University Rover Challenge’s Critical Design Review.",
+          "The wider rover design also included a robotic arm and stereo vision, which uses two camera views to estimate depth. The papers and demonstrations below show how the mechanical design fitted into that larger robotics system."
+        ]
+      }
+    ],
+    "links": [
+      { "url": "https://www.amrita.edu/news/amrita-team-participates-university-rover-challenge-usa", "label": "Read the university coverage" },
+      { "url": "/img/exp/rover_paper.pdf", "label": "Read the suspension research paper" },
+      { "url": "/projects/8_leg_dummy.html", "label": "Explore the field-trial companion" }
+    ],
+    "videos": ["mWysfPfZIGI", "-HYnqNPgKkU"]
+  },
+  {
+    "slug": "8_leg_dummy",
+    "storyChapter": "origins",
+    "seoTitle": "Rover Field Trials: Design in Motion | Ragesh Ramachandran",
+    "summary": "A companion to the 2015 eight-wheeled rover design: field-trial footage, the complete system paper, and a plain-language guide to what testing reveals.",
+    "title": "Taking the rover from the drawing board to the ground",
+    "intro": "A drawing can explain how a mechanism should move. A physical rover makes its weight, wheel contact, and coordination visible. This page collects field-trial material from our 2015 project.",
+    "context": "University Rover Challenge · Utah · 2015",
+    "image": "../assets/work/spider_1.JPG",
+    "imageAlt": "The 2015 rover prototype during outdoor field testing",
+    "sections": [
+      {
+        "heading": "Why testing the whole machine matters",
+        "paragraphs": [
+          "The eight-wheeled rover combined adjustable wheel supports with suspension, sensing, control, and a robotic arm. Testing brought those parts together under the weight and movement of the physical machine.",
+          "For a reader new to robotics, the useful questions are straightforward: which wheels are touching the ground, how does the body move as the supports change position, and how do the separate motions work together? Those are the kinds of questions field testing helps an engineering team examine."
+        ]
+      },
+      {
+        "heading": "The design and the footage tell different parts of the story",
+        "paragraphs": [
+          "The accompanying system paper describes the rover’s mechanical design, electronics, sensors, cameras, and control architecture. It also documents the construction and experimental testing of the prototype. I contributed to system integration and am a co-author of the paper.",
+          "This page complements the rover design overview with a recorded field-trial demonstration. Together, the two pages connect the idea on paper to the work of building and testing a real robot."
+        ]
+      }
+    ],
+    "links": [
+      { "url": "/projects/8_leg.html", "label": "Understand the rover design" },
+      { "url": "https://www.amrita.edu/news/amrita-team-participates-university-rover-challenge-usa", "label": "Read the university coverage" },
+      { "url": "/img/exp/rover2_paper.pdf", "label": "Read the complete system paper" }
+    ],
+    "videos": ["bEimLRsp5GA"]
+  }
+]
