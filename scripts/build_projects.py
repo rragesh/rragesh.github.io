@@ -6,14 +6,19 @@ from html import escape
 import json
 from pathlib import Path
 from link_policy import open_in_new_tabs
-from site_layout import header, footer, continue_reading
+from site_layout import header, footer
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/projects.json"
 LINKEDIN = "https://www.linkedin.com/in/ragesh-ramachandran/"
+STORY_CHAPTERS = {"origins": "Rover years", "control": "Sensing & recovery"}
 
 
 def render(project):
+    chapter = project["storyChapter"]
+    chapter_title = escape(STORY_CHAPTERS[chapter])
+    story_route = f"../about.html#{chapter}"
+    return_label = escape("Return to " + STORY_CHAPTERS[chapter].lower())
     title = escape(project["title"])
     seo_title = escape(project.get("seoTitle", project["title"] + " | Ragesh Ramachandran"))
     summary = project.get("summary") or project.get("intro") or " ".join(project.get("paragraphs", []))[:180]
@@ -75,15 +80,22 @@ def render(project):
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  {header("work", "../")}
+  {header("story", "../")}
   <main id="main" class="project-page container">
-    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../work.html#projects">Work</a></nav>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../about.html">My story</a><span aria-hidden="true">/</span><a href="{story_route}">{chapter_title}</a></nav>
     <h1>{title}</h1>
     <p class="project-context">{escape(project['context'])}</p>
     {intro}
     <img class="project-hero-image" src="../img/{project['image']}" alt="{image_alt}" fetchpriority="high">
     <div class="project-body">{body}<div class="project-links">{links}</div>{videos}</div>
-    {continue_reading("Working on something similar?", "If this project connects with a problem or idea you’re exploring, I’d enjoy comparing notes.", "../work.html#projects", "Explore more projects")}
+    <section class="section continue-reading">
+      <h2>Continue the story.</h2>
+      <p>See how this chapter connects to the engineering work that followed—or get in touch if it connects with something you’re building.</p>
+      <div class="continue-actions">
+        <a class="button primary-button" href="{story_route}">{return_label} <span class="arrow" aria-hidden="true"></span></a>
+        <a class="text-link" href="{LINKEDIN}">Talk with me on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a>
+      </div>
+    </section>
   </main>
   {footer("../")}
 </body>

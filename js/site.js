@@ -6,7 +6,7 @@ if (document.body.classList.contains("entry-page")) {
     "#about": "about.html",
     "#background": "about.html",
     "#exp": "work.html#exp",
-    "#work": "work.html#projects",
+    "#work": "about.html#origins",
     "#expertise": "work.html#expertise",
     "#process": "work.html#process",
     "#faq": "work.html#faq",

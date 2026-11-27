@@ -53,17 +53,12 @@
         <p>This is the story of how that question shaped me—as an engineer,
           a founder, and someone who cares about what happens after the demo.</p>
         <nav class="chapter-nav" aria-label="Journey chapters">
-          <a href="#origins">Rovers &amp; control</a>
+          <a href="#origins">Rover years</a>
+          <a href="#control">Sensing &amp; recovery</a>
           <a href="#industrial">Industrial robotics</a>
           <a href="#fleet-scale">Fleet scale</a>
           <a href="#today">The software factory</a>
         </nav>
-        <figure class="journey-photo">
-          <img src="img/optimized/roveruk.webp" width="936" height="634" fetchpriority="high"
-            alt="Phoenix II rover with articulated wheels and a robotic arm on the grass" />
-          <figcaption>Phoenix II · United Kingdom Rover Challenge, 2016. I led the
-            15-person team behind the rover.</figcaption>
-        </figure>
       </section>
 
       <section class="journey-chapter" id="origins" aria-labelledby="origins-title">
@@ -79,7 +74,17 @@
             later, I led a 15-person multidisciplinary team building a rover with
             autonomous navigation and manipulation capabilities for the United
             Kingdom Rover Challenge. Phoenix I and Phoenix II are still an
-            important part of how I think about engineering.</p>
+             important part of how I think about engineering.</p>
+          <figure class="journey-photo">
+            <img src="img/optimized/roveruk.webp" width="936" height="634" loading="lazy"
+              alt="Phoenix II rover with articulated wheels and a robotic arm on the grass" />
+            <figcaption><strong>Phoenix II · United Kingdom Rover Challenge, 2016</strong>
+              I led the 15-person team bringing navigation, manipulation, and the
+              rover’s subsystems together.
+              <a class="text-link" href="projects/phoenix.html" target="_blank" rel="noopener">Explore Phoenix II
+                <span class="arrow" aria-hidden="true"></span></a>
+            </figcaption>
+          </figure>
           <p>A rover makes the dependencies hard to ignore. Electronics, mechanics,
             control, and software all meet in the same machine. Leading that team
             also meant thinking about the interfaces between people: how one
@@ -87,11 +92,14 @@
           <p>That is where my habit of looking at the whole system took shape.
             Today, when I look at a deployment pipeline, I still follow it all the
             way to the robot and the person who will operate it.</p>
-          <div class="chapter-links">
-            <a href="projects/8_leg.html" target="_blank" rel="noopener">2015 rover</a>
-            <a href="projects/phoenix.html" target="_blank" rel="noopener">Phoenix II</a>
-            <a href="projects/phoenix_dummy.html" target="_blank" rel="noopener">Phoenix I</a>
-          </div>
+          <nav class="chapter-projects" aria-label="Earlier rover projects">
+            <p>Earlier rover work</p>
+            <div class="chapter-links">
+              <a href="projects/8_leg.html" target="_blank" rel="noopener">2015 rover design</a>
+              <a href="projects/8_leg_dummy.html" target="_blank" rel="noopener">2015 field trials</a>
+              <a href="projects/phoenix_dummy.html" target="_blank" rel="noopener">Phoenix I</a>
+            </div>
+          </nav>
         </div>
       </section>
 
@@ -101,14 +109,34 @@
         </div>
         <div class="chapter-copy">
           <p>The years around those rover projects let me explore very different
-            sides of robotics: autonomous docking at Ingeniarius, RobotCraft,
+            sides of robotics: <a href="projects/recharge.html" target="_blank" rel="noopener">autonomous docking</a>
+            at Ingeniarius, RobotCraft,
             robotic teaching arms, and systems that brought ground and aerial
-            robots together. In 2017, at the Mechatronics and Intelligent Systems
+            robots together. Other university work explored remotely operated
+            inspection. In 2017, at the Mechatronics and Intelligent Systems
             Research Lab, I worked on EMG-based control for a prosthetic arm.</p>
+          <nav class="chapter-projects" aria-label="University robotics projects">
+            <p>Other work from this period</p>
+            <div class="chapter-links">
+              <a href="projects/Saksha.html" target="_blank" rel="noopener">SAKSHA: teaching by movement</a>
+              <a href="projects/astra.html" target="_blank" rel="noopener">ASTRA: shared robot sensing</a>
+              <a href="projects/dhruv.html" target="_blank" rel="noopener">DHRUV: remote inspection</a>
+            </div>
+          </nav>
           <p>I then moved to France for a master’s in Control and Robotics at
             École Centrale de Nantes. Working on infrared-camera localization,
             calibration, and ROS integration gave me a deeper understanding of
             how a robot’s view of the world is constructed.</p>
+          <figure class="journey-photo">
+            <img src="img/optimized/localize.webp" width="720" height="720" loading="lazy"
+              alt="ROS visualization of four infrared cameras covering a shared indoor workspace" />
+            <figcaption><strong>Indoor localization · École Centrale de Nantes</strong>
+              My work connected infrared-camera readings, calibration, and ROS
+              so robots could locate themselves in a shared workspace.
+              <a class="text-link" href="projects/localization.html" target="_blank" rel="noopener">Explore the localization project
+                <span class="arrow" aria-hidden="true"></span></a>
+            </figcaption>
+          </figure>
           <p>My 2019 master’s thesis at Fraunhofer IPA took that thinking in another
             direction: detecting faults in industrial manipulators and generating
             recovery actions after abnormal operating conditions.</p>
@@ -116,12 +144,6 @@
             has stayed with me through release systems and fleet operations:
             knowing what went wrong, and having a way back, matters as much as
             getting the happy path to work.</p>
-          <div class="chapter-links">
-            <a href="projects/localization.html" target="_blank" rel="noopener">Localization work</a>
-            <a href="projects/recharge.html" target="_blank" rel="noopener">Autonomous docking</a>
-            <a href="projects/Saksha.html" target="_blank" rel="noopener">Robotic teaching arm</a>
-            <a href="projects/astra.html" target="_blank" rel="noopener">Multi-robot systems</a>
-          </div>
         </div>
       </section>
 

@@ -85,9 +85,9 @@ def import_landing():
     work_intro = '''<section class="page-intro" aria-labelledby="work-page-title">
       <h1 id="work-page-title">Work, from prototypes to production.</h1>
       <p>Robot applications, industrial integration, and the infrastructure behind reliable fleets. Explore the work itself, then the ways I help teams move it forward.</p>
-      <nav class="chapter-nav" aria-label="Work sections"><a href="#exp">Professional experience</a><a href="#projects">Robotics projects</a><a href="#expertise">Working together</a></nav>
+      <nav class="chapter-nav" aria-label="Work sections"><a href="#exp">Professional experience</a><a href="#projects">Engineering story</a><a href="#expertise">Working together</a></nav>
     </section>'''
-    projects = '''<section class="section" id="projects" aria-labelledby="projects-title"><div class="section-heading"><div><h2 id="projects-title">Robotics projects, explained.</h2><p>From a robot finding its charger to a rover finding its way across rough ground. Every project starts with the idea, then explains the engineering.</p></div></div><div class="project-grid">\n<!-- PROJECTS:START -->\n<!-- PROJECTS:END -->\n</div></section>'''
+    projects = '''<section class="section story-bridge" id="projects" aria-labelledby="projects-title"><h2 id="projects-title">Where my engineering approach began.</h2><p>Follow the journey from university rovers to industrial deployments and production fleets.</p><a class="text-link" href="about.html#origins">Read my story</a></section>'''
     work = work_intro + "\n" + element(landing, "section", "id", "exp") + "\n" + projects
     for section in ("expertise", "process", "faq"):
         work += "\n" + element(landing, "section", "id", section)
@@ -105,15 +105,6 @@ def import_landing():
     MANIFEST.write_text(json.dumps(pages, ensure_ascii=False, indent=2) + "\n")
 
 
-def project_cards():
-    cards = []
-    for project in json.loads((ROOT / "data/projects.json").read_text()):
-        cards.append(f'''<a class="project-card" href="projects/{escape(project['slug'])}.html">
-          <img src="img/{escape(project['image'])}" width="800" height="500" loading="lazy" alt="{escape(project['imageAlt'], quote=True)}" />
-          <div><h3>{escape(project['title'])}</h3><p>{escape(project['intro'])}</p><span class="project-meta">{escape(project['context'])}</span></div></a>''')
-    return "\n".join(cards)
-
-
 def render(page, content):
     canonical = BASE if page["file"] == "index.html" else BASE + page["file"]
     graph = json.dumps({"@context": "https://schema.org", "@graph": page["graph"]}, ensure_ascii=False).replace("<", "\\u003c")
@@ -121,8 +112,6 @@ def render(page, content):
     description = escape(page["description"], quote=True)
     image = BASE + page["image"]
     alt = escape(page["imageAlt"], quote=True)
-    if page["key"] == "work":
-        content = re.sub(r'(?<=<!-- PROJECTS:START -->).*?(?=<!-- PROJECTS:END -->)', "\n" + project_cards() + "\n", content, flags=re.S)
     return open_in_new_tabs(f'''<!doctype html>
 <html lang="en">
   <head>

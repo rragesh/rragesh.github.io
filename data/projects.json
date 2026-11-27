@@ -1,6 +1,7 @@
 [
   {
     "slug": "recharge",
+    "storyChapter": "control",
     "seoTitle": "Autonomous Robot Charging | Ragesh Ramachandran",
     "summary": "Helping a patrol robot find its charger: Ragesh Ramachandran’s ROS docking routine for the STOP project, developed and tested in Gazebo simulation.",
     "title": "Autonomous docking: finding the way back to charge",
@@ -39,6 +40,7 @@
   },
   {
     "slug": "localization",
+    "storyChapter": "control",
     "seoTitle": "Indoor Robot Positioning | Ragesh Ramachandran",
     "summary": "An overhead infrared-camera system that helps robots locate themselves indoors, with shared coordinates, ROS integration, and calibration.",
     "title": "Helping robots find their place indoors",
@@ -77,6 +79,7 @@
   },
   {
     "slug": "Saksha",
+    "storyChapter": "control",
     "seoTitle": "SAKSHA: Teach a Robot by Moving | Ragesh Ramachandran",
     "summary": "SAKSHA explores a more hands-on way to teach a robotic arm: move a linked control arm, record its joint positions, and replay the movement.",
     "title": "SAKSHA: teaching a robot by moving an arm",
@@ -115,6 +118,7 @@
   },
   {
     "slug": "astra",
+    "storyChapter": "control",
     "seoTitle": "ASTRA: Robots Sharing a View | Ragesh Ramachandran",
     "summary": "ASTRA explores coordination between ground and aerial robots through shared sensor information, mapping, and communication in a research prototype.",
     "title": "ASTRA: giving robots a shared view",
@@ -150,6 +154,7 @@
   },
   {
     "slug": "dhruv",
+    "storyChapter": "control",
     "seoTitle": "DHRUV Hazard-Inspection Rover | Ragesh Ramachandran",
     "summary": "DHRUV is a remotely operated rover prototype combining gas sensing, thermal imaging, and a robotic arm for inspecting potentially hazardous spaces.",
     "title": "DHRUV: a closer look at hazardous spaces",
@@ -187,6 +192,7 @@
   },
   {
     "slug": "phoenix",
+    "storyChapter": "origins",
     "seoTitle": "Phoenix II Planetary Rover | Ragesh Ramachandran",
     "summary": "The story of Phoenix II, a student planetary rover built for the 2016 United Kingdom Rover Challenge by a multidisciplinary team led by Ragesh Ramachandran.",
     "title": "Phoenix II: one rover, fifteen people",
@@ -218,6 +224,7 @@
   },
   {
     "slug": "phoenix_dummy",
+    "storyChapter": "origins",
     "seoTitle": "Phoenix I Rover Project | Ragesh Ramachandran",
     "summary": "Meet Phoenix I, built for the 2016 University Rover Challenge in Utah. Ragesh Ramachandran reflects on leading the team, with an original demonstration video.",
     "title": "Phoenix I: bringing a rover team’s work together",
@@ -249,6 +256,7 @@
   },
   {
     "slug": "8_leg",
+    "storyChapter": "origins",
     "seoTitle": "Eight-Wheeled Rover Design | Ragesh Ramachandran",
     "summary": "Explore the 2015 student rover’s adjustable wheel supports, rough-terrain suspension, and integrated robotics systems, with its published design paper.",
     "title": "An eight-wheeled rover with a different way over obstacles",
@@ -288,6 +296,7 @@
   },
   {
     "slug": "8_leg_dummy",
+    "storyChapter": "origins",
     "seoTitle": "Rover Field Trials: Design in Motion | Ragesh Ramachandran",
     "summary": "A companion to the 2015 eight-wheeled rover design: field-trial footage, the complete system paper, and a plain-language guide to what testing reveals.",
     "title": "Taking the rover from the drawing board to the ground",

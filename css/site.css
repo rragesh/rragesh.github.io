@@ -1260,9 +1260,15 @@ figcaption span {
 .work-page .page-intro .chapter-nav a {
   font-size: 15px;
 }
-.work-page .project-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 36px 28px;
+.story-bridge > :is(h2, p) {
+  max-width: var(--reading-width);
+}
+.story-bridge > p {
+  margin-top: 18px;
+  color: var(--muted);
+}
+.story-bridge > .text-link {
+  margin-top: 16px;
 }
 .work-page .faq-section {
   display: grid;
@@ -1521,7 +1527,7 @@ figcaption span {
   font-size: 13px;
 }
 .journey-photo {
-  margin-bottom: 48px;
+  margin-block: 32px;
 }
 .journey-photo img {
   width: 100%;
@@ -1530,7 +1536,19 @@ figcaption span {
 .journey-photo figcaption {
   color: var(--muted);
   font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
   margin-top: 12px;
+}
+.journey-photo figcaption strong {
+  display: block;
+  color: var(--ink);
+  font-weight: 600;
+}
+.journey-photo figcaption .text-link {
+  display: flex;
+  width: fit-content;
+  margin-top: 8px;
 }
 .journey-chapter {
   padding: 0;
@@ -1556,6 +1574,10 @@ figcaption span {
 .chapter-copy strong {
   color: var(--ink);
 }
+.chapter-copy a {
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
 .chapter-links {
   display: flex;
   flex-wrap: wrap;
@@ -1566,7 +1588,20 @@ figcaption span {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  font-size: 13px;
+  font-size: 14px;
+}
+.chapter-projects {
+  margin-block: 24px 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.chapter-projects > p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.chapter-projects .chapter-links {
+  margin-top: 4px;
 }
 .chapter-copy .story-signoff {
   font-family: var(--display);
@@ -1582,9 +1617,6 @@ figcaption span {
   margin-block: 20px 24px;
 }
 @media (max-width: 1000px) {
-  .work-page .project-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
   .engagement-options {
     grid-template-columns: 1fr;
     gap: 0;
@@ -1711,7 +1743,6 @@ figcaption span {
     grid-template-columns: 1fr;
     gap: 12px;
   }
-  .work-page .project-grid,
   .experience-detail {
     grid-template-columns: 1fr;
   }

@@ -4,17 +4,17 @@ Mode: Read. These dedicated pages let visitors understand Ragesh’s work and th
 
 ## Direction contract
 
-THESIS: Give each reader a named place to go and a useful next step. Keep project links and Medium previews visible, with consistent navigation back to the wider site.
+THESIS: Give each reader a named place to go and a useful next step. Work makes professional evidence and engagements clear; Writing keeps Medium previews visible. Earlier robotics projects live within My story, linked through a concise Work-page invitation.
 
 OWN-WORLD: Inherit Source Serif 4/Source Sans 3, sky-to-paper colors, blue links, quiet rules, and the day/evening switch. Shared header/footer across all main and project pages; active-section indication and project breadcrumbs.
 
-ALIGNMENT: Use the shared 980px header/footer shell and 660px reading measure. Writing uses the centered reading column, with article titles and excerpts aligned beside consistent thumbnail columns. Work keeps its 980px experience/project grids while introductions, heading groups, FAQs, and closing prose use the shared reading measure. All nine project pages align headings, prose, uncropped photographs, and video embeds in one 660px column. Reading prose is justified on desktop and left-aligned at 600px and below; cards and compact summaries stay naturally aligned. Gutters are 32px desktop and 20px mobile.
+ALIGNMENT: Use the shared 980px header/footer shell and 660px reading measure. Writing uses the centered reading column, with article titles and excerpts aligned beside consistent thumbnail columns. Work keeps its 980px experience and engagement layouts while introductions, heading groups, the story bridge, FAQs, and closing prose use the shared reading measure. All nine project pages align headings, prose, uncropped photographs, and video embeds in one 660px column. Reading prose is justified on desktop and left-aligned at 600px and below; cards and compact summaries stay naturally aligned. Gutters are 32px desktop and 20px mobile.
 
 EXPERIENCE: Four consistent organization-and-evidence rows lead with confidential current work, followed by NODE Robotics, Robotair, and Fraunhofer IPA / ROS-Industrial. Current capabilities stay visible, NODE's previously approved fleet/release/cost results are concise, and the attributed recommendation sits within that entry. Founder and research evidence uses the same alignment. Mobile stacks organization context before the evidence; current-work identifiers and operating figures remain private.
 
-STORY: Work presents professional experience, three comparable engagement options, nine project entry points, the engagement process, and FAQs. Writing presents the Medium feed first, then additional technical writing and the ROSCon talk. Closing sections invite another relevant page or a LinkedIn conversation.
+STORY: Work presents professional experience, three comparable engagement options, a short invitation to My story, the engagement process, and FAQs. Its former #projects anchor remains a useful bridge for old bookmarks. Writing presents the Medium feed first, then additional technical writing and the ROSCon talk. Closing sections invite another relevant page or a LinkedIn conversation.
 
-FIRST VIEWPORT: A clear page title and purpose, current-page navigation, then meaningful content. Work has local links to experience, projects, and working together; Writing exposes the latest articles and filters directly.
+FIRST VIEWPORT: A clear page title and purpose, current-page navigation, then meaningful content. Work has local links to experience, working together, the engineering-story invitation, and process; Writing exposes the latest articles and filters directly.
 
 FORM: Established-world content migration, seed: none (pinned): “everything else should be redirected from here”. Existing project URLs, story prose, photo, publication links, and Medium refresh behavior are retained. The source templates and shared renderer keep navigation synchronized.
 

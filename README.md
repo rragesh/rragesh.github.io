@@ -5,11 +5,11 @@ The personal site of [Ragesh Ramachandran](https://rragesh.github.io/), organize
 ## Pages and navigation
 
 - `index.html` — Home: who Ragesh is and where to explore next.
-- `about.html` — My story: the personal robotics journey.
-- `work.html` — Work: professional experience, every project, and collaboration options.
+- `about.html` — My story: the personal robotics journey, with all nine earlier projects linked within their relevant chapters.
+- `work.html` — Work: professional experience, collaboration options, and a short bridge to the engineering story.
 - `writing.html` — Writing: visible Medium previews, learning notes, and talks.
 - `how-i-work.html` — How I work: working principles, communication preferences, team fit, and a direct LinkedIn invitation. Supporting source references live in development notes.
-- `projects/*.html` — individual projects, with shared navigation and a breadcrumb back to Work.
+- `projects/*.html` — individual projects, with My story active in navigation and breadcrumbs/return links to their story chapter.
 
 Every page offers Home, My story, Work, Writing, How I work, and **Get in touch**, which links directly to LinkedIn. End-of-page links connect the reading paths. Work leads with the current confidential software-factory experience; the employer and position remain private. Old homepage fragment links such as `/#writing` and `/#work` forward to their new pages when JavaScript is available; navigation still works without JavaScript.
 
@@ -44,7 +44,7 @@ If the feed is unavailable, invalid, or empty, refresh fails without changing th
 
 ## Project pages
 
-Each project has a plain-language `intro`, descriptive `imageAlt`, search `summary`, and `sections` containing a `heading` and `paragraphs`. Explain the problem before introducing the engineering, define technical terms in context, and distinguish prototypes, simulations, and measured results. The builder still accepts the original flat `paragraphs` format for legacy imports. Publications, repositories, and demonstration links remain available for deeper reading.
+Each project has a plain-language `intro`, descriptive `imageAlt`, search `summary`, and `sections` containing a `heading` and `paragraphs`. Its `storyChapter` (`origins` or `control`) determines the breadcrumb and return destination; link the project from that chapter in `data/pages/story.html`. Explain the problem before introducing the engineering, define technical terms in context, and distinguish prototypes, simulations, and measured results. The builder still accepts the original flat `paragraphs` format for legacy imports. Publications, repositories, and demonstration links remain available for deeper reading.
 
 Edit `data/projects.json`, then regenerate the nine static project pages:
 
@@ -53,7 +53,7 @@ python3 scripts/build_projects.py
 python3 scripts/build_pages.py
 ```
 
-Existing public project URLs and project-publication PDFs are retained. Work lists every project directly. The résumé PDF remains private; professional profile links point to [LinkedIn](https://www.linkedin.com/in/ragesh-ramachandran/). `about.html` connects planetary rovers, control and recovery, industrial robotics, Robotair, production fleets, and current software-factory work through first-person narrative. The current employer, position, internal product names, operational metrics, and personal details from the private CV are not published.
+Existing public project URLs and project-publication PDFs are retained. My story links every project exactly once through two captioned visual examples, an inline docking link, and small contextual link groups. Work's former `#projects` anchor remains as a visible invitation to the story, including without JavaScript. The résumé PDF remains private; professional profile links point to [LinkedIn](https://www.linkedin.com/in/ragesh-ramachandran/). `about.html` connects planetary rovers, control and recovery, industrial robotics, Robotair, production fleets, and current software-factory work through first-person narrative. The current employer, position, internal product names, operational metrics, and personal details from the private CV are not published.
 
 ## Legacy cleanup
 
@@ -63,7 +63,7 @@ The old Colorlib demo pages are lightweight, JavaScript-free redirects to the cu
 | --- | --- |
 | `blog-home.html`, `blog-single.html` | `writing.html` |
 | `contact.html` | `work.html` (collaboration and LinkedIn contact) |
-| `portfolio.html`, `portfolio-details.html` | `work.html#projects` |
+| `portfolio.html`, `portfolio-details.html` | `about.html#origins` |
 | `services.html` | `work.html#expertise` |
 | `elements.html` | `index.html` |
 
@@ -89,7 +89,7 @@ python scripts/check_site.py
 node --check js/site.js
 ```
 
-The site checker covers consistent navigation/current-page state, a hero-only Home, visible Medium previews and project links, local targets, stylesheet assets, link behavior, headings, image alt text, canonical URLs, sitemap coverage, entity references, FAQ parity, compatibility redirect destinations/fallback links/noindex directives, and résumé/Instagram removal. Feed tests cover escaping, invalid URLs, empty/malformed feeds, tracking pixels, and preserving content outside the generated region. Link-policy tests cover safe targets, navigation, script preservation, and idempotence. CI runs these checks on pushes and pull requests.
+The site checker covers consistent navigation/current-page state, a hero-only Home, visible Medium previews, all nine projects linked from their declared story chapters, project breadcrumbs/return paths, the Work story bridge, local targets, stylesheet assets, link behavior, headings, image alt text, canonical URLs, sitemap coverage, entity references, FAQ parity, compatibility redirect destinations/fallback links/noindex directives, and résumé/Instagram removal. Feed tests cover escaping, invalid URLs, empty/malformed feeds, tracking pixels, and preserving content outside the generated region. Link-policy tests cover safe targets, navigation, script preservation, and idempotence. CI runs these checks on pushes and pull requests.
 
 It also verifies unique page titles/descriptions, social-preview images, project authorship, the Robotair founder relationship, and crawler access. After deployment, run `python scripts/check_live.py` to verify the **public** site rather than just the working copy. Publication tests ensure this check rejects stale pages, incorrect canonicals, and indexing restrictions.
 

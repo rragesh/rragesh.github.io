@@ -16,8 +16,8 @@ REDIRECTS = {
     'blog-single.html': 'writing.html',
     'contact.html': 'work.html',
     'elements.html': 'index.html',
-    'portfolio.html': 'work.html#projects',
-    'portfolio-details.html': 'work.html#projects',
+    'portfolio.html': 'about.html#origins',
+    'portfolio-details.html': 'about.html#origins',
     'services.html': 'work.html#expertise',
 }
 
@@ -46,13 +46,23 @@ class Page(HTMLParser):
         self.details_depth = 0
         self.article_count = 0
         self.project_links = []
+        self.project_chapters = {}
+        self.section_ids = []
+        self.section_classes = []
+        self.breadcrumb_links = []
+        self.return_links = []
+        self.in_breadcrumbs = False
 
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
         if tag == 'nav' and attrs.get('aria-label') == 'Main navigation':
             self.in_navigation = True
+        if tag == 'nav' and attrs.get('aria-label') == 'Breadcrumb':
+            self.in_breadcrumbs = True
         if tag == 'section':
             self.section_count += 1
+            self.section_ids.append(attrs.get('id'))
+            self.section_classes.append(attrs.get('class', '').split())
         if tag == 'details':
             self.details_depth += 1
         if tag == 'article' and 'article-card' in attrs.get('class', '').split():
@@ -75,10 +85,15 @@ class Page(HTMLParser):
         if tag == 'a':
             href = attrs.get('href', '')
             self.links.append(href)
+            if self.in_breadcrumbs:
+                self.breadcrumb_links.append(href)
+            if self.section_classes and 'continue-reading' in self.section_classes[-1]:
+                self.return_links.append(href)
             if self.in_navigation:
                 self.navigation.append((href, attrs.get('aria-current')))
-            if 'project-card' in attrs.get('class', '').split():
+            if re.fullmatch(r'projects/[^/]+\.html', urlsplit(href).path):
                 self.project_links.append(href)
+                self.project_chapters[href] = self.section_ids[-1] if self.section_ids else None
                 if self.details_depth:
                     self.errors.append('Project links must be visible without opening a disclosure')
             host = urlsplit(href).hostname or ''
@@ -108,8 +123,12 @@ class Page(HTMLParser):
             self.visible.append(data)
 
     def handle_endtag(self, tag):
+        if tag == 'section' and self.section_ids:
+            self.section_ids.pop()
+            self.section_classes.pop()
         if tag == 'nav':
             self.in_navigation = False
+            self.in_breadcrumbs = False
         if tag == 'details':
             self.details_depth = max(0, self.details_depth - 1)
         if tag == 'title':
@@ -143,6 +162,7 @@ def local_url_errors(path, urls, pages):
     return errors
 
 
+project_index = {project['slug']: project for project in json.loads((ROOT / 'data/projects.json').read_text())}
 pages = {}
 for path in [*(ROOT / name for name in ('index.html', 'about.html', 'work.html', 'writing.html', 'how-i-work.html')), *sorted((ROOT / 'projects').glob('*.html'))]:
     page = Page(path)
@@ -169,7 +189,7 @@ for path, page in pages.items():
     if [href for href, _ in page.navigation] != navigation:
         page.errors.append('Main navigation must expose Home, My story, Work, Writing, How I work, and LinkedIn contact consistently')
     active = [href for href, current in page.navigation if current]
-    expected_active = prefix + ('work.html' if prefix else path.name)
+    expected_active = prefix + ('about.html' if prefix else path.name)
     if active != [expected_active]:
         page.errors.append('Main navigation must identify the current page or parent section')
     expected = BASE if path.name == 'index.html' else BASE + path.relative_to(ROOT).as_posix()
@@ -188,6 +208,11 @@ for path, page in pages.items():
     if not image.startswith(BASE) or not (ROOT / unquote(urlsplit(image).path.lstrip('/'))).is_file():
         page.errors.append('Social preview must reference an existing public image')
     if path.parent.name == 'projects':
+        chapter = project_index.get(path.stem, {}).get('storyChapter')
+        if chapter not in ('origins', 'control'):
+            page.errors.append('Project must identify a supported story chapter')
+        elif any(f'../about.html#{chapter}' not in links for links in (page.breadcrumb_links, page.return_links)):
+            page.errors.append('Project breadcrumb and closing link must return to its story chapter')
         nodes = [node for schema in page.schemas for node in schema.get('@graph', [])]
         work = next((node for node in nodes if node.get('@type') == 'CreativeWork'), {})
         if work.get('author', {}).get('@id') != BASE + '#ragesh' or work.get('url') != expected:
@@ -217,9 +242,15 @@ writing = pages[(ROOT / 'writing.html').resolve()]
 if writing.article_count != len(json.loads((ROOT / 'data/medium-posts.json').read_text())):
     errors.append('Writing page must contain every cached Medium preview')
 work_page = pages[(ROOT / 'work.html').resolve()]
-expected_projects = {f"projects/{project['slug']}.html" for project in json.loads((ROOT / 'data/projects.json').read_text())}
-if set(work_page.project_links) != expected_projects or len(work_page.project_links) != len(expected_projects):
-    errors.append('Work page must expose every project exactly once')
+story_page = pages[(ROOT / 'about.html').resolve()]
+expected_projects = {f"projects/{slug}.html" for slug in project_index}
+if set(story_page.project_links) != expected_projects or len(story_page.project_links) != len(expected_projects):
+    errors.append('My story must expose every project exactly once')
+for slug, project in project_index.items():
+    if story_page.project_chapters.get(f'projects/{slug}.html') != project.get('storyChapter'):
+        errors.append(f'Project {slug} must be linked from its declared story chapter')
+if work_page.project_links or 'about.html#origins' not in work_page.links or 'projects' not in work_page.ids:
+    errors.append('Work must retain the legacy projects anchor and point readers to My story')
 graph = [node for page in pages.values() for schema in page.schemas for node in schema.get('@graph', [])]
 entities = {node.get('@id'): node for node in graph if node.get('@id')}
 person_id = BASE + '#ragesh'

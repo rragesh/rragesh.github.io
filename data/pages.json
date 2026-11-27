@@ -111,8 +111,8 @@
   {
     "key": "work",
     "file": "work.html",
-    "title": "Work & Robotics Projects | Ragesh Ramachandran",
-    "description": "Explore Ragesh Ramachandran’s current software-factory work, production fleet infrastructure, Robotair, industrial integration, and hands-on robotics projects.",
+    "title": "Work & Collaboration | Ragesh Ramachandran",
+    "description": "Explore Ragesh Ramachandran’s software-factory work, production fleet experience, and robotics deployment engineering and leadership engagements.",
     "bodyClass": "content-page work-page",
     "image": "img/optimized/ragesh-roscon-2023-social.jpg",
     "imageAlt": "Ragesh Ramachandran speaking at ROSCon India 2023",
@@ -122,7 +122,7 @@
         "@id": "https://rragesh.github.io/work.html#page",
         "url": "https://rragesh.github.io/work.html",
         "name": "Work — Ragesh Ramachandran",
-        "description": "Current software-factory infrastructure at a stealth defense robotics startup, including CI/CD, in-house OTA, ISO 9001 and CE process leadership, followed by earlier experience and projects.",
+        "description": "Current software-factory infrastructure at a stealth defense robotics startup, including CI/CD, in-house OTA, ISO 9001 and CE process leadership, alongside earlier professional experience and collaboration options.",
         "about": {
           "@id": "https://rragesh.github.io/#ragesh"
         },
