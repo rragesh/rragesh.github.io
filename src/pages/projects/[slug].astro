@@ -62,7 +62,7 @@ const graph = [
     {data.sections.map((section) => (
       <section class="project-section"><h2>{section.heading}</h2>{section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</section>
     ))}
-    <div class="project-links">{data.links.map((link) => <a class="button" href={link.url}>{link.label}</a>)}</div>
+    <div class="project-links">{data.links.map((link, index) => <Fragment>{index > 0 && " "}<a class="button" href={link.url}>{link.label}</a></Fragment>)}</div>
     {data.videos.length > 0 && (
       <section class="project-section">
         <h2>Watch the project in motion</h2>
