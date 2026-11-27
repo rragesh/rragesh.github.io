@@ -111,8 +111,8 @@
   {
     "key": "work",
     "file": "work.html",
-    "title": "Work & Collaboration | Ragesh Ramachandran",
-    "description": "Explore Ragesh Ramachandran’s software-factory work, production fleet experience, and robotics deployment engineering and leadership engagements.",
+    "title": "Robotics Deployment & DevOps | Ragesh Ramachandran",
+    "description": "Repeatable robot releases, recoverable updates, and fleet operations your team can own. Work with Ragesh on assessment, engineering, or technical leadership.",
     "bodyClass": "content-page work-page",
     "image": "img/optimized/ragesh-roscon-2023-social.jpg",
     "imageAlt": "Ragesh Ramachandran speaking at ROSCon India 2023",
@@ -122,7 +122,7 @@
         "@id": "https://rragesh.github.io/work.html#page",
         "url": "https://rragesh.github.io/work.html",
         "name": "Work — Ragesh Ramachandran",
-        "description": "Current software-factory infrastructure at a stealth defense robotics startup, including CI/CD, in-house OTA, ISO 9001 and CE process leadership, alongside earlier professional experience and collaboration options.",
+        "description": "Robotics deployment support for teams moving from pilots to production fleets: repeatable releases, recoverable updates, and engineering ownership. Compare engagements and explore Ragesh’s production experience.",
         "about": {
           "@id": "https://rragesh.github.io/#ragesh"
         },
@@ -187,7 +187,7 @@
           "@type": "Audience",
           "audienceType": "Robotics founders, CTOs, and engineering teams in the EU and US scaling from pilots to production fleets"
         },
-        "description": "Deployment readiness assessments, production deployment engineering, and fractional Robotics DevOps leadership for robotics companies in the EU and US scaling beyond pilots. Scope, deliverables, timing, and fees are agreed before work begins."
+        "description": "Deployment readiness assessments, production deployment engineering, and fractional Robotics DevOps leadership for robotics teams in the EU and US. Repeatable releases, recoverable updates, and fleet operations the customer’s team can own. Scope, deliverables, timing, and fees are agreed before work begins."
       },
       {
         "@type": "FAQPage",
@@ -207,7 +207,7 @@
             "name": "Which engagement should we start with?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Start with an assessment to clarify risks and priorities, production engineering to deliver an agreed system, or fractional leadership for ongoing technical direction. We choose the engagement around the outcome you need."
+              "text": "An assessment gives you a workflow map, prioritized gaps, and a roadmap to review with your team. You can act on it yourselves or scope implementation with me separately. If the work is already clear, start with production engineering to deliver the agreed system, or choose fractional leadership for ongoing technical direction."
             }
           },
           {
@@ -231,7 +231,7 @@
             "name": "What happens at handover?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Implementation includes documentation and an engineering handover, covering the key decisions and workflows your team needs to operate and maintain the system. We agree handover expectations and any ongoing support as part of the scope."
+              "text": "Implementation includes documentation, runbooks, and an engineering handover covering the key decisions and workflows your team needs to operate and maintain the system. We agree handover expectations and any ongoing support as part of the scope."
             }
           },
           {

@@ -1307,6 +1307,64 @@ figcaption span {
 .work-page .page-intro .chapter-nav a {
   font-size: 15px;
 }
+.work-page .page-intro > .work-proof {
+  font-size: 16px;
+  text-align: start;
+  text-wrap: pretty;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+.work-proof strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.work-page :is(.deployment-gaps, .expertise-section) .section-heading p {
+  font-size: 17px;
+}
+.deployment-gap-list {
+  margin: 0;
+}
+.deployment-gap-list > div {
+  display: grid;
+  grid-template-columns: 264px minmax(0, 1fr);
+  gap: 16px 56px;
+  padding-block: 24px;
+  border-top: 1px solid var(--line);
+}
+.deployment-gap-list dt {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.deployment-gap-list dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+.deployment-gap-list strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-weight: 600;
+}
+.deployment-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px 48px;
+}
+.deployment-contact p {
+  margin-top: 18px;
+  color: var(--muted);
+}
+.deployment-contact-action .button {
+  justify-content: space-between;
+  width: 100%;
+}
+.deployment-contact-action p {
+  margin-top: 12px;
+  font-size: 14px;
+}
 .story-bridge > :is(h2, p) {
   max-width: var(--reading-width);
 }
@@ -1381,6 +1439,12 @@ figcaption span {
   line-height: 1.7;
   color: var(--muted);
 }
+.engagement-outcome {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-weight: 600;
+}
 .engagement-option .button {
   align-self: end;
   justify-content: space-between;
@@ -1407,6 +1471,9 @@ figcaption span {
 .engagement-context p {
   font-size: 16px;
   color: var(--muted);
+}
+.engagement-context h3 + p {
+  margin-top: 12px;
 }
 .engagement-context p + p {
   margin-top: 12px;
@@ -1694,6 +1761,13 @@ figcaption span {
   }
 }
 @media (max-width: 800px) {
+  .deployment-gap-list > div,
+  .deployment-contact {
+    grid-template-columns: 1fr;
+  }
+  .deployment-contact-action {
+    max-width: 400px;
+  }
   .work-page .faq-section {
     grid-template-columns: 1fr;
   }
@@ -1776,7 +1850,8 @@ figcaption span {
     grid-template-columns: 1fr;
   }
   .work-page .faq-item p,
-  .work-page .faq-section .section-heading p {
+  .work-page :is(.faq-section, .deployment-gaps, .expertise-section) .section-heading p,
+  .deployment-contact > div > p {
     font-size: 16px;
   }
   .technical-scope summary {
