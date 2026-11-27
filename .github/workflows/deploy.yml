@@ -60,7 +60,7 @@ jobs:
             echo "Medium previews unchanged."
             exit 0
           fi
-          git commit -m "Refresh Medium article previews"
+          git commit -m "chore(writing): Refresh Medium article previews"
           git pull --rebase origin master
           git push origin HEAD:master
 
