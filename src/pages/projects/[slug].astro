@@ -1,0 +1,15 @@
+---
+// PLACEHOLDER: project page template
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+const { project } = Astro.props as { project: CollectionEntry<"projects"> };
+const data = project.data;
+---
+<BaseLayout title={data.seoTitle} description={data.summary} path={`/projects/${project.id}.html`} image="/img/social-preview.jpg" imageAlt={data.imageAlt} active="story" current="true" graph={[]} mainClass="project-page container">
+  <h1>{data.title}</h1>
+</BaseLayout>

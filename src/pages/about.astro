@@ -1,0 +1,9 @@
+---
+// PLACEHOLDER: to be ported from data/pages/story.html
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { pageMeta } from "../data/pages";
+const meta = pageMeta("story");
+---
+<BaseLayout {...meta} active="story" bodyClass={meta.bodyClass}>
+  <h1>{meta.title}</h1>
+</BaseLayout>

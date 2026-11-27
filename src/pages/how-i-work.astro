@@ -1,0 +1,9 @@
+---
+// PLACEHOLDER: to be ported from data/pages/approach.html
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { pageMeta } from "../data/pages";
+const meta = pageMeta("approach");
+---
+<BaseLayout {...meta} active="approach" bodyClass={meta.bodyClass}>
+  <h1>{meta.title}</h1>
+</BaseLayout>
