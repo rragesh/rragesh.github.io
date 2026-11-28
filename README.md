@@ -6,12 +6,12 @@ The personal site of [Ragesh Ramachandran](https://rragesh.github.io/), organize
 
 - `index.html` — Home: who Ragesh is and where to explore next.
 - `about.html` — My story: the personal robotics journey, with all nine earlier projects linked within their relevant chapters.
-- `work.html` — Work: professional experience, collaboration options, and a short bridge to the engineering story.
+- `work.html` — Work: customer outcomes, deployment challenges, concrete engagement options, professional experience, and a direct LinkedIn invitation.
 - `writing.html` — Writing: visible Medium previews, learning notes, and talks.
 - `how-i-work.html` — How I work: working principles, communication preferences, team fit, and a direct LinkedIn invitation. Supporting source references live in development notes.
 - `projects/*.html` — individual projects, with My story active in navigation and breadcrumbs/return links to their story chapter.
 
-Every page offers Home, My story, Work, How I work, Writing, and **Stay in touch**, which leads to `writing.html#stay-in-touch`. End-of-page primary actions follow that reading order. Writing ends with Medium subscription and LinkedIn connection options; the footer also exposes both destinations. Medium subscriptions are completed on the profile via Follow and email notifications. Work introduces the engagement options, supports them with professional experience and an engineering-story invitation, then answers questions. The FAQ covers scope, collaboration, and handover. The current employer and position remain private. Navigation works without JavaScript.
+Every page offers Home, My story, Work, How I work, Writing, and **Stay in touch**, which leads to `writing.html#stay-in-touch`. End-of-page primary actions follow that reading order. Writing ends with Medium subscription and LinkedIn connection options; the footer also exposes both destinations. Medium subscriptions are completed on the profile via Follow and email notifications. Work leads with dependable robot deployments, makes operational problems recognizable, and compares assessment, implementation, and fractional leadership through concrete outcomes. Professional experience and the engineering-story invitation support the offer; the FAQ covers scope, collaboration, and handover. A specific LinkedIn contact prompt precedes the continuation to How I work. The positioning rationale is in `docs/value-proposition.md`. The current employer and position remain private. Navigation works without JavaScript.
 
 The site is built with [Astro](https://astro.build/) as fully static HTML. Pages ship no framework JavaScript; only the small progressive-enhancement script runs in the browser.
 

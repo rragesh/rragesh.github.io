@@ -8,10 +8,51 @@ const meta = pageMeta("work");
 ---
 <BaseLayout {...meta} active="work" bodyClass={meta.bodyClass}>
   <section class="page-intro" aria-labelledby="work-page-title">
-    <h1 id="work-page-title">Work, from prototypes to production.</h1>
-    <p>I’m drawn to the stretch between a promising prototype and a robot people can
-      depend on. Here’s the work behind that, and the ways we could work together.</p>
-    <nav class="chapter-nav" aria-label="Work sections"><a href="#expertise">Ways to work together</a><a href="#exp">Experience</a><a href="#faq">Questions</a></nav>
+    <h1 id="work-page-title">Robot deployments your team can depend on.</h1>
+    <p>I help robotics teams turn pilot rollouts into repeatable releases,
+      recoverable updates, and fleet operations their engineers can own.</p>
+    <div class="hero-actions">
+      <a class="button primary-button" href="#start">Discuss your deployment <span class="arrow" aria-hidden="true"></span></a>
+      <a class="text-link" href="#expertise">See ways to work together <span class="arrow" aria-hidden="true"></span></a>
+    </div>
+    <p class="work-proof">The infrastructure I’ve built has supported <strong>over 100,000 software deliveries</strong> across multiple continents. <a href="#exp">Explore the experience behind it</a>.</p>
+    <nav class="chapter-nav" aria-label="Work sections"><a href="#deployment-gaps">Deployment challenges</a><a href="#exp">Experience</a><a href="#faq">Questions</a></nav>
+  </section>
+
+  <section class="section deployment-gaps" id="deployment-gaps" aria-labelledby="deployment-gaps-title">
+    <div class="section-heading">
+      <div>
+        <h2 id="deployment-gaps-title">Where deployment gets difficult.</h2>
+        <p>A working pilot is a starting point. Customer fleets need a process
+          your whole team can operate.</p>
+      </div>
+    </div>
+    <dl class="deployment-gap-list">
+      <div>
+        <dt>Releases depend on a few people.</dt>
+        <dd><strong>A process the team can repeat.</strong> I help connect versioned builds,
+          release checks, and automated deployments so each rollout follows a
+          documented workflow.</dd>
+      </div>
+      <div>
+        <dt>It’s hard to see how a rollout is going.</dt>
+        <dd><strong>Visibility to decide what happens next.</strong> Fleet logs, monitoring,
+          and rollout-health checks help your engineers decide whether to
+          continue an update or investigate.</dd>
+      </div>
+      <div>
+        <dt>A failed update leaves the team improvising.</dt>
+        <dd><strong>A defined path to recover.</strong> Staged over-the-air updates,
+          recovery procedures, and engineering handover give your team a
+          way to respond when something goes wrong.</dd>
+      </div>
+      <div>
+        <dt>Customer commitments outpace the infrastructure.</dt>
+        <dd><strong>Clear priorities and decision ownership.</strong> I work with you on
+          the technical roadmap, architecture, infrastructure costs, and
+          delivery milestones the team can realistically take on.</dd>
+      </div>
+    </dl>
   </section>
 
   <section class="section expertise-section" id="expertise" aria-labelledby="expertise-title">
@@ -19,15 +60,15 @@ const meta = pageMeta("work");
       <div>
         <h2 id="expertise-title">Ways we could work together.</h2>
         <p>For robotics founders, CTOs, and engineering teams in the EU and US.
-          We can start by understanding a deployment problem, build the infrastructure
-          to solve it, or work together on the longer-term technical direction.</p>
+          Start with an assessment when you need clarity, implementation when
+          you know what to build, or leadership for ongoing technical direction.</p>
       </div>
     </div>
     <div class="engagement-options">
       <article class="engagement-option" aria-labelledby="assessment-title">
         <h3 id="assessment-title">Deployment Readiness Assessment</h3>
-        <p>Let’s look at how software reaches your robots, where things get
-          difficult, and what’s worth fixing before the next rollout.</p>
+        <p><strong class="engagement-outcome">Know what to fix before the next rollout.</strong> I review how software reaches your robots and turn the gaps into
+          a plan your engineers can act on.</p>
         <ul class="engagement-scope" aria-label="Assessment scope">
           <li>Release-to-robot workflow map</li>
           <li>Prioritized risks and operational gaps</li>
@@ -39,23 +80,21 @@ const meta = pageMeta("work");
       </article>
       <article class="engagement-option" aria-labelledby="engineering-title">
         <h3 id="engineering-title">Production deployment engineering</h3>
-        <p>When you know what needs building, I work with your engineers on
-          infrastructure that makes deployments repeatable and gives the
-          team a way back when something goes wrong.</p>
+        <p><strong class="engagement-outcome">Put an agreed deployment system into operation.</strong> I build with your engineers, from repeatable releases to recovery,
+          with a handover so your team can run the result.</p>
         <ul class="engagement-scope" aria-label="Engineering scope">
-          <li>Release automation and deployment pipelines</li>
-          <li>Over-the-air updates, monitoring, and recovery</li>
-          <li>Integration with your existing infrastructure</li>
-          <li>Documentation and engineering handover</li>
+          <li>Versioned builds, tests, and release automation</li>
+          <li>Staged OTA updates with recovery paths</li>
+          <li>Fleet monitoring integrated with your infrastructure</li>
+          <li>Runbooks, documentation, and engineering handover</li>
         </ul>
         <a class="button primary-button" href={LINKEDIN}
           aria-label="Discuss implementation on LinkedIn">Discuss implementation <span class="arrow diagonal" aria-hidden="true"></span></a>
       </article>
       <article class="engagement-option" aria-labelledby="leadership-title">
         <h3 id="leadership-title">Fractional Robotics DevOps leadership</h3>
-        <p>For ongoing technical direction, I help founders and CTOs work through
-          deployment decisions, customer commitments, infrastructure costs,
-          and what the team can realistically deliver.</p>
+        <p><strong class="engagement-outcome">Give deployment priorities a clear owner.</strong> I work with founders and CTOs on customer commitments, infrastructure
+          costs, and what the team can realistically deliver.</p>
         <ul class="engagement-scope" aria-label="Leadership scope">
           <li>Technical roadmap and investment priorities</li>
           <li>Architecture and infrastructure-cost reviews</li>
@@ -67,10 +106,14 @@ const meta = pageMeta("work");
       </article>
     </div>
     <div class="engagement-context">
-      <p>Experience includes delivery infrastructure supporting <strong>more than 1,500 production robots</strong> at NODE Robotics. <a href="#earlier-work">Explore the experience behind the work</a>.</p>
-      <p>Each engagement is scoped individually. We agree the mandate,
-        deliverables, access, timing, and fees before starting.
-        Assessment and implementation are separate engagements.</p>
+      <h3>Your assessment stands on its own.</h3>
+      <p>You leave with a workflow map, prioritized gaps, and a roadmap reviewed
+        with your engineers. Your team can take it forward, or we can scope
+        implementation together. If you already know what needs building,
+        we can start there.</p>
+      <p>We agree the scope, deliverables, responsibilities, access, timing,
+        and fees before starting. Implementation and ongoing leadership
+        are separate engagements.</p>
     </div>
     <details class="technical-scope">
       <summary>
@@ -208,8 +251,10 @@ const meta = pageMeta("work");
     </article>
     <article class="faq-item" aria-labelledby="faq-engagement">
       <h3 id="faq-engagement">Which engagement should we start with?</h3>
-      <p>Start with an <strong>assessment</strong> to clarify risks and priorities, <strong>production engineering</strong> to deliver an agreed system, or <strong>fractional leadership</strong> for ongoing technical direction.
-        We choose the engagement around the outcome you need.</p>
+      <p>An <strong>assessment</strong> gives you a workflow map, prioritized gaps,
+        and a roadmap to review with your team. You can act on it yourselves
+        or scope implementation with me separately. If the work is already
+        clear, start with <strong>production engineering</strong> to deliver the agreed system, or choose <strong>fractional leadership</strong> for ongoing technical direction.</p>
     </article>
     <article class="faq-item" aria-labelledby="faq-collaboration">
       <h3 id="faq-collaboration">How will you work with our engineering team?</h3>
@@ -228,10 +273,10 @@ const meta = pageMeta("work");
     </article>
     <article class="faq-item" aria-labelledby="faq-handover">
       <h3 id="faq-handover">What happens at handover?</h3>
-      <p>Implementation includes documentation and an engineering handover,
-        covering the key decisions and workflows your team needs to operate
-        and maintain the system. We agree handover expectations and any
-        ongoing support as part of the scope.</p>
+      <p>Implementation includes documentation, runbooks, and an engineering
+        handover covering the key decisions and workflows your team needs
+        to operate and maintain the system. We agree handover expectations
+        and any ongoing support as part of the scope.</p>
     </article>
     <article class="faq-item" aria-labelledby="faq-robotair">
       <h3 id="faq-robotair">How does this relate to Robotair?</h3>
@@ -239,6 +284,19 @@ const meta = pageMeta("work");
         deployment engineering and technical leadership. For a Robotair-specific
         inquiry, mention the product in your message so we can clarify the scope.</p>
     </article>
+  </section>
+
+  <section class="section deployment-contact" id="start" aria-labelledby="deployment-contact-title">
+    <div>
+      <h2 id="deployment-contact-title">Let’s talk about your next rollout.</h2>
+      <p>Tell me what your robots do, how you deploy today, and where the process
+        gets difficult. A short description is enough to start a conversation
+        about the right scope.</p>
+    </div>
+    <div class="deployment-contact-action">
+      <a class="button primary-button" href={LINKEDIN}>Discuss your deployment on LinkedIn <span class="arrow diagonal" aria-hidden="true"></span></a>
+      <p>Opens my LinkedIn profile. Send me a short message to start.</p>
+    </div>
   </section>
 
   <ContinueReading
