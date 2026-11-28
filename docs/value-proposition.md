@@ -1,6 +1,6 @@
 # Customer value proposition
 
-Approved direction · 2026-11-27. The owner asked to apply this positioning to the website and open a PR. Implemented on `src/pages/work.astro`, with matching search metadata and FAQ structured data in `src/data/pages.json`. Commercial terms remain individually agreed.
+Approved direction · refined 2026-11-28. The owner approved a shorter, story-led Work page after finding the initial version verbose and difficult to connect with. The main path targets roughly 450–600 visible words across four sections. Implemented on `src/pages/work.astro`, with matching search metadata and FAQ structured data in `src/data/pages.json`. Commercial terms remain individually agreed.
 
 ## Reference
 
@@ -22,13 +22,13 @@ For Ragesh, the equivalent is the gap between a working robot pilot and a deploy
 
 ### Robot deployments your team can depend on.
 
-I help robotics teams turn pilot rollouts into repeatable releases, recoverable updates, and fleet operations their engineers can own.
+Open on the moment a working pilot grows into different customer environments, software versions, and deployments. Introduce Ragesh's role in turning those moving parts into a delivery process the whole team can run.
 
-The engagement comparison explains when to start with a Deployment Readiness Assessment and what the customer receives. Its closing note makes the standalone value and separately agreed commercial terms explicit.
+Follow that situation with the owner-approved software-delivery statement. One compact NODE Robotics example then connects the engineering contribution to the fleet and infrastructure-cost outcomes before introducing the three engagement paths.
 
 **Primary action:** Discuss your deployment.
 
-**Supporting link:** See ways to work together.
+**Supporting link:** See how I can help.
 
 **Nearby evidence:** The infrastructure I’ve built has supported over 100,000 software deliveries across multiple continents. The owner supplied and approved this statement on 2026-11-28. “Explore the experience behind it” links to the overall experience section.
 
@@ -65,17 +65,16 @@ Work with founders and CTOs on technical direction, infrastructure investment, r
 
 ## Work-page journey
 
-1. Lead with the customer outcome and a direct invitation to discuss a deployment.
-2. Make the operational problems recognizable in concrete language.
-3. Keep the existing three comparable engagement options, with their outcomes and deliverables easy to scan.
-4. Explain the assessment's standalone value and separately scoped follow-on choices.
-5. Support the offer with the existing professional experience and attributed recommendation.
-6. Answer fit, collaboration, scope, timing, fees, and handover questions in the visible FAQ.
-7. Give a specific contact prompt, followed by the established continuation to How I work.
+1. Make the pilot-to-fleet situation recognizable and introduce the role of delivery infrastructure, supported by the 100,000+ software-delivery statement.
+2. Tell one concrete NODE Robotics story: the deployment context, Ragesh's contribution, and the supplied fleet and cost results. Link to My story for the wider background.
+3. Offer three concise customer-need paths into assessment, engineering, and fractional leadership, followed by a shared scoping note.
+4. Invite a conversation about the next rollout, with LinkedIn as the primary action and How I work as a quieter continuation.
+
+One native Practical details disclosure holds technical scope and three short FAQs. The earlier challenge rows, repeated assessment explanation, role-by-role experience list, separate story section, six expanded FAQs, and separate closing reading section were consolidated because they repeated the same promises and interrupted the narrative. Detailed career context already lives in My story; technical and commercial detail remains available on demand.
 
 Contact copy:
 
-> Tell me what your robots do, how you deploy today, and where the process gets difficult. A short description is enough to start a conversation about the right scope.
+> What do your robots do, how does software reach them today, and where does the process get difficult? A short message is enough to start a conversation about the right scope.
 
 **Action:** Discuss your deployment on LinkedIn. The destination is Ragesh's profile; no booking calendar or automatic inquiry submission is implied.
 
