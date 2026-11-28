@@ -288,7 +288,7 @@ def check(dist):
         errors.append('Homepage must contain only the introductory hero, with content on dedicated pages')
     if home.primary_links != ['/about.html']:
         errors.append('Homepage must start the reading path with My story')
-    for current, following in [('about.html', '/work.html'), ('how-i-work.html', '/writing.html')]:
+    for current, following in [('about.html', '/work.html'), ('work.html', '/how-i-work.html'), ('how-i-work.html', '/writing.html')]:
         page = page_at(current)
         if not page.return_links or page.return_links[0] != following or following not in page.primary_links:
             errors.append(f'{current}: closing primary action must continue to {following}')
@@ -298,8 +298,6 @@ def check(dist):
     if writing.article_count != len(json.loads((DATA / 'medium-posts.json').read_text())):
         errors.append('Writing page must contain every cached Medium preview')
     work_page = page_at('work.html')
-    if work_page.return_links[:2] != [LINKEDIN, '/how-i-work.html'] or work_page.primary_links[-1:] != [LINKEDIN]:
-        errors.append('Work must close with a LinkedIn primary action and a secondary continuation to How I work')
     story_page = page_at('about.html')
     expected_projects = {f'/projects/{slug}.html' for slug in project_index}
     if set(story_page.project_links) != expected_projects or len(story_page.project_links) != len(expected_projects):

@@ -112,7 +112,7 @@
     "key": "work",
     "file": "work.html",
     "title": "Robotics Deployment & DevOps | Ragesh Ramachandran",
-    "description": "From a working pilot to a fleet your team can operate. Explore Ragesh’s robotics deployment work, production experience, and three ways to work together.",
+    "description": "Repeatable robot releases, recoverable updates, and fleet operations your team can own. Work with Ragesh on assessment, engineering, or technical leadership.",
     "bodyClass": "content-page work-page",
     "image": "img/optimized/ragesh-roscon-2023-social.jpg",
     "imageAlt": "Ragesh Ramachandran speaking at ROSCon India 2023",
@@ -122,7 +122,7 @@
         "@id": "https://rragesh.github.io/work.html#page",
         "url": "https://rragesh.github.io/work.html",
         "name": "Work — Ragesh Ramachandran",
-        "description": "A pilot-to-fleet story, Ragesh’s deployment infrastructure work at NODE Robotics, and three ways to work together on repeatable software delivery and engineering ownership.",
+        "description": "Robotics deployment support for teams moving from pilots to production fleets: repeatable releases, recoverable updates, and engineering ownership. Compare engagements and explore Ragesh’s production experience.",
         "about": {
           "@id": "https://rragesh.github.io/#ragesh"
         },
@@ -196,18 +196,42 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How do we agree scope and fees?",
+            "name": "When is your involvement most valuable?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We agree the outcome, scope, access, responsibilities, timing, and fees before starting. If the work is already clear, we can scope implementation directly."
+              "text": "When deployment is becoming a constraint on the business: pilots are moving into customer environments, fleets are expanding, or release and recovery work depends on a few people. I focus on the infrastructure and engineering practices needed to make that next stage repeatable."
             }
           },
           {
             "@type": "Question",
-            "name": "Can our team take the work forward?",
+            "name": "Which engagement should we start with?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. An assessment gives your engineers a reviewed roadmap they can implement themselves. Engineering engagements include documentation and handover; we agree any ongoing support separately."
+              "text": "An assessment gives you a workflow map, prioritized gaps, and a roadmap to review with your team. You can act on it yourselves or scope implementation with me separately. If the work is already clear, start with production engineering to deliver the agreed system, or choose fractional leadership for ongoing technical direction."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How will you work with our engineering team?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "I work with your engineers on the agreed scope, using your robot platform, deployment environment, and existing workflows as the starting point. We define access, decision-making responsibilities, and review milestones upfront, so ownership is clear throughout the engagement."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How are timing and fees determined?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each engagement is scoped individually. The work required, system complexity, access, and level of involvement shape the proposal. We agree deliverables, milestones, responsibilities, and fees before starting; implementation and ongoing leadership are scoped separately from an assessment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens at handover?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Implementation includes documentation, runbooks, and an engineering handover covering the key decisions and workflows your team needs to operate and maintain the system. We agree handover expectations and any ongoing support as part of the scope."
             }
           },
           {
@@ -215,7 +239,7 @@
             "name": "How does this relate to Robotair?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "I founded Robotair. These engagements are with me directly. For a Robotair-specific inquiry, mention the product so we can clarify the scope."
+              "text": "I founded Robotair. This page describes working directly with me on deployment engineering and technical leadership. For a Robotair-specific inquiry, mention the product in your message so we can clarify the scope."
             }
           }
         ]
