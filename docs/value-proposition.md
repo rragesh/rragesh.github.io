@@ -30,7 +30,7 @@ The engagement comparison explains when to start with a Deployment Readiness Ass
 
 **Supporting link:** See ways to work together.
 
-**Nearby evidence:** At NODE Robotics, I led delivery infrastructure supporting more than 1,500 production robots. Link to the full experience entry so the attribution stays clear.
+**Nearby evidence:** The infrastructure I’ve built has supported over 100,000 software deliveries across multiple continents. The owner supplied and approved this statement on 2026-11-28. “Explore the experience behind it” links to the overall experience section.
 
 ## Translate technical work into buyer value
 
@@ -80,6 +80,8 @@ Contact copy:
 **Action:** Discuss your deployment on LinkedIn. The destination is Ragesh's profile; no booking calendar or automatic inquiry submission is implied.
 
 ## Evidence and presentation
+
+The introductory proof uses the owner's approved 100,000+ software-delivery claim across multiple continents. Preserve the term “software deliveries” and the infrastructure-level attribution; no success rate, delivery-unit definition, named continents, time window, or employer breakdown was supplied.
 
 Use the existing, owner-supplied NODE Robotics results with their attribution: infrastructure supporting more than 1,500 production robots, three monthly software releases, and a 50% infrastructure-cost reduction in that historical role. Robotair's 15 paying beta customers, Fraunhofer IPA / ROS-Industrial experience, and the ROSCon India talk provide additional context. The source of these claims is `docs/profile-sources.md`.
 

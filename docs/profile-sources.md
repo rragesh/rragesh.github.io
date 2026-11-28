@@ -1,6 +1,6 @@
 # Professional profile sources
 
-Updated 2026-11-26. Keep visible copy and structured data aligned. These notes are development material; only `public/` and the built pages are published. Do not record confidential identifiers from the private CV here.
+Updated 2026-11-28. Keep visible copy and structured data aligned. These notes are development material; only `public/` and the built pages are published. Do not record confidential identifiers from the private CV here.
 
 ## Owner-provided positioning and facts
 
@@ -13,6 +13,14 @@ The user explicitly supplied:
 - ROSCon India 2023 talk, with an owner-supplied photograph and recording link.
 
 The fleet count is the user's experience claim, not independently verified from a public employment record. The owner supplied the talk year and recording URL; no client names, guaranteed outcomes, or current availability was inferred. The journey’s historical dates come from the owner’s private CV, summarized below.
+
+## Owner-approved delivery-scale statement · 2026-11-28
+
+During the Work-page review, the owner supplied a new delivery-volume claim and approved this exact wording for the introduction:
+
+> The infrastructure I’ve built has supported over 100,000 software deliveries across multiple continents.
+
+This is an owner-provided claim, not an independently verified result. Retain the term “software deliveries”: no definition as completed robot deployments or updates, success rate, time window, named continents, or employer-specific breakdown was supplied. The statement refers to infrastructure Ragesh built and links to the overall experience section. The separate historical figure of more than 1,500 production robots remains attributed to NODE Robotics within its experience entry.
 
 ## Private CV and direct owner update · 2026-11-26
 
